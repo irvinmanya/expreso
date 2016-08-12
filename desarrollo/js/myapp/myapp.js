@@ -139,6 +139,24 @@ $(document).on('ready',function() {
             }
         }
     });
+    var owl = $('.owlHistoria');
+    owl.owlCarousel({
+        items: 1,
+        loop: true,
+        margin: 0,
+        autoplay: true,
+        lazyLoad: true,
+        autoplayTimeout: 2500,
+        autoplayHoverPause: false,
+        smartSpeed:450,
+        responsive: {
+            0: {
+                items: 1,
+                dots: false,
+                nav:true
+            }
+        }
+    });
     //-------------- [ Carusel con animacion ] --------------//
 
     //-------------- [ Eliminando saltos de line ] --------------//
