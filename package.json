@@ -1,0 +1,46 @@
+{
+  "name": "irvin",
+  "version": "0.0.0",
+  "description": "proy personal web site",
+  "main": "gulpfile.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://kevinrodbe@bitbucket.org/kevinrodbe/krb2015.git"
+  },
+  "author": "irvin",
+  "license": "BSD-2-Clause",
+  "bugs": {
+    "url": "https://bitbucket.org/irvin/ivh/issues"
+  },
+  "devDependencies": {
+    "browser-sync": "^2.3.1",
+    "gulp": "~3.9.0",
+    "gulp-concat": "~2.6.0",
+    "gulp-connect-php": "0.0.7",
+    "gulp-filter": "^3.0.1",
+    "gulp-image-resize": "^0.7.0",
+    "gulp-imagemin": "^2.4.0",
+    "gulp-jshint": "^2.0.0",
+    "gulp-minify-css": "^1.2.3",
+    "gulp-newer": "^1.1.0",
+    "gulp-rename": "~1.2.0",
+    "gulp-sass": "^2.1.1",
+    "gulp-stylus": "^2.1.2",
+    "gulp-uglify": "^1.5.1",
+    "gulp-util": "~3.0.3",
+    "gulp-watch": "^4.3.5",
+    "imagemin-jpegoptim": "^4.0.0",
+    "imagemin-pngquant": "~4.2.0",
+    "jshint": "^2.8.0",
+    "rupture": "^0.6.1"
+  },
+  "dependencies": {
+    "imagemin-jpegoptim": "^4.1.0",
+    "imagemin-pngquant": "^4.2.0",
+    "nib": "~1.1.0"
+  },
+  "homepage": "https://bitbucket.org/irvin/"
+}

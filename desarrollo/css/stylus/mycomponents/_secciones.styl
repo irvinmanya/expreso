@@ -1,0 +1,779 @@
+//_________________________________________________________________________/
+//________________________________________________________________________/
+//---------------------------- [ ESTILOS ] ------------------------------/
+@import 'nib'
+
+vendor-prefixes = webkit moz ms o official
+scale = 0 480px 768px 992px 1200px
+
+section
+	tam ()
+
+
+//------------> [ Intro ] <-----------------//
+.intro
+	tam ()
+	padding 20px 0px 20px 0px
+	
+.sliderIntro
+	tam ()
+	font-size 0px
+	
+
+.sliderFeat
+	tam ()
+	width calc( 100% - 235px )
+	li
+		tam ()
+		figure
+			tam ()
+			overflow hidden
+			figcaption
+				position absolute
+				width 100%
+				height auto
+				bottom 0px
+				left 0px
+				background -moz-linear-gradient(top, rgba(0,0,0,0) 0%, rgba(0,0,0,1) 86%, rgba(0,0,0,1) 100%)
+				background -webkit-linear-gradient(top, rgba(0,0,0,0) 0%,rgba(0,0,0,1) 86%,rgba(0,0,0,1) 100%)
+				background linear-gradient(to bottom, rgba(0,0,0,0) 0%,rgba(0,0,0,1) 86%,rgba(0,0,0,1) 100%)
+				text-align left
+				z-index 1
+				padding 5px 10px 5px 10px
+				&:before
+					befcont ()
+					bottom 0px
+					left 0px
+					background rgba(0,0,0,.5)
+				h2
+				p
+					tam ()
+					color blanco
+					padding 0px 0px 7px 0px
+				a
+					color blanco
+					&:hover
+					&:active
+						color blanco
+	
+.sliderList
+	tam ()
+	width 235px
+	li
+		tam ()
+		height auto
+		border-bottom 1px solid rgba(0,0,0,.15)
+		font-size 0px
+		height auto
+		trancicion ()
+		overflow hidden
+		&:before
+			befcont ()
+			width 10px
+			height 10px
+			top 0px
+			bottom 0px
+			left -7px
+			margin auto
+			transform rotate(45deg)
+			background negro
+			opacity 0
+		figure
+			tam ()
+			width 45px
+			height 45px
+			margin 10px 0px 0px 0px
+			border-radius 50%
+			overflow hidden
+			img
+				position absolute
+				top 0px
+				left 0px
+				right 0px
+				margin-left auto
+				margin-right auto
+				width auto
+				height 100%
+		.sliderTxt
+			tam ()
+			width calc( 100% - 60px )
+			text-align left
+			padding 5px 7px 5px 7px
+			h3
+			p
+				tam ()
+			h3
+				font-size 16px
+				padding-bottom 3px
+			p
+				font-size 14px
+				color rgba(0,0,0,.7)
+		&:last-child
+			border-bottom 0px solid blanco
+		&:hover
+		&:active
+		&:focus
+			border-left 3px solid negro
+			&:before
+				opacity 1
+
+.sliderFeatHide
+	display none !important
+.sliderFeatAct
+	display inline-block !important
+
+// .sliderNav
+// 	tam ()
+// 	background negro
+// 	font-size 0px
+// 	display none
+
+.sliderNav
+	tam ()
+	max-width calc( 100% - 235px )
+	background rgba(0,0,0,.0)
+	font-size 0px
+	position absolute
+	top 0px
+	bottom 0px
+	left 0px
+	margin-top auto
+	margin-bottom auto
+	height 30px
+	z-index 1
+	pointer-events none
+
+.sliderPrev
+.sliderNext
+	width 30px
+	height 30px
+	position absolute
+	top 0px
+	line-height 30px
+	color blanco
+	font-size 20px
+	cursor pointer
+	background negro
+	line-height 30px
+	pointer-events visible
+
+.sliderPrev
+	left 0px
+
+.sliderNext
+	right 0px
+
+.sliderListAct
+	border-left 3px solid #5b5b5b !important
+	&:before
+		opacity 1 !important
+		background #5b5b5b !important
+
+.itemLast
+	tam ()
+	border 1px solid rgba(0,0,0,.15)
+	margin-bottom 20px
+	figure
+		tam ()
+		img
+			tam ()
+		figcaption
+			tam ()
+			text-align left
+			h3
+			h4
+				tam ()
+				padding 10px 10px 10px 10px
+			p
+				padding 7px 10px 7px 10px
+
+
+// Materialize
+// ---> [ Desktop ]
+//@media screen and (max-width: 1200px)
+
+// ---> [ Tablet ]
+//@media screen and (max-width: 992px)
+
+// ---> [ Mobil ]
+@media screen and (max-width: 600px)
+	.intro
+		tam ()
+		padding 0px 0px 0px 0px
+		
+	.sliderIntro
+		margin 20px 0px 20px 0px
+
+	.sliderFeat
+	.sliderList
+		width 100%
+
+	.sliderFeat
+		li
+			figure
+				max-height auto
+
+	.sliderNav
+		background negro
+		display inline-block
+		position relative
+		top auto
+		bottom auto
+		left auto
+		max-width 100%
+
+	.sliderPrev
+	.sliderNext
+		position relative
+		tam ()
+		width 50%
+		height 30px
+		float left
+		color blanco
+		font-size 20px
+		cursor pointer
+		line-height 30px
+		pointer-events visible
+
+	.itemLast
+		margin-bottom 0px
+
+
+//----------> [ Fin - Intro ] <------------//
+
+//------------> [ Home - Noticias ] <-----------------//
+.notBox
+	tam ()
+	.titleBox2
+		text-align left
+		margin-bottom 25px
+
+.notBoxPad
+	padding 0px 15px 0px 15px
+
+.secDestac
+	border-top 1px solid rgba(0,0,0,.15)
+
+.notItemHome
+	max-width 350px
+	tam ()
+	text-align left
+	figure
+		tam ()
+	figcaption
+		h3
+		p
+			tam ()
+			padding 7px 10px 7px 10px
+		h3
+			border-bottom 1px solid rgba(0,0,0,.15)
+		p
+			font-size 14px
+			color rgba(0,0,0,.7)
+
+.itemLastMin
+	tam ()
+	text-align left
+	h3
+		font-size 20px
+		tam ()
+		padding 7px 10px 7px 10px
+		border-bottom 1px solid rgba(0,0,0,.15)
+	ul
+		tam ()
+		li
+			tam ()
+			a
+				tam ()
+				padding 10px 10px 10px 10px
+				border-bottom 1px solid rgba(0,0,0,.15)
+				&:hover
+				&:active
+				&:focus
+					background rgba(0,0,0,.15)
+			&:last-child
+				a
+					border-bottom 0px solid rgba(0,0,0,.15)
+			
+// ---> [ Desktop ]
+//@media screen and (max-width: 1200px)
+
+// ---> [ Tablet ]
+//@media screen and (max-width: 992px)
+
+// ---> [ Mobil ]
+@media screen and (max-width: 600px)
+	.notBox
+		article
+			padding 0px 0px 0px 0px !important
+
+//------------> [ Fin - Home - Noticias ] <-----------------//
+
+.owlColum
+	padding 0px 30px 30px 30px
+	.owl-controls
+		position absolute !important
+		top 0px
+		left 0px
+		width 100%
+		height 100%
+		pointer-events none
+		.owl-nav
+			position absolute !important
+			top 0px
+			left 0px
+			width 100%
+			height calc( 100% - 30px )
+			pointer-events none
+			.owl-prev
+				left 0px
+				span
+					background url('../img/plantilla/icoPrev.svg') center no-repeat !important
+			.owl-next
+				right 0px
+				span
+					background url('../img/plantilla/icoNext.svg') center no-repeat !important
+			.owl-prev
+			.owl-next
+				position absolute
+				top 0px
+				width 30px
+				height 100%
+				background rgba(0,0,0,.05) !important
+				pointer-events visible
+				span
+					position absolute
+					background-size 35px auto !important
+					top 0px
+					width 100%
+					height 100%
+					left 0px
+				&:hover
+					span
+						&:before
+							top 5px
+							left 5px
+		.owl-dots
+			position absolute
+			left 0px
+			right 0px
+			margin-left auto
+			margin-right auto
+			bottom -10px
+			pointer-events visible
+			.owl-dot
+				span
+					background rgba(0,0,0,.25)
+			.active
+				span
+					background rgba(0,0,0,.7) !important
+//------------> [ Columnistas ] <-----------------//
+// ---> [ Desktop ]
+//@media screen and (max-width: 1200px)
+
+// ---> [ Tablet ]
+//@media screen and (max-width: 992px)
+
+// ---> [ Mobil ]
+@media screen and (max-width: 600px)
+	.owlColum
+		tam ()
+		li
+			tam ()
+			text-align left
+			figure
+				tam ()
+			figcaption
+				tam ()
+				h3
+					tam ()
+					padding 7px 10px 7px 10px
+					&:before
+						befcont ()
+						width 30px
+						height 100%
+						top 0px
+						right 0px
+						background url('../img/plantilla/icoNext.svg') center no-repeat
+						background-size 100%
+						border-left 1px solid rgba(0,0,0,.15)
+
+//------------> [ Fin - Home - Columnistas ] <-----------------//
+
+
+//------------> [ Modulos de noticias ] <-----------------//
+.itemModNot
+	tam ()
+	text-align left
+	margin-bottom 20px
+	h3
+		tam ()
+		padding 7px 10px 7px 10px
+		i
+			float right
+			width 20px
+			height auto
+	figure
+		tam ()
+	figcaption
+		tam ()
+		h4
+			padding 7px 10px 7px 10px
+			font-size 18px
+	ul
+		tam ()
+		text-align left
+		li
+			tam ()
+			a
+				tam ()
+				padding 7px 10px 7px 10px
+				font-size 14px
+				border-top 1px solid rgba(0,0,0,.15)
+
+.encBox
+	tam ()
+	padding 30px 20px 20px 20px
+
+.encInpCont
+	tam ()
+	margin 15px 0px 10px 0px
+
+// Materialize
+// ---> [ Desktop ]
+//@media screen and (max-width: 1200px)
+
+// ---> [ Tablet ]
+//@media screen and (max-width: 992px)
+
+// ---> [ Mobil ]
+// @media screen and (max-width: 600px)
+// 	.itemModNot
+// 		margin-bottom 0px
+
+//------------> [ Fin - Home - Modulos de noticias ] <-----------------//
+
+//------------> [ Home - Blogueros ] <-----------------//
+.blogerList
+	tam ()
+	text-align left
+	padding 20px 0px 20px 0px
+
+.blogItem
+	tam ()
+	figure
+		tam ()
+	figcaption
+		tam ()
+		h3
+			padding 7px 10px 7px 10px
+			tam ()
+			text-align center
+
+// Materialize
+// ---> [ Desktop ]
+//@media screen and (max-width: 1200px)
+
+// ---> [ Tablet ]
+//@media screen and (max-width: 992px)
+
+// ---> [ Mobil ]
+@media screen and (max-width: 600px)
+	.blogerList
+		text-align center
+		padding 0px
+		
+	.blogItem
+		margin-bottom 20px
+		max-width 350px
+
+//------------> [ Fin - Home - Blogueros ] <-----------------//
+
+
+//------------> [ Youtube ] <-----------------//
+.ytSlider
+	tam ()
+	padding 0px 0px 20px 0px
+	border-bottom 1px solid rgba(0,0,0,.15)
+
+.ytBox
+	tam ()
+	margin 0px 0px 10px 0px
+	i
+		position absolute
+		top 0px
+		left 0px
+		right 0px
+		bottom 0px
+		margin auto
+		width 50px
+		height 50px
+		background url('../img/plantilla/playtv.svg') center no-repeat
+		background-size 100%
+		z-index 1
+		opacity 0.8
+
+.ytList
+	tam ()
+	li
+		tam ()
+		figure
+			tam ()
+			padding 5px
+			i
+				position absolute
+				top 0px
+				left 0px
+				right 0px
+				bottom 0px
+				margin auto
+				width 30px
+				height 30px
+				background url('../img/plantilla/playtv.svg') center no-repeat
+				background-size 100%
+				z-index 1
+				opacity 0.8
+
+.ytList
+	.owl-nav
+		tam ()
+		padding 0px 5px 0px 3px !important
+		.owl-prev
+		.owl-next
+			width 30px
+			height 30px
+			background rgba(0,0,0,.15) !important
+			position relative
+			span
+				position absolute
+				width 100%
+				height 100%
+				left 0px
+				top 0px
+		.owl-prev
+			float left
+			span
+				background url('../img/plantilla/icoPrev.svg') center no-repeat !important
+		.owl-next
+			float right
+			span
+				background url('../img/plantilla/icoNext.svg') center no-repeat !important
+	.owl-dots
+		position absolute
+		bottom 0px
+		left 0px
+		right 0px
+		pointer-events none
+		.owl-dot
+			pointer-events visible
+			span
+				background rgba(0,0,0,.3) !important
+		.active
+			span
+				background rgba(0,0,0,.6) !important
+
+// Materialize
+// ---> [ Desktop ]
+//@media screen and (max-width: 1200px)
+
+// ---> [ Tablet ]
+//@media screen and (max-width: 992px)
+
+// ---> [ Mobil ]
+@media screen and (max-width: 600px)
+	.ytSlider
+		margin-bottom 25px
+
+//------------> [ Fin - Youtube ] <-----------------//
+
+//------------> [ Publicidad ] <-----------------//
+.rowPub
+	padding 0px 0px 0px 0px
+	
+.publong
+	tam ()
+	max-width 970px
+	height 90px
+// Materialize
+// ---> [ Desktop ]
+//@media screen and (max-width: 1200px)
+
+// ---> [ Tablet ]
+//@media screen and (max-width: 992px)
+
+// ---> [ Mobil ]
+@media screen and (max-width: 600px)
+	.publong
+		height auto
+
+//------------> [ Fin - Publicidad ] <-----------------//
+
+
+//------------> [ Publicidad - Formulario ] <-----------------//
+.formBox
+	tam ()
+	max-width 800px
+	padding 20px 20px 0px 20px
+	margin 30px 0px 10px 0px
+	p
+		text-align center
+
+.inputRow
+	tam ()
+	padding-bottom 20px
+
+.inputItem
+	tam ()
+
+// Materialize
+// ---> [ Desktop ]
+//@media screen and (max-width: 1200px)
+
+// ---> [ Tablet ]
+//@media screen and (max-width: 992px)
+
+// ---> [ Mobil ]
+@media screen and (max-width: 600px)
+	.formBox
+		padding 20px 0px 0px 0px
+	.inputRow
+		padding-bottom 0px
+	.inputItem
+		margin-bottom 20px
+	.pubform
+		.row
+			margin-bottom 0px !important
+
+//------------> [ Fin - Publicidad - Formulario ] <-----------------//
+
+//------------> [ Publicidad - Informacion ] <-----------------//
+.pubinf
+	padding-top 40px
+	.titleBox2
+		margin-bottom 20px
+
+.gmap
+	tam ()
+	min-height 280px
+	background rgba(0,0,0,0.5)
+	margin-top 20px
+
+.pinfList
+	tam ()
+	li
+		tam ()
+		font-size 0px
+		i
+			tam ()
+			width 60px
+			height auto
+			padding 20px 0px 0px 0px 0px
+			img
+				tam ()
+				width auto
+				height 50px
+		.pinfTxt
+			tam ()
+			width calc( 100% - 60px )
+			font-size 18px
+			text-align left
+			padding 20px 20px 20px 20px
+		&:before
+			befcont ()
+			left 0px
+			bottom 0px
+			height 1px
+			background -moz-radial-gradient(center, ellipse cover, rgba(0,0,0,1) 0%, rgba(0,0,0,0) 73%, rgba(0,0,0,0) 100%)
+			background -webkit-radial-gradient(center, ellipse cover, rgba(0,0,0,1) 0%,rgba(0,0,0,0) 73%,rgba(0,0,0,0) 100%)
+			background radial-gradient(ellipse at center, rgba(0,0,0,1) 0%,rgba(0,0,0,0) 73%,rgba(0,0,0,0) 100%)
+		&:last-child
+			&:before
+				display none
+
+.pinfTell
+	tam ()
+	padding 20px 0px 20px 0px
+	border-top  1px solid rgba(0,0,0,.15)
+	li
+		bloque ()
+		position relative
+		text-align left
+		padding 20px 20px 20px 20px
+		&:before
+			display none
+
+.pinfTellTitulo
+	tam ()
+	padding-top 10px
+
+// Materialize
+// ---> [ Desktop ]
+//@media screen and (max-width: 1200px)
+
+// ---> [ Tablet ]
+//@media screen and (max-width: 992px)
+
+// ---> [ Mobil ]
+@media screen and (max-width: 600px)
+	.pinfTell
+		padding 20px 0px 0px 0px
+		li
+			&:last-child
+				.margBot20
+					margin-bottom 0px
+
+//------------> [ Fin - Publicidad - Informacion ] <-----------------//
+
+//------------> [ Empresa ] <-----------------//
+.pubemp
+	padding-top 40px
+
+.teamList
+	tam ()
+	padding 30px 0px 0px 0px
+	li
+		text-align left
+		position relative
+		&:nth-child(3)
+			&:before
+				display none
+
+.teamItem
+	tam ()
+	padding 20px
+	margin-bottom 20px
+
+// Materialize
+// ---> [ Desktop ]
+//@media screen and (max-width: 1200px)
+
+// ---> [ Tablet ]
+//@media screen and (max-width: 992px)
+
+// ---> [ Mobil ]
+@media screen and (max-width: 600px)
+	.teamList
+		li
+			&:before
+				width 100%
+				height 1px
+				top auto
+				bottom 0px
+				left 0px
+				right 0px
+				margin-left auto
+				margin-right auto
+			&:nth-child(3)
+				&:before
+					display block
+			&:last-child
+				.teamItem
+					margin-bottom 0px
+				&:before
+					display none
+
+//------------> [ Fin - Empresa ] <-----------------//
+
+//---------------------------- [ ESTILOS ] ------------------------------/
+//________________________________________________________________________/
+//_________________________________________________________________________/

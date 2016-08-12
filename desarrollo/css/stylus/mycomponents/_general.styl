@@ -1,0 +1,474 @@
+//_________________________________________________________________________/
+//________________________________________________________________________/
+//---------------------------- [ ESTILOS ] ------------------------------/
+@import 'nib'
+
+vendor-prefixes = webkit moz ms o official
+scale = 0 480px 768px 992px 1200px
+
+body
+	background blanco
+	padding 0px
+	margin 0px
+	text-align center
+	color negro
+	font-size 18px
+	font-family fuente1 !important
+
+//---> [ Secciones ]
+.secrow
+	tam ()
+	padding 20px 0px 20px 0px
+
+.colsinpad
+	padding-left 0px !important
+	padding-right 0px !important
+
+.rowRell
+	position relative
+
+.itemShadow
+	border 1px solid rgba(0,0,0,.15)
+	box-shadow 1px 1px 10px 0px rgba(0,0,0,.25)
+
+.contShadow
+	box-shadow 0px 0px 15px 0px rgba(0,0,0,.2)
+
+.lineLateralLeft
+.lineLateralRight
+.lineTop
+.lineBottom
+	&:before
+		befcont ()
+		background -moz-radial-gradient(center, ellipse cover, rgba(0,0,0,1) 0%, rgba(0,0,0,0) 73%, rgba(0,0,0,0) 100%)
+		background -webkit-radial-gradient(center, ellipse cover, rgba(0,0,0,1) 0%,rgba(0,0,0,0) 73%,rgba(0,0,0,0) 100%)
+		background radial-gradient(ellipse at center, rgba(0,0,0,1) 0%,rgba(0,0,0,0) 73%,rgba(0,0,0,0) 100%)
+
+.lineLateralRight
+	&:before
+		right 0px
+		bottom 0px
+		height 100%
+		width 1px
+
+.lineLateralLeft
+	&:before
+		left 0px
+		bottom 0px
+		height 100%
+		width 1px
+
+.lineTop
+	&:before
+		right 0px
+		top 0px
+		height 1px
+		width 100%
+
+.lineBottom
+	&:before
+		right 0px
+		top 0px
+		height 1px
+		width 100%
+
+// ---> [ Desktop ]
+//@media screen and (max-width: 1200px)
+
+// ---> [ Tablet ]
+//@media screen and (max-width: 992px)
+
+// ---> [ Mobil ]
+@media screen and (max-width: 600px)
+	.margBot20
+		margin-bottom 20px
+
+// ----------------- [ Header ] --------------- //
+header
+	tam ()
+	z-index 9
+
+.infoHeader
+	tam ()
+	background blanco
+	height auto
+	padding 7px 15px 7px 15px
+
+.logoBox
+	tam ()
+	max-width 220px
+	margin-top 15px
+	margin-left 15px
+	img
+		tam ()
+
+.MapHeader
+	tam ()
+	width auto
+	li
+		bloque ()
+		a
+			font-size 14px
+			line-height 25px
+			padding-right 10px
+			margin-right 5px
+			position relative
+			&:before
+				befcont ()
+				width 1px
+				height 100%
+				background negro
+				top 0px
+				right 0px
+		&:last-child
+			a
+				padding-right 0px
+				margin-right 0px
+				&:before
+					display none
+
+.rsListHead
+	bloque ()
+	width auto
+	height auto
+	float right
+	span
+		font-size 14px
+		color negro
+		bloque ()
+		line-height 25px
+	li
+		bloque ()
+		a
+			bloque ()
+			width 25px
+			height auto
+			trancicion ()
+			&:hover
+			&:focus
+			&:active
+				transform scale(1.1,1.1)
+
+.headerBtn
+	width auto
+	height auto
+	float right
+	margin-top 15px
+	li
+		bloque ()
+		padding 0px 10px 0px 0px
+		margin 0px 10px 0px 0px
+	.btnGeneral
+		padding 8px 15px 8px 15px
+
+.inpsearch
+	width 200px
+	height 35px
+	background blanco
+	border 1px solid rgba(0,0,0,.15)
+	bloque ()
+	padding 0px 15px 0px 15px
+
+.headerBtnLine
+	position relative
+	&:before
+		befcont ()
+		width 1px
+		height 100%
+		background negro
+		top 0px
+		right 0px
+
+.hamBurger
+	padding 0px
+
+.menuBox
+	width 100%
+	position relative
+	z-index 9
+	height auto
+	bottom 0px
+	left 0px
+	text-align left
+	background #cccccc
+	padding 0px 0px 20px 0px
+
+.hamBurger
+	display none
+.searchIco
+	display none
+
+// Materialize
+// ---> [ Desktop ]
+//@media screen and (max-width: 1200px)
+
+// ---> [ Tablet ]
+//@media screen and (max-width: 992px)
+
+// ---> [ Mobil ]
+//@media screen and (max-width: 600px)
+@media screen and (max-width: 992px)
+	.menuBox
+		position fixed
+		height 55px
+		bottom 0px
+		left 0px
+		text-align center
+
+	.logoBox
+		max-width 170px
+		margin-left 0px
+
+	.headerBtn
+		display none
+
+	.infoHeader
+		display none
+
+	.hamBurger
+	.searchIco
+		display block
+		width 55px
+		height 55px
+		position absolute
+		top 0px
+		left 0px
+		padding 5px
+		cursor pointer
+		img
+			tam ()
+			max-width 40px
+			margin-top 2px
+	
+	.hamBurger
+		padding 0px 5px 5px 5px
+
+	.searchIco
+		left auto
+		right 0px
+		img
+			margin-top 7px
+			max-width 30px
+
+//------[ Menu ] -------------->
+.mainMenu
+	position relative
+	height 50px
+	max-width auto
+	trancicion ()
+	border-left 1px solid rgba(0,0,0,.1)
+	border-right 1px solid rgba(0,0,0,.1)
+	border-bottom 1px solid rgba(0,0,0,.1)
+	ul
+		tam ()
+		text-align left
+		font-size 0px
+		li
+			bloque ()
+			a
+				bloque ()
+				border-left 1px solid rgba(0,0,0,.15)
+				line-height 50px
+				text-decoration none
+				trancicion ()
+				font-size 16px
+				padding 0px 10px 0px 10px
+				&:hover
+				&:active
+				&:focus
+					background rgba(0,0,0,.15)
+			&:first-child
+				a
+					border-left 0px solid rgba(0,0,0,.0)
+
+// Materialize
+// ---> [ Desktop ]
+//@media screen and (max-width: 1200px)
+
+// ---> [ Tablet ]
+@media screen and (max-width: 992px)
+	.mainMenu
+		position fixed
+		bottom 55px
+		left -30%
+		width 100%
+		height calc( 100% - 55px )
+		background blanco
+		max-width 250px
+		overflow-y scroll
+		opacity 0
+		pointer-events none
+		box-shadow 3px -5px 10px 0px rgba(0,0,0,.2)
+		border-left 0px solid rgba(0,0,0,.1)
+		border-right 0px solid rgba(0,0,0,.1)
+		ul
+			tam ()
+			li
+				tam ()
+				a
+					tam ()
+					padding 10px 10px 10px 10px
+					border-bottom 1px solid rgba(0,0,0,.1)
+					text-align left
+					border-left 0px solid rgba(0,0,0,.15)
+
+	.mainMenuAct
+		pointer-events visible
+		opacity 1
+		left 0px
+
+// ---> [ Mobil ]
+//@media screen and (max-width: 600px)
+
+
+//------[ Search ] -------------->
+.searchFixed
+	width 100%
+	height 50px
+	background blanco
+	position fixed
+	top -30%
+	left 0px
+	box-shadow 0px 0px 10px 0px rgba(0,0,0,.2)
+	z-index 9
+	trancicion ()
+	opacity 0
+	pointer-events none
+
+.searchFixedAct
+	pointer-events visible
+	opacity 1
+	top 0px
+
+//------[ Inputs Fields ] -------------->
+.inputField
+	tam ()
+	height 50px
+	background blanco
+	border 0px solid
+	color negro
+	padding 0px 15px 0px 15px
+
+
+
+// ----------------- [ Footer ] --------------- //
+footer
+	tam ()
+	background celeste2
+	padding 30px 0px 5px 0px
+	
+// Site Map
+.siteMapBox
+	text-align left
+	tam ()
+	h3
+		color blanco
+
+.lastNot
+	tam ()
+	padding 10px 0px 10px 0px
+	text-align left
+	li
+		tam ()
+		color blanco
+		padding-left 20px !important
+		&:before
+			befcont ()
+			width 15px
+			height 15px
+			left 0px
+			top 2px
+			background url('../img/plantilla/bullet.svg') center no-repeat
+			background-size 100%
+		a
+			tam ()
+			padding 2px 0px 4px 0px
+			color blanco
+
+// Materialize
+// ---> [ Desktop ]
+//@media screen and (max-width: 1200px)
+
+// ---> [ Tablet ]
+//@media screen and (max-width: 992px)
+
+// ---> [ Mobil ]
+@media screen and (max-width: 600px)
+	footer
+		padding 30px 0px 60px 0px
+		
+	.siteMapBox
+		border-bottom 1px solid rgba(255,255,255,.3) !important
+		padding-bottom 10px
+	
+	.siteMapBoxLast
+		border-bottom 1px solid rgba(255,255,255,.0) !important
+		padding-bottom 0px
+
+
+// ---------------- [ Footer ] ----------------------//
+// [ Copyright ] //---------->
+.copyRight
+	tam ()
+	padding 20px 0px 10px 0px
+	&:before
+		content ''
+		width 100%
+		height 1px
+		position absolute
+		top 0px
+		left 0px
+		right 0px
+		margin-left auto
+		margin-right auto
+		max-width 1300px
+		background -moz-radial-gradient(center, ellipse cover, rgba(255,255,255,1) 0%, rgba(255,255,255,0.99) 1%, rgba(255,255,255,0) 68%, rgba(255,255,255,0) 100%)
+		background -webkit-radial-gradient(center, ellipse cover, rgba(255,255,255,1) 0%,rgba(255,255,255,0.99) 1%,rgba(255,255,255,0) 68%,rgba(255,255,255,0) 100%)
+		background radial-gradient(ellipse at center, rgba(255,255,255,1) 0%,rgba(255,255,255,0.99) 1%,rgba(255,255,255,0) 68%,rgba(255,255,255,0) 100%)
+	.row
+		margin-bottom 0px
+	.linkTxt
+		color blanco !important
+		trancicion ()
+		&:hover
+		&:active
+		&:focus
+			text-decoration underline
+			color blanco
+
+.copyRightTxt
+	text-align right
+	color blanco
+
+.copyManya
+	text-align left
+	color blanco
+
+.manyaIco
+	width 25px
+	height auto
+	bloque ()
+	vertical-align middle
+	margin-right 3px
+
+// ---> [ Tablet ]
+@media screen and (max-width: 992px)
+	.copyRightTxt
+		text-align center
+
+	.copyManya
+		text-align center
+
+	.copyRightTxt
+		text-align center
+		line-height 120%
+
+// // ---> [ Mobil ]
+// @media screen and (max-width: 600px)
+// 	.sitempBox
+// 		width 100%
+
+
+//---------------------------- [ FIN - ESTILOS ] ------------------------/
+//________________________________________________________________________/
+//_________________________________________________________________________/
