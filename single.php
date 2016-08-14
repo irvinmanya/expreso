@@ -61,28 +61,30 @@
 						</ul>
 					</li>
 				</ul>
+
+				<div class="singSlider owlOneItem">
+					<div class="singItem">
+						<figure>
+							<img src="<?php echo get_template_directory_uri() ?>/img/plantilla/noticia.jpg" alt="title" title="title">
+						</figure>
+					</div>
+					<div class="singItem">
+						<figure>
+							<img src="<?php echo get_template_directory_uri() ?>/img/plantilla/noticia.jpg" alt="title" title="title">
+						</figure>
+					</div>
+					<div class="singItem">
+						<figure>
+							<img src="<?php echo get_template_directory_uri() ?>/img/plantilla/noticia.jpg" alt="title" title="title">
+						</figure>
+					</div>
+				</div>
 				
 				<?php //Contenido ?>
 				<div class="campTxt">
-					<div class="singSlider owlOneItem">
-						<div class="singItem">
-							<figure>
-								<img src="<?php echo get_template_directory_uri() ?>/img/plantilla/noticia.jpg" alt="title" title="title">
-							</figure>
-						</div>
-						<div class="singItem">
-							<figure>
-								<img src="<?php echo get_template_directory_uri() ?>/img/plantilla/noticia.jpg" alt="title" title="title">
-							</figure>
-						</div>
-						<div class="singItem">
-							<figure>
-								<img src="<?php echo get_template_directory_uri() ?>/img/plantilla/noticia.jpg" alt="title" title="title">
-							</figure>
-						</div>
-					</div>
 					<?php the_content(); ?>
 				</div>
+
 				
 				<?php //Articulos relacionados ?>
 				<div class="col l12 m12 s12" rowRell">
