@@ -33,7 +33,7 @@ var path={
 	nameSass:'materialize.min.css',
 	ouputSass:'./desarrollo/css/general/',
 
-	inputJsMaterial:'./desarrollo/js/jsMaterial/**/*.js',
+	inputJsMaterial:'./desarrollo/js/jsMaterial/*.js',
 	outputJsMaterial:'./desarrollo/js/general/',
 	nameJsMaterial:'materialize.js',
 
