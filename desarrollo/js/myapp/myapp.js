@@ -159,8 +159,7 @@ $(document).on('ready',function() {
     });
     //-------------- [ Carusel con animacion ] --------------//
 
-    $('.histSlider').find('.owl-controls').addClass('arroOWL');
-    $('.listCaricatura').find('.owl-controls').addClass('arroOWL');
+    $('.owlOneItem').find('.owl-controls').addClass('arroOWL');
 
     //-------------- [ Eliminando saltos de line ] --------------//
     $('.formBox').find('br').remove();

@@ -83,7 +83,7 @@
 				</div>
 
 				<?php //Contenido ?>
-				<div class="campTxt">
+				<div class="campTxt lineBottom">
 					<?php the_content(); ?>
 				</div>
 
