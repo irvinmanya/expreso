@@ -89,7 +89,7 @@
 
 				
 				<?php //Articulos relacionados ?>
-				<div class="rowSing rowRell">
+				<div class="rowSing rowRell lineBottom">
 					<div class="titleBox2">
 						<h2>
 							Noticias relacionadas
@@ -155,7 +155,7 @@
 				</div>
 
 				<?php //Articulos relacionados ?>
-				<div class="rowSing rowRell">
+				<div class="rowSing rowRell lineBottom">
 					<div class="titleBox2">
 						<h2>
 							Noticias de una categoría relacionadas
