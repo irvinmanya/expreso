@@ -588,7 +588,7 @@
 				</article>
 
 				<?php //Caricatura ?>
-				<article class="col l6 m12 s12">
+				<article class="col l12 m12 s12">
 					<ul class="listCaricatura owlOneItem">
 						<li>
 							<figure>
