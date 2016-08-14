@@ -296,7 +296,8 @@ $(document).on('ready',function() {
     });*/
 
     // Collapse
-
+    $('.collapsible').collapsible({
+    })
 
 });
     
