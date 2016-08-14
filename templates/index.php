@@ -5,7 +5,7 @@
 ?>
 <?php get_header(); ?>
 
-<!-- [ Intro ] -->
+<?php //Intro ?>
 <section class="secCont intro">
 	<div class="container">
 		<div class="row">
@@ -134,7 +134,7 @@
 	</div>
 </section>
 
-<!-- [ Noticias Destacadas ] -->
+<?php //Noticias destacadas ?>
 <section class="secrow secDestac">
 	<div class="container notBox">
 		<div class="row">
@@ -234,7 +234,7 @@
 	</div>
 </section>
 
-<!-- [ Política ] -->
+<?php //Política ?>
 <section class="secrow secDestac">
 	<div class="container notBox">
 		<div class="row">
@@ -307,19 +307,19 @@
 				</a>
 			</div>
 			<div class="col l4 m12 s12">
-				<article class="itemLast itemShadow margBot20">
+				<div class="itemLast itemShadow margBot20">
 					<figure>
 						<a href="javascript:void(0)" title="">
 							<img src="<?php echo get_template_directory_uri() ?>/img/plantilla/noticia.jpg" alt="title" title="title">
 						</a>
 					</figure>
-				</article>
+				</div>
 			</div>
 		</div>
 	</div>
 </section>
 
-<!-- [ Economia ] -->
+<?php //Economia ?>
 <section class="secrow secDestac">
 	<div class="container notBox">
 		<div class="row">
@@ -420,7 +420,7 @@
 	</div>
 </section>
 
-<!-- [ Actualidad ] -->
+<?php //Actualidad ?>
 <section class="secrow secDestac">
 	<div class="container notBox">
 		<div class="row">
@@ -518,7 +518,7 @@
 	</div>
 </section>
 
-<!-- [ Mundo ] -->
+<?php //Mundo ?>
 <section class="secrow secDestac">
 	<div class="container notBox">
 		<div class="row">
@@ -591,19 +591,19 @@
 				</a>
 			</div>
 			<div class="col l4 m12 s12">
-				<article class="itemLast itemShadow margBot20">
+				<div class="itemLast itemShadow margBot20">
 					<figure>
 						<a href="javascript:void(0)" title="">
 							<img src="<?php echo get_template_directory_uri() ?>/img/plantilla/noticia.jpg" alt="title" title="title">
 						</a>
 					</figure>
-				</article>
+				</div>
 			</div>
 		</div>
 	</div>
 </section>
 
-<!-- [ Columnista del día ] -->
+<?php //Columnista del dia ?>
 <section class="secrow secDestac">
 	<div class="container notBox">
 		<div class="row">
@@ -702,7 +702,7 @@
 	</div>
 </section>
 
-<!-- [ Modulos de noticias ] -->
+<?php //Modulos de noticias ?>
 <section class="secrow secDestac">
 	<div class="container notBox">
 		<div class="row">

@@ -21,7 +21,7 @@ if ( have_posts() ) { while ( have_posts() ) {the_post(); }}?>
 	<div class="container">
 		<div class="row">
 			<div class="col l12 m12 s12">
-				<ul class="histSlider owlHistoria">
+				<ul class="histSlider owlOneItem">
 					<?php if( have_rows('his-sliderlist') ): ?>
 						<?php while ( have_rows('his-sliderlist') ) : the_row(); ?>
 							<li>
@@ -40,6 +40,11 @@ if ( have_posts() ) { while ( have_posts() ) {the_post(); }}?>
 		</div>
 	</div>
 </section>
+
+<div class="publong">
+	<?php $pubPublong2 = get_field('his-pubimg2'); ?>
+	<img src="<?php echo $pubPublong2['url']; ?>" alt="<?php echo $pubPublong2['title']; ?>" title="<?php echo $pubPublong2['title']; ?>">
+</div>
 
 <?php get_footer(); ?>
 </body>

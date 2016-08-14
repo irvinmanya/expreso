@@ -139,7 +139,7 @@ $(document).on('ready',function() {
             }
         }
     });
-    var owl = $('.owlHistoria');
+    var owl = $('.owlOneItem');
     owl.owlCarousel({
         items: 1,
         loop: true,
@@ -160,6 +160,7 @@ $(document).on('ready',function() {
     //-------------- [ Carusel con animacion ] --------------//
 
     $('.histSlider').find('.owl-controls').addClass('arroOWL');
+    $('.listCaricatura').find('.owl-controls').addClass('arroOWL');
 
     //-------------- [ Eliminando saltos de line ] --------------//
     $('.formBox').find('br').remove();
