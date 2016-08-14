@@ -529,7 +529,7 @@
 <section class="secrow secDestac">
 	<div class="container notBox">
 		<div class="row">
-			<div class="col l8 s12 m12">
+			<div class="col l8 s12 m12 rowRell">
 
 				<?php //Modulo #1 ?>
 				<article class="col l6 m12 s12">
@@ -588,7 +588,7 @@
 				</article>
 
 				<?php //Caricatura ?>
-				<article class="col l12 m12 s12 ">
+				<article class="col l12 m12 s12">
 					<ul class="listCaricatura owlOneItem">
 						<li>
 							<figure>
