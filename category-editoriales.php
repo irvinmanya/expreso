@@ -20,11 +20,11 @@
 			<?php //Content ?>
 			<div class="col l6 m12 s12">
 				<ul class="collapsible acordImg" data-collapsible="accordion">
-					<li>
-						<div class="collapsible-header">
+					<li class="active">
+						<div class="collapsible-header active">
 							First #1
 						</div>
-						<div class="collapsible-body">
+						<div class="collapsible-body" style="display:block;">
 							<figure>
 								<img src="<?php echo get_template_directory_uri() ?>/img/plantilla/noticia.jpg" alt="title" title="title">
 							</figure>
@@ -85,7 +85,7 @@
 							</div>
 						</div>
 					</li>
-				<li>
+				</ul>
 			</div>
 
 			<?php //SideBar ?>
