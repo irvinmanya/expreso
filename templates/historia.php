@@ -1,14 +1,19 @@
 <?php
 /**
  * Template Name: Historia
-
- * @link 
- * @package WordPress
- * @subpackage Expreso
- * @since 
  */
 ?>
 <?php get_header(); ?>
+<?php 
+if ( have_posts() ) {
+	while ( have_posts() ) {
+		the_post(); 
+		//
+		// Post Content here
+		//
+	} // end while
+} // end if
+?>
 <section class="secrow rowPub">
 	<div class="container">
 		<div class="row">
