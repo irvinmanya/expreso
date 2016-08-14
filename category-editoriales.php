@@ -8,11 +8,12 @@
 		<div class="row">
 			<?php //filtros ?>
 			<div class="col l3 m12 s12 rowFiltros">
-				<h2>
-					Encuentra rápido lo que más te interesa leer
-				</h2>
-
-				<div class="inp-field">
+				<div class="titleBox2">
+					<h2>
+						Encuentra rápido lo que más te interesa leer
+					</h2>
+				</div>
+				<div class="inpFiltro>
 					<input type="date" class="datepicker">
 				</div>
 			</div>
