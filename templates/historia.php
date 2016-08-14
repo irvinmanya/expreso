@@ -1,6 +1,11 @@
 <?php
 /**
  * Template Name: Historia
+
+ * @link 
+ * @package WordPress
+ * @subpackage Expreso
+ * @since 
  */
 ?>
 <?php get_header(); ?>
@@ -31,7 +36,7 @@
 				<?php endif; ?>
 			</ul>
 			<div class="campTxt">
-				<?php echo the_content(); ?>
+				<?php the_content(); ?>
 			</div>
 		</div>
 	</div>
