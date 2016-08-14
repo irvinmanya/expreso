@@ -13,7 +13,7 @@
 						Encuentra rápido lo que más te interesa leer
 					</h2>
 				</div>
-				<div class="inpFiltro>
+				<div class="inpFiltro">
 					<input type="date" class="datepicker">
 				</div>
 			</div>
