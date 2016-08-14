@@ -18,14 +18,14 @@
 			<div class="col l8 m12 s12">
 
 				<?php //Titulo ?>
-				<div class="titleBox">
+				<div class="titleBox1">
 					<h1>
 						<?php the_title() ?>
 					</h1>
 				</div>
 				
 				<?php //Detalles ?>
-				<ul class="singDetalles">
+				<ul class="singDet">
 					<li>
 						<i>
 							<img src="<?php echo get_template_directory_uri() ?>/img/plantilla/icoUser.svg" alt="Autor" title="Autor">
