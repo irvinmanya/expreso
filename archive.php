@@ -617,7 +617,7 @@
 					<figure>
 						<figcaption>
 							<h3>
-								Destacada del día
+								Entrevista
 							</h3>
 						</figcaption>
 						<a href="javascript:void(0)" title="">
@@ -625,9 +625,7 @@
 						</a>
 						<figcaption>
 							<p>
-								<a href="javascript:void(0)" title="">
-									El actor visto en "Attack The Block" o en el Episodio VII de 'La guerra de...
-								</a>
+								El actor visto en "Attack The Block" o en el Episodio VII de 'La guerra de...
 							</p>
 						</figcaption>
 					</figure>

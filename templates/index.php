@@ -498,7 +498,7 @@
 					<figure>
 						<figcaption>
 							<h3>
-								Destacada del día
+								Entrevista
 							</h3>
 						</figcaption>
 						<a href="javascript:void(0)" title="">
