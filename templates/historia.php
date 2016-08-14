@@ -8,7 +8,7 @@
 	<div class="container">
 		<div class="row">
 			<figure class="publong">
-				<?php $pubPublong = get_field('pub-publong'); ?>
+				<?php $pubPublong = get_field('his-pubimg1'); ?>
 				<img src="<?php echo $pubPublong['url']; ?>" alt="<?php echo $pubPublong['title']; ?>" title="<?php echo $pubPublong['title']; ?>">
 			</figure>
 		</div>
@@ -23,8 +23,8 @@
 					<?php while ( have_rows('his-sliderlist') ) : the_row(); ?>
 						<li>
 							<figure>
-								<?php $hisSliderlist = get_sub_field('his-sliderlist'); ?>
-								<img src="<?php echo $hisSliderlist['url']; ?>" alt="<?php echo $hisSliderlist['url']; ?>" title="<?php echo $hisSliderlist['url']; ?>">
+								<?php $hisSliderlist = get_sub_field('his-sliderlimg'); ?>
+								<img src="<?php echo $hisSliderlist['url']; ?>" alt="<?php echo $hisSliderlist['title']; ?>" title="<?php echo $hisSliderlist['title']; ?>">
 							</figure>
 						</li>
 					<?php endwhile; ?>
