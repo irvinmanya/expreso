@@ -31,7 +31,7 @@
 				<?php endif; ?>
 			</ul>
 			<div class="campTxt">
-				<?php the_content(); ?>
+				<?php echo the_content(); ?>
 			</div>
 		</div>
 	</div>
