@@ -30,7 +30,9 @@
 								<img src="<?php echo get_template_directory_uri() ?>/img/plantilla/noticia.jpg" alt="title" title="title">
 							</figure>
 							<div class="campTxt">
-								Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quos earum dolor minima autem, sit voluptatibus, praesentium.
+								<p>
+									Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quos earum dolor minima autem, sit voluptatibus, praesentium.
+								</p>
 							</div>
 						</div>
 					</li>
