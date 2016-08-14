@@ -5,15 +5,7 @@
 ?>
 <?php get_header(); ?>
 <?php 
-if ( have_posts() ) {
-	while ( have_posts() ) {
-		the_post(); 
-		//
-		// Post Content here
-		//
-	} // end while
-} // end if
-?>
+if ( have_posts() ) { while ( have_posts() ) {the_post(); }}?>
 <section class="secrow rowPub">
 	<div class="container">
 		<div class="row">
@@ -28,20 +20,22 @@ if ( have_posts() ) {
 <section class="secrow historia">
 	<div class="container">
 		<div class="row">
-			<ul class="histSlider owlHistoria">
-				<?php if( have_rows('his-sliderlist') ): ?>
-					<?php while ( have_rows('his-sliderlist') ) : the_row(); ?>
-						<li>
-							<figure>
-								<?php $hisSliderlist = get_sub_field('his-sliderlimg'); ?>
-								<img src="<?php echo $hisSliderlist['url']; ?>" alt="<?php echo $hisSliderlist['title']; ?>" title="<?php echo $hisSliderlist['title']; ?>">
-							</figure>
-						</li>
-					<?php endwhile; ?>
-				<?php endif; ?>
-			</ul>
-			<div class="campTxt">
-				<?php the_content(); ?>
+			<div class="col l12 m12 s12">
+				<ul class="histSlider owlHistoria">
+					<?php if( have_rows('his-sliderlist') ): ?>
+						<?php while ( have_rows('his-sliderlist') ) : the_row(); ?>
+							<li>
+								<figure>
+									<?php $hisSliderlist = get_sub_field('his-sliderlimg'); ?>
+									<img src="<?php echo $hisSliderlist['url']; ?>" alt="<?php echo $hisSliderlist['title']; ?>" title="<?php echo $hisSliderlist['title']; ?>">
+								</figure>
+							</li>
+						<?php endwhile; ?>
+					<?php endif; ?>
+				</ul>
+				<div class="campTxt">
+					<?php the_content(); ?>
+				</div>
 			</div>
 		</div>
 	</div>
