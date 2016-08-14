@@ -5,16 +5,8 @@
 ?>
 <?php get_header(); ?>
 
-<section class="secrow rowPub">
-	<div class="container">
-		<div class="row">
-			<div class="publong">
-				<?php $pubPublong = get_field('pub-publong'); ?>
-				<img src="<?php echo $pubPublong['url']; ?>" alt="<?php echo $pubPublong['title']; ?>" title="<?php echo $pubPublong['title']; ?>">
-			</div>
-		</div>
-	</div>
-</section>
+<?php //Publicidad - Long ?>
+<?php include('content/publong.php'); ?>
 
 <?php if( have_rows('pub-cont') ): ?>
 	<?php while ( have_rows('pub-cont') ) : the_row(); ?>

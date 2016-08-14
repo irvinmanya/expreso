@@ -5,6 +5,9 @@
 ?>
 <?php get_header(); ?>
 
+<?php //Publicidad - Long ?>
+<?php include('content/publong.php'); ?>
+
 <?php //Intro ?>
 <section class="secCont intro">
 	<div class="container">
@@ -307,13 +310,8 @@
 				</a>
 			</div>
 			<div class="col l4 m12 s12">
-				<div class="itemLast itemShadow margBot20">
-					<figure>
-						<a href="javascript:void(0)" title="">
-							<img src="<?php echo get_template_directory_uri() ?>/img/plantilla/noticia.jpg" alt="title" title="title">
-						</a>
-					</figure>
-				</div>
+				<?php //Publicidad . small ?>
+				<?php include('content/pubsmall.php'); ?>
 			</div>
 		</div>
 	</div>
@@ -591,13 +589,8 @@
 				</a>
 			</div>
 			<div class="col l4 m12 s12">
-				<div class="itemLast itemShadow margBot20">
-					<figure>
-						<a href="javascript:void(0)" title="">
-							<img src="<?php echo get_template_directory_uri() ?>/img/plantilla/noticia.jpg" alt="title" title="title">
-						</a>
-					</figure>
-				</div>
+				<?php //Publicidad - Small ?>
+				<?php include('content/pubsmall.php'); ?>
 			</div>
 		</div>
 	</div>
@@ -1202,14 +1195,8 @@
 					</article>
 				</div>
 
-				<!-- [ Publicidad ] -->
-				<div class="itemLast itemShadow margBot20">
-					<figure>
-						<a href="javascript:void(0)" title="">
-							<img src="<?php echo get_template_directory_uri() ?>/img/plantilla/noticia.jpg" alt="title" title="title">
-						</a>
-					</figure>
-				</div>
+				<?php //Publicidad - Small ?>
+				<?php include('content/pubsmall.php'); ?>
 				
 				<!-- [ Suplementos del dia ] -->
 				<article class="itemLast itemShadow margBot20">
@@ -1232,14 +1219,8 @@
 					</figure>
 				</article>
 
-				<!-- [ Publicidad ] -->
-				<div class="itemLast itemShadow margBot20">
-					<figure>
-						<a href="javascript:void(0)" title="">
-							<img src="<?php echo get_template_directory_uri() ?>/img/plantilla/noticia.jpg" alt="title" title="title">
-						</a>
-					</figure>
-				</div>
+				<?php //Publicidad - Small ?>
+				<?php include('content/pubsmall.php'); ?>
 
 			</div>
 		</div>
