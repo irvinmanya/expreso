@@ -139,7 +139,7 @@
 		<div class="row">
 			<div class="col l8 m12 s12 rowRell">
 				<article class="col l6 m12 s12">
-					<div class="notItemHome itemShadow margBot20">
+					<div class="notItemHome notItemArt itemShadow margBot20">
 						<figure>
 							<a href="javascript:void(0)" title="">
 								<img src="<?php echo get_template_directory_uri() ?>/img/plantilla/noticia.jpg" alt="title" title="">
@@ -158,7 +158,7 @@
 					</div>
 				</article>
 				<article class="col l6 m12 s12">
-					<div class="notItemHome itemShadow margBot20">
+					<div class="notItemHome notItemArt itemShadow margBot20">
 						<figure>
 							<a href="javascript:void(0)" title="">
 								<img src="<?php echo get_template_directory_uri() ?>/img/plantilla/noticia.jpg" alt="title" title="">
@@ -211,7 +211,7 @@
 		<div class="row">
 			<div class="col l8 m12 s12 rowRell">
 				<article class="col l6 m12 s12">
-					<div class="notItemHome itemShadow margBot20">
+					<div class="notItemHome notItemArt notItemArt itemShadow margBot20">
 						<figure>
 							<a href="javascript:void(0)" title="">
 								<img src="<?php echo get_template_directory_uri() ?>/img/plantilla/noticia.jpg" alt="title" title="">
@@ -230,7 +230,7 @@
 					</div>
 				</article>
 				<article class="col l6 m12 s12">
-					<div class="notItemHome itemShadow margBot20">
+					<div class="notItemHome notItemArt itemShadow margBot20">
 						<figure>
 							<a href="javascript:void(0)" title="">
 								<img src="<?php echo get_template_directory_uri() ?>/img/plantilla/noticia.jpg" alt="title" title="">
@@ -268,7 +268,7 @@
 		<div class="row">
 			<div class="col l8 m12 s12 rowRell">
 				<article class="col l4 m12 s12">
-					<div class="notItemHome itemShadow margBot20">
+					<div class="notItemHome notItemArt itemShadow margBot20">
 						<figure>
 							<a href="javascript:void(0)" title="">
 								<img src="<?php echo get_template_directory_uri() ?>/img/plantilla/noticia.jpg" alt="title" title="">
@@ -287,7 +287,7 @@
 					</div>
 				</article>
 				<article class="col l4 m12 s12">
-					<div class="notItemHome itemShadow margBot20">
+					<div class="notItemHome notItemArt itemShadow margBot20">
 						<figure>
 							<a href="javascript:void(0)" title="">
 								<img src="<?php echo get_template_directory_uri() ?>/img/plantilla/noticia.jpg" alt="title" title="">
@@ -306,7 +306,7 @@
 					</div>
 				</article>
 				<article class="col l4 m12 s12">
-					<div class="notItemHome itemShadow margBot20">
+					<div class="notItemHome notItemArt itemShadow margBot20">
 						<figure>
 							<a href="javascript:void(0)" title="">
 								<img src="<?php echo get_template_directory_uri() ?>/img/plantilla/noticia.jpg" alt="title" title="">
@@ -356,7 +356,7 @@
 		<div class="row">
 			<div class="col l8 m12 s12 rowRell">
 				<article class="col l4 m12 s12">
-					<div class="notItemHome itemShadow margBot20">
+					<div class="notItemHome notItemArt itemShadow margBot20">
 						<figure>
 							<a href="javascript:void(0)" title="">
 								<img src="<?php echo get_template_directory_uri() ?>/img/plantilla/noticia.jpg" alt="title" title="">
@@ -375,7 +375,7 @@
 					</div>
 				</article>
 				<article class="col l4 m12 s12">
-					<div class="notItemHome itemShadow margBot20">
+					<div class="notItemHome notItemArt itemShadow margBot20">
 						<figure>
 							<a href="javascript:void(0)" title="">
 								<img src="<?php echo get_template_directory_uri() ?>/img/plantilla/noticia.jpg" alt="title" title="">
@@ -394,7 +394,7 @@
 					</div>
 				</article>
 				<article class="col l4 m12 s12">
-					<div class="notItemHome itemShadow margBot20">
+					<div class="notItemHome notItemArt itemShadow margBot20">
 						<figure>
 							<a href="javascript:void(0)" title="">
 								<img src="<?php echo get_template_directory_uri() ?>/img/plantilla/noticia.jpg" alt="title" title="">
