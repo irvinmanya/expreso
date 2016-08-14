@@ -155,7 +155,7 @@
 				</div>
 
 				<?php //Articulos relacionados ?>
-				<div class="col l12 m12 s12" rowRell">
+				<div class="rowSing rowRell">
 					<div class="titleBox2">
 						<h2>
 							Noticias de una categoría relacionadas
