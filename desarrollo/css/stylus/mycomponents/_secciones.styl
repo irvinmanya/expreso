@@ -828,11 +828,16 @@ section
 .single
 	tam ()
 	text-align left 
-	
+
+.rowSing
+	tam ()
+	margin-bottom 20px
+
 .singDet
 	tam ()
 	li
 		bloque ()
+		padding-right 15px
 		i
 			bloque ()
 			width 15px
@@ -845,6 +850,25 @@ section
 	tam ()
 	figure
 		tam ()
+
+.catList
+	tam ()
+	text-align left
+	ul
+		li
+			bloque ()
+
+// Materialize
+// ---> [ Desktop ]
+//@media screen and (max-width: 1200px)
+
+// ---> [ Tablet ]
+//@media screen and (max-width: 992px)
+
+// ---> [ Mobil ]
+@media screen and (max-width: 600px)
+	.rowSing
+		margin-bottom 0px
 
 //------------> [ Fin - Single ] <-----------------//
 

@@ -1,5 +1,7 @@
 <?php get_header(); ?>
 
+<?php if ( have_posts() ) { while ( have_posts() ) {the_post(); }}?>
+
 <?php //Publicidad ?>
 <section class="secrow rowPub">
 	<div class="container">
@@ -30,7 +32,7 @@
 						<i>
 							<img src="<?php echo get_template_directory_uri() ?>/img/plantilla/icoUser.svg" alt="Autor" title="Autor">
 						</i>
-						Autor name
+						Autor name |
 					</li>
 					<li>
 						<i>
@@ -38,7 +40,7 @@
 						</i>
 						Publicado hace 5
 					</li>
-					<li>
+					<li class="catList">
 						<i>
 							<img src="<?php echo get_template_directory_uri() ?>/img/plantilla/icoTag.svg" alt="Tag" title="Tag">
 						</i>
@@ -79,7 +81,7 @@
 						</figure>
 					</div>
 				</div>
-				
+
 				<?php //Contenido ?>
 				<div class="campTxt">
 					<?php the_content(); ?>
@@ -87,7 +89,7 @@
 
 				
 				<?php //Articulos relacionados ?>
-				<div class="col l12 m12 s12" rowRell">
+				<div class="rowSing rowRell">
 					<div class="titleBox2">
 						<h2>
 							Noticias relacionadas
