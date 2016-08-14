@@ -14,7 +14,10 @@
 					</h2>
 				</div>
 				<div class="inpFiltro">
-					<input type="date" class="datepicker">
+					<label for="">
+						Escoja una fecha
+					</label>
+					<input type="date" class="datepicker picker__input">
 				</div>
 			</div>
 
