@@ -372,8 +372,8 @@ function wpdocs_excerpt_more( $more ) {
 add_filter( 'excerpt_more', 'wpdocs_excerpt_more' );
 
 function wpdocs_custom_excerpt_length( $length ) {
-    return 22;
+    return 10;
 }
-add_filter( 'excerpt_length', 'wpdocs_custom_excerpt_length', 5 );
+add_filter( 'excerpt_length', 'wpdocs_custom_excerpt_length', 8 );
 
 /*-------------------[ Fin - Resumen del blog y longitud ]----------------------*/
