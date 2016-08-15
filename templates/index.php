@@ -151,12 +151,13 @@
 					<?php wp_reset_postdata(); ?>
 				<?php endif; ?>
 
-				<a href="javascript:void(0)" class="btnPlusAbs" title="">
+				<a href="http://expreso.dhdinc.info/seccion/destacado/" class="btnPlusAbs" title="Ver más">
 					<i>
-						<img src="<?php echo get_template_directory_uri() ?>/img/plantilla/icoPlus.svg" alt="title" title="">
+						<img src="<?php echo get_template_directory_uri() ?>/img/plantilla/icoPlus.svg" alt="Ver más" title="Ver más">
 					</i>
 					Ver más
 				</a>
+
 			</div>
 			<div class="col l4 m12 s12">
 				<?php $args = array(
@@ -204,66 +205,22 @@
 				<div class="titleBox2">
 					<h2>Política</h2>	
 				</div>
-				<article class="col l4 m12 s12">
-					<div class="notItemHome itemShadow margBot20">
-						<figure>
-							<a href="javascript:void(0)" title="">
-								<img src="<?php echo get_template_directory_uri() ?>/img/plantilla/noticia.jpg" alt="title" title="">
-							</a>
-							<figcaption>
-								<h3>
-									<a href="javascript:void(0)" title="">
-										John Boyega en el reparto de "Pacific Rim 2"
-									</a>
-								</h3>
-								<p>
-									El actor visto en "Attack The Block" o en el Episodio VII de 'La guerra de...
-								</p>
-							</figcaption>
-						</figure>
-					</div>
-				</article>
-				<article class="col l4 m12 s12">
-					<div class="notItemHome itemShadow margBot20">
-						<figure>
-							<a href="javascript:void(0)" title="">
-								<img src="<?php echo get_template_directory_uri() ?>/img/plantilla/noticia.jpg" alt="title" title="">
-							</a>
-							<figcaption>
-								<h3>
-									<a href="javascript:void(0)" title="">
-										John Boyega en el reparto de "Pacific Rim 2"
-									</a>
-								</h3>
-								<p>
-									El actor visto en "Attack The Block" o en el Episodio VII de 'La guerra de...
-								</p>
-							</figcaption>
-						</figure>
-					</div>
-				</article>
-				<article class="col l4 m12 s12">
-					<div class="notItemHome itemShadow margBot20">
-						<figure>
-							<a href="javascript:void(0)" title="">
-								<img src="<?php echo get_template_directory_uri() ?>/img/plantilla/noticia.jpg" alt="title" title="">
-							</a>
-							<figcaption>
-								<h3>
-									<a href="javascript:void(0)" title="">
-										John Boyega en el reparto de "Pacific Rim 2"
-									</a>
-								</h3>
-								<p>
-									El actor visto en "Attack The Block" o en el Episodio VII de 'La guerra de...
-								</p>
-							</figcaption>
-						</figure>
-					</div>
-				</article>
-				<a href="javascript:void(0)" class="btnPlusAbs" title="">
+				<?php $args = array(
+					'posts_per_page' => '3',
+					'cat' => 5
+				);?>
+				<?php $the_query = new WP_Query($args); ?>
+					<?php if ($the_query->have_posts()) : ?>
+						<?php while ($the_query->have_posts()) : $the_query->the_post(); ?>
+							<article class="col l4 m12 s12">
+								<?php get_template_part( 'content/content', 'notcard' ); ?>
+							</article>
+						<?php endwhile; ?>
+					<?php wp_reset_postdata(); ?>
+				<?php endif; ?>
+				<a href="http://expreso.dhdinc.info/seccion/politica/" class="btnPlusAbs" title="Ver más">
 					<i>
-						<img src="<?php echo get_template_directory_uri() ?>/img/plantilla/icoPlus.svg" alt="title" title="">
+						<img src="<?php echo get_template_directory_uri() ?>/img/plantilla/icoPlus.svg" alt="Ver más" title="Ver más">
 					</i>
 					Ver más
 				</a>
