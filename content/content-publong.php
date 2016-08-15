@@ -1,5 +1,5 @@
 <?php //Publicidad ?>
-<section class="secrow rowPub">
+<div class="secrow rowPub">
 	<div class="container">
 		<div class="row">
 			<figure class="publong">
@@ -7,4 +7,4 @@
 			</figure>
 		</div>
 	</div>
-</section>
+</div>
