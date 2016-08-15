@@ -1,7 +1,7 @@
 <?php get_header(); ?>
 
 <?php //Publicidad - Long ?>
-<?php include('content/publong.php'); ?>
+<?php get_sidebar('publong'); ?>
 
 <section class="secrow editoriales">
 	<div class="container">
@@ -96,7 +96,7 @@
 			<div class="col l3 m12 s12">
 
 				<?php //Publicidad - Small ?>
-				<?php include('content/pubsmall.php'); ?>
+				<?php get_sidebar('pubsmall'); ?>f
 
 				<?php //Entrevissta ?>
 				<article class="itemLast itemShadow margBot20">

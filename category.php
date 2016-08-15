@@ -1,7 +1,7 @@
 <?php get_header(); ?>
 
 <?php //Publicidad - Long ?>
-<?php include('content/publong.php'); ?>
+<?php get_sidebar('publong'); ?>
 
 <?php // Intro ?>
 <section class="secCont intro">
@@ -254,7 +254,7 @@
 			</div>
 			<div class="col l4 m12 s12">
 				<?php //Publicidad - Small ?>
-				<?php include('content/pubsmall.php'); ?>
+				<?php get_sidebar('pubsmall'); ?>
 			</div>
 		</div>
 	</div>
@@ -413,7 +413,7 @@
 			</div>
 			<div class="col l4 m12 s12">
 				<?php //Publicidad - Small ?>
-				<?php include('content/pubsmall.php'); ?>
+				<?php get_sidebar('pubsmall'); ?>
 			</div>
 		</div>
 	</div>
@@ -625,7 +625,7 @@
 				</article>
 
 				<?php //Publicidad - small ?>
-				<?php include('content/pubsmall.php'); ?>
+				<?php get_sidebar('pubsmall'); ?>
 
 				<!-- [ Encuesta ] -->
 				<div class="encBox itemShadow margBot20">

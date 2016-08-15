@@ -1,7 +1,7 @@
 <?php get_header(); ?>
 
 <?php //Publicidad - Long ?>
-<?php include('content/publong.php'); ?>
+<?php get_sidebar('publong'); ?>
 
 <?php //SinglePage ?>
 <section class="rowsec">
@@ -29,14 +29,8 @@
 					</figure>
 				</article>
 
-				<!-- [ Publicidad ] -->
-				<div class="itemLast itemShadow margBot20">
-					<figure>
-						<a href="javascript:void(0)" title="">
-							<img src="<?php echo get_template_directory_uri() ?>/img/plantilla/noticia.jpg" alt="title" title="title">
-						</a>
-					</figure>
-				</div>
+				<?php //Publicidad - Small ?>
+				<?php get_sidebar('pubsmall'); ?>
 			</div>
 		</div>
 	</div>

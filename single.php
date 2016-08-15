@@ -1,15 +1,7 @@
 <?php get_header(); ?>
 
 <?php //Publicidad ?>
-<section class="secrow rowPub">
-	<div class="container">
-		<div class="row">
-			<figure class="publong">
-				<img src="<?php echo get_template_directory_uri() ?>/img/plantilla/publong.jpg" alt="title" title="title">
-			</figure>
-		</div>
-	</div>
-</section>
+<?php get_sidebar('publong'); ?>
 
 <?php //Interior de entrada ?>
 <section class="secrow single">
@@ -223,14 +215,8 @@
 			<?php //Sidebar ?>
 			<div class="col l4 m12 s12">
 
-				<?php //Publicidad ?>
-				<div class="itemLast itemShadow margBot20">
-					<figure>
-						<a href="javascript:void(0)" title="">
-							<img src="<?php echo get_template_directory_uri() ?>/img/plantilla/noticia.jpg" alt="title" title="title">
-						</a>
-					</figure>
-				</div>
+				<?php //Publicidad ?>				
+				<?php get_sidebar('pubsmall'); ?>
 				
 				<?php //Entrvista ?>
 				<article class="itemLast itemShadow margBot20">
@@ -316,13 +302,7 @@
 				</div>
 
 				<?php //Publicidad ?>
-				<div class="itemLast itemShadow margBot20">
-					<figure>
-						<a href="javascript:void(0)" title="">
-							<img src="<?php echo get_template_directory_uri() ?>/img/plantilla/noticia.jpg" alt="title" title="title">
-						</a>
-					</figure>
-				</div>
+				<?php get_sidebar('pubsmall'); ?>
 
 				<?php //Suplementos del día ?>
 				<article class="itemLast itemShadow margBot20">

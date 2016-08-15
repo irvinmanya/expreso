@@ -6,7 +6,7 @@
 <?php get_header(); ?>
 
 <?php //Publicidad - Long ?>
-<?php include('../content/publong.php'); ?>
+<?php get_sidebar('publong'); ?>
 
 <?php if( have_rows('pub-cont') ): ?>
 	<?php while ( have_rows('pub-cont') ) : the_row(); ?>
