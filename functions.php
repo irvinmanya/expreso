@@ -377,3 +377,11 @@ function wpdocs_custom_excerpt_length( $length ) {
 add_filter( 'excerpt_length', 'wpdocs_custom_excerpt_length', 10 );
 
 /*-------------------[ Fin - Resumen del blog y longitud ]----------------------*/
+
+
+/*-------------------[ Imagen Destacada]----------------------*/
+add_theme_support('post-thumbnails');//imagen destacada
+add_image_size('small-thumbnail',180,120,true);
+add_image_size('img-post-box',348,210,true);
+add_image_size('banner-image',920,210,array('left','top'));
+/*-------------------[ Fin - Imagen Destacada ]----------------------*/
