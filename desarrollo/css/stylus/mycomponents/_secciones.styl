@@ -255,7 +255,6 @@ section
 	border-top 1px solid rgba(0,0,0,.15)
 
 .notItemHome
-	max-width 350px
 	tam ()
 	text-align left
 	figure
@@ -303,6 +302,8 @@ section
 
 // ---> [ Mobil ]
 @media screen and (max-width: 600px)
+	.notItemHome
+		max-width 360px
 	.notBox
 		article
 			padding 0px 0px 0px 0px !important
@@ -932,10 +933,19 @@ section
 	&:active
 		border-bottom 2px solid celeste2 !important
 
+.filtroBox
+	tam ()
+	text-align left
+
 //------------> [ Fin - Filtros ] <-----------------//
 
 //------------> [ Categoria - Editoriales ] <-----------------//
 .editoriales
+.polidatos
+.portadas
+.singleEditoriales
+.singlePolidatos
+.singlePortadas
 	tam ()
 
 .editCont
@@ -943,23 +953,30 @@ section
 	text-align left
 	.titleBox1
 		margin-bottom 20px
-
-.linkPlus
-	bloque ()
-	font-size 25px
-	trancicion ()
-	padding 20px 0px 20px 0px
-	i
-		bloque ()
-		width 15px
-		height auto
-	&:hover
-	&:active
-	&:focus
-		color celeste2
-
 //------------> [ Fin - Categoria - Editoriales ] <-----------------//
 
+//------------> [ Categoria - Portada ] <-----------------//
+.portCont
+	tam ()
+	figure
+		tam ()
+//------------> [ Fin - Categoria - Portada ] <-----------------//
+
+//------------> [ Categoria - Cine ] <-----------------//
+.itemCine
+	tam ()
+	.linkPlus
+		font-size 18px
+		padding 5px 0px 5px 0px
+
+.playCont
+	tam ()
+	i
+		width 50px
+		height 50px
+		padding 5px 5px 5px 5px
+		midAbs ()
+//------------> [ Fin - Categoria - Cine ] <-----------------//
 
 //---------------------------- [ ESTILOS ] ------------------------------/
 //________________________________________________________________________/

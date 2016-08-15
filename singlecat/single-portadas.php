@@ -1,5 +1,5 @@
-<?php //Polidatos ?>
-<section class="rowsec singlePolidatos">
+<?php //Portadas ?>
+<section class="rowsec singlePortadas">
 	<div class="container">
 		<div class="row">
 			<div class="col l8 m12 s12">

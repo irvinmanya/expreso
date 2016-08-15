@@ -3,7 +3,7 @@
 <?php //Publicidad - Long ?>
 <?php get_template_part( 'content/content', 'publong' ); ?>
 
-<section class="secrow editoriales">
+<section class="secrow polidatos">
 	<div class="container">
 		<div class="row">
 			<?php //filtros ?>

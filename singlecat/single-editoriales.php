@@ -1,5 +1,5 @@
 <?php //SinglePage ?>
-<section class="rowsec editoriales">
+<section class="rowsec singleEditoriales">
 	<div class="container">
 		<div class="row">
 			<div class="col l8 m12 s12">
