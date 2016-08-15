@@ -7,7 +7,7 @@
 	<div class="container">
 		<div class="row">
 			<?php //filtros ?>
-			<div class="col l3 m12 s12 rowFiltros">
+			<div class="col l3 m12 s12 rowFiltros lineLateralRight">
 				<div class="titleBox2">
 					<h2>
 						Encuentra rápido lo que más te interesa leer

@@ -2,7 +2,7 @@
 <section class="secrow single">
 	<div class="container">
 		<div class="row">
-			<div class="col l8 m12 s12">
+			<div class="col l8 m12 s12 lineLateralRight" style="position:relative;">
 
 				<?php //Titulo ?>
 				<div class="titleBox1">

@@ -914,12 +914,30 @@ section
 				p
 					padding 0px !important
 				
-	
+// Materialize
+// ---> [ Desktop ]
+//@media screen and (max-width: 1200px)
+
+// ---> [ Tablet ]
+//@media screen and (max-width: 992px)
+
+// ---> [ Mobil ]
+@media screen and (max-width: 600px)
+	.acordImg
+		li
+			.collapsible-body
+				figure
+					tam ()
+					width 100%
+				.campTxt
+					width 100%
+
+
 //------------> [ Fin - Acordeon ] <-----------------//
 
 //------------> [ Filtros ] <-----------------//
 .inpFiltro
-	bloque ()
+	tam ()
 	margin-bottom 20px
 
 .rowFiltros
@@ -929,9 +947,8 @@ section
 
 .datepicker
 	tam ()
-	border 0px solid white !important
 	height 40px
-	border-bottom 1px solid rgba(0, 0, 0, .5) !important
+	border 1px solid rgba(0, 0, 0, .5) !important
 	color negro
 	&:hover
 	&:focus
@@ -992,6 +1009,75 @@ section
 		midAbs ()
 		
 //------------> [ Fin - Categoria - Cine ] <-----------------//
+
+//------------> [ Blogueros ] <-----------------//
+.blogerItem
+	tam ()
+	margin-bottom 20px
+	font-size 0px
+	figure
+		tam ()
+		width 200px
+	.blogerTxt
+		tam ()
+		width calc( 100% - 200px )
+		h3
+			tam ()
+			padding-bottom 7px
+			font-size 22px
+		p
+			tam ()
+			padding-bottom 10p
+			font-size 14px
+		.linkPlus
+			font-size 18px
+			padding 5px 0px 5px 0px
+
+.blogAutor
+	tam ()
+	margin-bottom 20px
+	figure
+		tam ()
+		figcaption
+			tam ()
+			text-align left
+			h3
+				font-size 20px
+				tam ()
+				border-bottom 1px solid rgba(0, 0, 0, .25)
+				padding 10px 10px 10px 10px
+			h4
+				font-size 18px
+				tam ()
+				border-bottom 1px solid rgba(0, 0, 0, .25)
+				padding 10px 10px 10px 10px
+			p
+				font-size 14px
+				
+
+// Materialize
+// ---> [ Desktop ]
+//@media screen and (max-width: 1200px)
+
+// ---> [ Tablet ]
+//@media screen and (max-width: 992px)
+
+// ---> [ Mobil ]
+@media screen and (max-width: 600px)
+	.blogerItem
+		margin-bottom 0px
+		figure
+			tam ()
+			width 100%
+		.blogerTxt
+			tam ()
+			width 100%
+
+	.blogCont
+		tam ()
+		text-align left
+
+//------------> [ Fin -Blogueros ] <-----------------//
 
 //---------------------------- [ ESTILOS ] ------------------------------/
 //________________________________________________________________________/

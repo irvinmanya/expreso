@@ -2,7 +2,7 @@
 <section class="rowsec singlePolidatos">
 	<div class="container">
 		<div class="row">
-			<div class="col l8 m12 s12">
+			<div class="col l8 m12 s12 lineLateralRight" style="position:relative;">
 				<div class="editCont">
 
 					<div class="titleBox1">
