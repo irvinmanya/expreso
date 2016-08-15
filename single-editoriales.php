@@ -1,4 +1,4 @@
-<?php get_header(); ?>
+editoriales<?php get_header(); ?>
 
 <?php //Publicidad - Long ?>
 <?php get_template_part( 'content/content', 'publong' ); ?>

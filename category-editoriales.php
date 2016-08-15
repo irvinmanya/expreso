@@ -16,6 +16,8 @@
 				<div class="inpFiltro">
 					<input type="date" name="fecEdit" id="fecEdit" class="datepicker picker__input" placeholder="Escoja una fecha">
 				</div><br>
+
+				
 				<button type="submit" class="btnGeneral">
 					Filtrar
 				</button>
