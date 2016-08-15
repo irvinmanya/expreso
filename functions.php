@@ -360,3 +360,20 @@ if (!is_admin()) {
 // --- PLUGINS ---
 // Necesario para que funcione el plugin "Category Thumbnails"
 add_theme_support('category-thumbnails');
+
+
+/*-------------------[ Resumen del blog y longitud ]----------------------*/
+function wpdocs_excerpt_more( $more ) {
+    return sprintf( '... <a class="" title="Leer más" href="%1$s">Leer más</a>',
+        get_permalink( get_the_ID() ),
+        __( 'Leer más', 'textdomain' )
+    );
+}
+add_filter( 'excerpt_more', 'wpdocs_excerpt_more' );
+
+function wpdocs_custom_excerpt_length( $length ) {
+    return 22;
+}
+add_filter( 'excerpt_length', 'wpdocs_custom_excerpt_length', 15 );
+
+/*-------------------[ Fin - Resumen del blog y longitud ]----------------------*/
