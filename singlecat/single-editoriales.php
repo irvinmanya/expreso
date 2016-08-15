@@ -1,14 +1,16 @@
-editoriales<?php get_header(); ?>
-
-<?php //Publicidad - Long ?>
-<?php get_template_part( 'content/content', 'publong' ); ?>
-
 <?php //SinglePage ?>
 <section class="rowsec">
 	<div class="container">
 		<div class="row">
 			<div class="col l8 m12 s12">
-				
+				<div class="titleBox1">
+					<h1>
+						<?php the_title(); ?>
+					</h1>
+				</div>
+				<div class="campTxt">
+					<?php the_content(); ?>
+				</div>
 			</div>
 			<div class="col l4 m12 s12">
 				<article class="itemLast itemShadow margBot20">
@@ -35,8 +37,3 @@ editoriales<?php get_header(); ?>
 		</div>
 	</div>
 </section>
-
-
-<?php get_footer(); ?>
-</body>
-</html>
