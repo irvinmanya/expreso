@@ -6,7 +6,7 @@
 <?php get_header(); ?>
 
 <?php //Publicidad - Long ?>
-<?php include('../content/publong.php'); ?>
+<?php include('../../content/publong.php'); ?>
 
 <?php //Intro ?>
 <section class="secCont intro">
