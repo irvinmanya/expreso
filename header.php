@@ -34,12 +34,18 @@
 <link rel="stylesheet" href="<?php echo get_template_directory_uri() ?>/css/style.min.css">
 
 </head>
+<?php if ( have_posts() ) { while ( have_posts() ) {the_post(); }}?>
 <body>
 	<header>
 		<div class="container">
 			<div class="menuBox contShadow">
 				<div class="infoHeader">
 					<ul class="MapHeader">
+						<li>
+							<a href="javascript:void(0)">
+								Editoriales
+							</a>
+						</li>
 						<li>
 							<a href="javascript:void(0)">
 								Historia

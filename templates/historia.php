@@ -4,8 +4,7 @@
  */
 ?>
 <?php get_header(); ?>
-<?php 
-if ( have_posts() ) { while ( have_posts() ) {the_post(); }}?>
+
 <section class="secrow rowPub">
 	<div class="container">
 		<div class="row">
