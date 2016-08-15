@@ -372,7 +372,7 @@ function wpdocs_excerpt_more( $more ) {
 add_filter( 'excerpt_more', 'wpdocs_excerpt_more' );
 
 function wpdocs_custom_excerpt_length( $length ) {
-    return 13;
+    return 16;
 }
 add_filter( 'excerpt_length', 'wpdocs_custom_excerpt_length', 10 );
 
