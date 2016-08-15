@@ -161,9 +161,8 @@
 			</div>
 			<div class="col l4 m12 s12">
 				<?php $args = array(
-					'posts_per_page' => '3',
-					'cat' => 227,
-					'orderby' => 'rand'
+					'posts_per_page' => '1',
+					'cat' => 227
 				);?>
 				<?php $the_query = new WP_Query($args); ?>
 					<?php if ($the_query->have_posts()) : ?>
