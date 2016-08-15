@@ -7,6 +7,8 @@
 <?php
 if (in_category('editoriales')) {
 	get_template_part( 'singlecat/single', 'editoriales' );
+}elseif(in_category('polidatos-y-chicotazos')){
+	get_template_part( 'singlecat/polidatos', 'editoriales' );
 } else {
 	get_template_part( 'singlecat/single', 'default ' );
 }

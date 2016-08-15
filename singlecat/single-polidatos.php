@@ -1,4 +1,4 @@
-<?php //SinglePage ?>
+<?php //Polidatos ?>
 <section class="rowsec editoriales">
 	<div class="container">
 		<div class="row">
