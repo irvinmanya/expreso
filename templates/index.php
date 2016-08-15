@@ -6,7 +6,7 @@
 <?php get_header(); ?>
 
 <?php //Publicidad - Long ?>
-<?php get_template_part( 'content', 'publong' ); ?>
+<?php get_template_part( 'content/content', 'publong' ); ?>
 
 <?php //Intro ?>
 <section class="secCont intro">
@@ -119,30 +119,34 @@
 				</div>
 
 				<?php $args = array(
-					'posts_per_page' => '1',
+					'posts_per_page' => '3',
 					'cat' => 227
 				);?>
 				<?php $the_query = new WP_Query($args); ?>
 					<?php if ($the_query->have_posts()) : ?>
 						<?php while ($the_query->have_posts()) : $the_query->the_post(); ?>
 							<article class="col l4 m12 s12">
-								<div class="notItemHome itemShadow margBot20">
-									<figure>
-										<a href="javascript:void(0)" title="">
-											<img src="<?php echo get_template_directory_uri() ?>/img/plantilla/noticia.jpg" alt="title" title="">
-										</a>
-										<figcaption>
-											<h3>
-												<a href="javascript:void(0)" title="">
-													John Boyega en el reparto de "Pacific Rim 2"
-												</a>
-											</h3>
-											<p>
-												El actor visto en "Attack The Block" o en el Episodio VII de 'La guerra de...
-											</p>
-										</figcaption>
-									</figure>
-								</div>
+								<?php if (false) { ?>
+									<div class="notItemHome itemShadow margBot20">
+										<figure>
+											<a href="javascript:void(0)" title="">
+												<img src="<?php echo get_template_directory_uri() ?>/img/plantilla/noticia.jpg" alt="title" title="">
+											</a>
+											<figcaption>
+												<h3>
+													<a href="javascript:void(0)" title="">
+														<?php the_title() ?>
+													</a>
+												</h3>
+												<p>
+													El actor visto en "Attack The Block" o en el Episodio VII de 'La guerra de...
+												</p>
+											</figcaption>
+										</figure>
+									</div>
+								<?php } ?>
+								<?php get_template_part( 'content/content', 'notcard' ); ?>
+							
 							</article>
 						<?php endwhile; ?>
 					<?php wp_reset_postdata(); ?>
