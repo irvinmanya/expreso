@@ -6,7 +6,7 @@
 <?php get_header(); ?>
 
 <?php //Publicidad - Long ?>
-<?php get_sidebar('publong'); ?>
+<?php get_template_part( 'content', 'publong' ); ?>
 
 <?php //Intro ?>
 <section class="secCont intro">
@@ -311,7 +311,7 @@
 			</div>
 			<div class="col l4 m12 s12">
 				<?php //Publicidad . small ?>
-				<?php get_sidebar('pubsmall'); ?>
+				<?php get_template_part( 'content', 'pubsmall' ); ?>
 			</div>
 		</div>
 	</div>
@@ -590,7 +590,7 @@
 			</div>
 			<div class="col l4 m12 s12">
 				<?php //Publicidad - Small ?>
-				<?php get_sidebar('pubsmall'); ?>
+				<?php get_template_part( 'content', 'pubsmall' ); ?>
 			</div>
 		</div>
 	</div>
@@ -1196,7 +1196,7 @@
 				</div>
 
 				<?php //Publicidad - Small ?>
-				<?php get_sidebar('pubsmall'); ?>
+				<?php get_template_part( 'content', 'pubsmall' ); ?>
 				
 				<!-- [ Suplementos del dia ] -->
 				<article class="itemLast itemShadow margBot20">
@@ -1220,7 +1220,7 @@
 				</article>
 
 				<?php //Publicidad - Small ?>
-				<?php get_sidebar('pubsmall'); ?>
+				<?php get_template_part( 'content', 'pubsmall' ); ?>
 
 			</div>
 		</div>
