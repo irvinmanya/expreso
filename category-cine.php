@@ -30,35 +30,31 @@
 						Filtra por tema
 					</h3>
 				</div>
-				<div class="filtroBox">
+				<div class="filtroBox lineBottom">
 					<p>
 						<input type="checkbox" id="tema1" name="tema1"/>
-						<label for="test5">Tema #1</label>
+						<label for="tema1">Tema #1</label>
 					</p>
 					<p>
 						<input type="checkbox" id="tema2" name="tema2"/>
-						<label for="test5">Tema #2</label>
+						<label for="tema2">Tema #2</label>
 					</p>
 					<p>
 						<input type="checkbox" id="tema3" name="tema3"/>
-						<label for="test5">Tema #3</label>
+						<label for="tema3">Tema #3</label>
 					</p>
 					<p>
 						<input type="checkbox" id="tema4" name="tema4"/>
-						<label for="test5">Tema #4</label>
+						<label for="tema4">Tema #4</label>
 					</p>
+					<div class="inpFiltro">
+						<input type="date" name="fecEdit" id="fecEdit" class="datepicker picker__input" placeholder="Escoja una fecha">
+					</div>
 				</div>
 
-				<div class="inpFiltro">
-					<input type="date" name="fecEdit" id="fecEdit" class="datepicker picker__input" placeholder="Escoja una fecha">
-				</div>
 
 				<?php //Publicidad - Small ?>
 				<?php get_template_part( 'content/content', 'pubsmall' ); ?>
-
-				<button type="submit" class="btnGeneral">
-					Filtrar
-				</button>
 			</div>
 
 			<?php //Content ?>
