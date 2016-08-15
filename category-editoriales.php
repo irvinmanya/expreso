@@ -14,18 +14,8 @@
 					</h2>
 				</div>
 				<div class="inpFiltro">
-					<div class="inputItem">
-						<span class="input input--kohana">
 
-							<input type="date" id="editFec" name="editFec" class="datepicker input__field class:input__field--kohana">
-							<label class="input__label input__label--kohana" for="pnombre">
-								<i class="icon--kohana icoNom"></i>
-								<span class="input__label-content input__label-content--kohana">
-									Escoja una fecha
-								</span>
-							</label>
-						</span>
-					</div>
+					<input type="date" name="fecEdit" id="fecEdit" class="datepicker picker__input" placeholder="Escoja una fecha">
 				</div>
 			</div>
 
