@@ -75,25 +75,34 @@
 				</div>
 			</article>
 			<article class="col l4 m12 s12">
-				<div class="itemLast itemShadow">
-					<figure>
-						<figcaption>
-							<h3>
-								Portada del día
-							</h3>
-						</figcaption>
-						<a href="javascript:void(0)" title="">
-							<img src="<?php echo get_template_directory_uri() ?>/img/plantilla/noticia.jpg" alt="title" title="title">
-						</a>
-						<figcaption>
-							<h4>
-								<a href="javascript:void(0)" title="">
-									Mira aquí la versión impresa "Preessreader"
-								</a>
-							</h4>
-						</figcaption>
-					</figure>
-				</div>
+				<?php $args = array(
+					'posts_per_page' => '1'
+				);?>
+				<?php $the_query = new WP_Query($args); ?>
+					<?php if ($the_query->have_posts()) : ?>
+						<?php while ($the_query->have_posts()) : $the_query->the_post(); ?>
+							<div class="itemLast itemShadow">
+								<figure>
+									<figcaption>
+										<h3>
+											Portada del día
+										</h3>
+									</figcaption>
+									<a href="javascript:void(0)" title="">
+										<?php the_post_thumbnail(); ?>
+									</a>
+									<figcaption>
+										<h4>
+											<a href="javascript:void(0)" title="">
+												Mira aquí la versión impresa "Preessreader"
+											</a>
+										</h4>
+									</figcaption>
+								</figure>
+							</div>
+						<?php endwhile; ?>
+					<?php wp_reset_postdata(); ?>
+				<?php endif; ?>
 			</article>
 		</div>
 	</div>
