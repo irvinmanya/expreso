@@ -1,7 +1,7 @@
 <?php get_header(); ?>
 
 <?php //Publicidad - Long ?>
-<?php get_template_part( 'content', 'publong' ); ?>
+<?php get_template_part( 'content/content', 'publong' ); ?>
 
 <?php //SinglePage ?>
 <section class="rowsec">
@@ -30,7 +30,7 @@
 				</article>
 
 				<?php //Publicidad - Small ?>
-				<?php get_template_part( 'content', 'pubsmall' ); ?>
+				<?php get_template_part( 'content/content', 'pubsmall' ); ?>
 			</div>
 		</div>
 	</div>

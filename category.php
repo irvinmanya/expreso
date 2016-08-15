@@ -1,7 +1,7 @@
 <?php get_header(); ?>
 
 <?php //Publicidad - Long ?>
-<?php get_template_part( 'content', 'publong' ); ?>
+<?php get_template_part( 'content/content', 'publong' ); ?>
 
 <?php // Intro ?>
 <section class="secCont intro">
@@ -254,7 +254,7 @@
 			</div>
 			<div class="col l4 m12 s12">
 				<?php //Publicidad - Small ?>
-				<?php get_template_part( 'content', 'pubsmall' ); ?>
+				<?php get_template_part( 'content/content', 'pubsmall' ); ?>
 			</div>
 		</div>
 	</div>
@@ -413,7 +413,7 @@
 			</div>
 			<div class="col l4 m12 s12">
 				<?php //Publicidad - Small ?>
-				<?php get_template_part( 'content', 'pubsmall' ); ?>
+				<?php get_template_part( 'content/content', 'pubsmall' ); ?>
 			</div>
 		</div>
 	</div>
@@ -625,7 +625,7 @@
 				</article>
 
 				<?php //Publicidad - small ?>
-				<?php get_template_part( 'content', 'pubsmall' ); ?>
+				<?php get_template_part( 'content/content', 'pubsmall' ); ?>
 
 				<!-- [ Encuesta ] -->
 				<div class="encBox itemShadow margBot20">

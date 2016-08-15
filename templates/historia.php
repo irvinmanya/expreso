@@ -6,7 +6,7 @@
 <?php get_header(); ?>
 
 <?php //Publicidad - Long ?>
-<?php get_template_part( 'content', 'publong' ); ?>
+<?php get_template_part( 'content/content', 'publong' ); ?>
 
 <section class="secrow historia">
 	<div class="container">

@@ -311,7 +311,7 @@
 			</div>
 			<div class="col l4 m12 s12">
 				<?php //Publicidad . small ?>
-				<?php get_template_part( 'content', 'pubsmall' ); ?>
+				<?php get_template_part( 'content/content', 'pubsmall' ); ?>
 			</div>
 		</div>
 	</div>
@@ -590,7 +590,7 @@
 			</div>
 			<div class="col l4 m12 s12">
 				<?php //Publicidad - Small ?>
-				<?php get_template_part( 'content', 'pubsmall' ); ?>
+				<?php get_template_part( 'content/content', 'pubsmall' ); ?>
 			</div>
 		</div>
 	</div>
@@ -1196,7 +1196,7 @@
 				</div>
 
 				<?php //Publicidad - Small ?>
-				<?php get_template_part( 'content', 'pubsmall' ); ?>
+				<?php get_template_part( 'content/content', 'pubsmall' ); ?>
 				
 				<!-- [ Suplementos del dia ] -->
 				<article class="itemLast itemShadow margBot20">
@@ -1220,7 +1220,7 @@
 				</article>
 
 				<?php //Publicidad - Small ?>
-				<?php get_template_part( 'content', 'pubsmall' ); ?>
+				<?php get_template_part( 'content/content', 'pubsmall' ); ?>
 
 			</div>
 		</div>

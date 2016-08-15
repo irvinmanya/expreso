@@ -1,7 +1,7 @@
 <?php get_header(); ?>
 
 <?php //Publicidad - Long ?>
-<?php get_template_part( 'content', 'publong' ); ?>
+<?php get_template_part( 'content/content', 'publong' ); ?>
 
 <section class="secrow editoriales">
 	<div class="container">
@@ -14,9 +14,11 @@
 					</h2>
 				</div>
 				<div class="inpFiltro">
-
 					<input type="date" name="fecEdit" id="fecEdit" class="datepicker picker__input" placeholder="Escoja una fecha">
 				</div>
+				<button type="submit" class="btnGeneral">
+					Filtrar
+				</button>
 			</div>
 
 			<?php //Content ?>
@@ -96,7 +98,7 @@
 			<div class="col l3 m12 s12">
 
 				<?php //Publicidad - Small ?>
-				<?php get_template_part( 'content', 'pubsmall' ); ?>
+				<?php get_template_part( 'content/content', 'pubsmall' ); ?>
 
 				<?php //Entrevissta ?>
 				<article class="itemLast itemShadow margBot20">

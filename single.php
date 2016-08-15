@@ -1,7 +1,7 @@
 <?php get_header(); ?>
 
 <?php //Publicidad ?>
-<?php get_template_part( 'content', 'publong' ); ?>
+<?php get_template_part( 'content/content', 'publong' ); ?>
 
 <?php //Interior de entrada ?>
 <section class="secrow single">
@@ -216,7 +216,7 @@
 			<div class="col l4 m12 s12">
 
 				<?php //Publicidad ?>				
-				<?php get_template_part( 'content', 'pubsmall' ); ?>
+				<?php get_template_part( 'content/content', 'pubsmall' ); ?>
 				
 				<?php //Entrvista ?>
 				<article class="itemLast itemShadow margBot20">
@@ -302,7 +302,7 @@
 				</div>
 
 				<?php //Publicidad ?>
-				<?php get_template_part( 'content', 'pubsmall' ); ?>
+				<?php get_template_part( 'content/content', 'pubsmall' ); ?>
 
 				<?php //Suplementos del día ?>
 				<article class="itemLast itemShadow margBot20">
