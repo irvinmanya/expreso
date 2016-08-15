@@ -16,7 +16,7 @@
 				<div class="sliderIntro itemShadow">
 					<ul class="sliderFeat" id="sliderFeat">
 						<?php $args = array(
-							'posts_per_page' => '4'
+							'posts_per_page' => '3'
 						);?>
 						<?php $the_query = new WP_Query($args); ?>
 							<?php if ($the_query->have_posts()) : ?>
@@ -50,7 +50,7 @@
 					</div>
 					<ul class="sliderList" id="sliderList">
 						<?php $args = array(
-							'posts_per_page' => '4'
+							'posts_per_page' => '3'
 						);?>
 						<?php $the_query = new WP_Query($args); ?>
 							<?php if ($the_query->have_posts()) : ?>
