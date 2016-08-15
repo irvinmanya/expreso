@@ -58,7 +58,7 @@
 			</div>
 
 			<?php //Content ?>
-			<div class="col l9 m12 s12 rowRell">
+			<div class="col l9 m12 s12">
 				<article class="col l6 m12 s12">
 					<div class="notItemHome itemCine itemShadow margBot20">
 						<figure>
@@ -87,6 +87,91 @@
 						</figure>
 					</div>
 				</article>
+				<article class="col l6 m12 s12">
+					<div class="notItemHome itemCine itemShadow margBot20">
+						<figure>
+							<a href="javascript:void(0)" title="" class="playCont">
+								<img src="<?php echo get_template_directory_uri() ?>/img/plantilla/noticia.jpg" alt="title" title="">
+								<i>
+									<img src="<?php echo get_template_directory_uri() ?>/img/plantilla/icoPlay.svg" alt="" title="">
+								</i>
+							</a>
+							<figcaption>
+								<h3>
+									<a href="javascript:void(0)" title="">
+										John Boyega en el reparto de "Pacific Rim 2"
+									</a>
+								</h3>
+								<p>
+									El actor visto en "Attack The Block" o en el Episodio VII de 'La guerra de...
+								</p>
+								<a href="javascript:void(0)" title="" class="linkPlus">
+									Míralo ahora
+									<i>
+										<img src="<?php echo get_template_directory_uri() ?>/img/plantilla/arrowLeftMod.svg" alt="" title="">
+									</i>
+								</a>
+							</figcaption>
+						</figure>
+					</div>
+				</article>
+				<article class="col l6 m12 s12">
+					<div class="notItemHome itemCine itemShadow margBot20">
+						<figure>
+							<a href="javascript:void(0)" title="" class="playCont">
+								<img src="<?php echo get_template_directory_uri() ?>/img/plantilla/noticia.jpg" alt="title" title="">
+								<i>
+									<img src="<?php echo get_template_directory_uri() ?>/img/plantilla/icoPlay.svg" alt="" title="">
+								</i>
+							</a>
+							<figcaption>
+								<h3>
+									<a href="javascript:void(0)" title="">
+										John Boyega en el reparto de "Pacific Rim 2"
+									</a>
+								</h3>
+								<p>
+									El actor visto en "Attack The Block" o en el Episodio VII de 'La guerra de...
+								</p>
+								<a href="javascript:void(0)" title="" class="linkPlus">
+									Míralo ahora
+									<i>
+										<img src="<?php echo get_template_directory_uri() ?>/img/plantilla/arrowLeftMod.svg" alt="" title="">
+									</i>
+								</a>
+							</figcaption>
+						</figure>
+					</div>
+				</article>
+				<article class="col l6 m12 s12">
+					<div class="notItemHome itemCine itemShadow margBot20">
+						<figure>
+							<a href="javascript:void(0)" title="" class="playCont">
+								<img src="<?php echo get_template_directory_uri() ?>/img/plantilla/noticia.jpg" alt="title" title="">
+								<i>
+									<img src="<?php echo get_template_directory_uri() ?>/img/plantilla/icoPlay.svg" alt="" title="">
+								</i>
+							</a>
+							<figcaption>
+								<h3>
+									<a href="javascript:void(0)" title="">
+										John Boyega en el reparto de "Pacific Rim 2"
+									</a>
+								</h3>
+								<p>
+									El actor visto en "Attack The Block" o en el Episodio VII de 'La guerra de...
+								</p>
+								<a href="javascript:void(0)" title="" class="linkPlus">
+									Míralo ahora
+									<i>
+										<img src="<?php echo get_template_directory_uri() ?>/img/plantilla/arrowLeftMod.svg" alt="" title="">
+									</i>
+								</a>
+							</figcaption>
+						</figure>
+					</div>
+				</article>
+				
 			</div>
 
 		</div>
