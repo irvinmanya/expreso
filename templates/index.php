@@ -320,7 +320,7 @@
 			</div>
 			<div class="col l4 m12 s12">
 				<?php $args = array(
-					'posts_per_page' => '3',
+					'posts_per_page' => '1',
 					'cat' => 29
 				);?>
 				<?php $the_query = new WP_Query($args); ?>
