@@ -42,17 +42,17 @@
 				<div class="infoHeader">
 					<ul class="MapHeader">
 						<li>
-							<a href="javascript:void(0)">
+							<a href="http://expreso.dhdinc.info/seccion/editoriales/" title="Editoriales">
 								Editoriales
 							</a>
 						</li>
 						<li>
-							<a href="javascript:void(0)">
+							<a href="http://expreso.dhdinc.info/historia/" title="Historia">
 								Historia
 							</a>
 						</li>
 						<li>
-							<a href="javascript:void(0)">
+							<a href="http://expreso.dhdinc.info/publicidad/" title="Publicidad">
 								Publicidad
 							</a>
 						</li>
