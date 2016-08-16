@@ -241,66 +241,22 @@
 				<div class="titleBox2">
 					<h2>Economía</h2>	
 				</div>
-				<article class="col l4 m12 s12">
-					<div class="notItemHome itemShadow margBot20">
-						<figure>
-							<a href="javascript:void(0)" title="">
-								<img src="<?php echo get_template_directory_uri() ?>/img/plantilla/noticia.jpg" alt="title" title="">
-							</a>
-							<figcaption>
-								<h3>
-									<a href="javascript:void(0)" title="">
-										John Boyega en el reparto de "Pacific Rim 2"
-									</a>
-								</h3>
-								<p>
-									El actor visto en "Attack The Block" o en el Episodio VII de 'La guerra de...
-								</p>
-							</figcaption>
-						</figure>
-					</div>
-				</article>
-				<article class="col l4 m12 s12">
-					<div class="notItemHome itemShadow margBot20">
-						<figure>
-							<a href="javascript:void(0)" title="">
-								<img src="<?php echo get_template_directory_uri() ?>/img/plantilla/noticia.jpg" alt="title" title="">
-							</a>
-							<figcaption>
-								<h3>
-									<a href="javascript:void(0)" title="">
-										John Boyega en el reparto de "Pacific Rim 2"
-									</a>
-								</h3>
-								<p>
-									El actor visto en "Attack The Block" o en el Episodio VII de 'La guerra de...
-								</p>
-							</figcaption>
-						</figure>
-					</div>
-				</article>
-				<article class="col l4 m12 s12">
-					<div class="notItemHome itemShadow margBot20">
-						<figure>
-							<a href="javascript:void(0)" title="">
-								<img src="<?php echo get_template_directory_uri() ?>/img/plantilla/noticia.jpg" alt="title" title="">
-							</a>
-							<figcaption>
-								<h3>
-									<a href="javascript:void(0)" title="">
-										John Boyega en el reparto de "Pacific Rim 2"
-									</a>
-								</h3>
-								<p>
-									El actor visto en "Attack The Block" o en el Episodio VII de 'La guerra de...
-								</p>
-							</figcaption>
-						</figure>
-					</div>
-				</article>
-				<a href="javascript:void(0)" class="btnPlusAbs" title="">
+				<?php $args = array(
+					'posts_per_page' => '3',
+					'cat' => 6
+				);?>
+				<?php $the_query = new WP_Query($args); ?>
+					<?php if ($the_query->have_posts()) : ?>
+						<?php while ($the_query->have_posts()) : $the_query->the_post(); ?>
+							<article class="col l4 m12 s12">
+								<?php get_template_part( 'content/content', 'notcard' ); ?>
+							</article>
+						<?php endwhile; ?>
+					<?php wp_reset_postdata(); ?>
+				<?php endif; ?>
+				<a href="http://expreso.dhdinc.info/seccion/economia/" class="btnPlusAbs" title="Ver más">
 					<i>
-						<img src="<?php echo get_template_directory_uri() ?>/img/plantilla/icoPlus.svg" alt="title" title="">
+						<img src="<?php echo get_template_directory_uri() ?>/img/plantilla/icoPlus.svg" alt="Ver más" title="Ver más">
 					</i>
 					Ver más
 				</a>
@@ -311,21 +267,21 @@
 						Último minuto
 					</h3>
 					<ul>
-						<li>
-							<a href="javascript:void(0)">
-								El presidente del congreso, Luis iberico
-							</a>
-						</li>
-						<li>
-							<a href="javascript:void(0)">
-								Tumbes: Miembros de mesa estaban requisitoriados
-							</a>
-						</li>
-						<li>
-							<a href="javascript:void(0)">
-								Tumbes: Miembros de mesa estaban requisitoriados
-							</a>
-						</li>
+						<?php $args = array(
+							'posts_per_page' => '6',
+							'cat' => 6
+						);?>
+						<?php $the_query = new WP_Query($args); ?>
+							<?php if ($the_query->have_posts()) : ?>
+								<?php while ($the_query->have_posts()) : $the_query->the_post(); ?>
+								<li>
+									<a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>">
+										<?php the_title(); ?>
+									</a>
+								</li>
+								<?php endwhile; ?>
+							<?php wp_reset_postdata(); ?>
+						<?php endif; ?>
 					</ul>
 					</figure>
 				</article>
@@ -342,91 +298,54 @@
 				<div class="titleBox2">
 					<h2>Actualidad</h2>	
 				</div>
-
-				<article class="col l4 m12 s12">
-					<div class="notItemHome itemShadow margBot20">
-						<figure>
-							<a href="javascript:void(0)" title="">
-								<img src="<?php echo get_template_directory_uri() ?>/img/plantilla/noticia.jpg" alt="title" title="">
-							</a>
-							<figcaption>
-								<h3>
-									<a href="javascript:void(0)" title="">
-										John Boyega en el reparto de "Pacific Rim 2"
-									</a>
-								</h3>
-								<p>
-									El actor visto en "Attack The Block" o en el Episodio VII de 'La guerra de...
-								</p>
-							</figcaption>
-						</figure>
-					</div>
-				</article>
-				<article class="col l4 m12 s12">
-					<div class="notItemHome itemShadow margBot20">
-						<figure>
-							<a href="javascript:void(0)" title="">
-								<img src="<?php echo get_template_directory_uri() ?>/img/plantilla/noticia.jpg" alt="title" title="">
-							</a>
-							<figcaption>
-								<h3>
-									<a href="javascript:void(0)" title="">
-										John Boyega en el reparto de "Pacific Rim 2"
-									</a>
-								</h3>
-								<p>
-									El actor visto en "Attack The Block" o en el Episodio VII de 'La guerra de...
-								</p>
-							</figcaption>
-						</figure>
-					</div>
-				</article>
-				<article class="col l4 m12 s12">
-					<div class="notItemHome itemShadow margBot20">
-						<figure>
-							<a href="javascript:void(0)" title="">
-								<img src="<?php echo get_template_directory_uri() ?>/img/plantilla/noticia.jpg" alt="title" title="">
-							</a>
-							<figcaption>
-								<h3>
-									<a href="javascript:void(0)" title="">
-										John Boyega en el reparto de "Pacific Rim 2"
-									</a>
-								</h3>
-								<p>
-									El actor visto en "Attack The Block" o en el Episodio VII de 'La guerra de...
-								</p>
-							</figcaption>
-						</figure>
-					</div>
-				</article>
-				<a href="javascript:void(0)" class="btnPlusAbs" title="">
+				<?php $args = array(
+					'posts_per_page' => '3',
+					'cat' => 29
+				);?>
+				<?php $the_query = new WP_Query($args); ?>
+					<?php if ($the_query->have_posts()) : ?>
+						<?php while ($the_query->have_posts()) : $the_query->the_post(); ?>
+							<article class="col l4 m12 s12">
+								<?php get_template_part( 'content/content', 'notcard' ); ?>
+							</article>
+						<?php endwhile; ?>
+					<?php wp_reset_postdata(); ?>
+				<?php endif; ?>
+				<a href="http://expreso.dhdinc.info/seccion/actualidad/" class="btnPlusAbs" title="Ver más">
 					<i>
-						<img src="<?php echo get_template_directory_uri() ?>/img/plantilla/icoPlus.svg" alt="title" title="">
+						<img src="<?php echo get_template_directory_uri() ?>/img/plantilla/icoPlus.svg" alt="Ver más" title="Ver más">
 					</i>
 					Ver más
 				</a>
 			</div>
 			<div class="col l4 m12 s12">
-				<article class="itemLast itemShadow margBot20">
-					<figure>
-						<figcaption>
-							<h3>
-								Entrevista
-							</h3>
-						</figcaption>
-						<a href="javascript:void(0)" title="">
-							<img src="<?php echo get_template_directory_uri() ?>/img/plantilla/noticia.jpg" alt="title" title="title">
-						</a>
-						<figcaption>
-							<p>
-								<a href="javascript:void(0)" title="">
-									El actor visto en "Attack The Block" o en el Episodio VII de 'La guerra de...
-								</a>
-							</p>
-						</figcaption>
-					</figure>
-				</article>
+				<?php $args = array(
+					'posts_per_page' => '3',
+					'cat' => 29
+				);?>
+				<?php $the_query = new WP_Query($args); ?>
+					<?php if ($the_query->have_posts()) : ?>
+						<?php while ($the_query->have_posts()) : $the_query->the_post(); ?>
+							<article class="itemLast itemShadow margBot20">
+								<figure>
+									<figcaption>
+										<h3>
+											Entrevista
+										</h3>
+									</figcaption>
+									<a href="javascript:void(0)" title="">
+										<?php the_post_thumbnail(); ?>
+									</a>
+									<figcaption>
+										<p>
+											<?php the_excerpt(); ?>
+										</p>
+									</figcaption>
+								</figure>
+							</article>
+						<?php endwhile; ?>
+					<?php wp_reset_postdata(); ?>
+				<?php endif; ?>
 			</div>
 		</div>
 	</div>
@@ -440,66 +359,22 @@
 				<div class="titleBox2">
 					<h2>Mundo</h2>	
 				</div>
-				<article class="col l4 m12 s12">
-					<div class="notItemHome itemShadow margBot20">
-						<figure>
-							<a href="javascript:void(0)" title="">
-								<img src="<?php echo get_template_directory_uri() ?>/img/plantilla/noticia.jpg" alt="title" title="">
-							</a>
-							<figcaption>
-								<h3>
-									<a href="javascript:void(0)" title="">
-										John Boyega en el reparto de "Pacific Rim 2"
-									</a>
-								</h3>
-								<p>
-									El actor visto en "Attack The Block" o en el Episodio VII de 'La guerra de...
-								</p>
-							</figcaption>
-						</figure>
-					</div>
-				</article>
-				<article class="col l4 m12 s12">
-					<div class="notItemHome itemShadow margBot20">
-						<figure>
-							<a href="javascript:void(0)" title="">
-								<img src="<?php echo get_template_directory_uri() ?>/img/plantilla/noticia.jpg" alt="title" title="">
-							</a>
-							<figcaption>
-								<h3>
-									<a href="javascript:void(0)" title="">
-										John Boyega en el reparto de "Pacific Rim 2"
-									</a>
-								</h3>
-								<p>
-									El actor visto en "Attack The Block" o en el Episodio VII de 'La guerra de...
-								</p>
-							</figcaption>
-						</figure>
-					</div>
-				</article>
-				<article class="col l4 m12 s12">
-					<div class="notItemHome itemShadow margBot20">
-						<figure>
-							<a href="javascript:void(0)" title="">
-								<img src="<?php echo get_template_directory_uri() ?>/img/plantilla/noticia.jpg" alt="title" title="">
-							</a>
-							<figcaption>
-								<h3>
-									<a href="javascript:void(0)" title="">
-										John Boyega en el reparto de "Pacific Rim 2"
-									</a>
-								</h3>
-								<p>
-									El actor visto en "Attack The Block" o en el Episodio VII de 'La guerra de...
-								</p>
-							</figcaption>
-						</figure>
-					</div>
-				</article>
-				<a href="javascript:void(0)" class="btnPlusAbs" title="">
+				<?php $args = array(
+					'posts_per_page' => '3',
+					'cat' => 9
+				);?>
+				<?php $the_query = new WP_Query($args); ?>
+					<?php if ($the_query->have_posts()) : ?>
+						<?php while ($the_query->have_posts()) : $the_query->the_post(); ?>
+							<article class="col l4 m12 s12">
+								<?php get_template_part( 'content/content', 'notcard' ); ?>
+							</article>
+						<?php endwhile; ?>
+					<?php wp_reset_postdata(); ?>
+				<?php endif; ?>
+				<a href="http://expreso.dhdinc.info/seccion/mundo/" class="btnPlusAbs" title="Ver más">
 					<i>
-						<img src="<?php echo get_template_directory_uri() ?>/img/plantilla/icoPlus.svg" alt="title" title="">
+						<img src="<?php echo get_template_directory_uri() ?>/img/plantilla/icoPlus.svg" alt="Ver más" title="Ver más">
 					</i>
 					Ver más
 				</a>
@@ -521,90 +396,30 @@
 					<h2>Columnistas del día</h2>
 				</div>
 				<ul class="owlColum owlColumnista">
-					<li class="itemShadow">
-						<figure>
-							<a href="javascript:void(0)" title="">
-								<img src="<?php echo get_template_directory_uri() ?>/img/plantilla/noticia.jpg" alt="title" title="">
-							</a>
-							<figcaption>
-								<h3>
-									<a href="https://manya.pe" target="blank" title="">
-										Nombre del columnista
-									</a>
-								</h3>
-							</figcaption>
-						</figure>
-					</li>
-					<li class="itemShadow">
-						<figure>
-							<a href="javascript:void(0)" title="">
-								<img src="<?php echo get_template_directory_uri() ?>/img/plantilla/noticia.jpg" alt="title" title="">
-							</a>
-							<figcaption>
-								<h3>
-									<a href="https://manya.pe" target="blank" title="">
-										Nombre del columnista
-									</a>
-								</h3>
-							</figcaption>
-						</figure>
-					</li>
-					<li class="itemShadow">
-						<figure>
-							<a href="javascript:void(0)" title="">
-								<img src="<?php echo get_template_directory_uri() ?>/img/plantilla/noticia.jpg" alt="title" title="">
-							</a>
-							<figcaption>
-								<h3>
-									<a href="https://manya.pe" target="blank" title="">
-										Nombre del columnista
-									</a>
-								</h3>
-							</figcaption>
-						</figure>
-					</li>
-					<li class="itemShadow">
-						<figure>
-							<a href="javascript:void(0)" title="">
-								<img src="<?php echo get_template_directory_uri() ?>/img/plantilla/noticia.jpg" alt="title" title="">
-							</a>
-							<figcaption>
-								<h3>
-									<a href="https://manya.pe" target="blank" title="">
-										Nombre del columnista
-									</a>
-								</h3>
-							</figcaption>
-						</figure>
-					</li>
-					<li class="itemShadow">
-						<figure>
-							<a href="javascript:void(0)" title="">
-								<img src="<?php echo get_template_directory_uri() ?>/img/plantilla/noticia.jpg" alt="title" title="">
-							</a>
-							<figcaption>
-								<h3>
-									<a href="https://manya.pe" target="blank" title="">
-										Nombre del columnista
-									</a>
-								</h3>
-							</figcaption>
-						</figure>
-					</li>
-					<li class="itemShadow">
-						<figure>
-							<a href="javascript:void(0)" title="">
-								<img src="<?php echo get_template_directory_uri() ?>/img/plantilla/noticia.jpg" alt="title" title="">
-							</a>
-							<figcaption>
-								<h3>
-									<a href="https://manya.pe" target="blank" title="">
-										Nombre del columnista
-									</a>
-								</h3>
-							</figcaption>
-						</figure>
-					</li>
+					<?php $args = array(
+						'posts_per_page' => '9',
+						'cat' => 131
+					);?>
+					<?php $the_query = new WP_Query($args); ?>
+						<?php if ($the_query->have_posts()) : ?>
+							<?php while ($the_query->have_posts()) : $the_query->the_post(); ?>
+								<li class="itemShadow">
+									<figure>
+										<a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>">
+											<img src="<?php echo get_template_directory_uri() ?>/img/plantilla/noticia.jpg" alt="title" title="">
+										</a>
+										<figcaption>
+											<h3>
+												<a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>">
+													<?php the_title() ?>
+												</a>
+											</h3>
+										</figcaption>
+									</figure>
+								</li>
+							<?php endwhile; ?>
+						<?php wp_reset_postdata(); ?>
+					<?php endif; ?>
 				</ul>
 			</div>
 		</div>
@@ -617,7 +432,7 @@
 		<div class="row">
 			<div class="col l8 s12 m12">
 
-				<!-- [ Tecnología ] -->
+				<?php //Tecnología ?>
 				<article class="col l6 m12 s12">
 					<div class="itemModNot itemShadow margBot20">
 						<h3>
@@ -628,39 +443,49 @@
 								</i>
 							</a>
 						</h3>
-						<figure>
-							<a href="javascript:void(0)" title="">
-								<img src="<?php echo get_template_directory_uri() ?>/img/plantilla/noticia.jpg" alt="title" title="title">
-							</a>
-							<figcaption>
-								<h4>
-									<a href="javascript:void(0)">
-										Parlamento votaría retiro de aportes a las AFP
-									</a>
-								</h4>
-							</figcaption>
-						</figure>
+						<?php $args = array(
+							'posts_per_page' => '1',
+							'cat' => 1364
+						);?>
+						<?php $the_query = new WP_Query($args); ?>
+							<?php if ($the_query->have_posts()) : ?>
+								<?php while ($the_query->have_posts()) : $the_query->the_post(); ?>
+									<figure>
+										<a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>">
+											<?php the_post_thumbnail(); ?>
+										</a>
+										<figcaption>
+											<h4>
+												<a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>">
+													<?php the_title(); ?>
+												</a>
+											</h4>
+										</figcaption>
+									</figure>
+								<?php endwhile; ?>
+							<?php wp_reset_postdata(); ?>
+						<?php endif; ?>
 						<ul>
-							<li>
-								<a href="javascript:void(0)" title="">
-									¿Qué profesionales serán más buscados en 10 años?
-								</a>
-							</li>
-							<li>
-								<a href="javascript:void(0)" title="">
-									¿Qué profesionales serán más buscados en 10 años?
-								</a>
-							</li>
-							<li>
-								<a href="javascript:void(0)" title="">
-									¿Qué profesionales serán más buscados en 10 años?
-								</a>
-							</li>
+							<?php $args = array(
+								'posts_per_page' => '4',
+								'cat' => 1364
+							);?>
+							<?php $the_query = new WP_Query($args); ?>
+								<?php if ($the_query->have_posts()) : ?>
+									<?php while ($the_query->have_posts()) : $the_query->the_post(); ?>
+										<li>
+											<a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>">
+												<?php the_title(); ?>
+											</a>
+										</li>
+									<?php endwhile; ?>
+								<?php wp_reset_postdata(); ?>
+							<?php endif; ?>
 						</ul>
 					</div>
 				</article>
 
-				<!-- [ Espectaculos ] -->
+				<?php //Espectaculos ?>
 				<article class="col l6 m12 s12">
 					<div class="itemModNot itemShadow margBot20">
 						<h3>
@@ -671,39 +496,49 @@
 								</i>
 							</a>
 						</h3>
-						<figure>
-							<a href="javascript:void(0)" title="">
-								<img src="<?php echo get_template_directory_uri() ?>/img/plantilla/noticia.jpg" alt="title" title="title">
-							</a>
-							<figcaption>
-								<h4>
-									<a href="javascript:void(0)">
-										Parlamento votaría retiro de aportes a las AFP
-									</a>
-								</h4>
-							</figcaption>
-						</figure>
+						<?php $args = array(
+							'posts_per_page' => '1',
+							'cat' => 11
+						);?>
+						<?php $the_query = new WP_Query($args); ?>
+							<?php if ($the_query->have_posts()) : ?>
+								<?php while ($the_query->have_posts()) : $the_query->the_post(); ?>
+									<figure>
+										<a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>">
+											<?php the_post_thumbnail(); ?>
+										</a>
+										<figcaption>
+											<h4>
+												<a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>">
+													<?php the_title(); ?>
+												</a>
+											</h4>
+										</figcaption>
+									</figure>
+								<?php endwhile; ?>
+							<?php wp_reset_postdata(); ?>
+						<?php endif; ?>
 						<ul>
-							<li>
-								<a href="javascript:void(0)" title="">
-									¿Qué profesionales serán más buscados en 10 años?
-								</a>
-							</li>
-							<li>
-								<a href="javascript:void(0)" title="">
-									¿Qué profesionales serán más buscados en 10 años?
-								</a>
-							</li>
-							<li>
-								<a href="javascript:void(0)" title="">
-									¿Qué profesionales serán más buscados en 10 años?
-								</a>
-							</li>
+							<?php $args = array(
+								'posts_per_page' => '4',
+								'cat' => 11
+							);?>
+							<?php $the_query = new WP_Query($args); ?>
+								<?php if ($the_query->have_posts()) : ?>
+									<?php while ($the_query->have_posts()) : $the_query->the_post(); ?>
+										<li>
+											<a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>">
+												<?php the_title(); ?>
+											</a>
+										</li>
+									<?php endwhile; ?>
+								<?php wp_reset_postdata(); ?>
+							<?php endif; ?>
 						</ul>
 					</div>
 				</article>
 
-				<!-- [ Judicial ] -->
+				<?php //Judicial ?>
 				<article class="col l6 m12 s12">
 					<div class="itemModNot itemShadow margBot20">
 						<h3>
@@ -714,39 +549,49 @@
 								</i>
 							</a>
 						</h3>
-						<figure>
-							<a href="javascript:void(0)" title="">
-								<img src="<?php echo get_template_directory_uri() ?>/img/plantilla/noticia.jpg" alt="title" title="title">
-							</a>
-							<figcaption>
-								<h4>
-									<a href="javascript:void(0)">
-										Parlamento votaría retiro de aportes a las AFP
-									</a>
-								</h4>
-							</figcaption>
-						</figure>
+						<?php $args = array(
+							'posts_per_page' => '1',
+							'cat' => 12
+						);?>
+						<?php $the_query = new WP_Query($args); ?>
+							<?php if ($the_query->have_posts()) : ?>
+								<?php while ($the_query->have_posts()) : $the_query->the_post(); ?>
+									<figure>
+										<a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>">
+											<?php the_post_thumbnail(); ?>
+										</a>
+										<figcaption>
+											<h4>
+												<a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>">
+													<?php the_title(); ?>
+												</a>
+											</h4>
+										</figcaption>
+									</figure>
+								<?php endwhile; ?>
+							<?php wp_reset_postdata(); ?>
+						<?php endif; ?>
 						<ul>
-							<li>
-								<a href="javascript:void(0)" title="">
-									¿Qué profesionales serán más buscados en 10 años?
-								</a>
-							</li>
-							<li>
-								<a href="javascript:void(0)" title="">
-									¿Qué profesionales serán más buscados en 10 años?
-								</a>
-							</li>
-							<li>
-								<a href="javascript:void(0)" title="">
-									¿Qué profesionales serán más buscados en 10 años?
-								</a>
-							</li>
+							<?php $args = array(
+								'posts_per_page' => '4',
+								'cat' => 12
+							);?>
+							<?php $the_query = new WP_Query($args); ?>
+								<?php if ($the_query->have_posts()) : ?>
+									<?php while ($the_query->have_posts()) : $the_query->the_post(); ?>
+										<li>
+											<a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>">
+												<?php the_title(); ?>
+											</a>
+										</li>
+									<?php endwhile; ?>
+								<?php wp_reset_postdata(); ?>
+							<?php endif; ?>
 						</ul>
 					</div>
 				</article>
 
-				<!-- [ Deportes ] -->
+				<?php //Deportes ?>
 				<article class="col l6 m12 s12">
 					<div class="itemModNot itemShadow margBot20">
 						<h3>
@@ -757,39 +602,49 @@
 								</i>
 							</a>
 						</h3>
-						<figure>
-							<a href="javascript:void(0)" title="">
-								<img src="<?php echo get_template_directory_uri() ?>/img/plantilla/noticia.jpg" alt="title" title="title">
-							</a>
-							<figcaption>
-								<h4>
-									<a href="javascript:void(0)">
-										Parlamento votaría retiro de aportes a las AFP
-									</a>
-								</h4>
-							</figcaption>
-						</figure>
+						<?php $args = array(
+							'posts_per_page' => '1',
+							'cat' => 10
+						);?>
+						<?php $the_query = new WP_Query($args); ?>
+							<?php if ($the_query->have_posts()) : ?>
+								<?php while ($the_query->have_posts()) : $the_query->the_post(); ?>
+									<figure>
+										<a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>">
+											<?php the_post_thumbnail(); ?>
+										</a>
+										<figcaption>
+											<h4>
+												<a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>">
+													<?php the_title(); ?>
+												</a>
+											</h4>
+										</figcaption>
+									</figure>
+								<?php endwhile; ?>
+							<?php wp_reset_postdata(); ?>
+						<?php endif; ?>
 						<ul>
-							<li>
-								<a href="javascript:void(0)" title="">
-									¿Qué profesionales serán más buscados en 10 años?
-								</a>
-							</li>
-							<li>
-								<a href="javascript:void(0)" title="">
-									¿Qué profesionales serán más buscados en 10 años?
-								</a>
-							</li>
-							<li>
-								<a href="javascript:void(0)" title="">
-									¿Qué profesionales serán más buscados en 10 años?
-								</a>
-							</li>
+							<?php $args = array(
+								'posts_per_page' => '4',
+								'cat' => 10
+							);?>
+							<?php $the_query = new WP_Query($args); ?>
+								<?php if ($the_query->have_posts()) : ?>
+									<?php while ($the_query->have_posts()) : $the_query->the_post(); ?>
+										<li>
+											<a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>">
+												<?php the_title(); ?>
+											</a>
+										</li>
+									<?php endwhile; ?>
+								<?php wp_reset_postdata(); ?>
+							<?php endif; ?>
 						</ul>
 					</div>
 				</article>
 
-				<!-- [ Cultural ] -->
+				<?php //Cultural ?>
 				<article class="col l6 m12 s12">
 					<div class="itemModNot itemShadow margBot20">
 						<h3>
@@ -800,39 +655,49 @@
 								</i>
 							</a>
 						</h3>
-						<figure>
-							<a href="javascript:void(0)" title="">
-								<img src="<?php echo get_template_directory_uri() ?>/img/plantilla/noticia.jpg" alt="title" title="title">
-							</a>
-							<figcaption>
-								<h4>
-									<a href="javascript:void(0)">
-										Parlamento votaría retiro de aportes a las AFP
-									</a>
-								</h4>
-							</figcaption>
-						</figure>
+						<?php $args = array(
+							'posts_per_page' => '1',
+							'cat' => 13
+						);?>
+						<?php $the_query = new WP_Query($args); ?>
+							<?php if ($the_query->have_posts()) : ?>
+								<?php while ($the_query->have_posts()) : $the_query->the_post(); ?>
+									<figure>
+										<a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>">
+											<?php the_post_thumbnail(); ?>
+										</a>
+										<figcaption>
+											<h4>
+												<a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>">
+													<?php the_title(); ?>
+												</a>
+											</h4>
+										</figcaption>
+									</figure>
+								<?php endwhile; ?>
+							<?php wp_reset_postdata(); ?>
+						<?php endif; ?>
 						<ul>
-							<li>
-								<a href="javascript:void(0)" title="">
-									¿Qué profesionales serán más buscados en 10 años?
-								</a>
-							</li>
-							<li>
-								<a href="javascript:void(0)" title="">
-									¿Qué profesionales serán más buscados en 10 años?
-								</a>
-							</li>
-							<li>
-								<a href="javascript:void(0)" title="">
-									¿Qué profesionales serán más buscados en 10 años?
-								</a>
-							</li>
+							<?php $args = array(
+								'posts_per_page' => '4',
+								'cat' => 13
+							);?>
+							<?php $the_query = new WP_Query($args); ?>
+								<?php if ($the_query->have_posts()) : ?>
+									<?php while ($the_query->have_posts()) : $the_query->the_post(); ?>
+										<li>
+											<a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>">
+												<?php the_title(); ?>
+											</a>
+										</li>
+									<?php endwhile; ?>
+								<?php wp_reset_postdata(); ?>
+							<?php endif; ?>
 						</ul>
 					</div>
 				</article>
 
-				<!-- [ Especiales ] -->
+				<?php //Especiales ?>
 				<article class="col l6 m12 s12">
 					<div class="itemModNot itemShadow margBot20">
 						<h3>
@@ -843,39 +708,49 @@
 								</i>
 							</a>
 						</h3>
-						<figure>
-							<a href="javascript:void(0)" title="">
-								<img src="<?php echo get_template_directory_uri() ?>/img/plantilla/noticia.jpg" alt="title" title="title">
-							</a>
-							<figcaption>
-								<h4>
-									<a href="javascript:void(0)">
-										Parlamento votaría retiro de aportes a las AFP
-									</a>
-								</h4>
-							</figcaption>
-						</figure>
+						<?php $args = array(
+							'posts_per_page' => '1',
+							'cat' => 49
+						);?>
+						<?php $the_query = new WP_Query($args); ?>
+							<?php if ($the_query->have_posts()) : ?>
+								<?php while ($the_query->have_posts()) : $the_query->the_post(); ?>
+									<figure>
+										<a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>">
+											<?php the_post_thumbnail(); ?>
+										</a>
+										<figcaption>
+											<h4>
+												<a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>">
+													<?php the_title(); ?>
+												</a>
+											</h4>
+										</figcaption>
+									</figure>
+								<?php endwhile; ?>
+							<?php wp_reset_postdata(); ?>
+						<?php endif; ?>
 						<ul>
-							<li>
-								<a href="javascript:void(0)" title="">
-									¿Qué profesionales serán más buscados en 10 años?
-								</a>
-							</li>
-							<li>
-								<a href="javascript:void(0)" title="">
-									¿Qué profesionales serán más buscados en 10 años?
-								</a>
-							</li>
-							<li>
-								<a href="javascript:void(0)" title="">
-									¿Qué profesionales serán más buscados en 10 años?
-								</a>
-							</li>
+							<?php $args = array(
+								'posts_per_page' => '4',
+								'cat' => 49
+							);?>
+							<?php $the_query = new WP_Query($args); ?>
+								<?php if ($the_query->have_posts()) : ?>
+									<?php while ($the_query->have_posts()) : $the_query->the_post(); ?>
+										<li>
+											<a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>">
+												<?php the_title(); ?>
+											</a>
+										</li>
+									<?php endwhile; ?>
+								<?php wp_reset_postdata(); ?>
+							<?php endif; ?>
 						</ul>
 					</div>
 				</article>
 
-				<!-- [ Cine ] -->
+				<?php //cine ?>
 				<article class="col l6 m12 s12">
 					<div class="itemModNot itemShadow margBot20">
 						<h3>
@@ -886,34 +761,44 @@
 								</i>
 							</a>
 						</h3>
-						<figure>
-							<a href="javascript:void(0)" title="">
-								<img src="<?php echo get_template_directory_uri() ?>/img/plantilla/noticia.jpg" alt="title" title="title">
-							</a>
-							<figcaption>
-								<h4>
-									<a href="javascript:void(0)">
-										Parlamento votaría retiro de aportes a las AFP
-									</a>
-								</h4>
-							</figcaption>
-						</figure>
+						<?php $args = array(
+							'posts_per_page' => '1',
+							'cat' => 17
+						);?>
+						<?php $the_query = new WP_Query($args); ?>
+							<?php if ($the_query->have_posts()) : ?>
+								<?php while ($the_query->have_posts()) : $the_query->the_post(); ?>
+									<figure>
+										<a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>">
+											<?php the_post_thumbnail(); ?>
+										</a>
+										<figcaption>
+											<h4>
+												<a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>">
+													<?php the_title(); ?>
+												</a>
+											</h4>
+										</figcaption>
+									</figure>
+								<?php endwhile; ?>
+							<?php wp_reset_postdata(); ?>
+						<?php endif; ?>
 						<ul>
-							<li>
-								<a href="javascript:void(0)" title="">
-									¿Qué profesionales serán más buscados en 10 años?
-								</a>
-							</li>
-							<li>
-								<a href="javascript:void(0)" title="">
-									¿Qué profesionales serán más buscados en 10 años?
-								</a>
-							</li>
-							<li>
-								<a href="javascript:void(0)" title="">
-									¿Qué profesionales serán más buscados en 10 años?
-								</a>
-							</li>
+							<?php $args = array(
+								'posts_per_page' => '4',
+								'cat' => 17
+							);?>
+							<?php $the_query = new WP_Query($args); ?>
+								<?php if ($the_query->have_posts()) : ?>
+									<?php while ($the_query->have_posts()) : $the_query->the_post(); ?>
+										<li>
+											<a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>">
+												<?php the_title(); ?>
+											</a>
+										</li>
+									<?php endwhile; ?>
+								<?php wp_reset_postdata(); ?>
+							<?php endif; ?>
 						</ul>
 					</div>
 				</article>
@@ -923,40 +808,50 @@
 					<div class="itemModNot itemShadow margBot20">
 						<h3>
 							<a href="javascript:void(0)">
-								Cine
+								Nacional
 								<i>
 									<img src="<?php echo get_template_directory_uri() ?>/img/plantilla/arrowLeftMod.svg" alt="title" title="title">
 								</i>
 							</a>
 						</h3>
-						<figure>
-							<a href="javascript:void(0)" title="">
-								<img src="<?php echo get_template_directory_uri() ?>/img/plantilla/noticia.jpg" alt="title" title="title">
-							</a>
-							<figcaption>
-								<h4>
-									<a href="javascript:void(0)">
-										Parlamento votaría retiro de aportes a las AFP
-									</a>
-								</h4>
-							</figcaption>
-						</figure>
+						<?php $args = array(
+							'posts_per_page' => '1',
+							'cat' => 8
+						);?>
+						<?php $the_query = new WP_Query($args); ?>
+							<?php if ($the_query->have_posts()) : ?>
+								<?php while ($the_query->have_posts()) : $the_query->the_post(); ?>
+									<figure>
+										<a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>">
+											<?php the_post_thumbnail(); ?>
+										</a>
+										<figcaption>
+											<h4>
+												<a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>">
+													<?php the_title(); ?>
+												</a>
+											</h4>
+										</figcaption>
+									</figure>
+								<?php endwhile; ?>
+							<?php wp_reset_postdata(); ?>
+						<?php endif; ?>
 						<ul>
-							<li>
-								<a href="javascript:void(0)" title="">
-									¿Qué profesionales serán más buscados en 10 años?
-								</a>
-							</li>
-							<li>
-								<a href="javascript:void(0)" title="">
-									¿Qué profesionales serán más buscados en 10 años?
-								</a>
-							</li>
-							<li>
-								<a href="javascript:void(0)" title="">
-									¿Qué profesionales serán más buscados en 10 años?
-								</a>
-							</li>
+							<?php $args = array(
+								'posts_per_page' => '4',
+								'cat' => 8
+							);?>
+							<?php $the_query = new WP_Query($args); ?>
+								<?php if ($the_query->have_posts()) : ?>
+									<?php while ($the_query->have_posts()) : $the_query->the_post(); ?>
+										<li>
+											<a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>">
+												<?php the_title(); ?>
+											</a>
+										</li>
+									<?php endwhile; ?>
+								<?php wp_reset_postdata(); ?>
+							<?php endif; ?>
 						</ul>
 					</div>
 				</article>
@@ -1045,70 +940,32 @@
 							Nuestros blogueros
 						</h2>
 					</div>
-					<article class="col l12 m12 s12">
-						<div class="blogItem itemShadow margBot20">
-							<figure>
-								<a href="javascript:void(0)" title="">
-									<img src="<?php echo get_template_directory_uri() ?>/img/plantilla/noticia.jpg" alt="title" title="title">
-								</a>
-								<figcaption>
-									<h3>
-										<a href="javascript:void(0)" title="">
-											Nombre del bloguero
-										</a>
-									</h3>
-								</figcaption>
-							</figure>
-						</div>
-					</article>
-					<article class="col l12 m12 s12">
-						<div class="blogItem itemShadow margBot20">
-							<figure>
-								<a href="javascript:void(0)" title="">
-									<img src="<?php echo get_template_directory_uri() ?>/img/plantilla/noticia.jpg" alt="title" title="title">
-								</a>
-								<figcaption>
-									<h3>
-										<a href="javascript:void(0)" title="">
-											Nombre del bloguero
-										</a>
-									</h3>
-								</figcaption>
-							</figure>
-						</div>
-					</article>
-					<article class="col l12 m12 s12">
-						<div class="blogItem itemShadow margBot20">
-							<figure>
-								<a href="javascript:void(0)" title="">
-									<img src="<?php echo get_template_directory_uri() ?>/img/plantilla/noticia.jpg" alt="title" title="title">
-								</a>
-								<figcaption>
-									<h3>
-										<a href="javascript:void(0)" title="">
-											Nombre del bloguero
-										</a>
-									</h3>
-								</figcaption>
-							</figure>
-						</div>
-					</article>
-					<article class="col l12 m12 s12">
-						<div class="blogItem itemShadow margBot20">
-							<figure>
-								<a href="javascript:void(0)" title="">
-									<img src="<?php echo get_template_directory_uri() ?>/img/plantilla/noticia.jpg" alt="title" title="title">
-								</a>
-								<figcaption>
-									<h3>
-										<a href="javascript:void(0)" title="">
-											Nombre del bloguero
-										</a>
-									</h3>
-								</figcaption>
-							</figure>
-						</div>
-					</article>
+					<?php $args = array(
+						'posts_per_page' => '4',
+						'cat' => 131
+					);?>
+					<?php $the_query = new WP_Query($args); ?>
+						<?php if ($the_query->have_posts()) : ?>
+							<?php while ($the_query->have_posts()) : $the_query->the_post(); ?>
+								<article class="col l12 m12 s12">
+									<div class="blogItem itemShadow margBot20">
+										<figure>
+											<a href="javascript:void(0)" title="">
+												<?php the_post_thumbnail(); ?>
+											</a>
+											<figcaption>
+												<h3>
+													<a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>">
+														<?php the_title(); ?>
+													</a>
+												</h3>
+											</figcaption>
+										</figure>
+									</div>
+								</article>
+							<?php endwhile; ?>
+						<?php wp_reset_postdata(); ?>
+					<?php endif; ?>
 				</div>
 
 				<?php //Publicidad - Small ?>
