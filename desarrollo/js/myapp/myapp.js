@@ -236,6 +236,7 @@ $(document).on('ready',function() {
         if ($(window).width() >= 600) {
           equalheight('.teamItem');
           equalheight('.itemModNot');
+          equalheight('.notItemHome');
         }
     });
 
@@ -243,6 +244,7 @@ $(document).on('ready',function() {
         if ($(window).width() >= 600) {
           equalheight('.teamItem');
           equalheight('.itemModNot');
+          equalheight('.notItemHome');
         }
     });
     //-------------- [ FIN - Plugin de height ] --------------//
