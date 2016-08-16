@@ -949,7 +949,7 @@
 							<?php while ($the_query->have_posts()) : $the_query->the_post(); ?>
 								<article class="col l12 m12 s12">
 									<div class="blogItem itemShadow margBot20">
-										<figure>
+										<figure class="pDay">
 											<a href="javascript:void(0)" title="">
 												<?php the_post_thumbnail(); ?>
 											</a>
