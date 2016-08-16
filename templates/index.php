@@ -953,14 +953,14 @@
 											<a href="javascript:void(0)" title="">
 												<?php the_post_thumbnail(); ?>
 											</a>
-											<figcaption>
-												<h3>
-													<a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>">
-														<?php the_title(); ?>
-													</a>
-												</h3>
-											</figcaption>
 										</figure>
+										<figcaption>
+											<h3>
+												<a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>">
+													<?php the_title(); ?>
+												</a>
+											</h3>
+										</figcaption>
 									</div>
 								</article>
 							<?php endwhile; ?>
