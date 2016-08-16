@@ -89,9 +89,9 @@
 											Portada del día
 										</h3>
 									</figcaption>
-									<a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>">
-										<?php the_post_thumbnail(); ?>
-									</a>
+										<a href="<?php the_permalink(); ?>" class="pDay" title="<?php the_title(); ?>">
+											<?php the_post_thumbnail(); ?>
+										</a>
 									<figcaption>
 										<h4>
 											<a href="<?php the_permalink(); ?>" title="<?php the_title() ?>">
@@ -949,18 +949,18 @@
 							<?php while ($the_query->have_posts()) : $the_query->the_post(); ?>
 								<article class="col l12 m12 s12">
 									<div class="blogItem itemShadow margBot20">
-										<figure class="pDay">
+										<figure>
 											<a href="javascript:void(0)" title="">
 												<?php the_post_thumbnail(); ?>
 											</a>
+											<figcaption>
+												<h3>
+													<a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>">
+														<?php the_title(); ?>
+													</a>
+												</h3>
+											</figcaption>
 										</figure>
-										<figcaption>
-											<h3>
-												<a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>">
-													<?php the_title(); ?>
-												</a>
-											</h3>
-										</figcaption>
 									</div>
 								</article>
 							<?php endwhile; ?>
