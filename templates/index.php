@@ -397,7 +397,7 @@
 				</div>
 				<ul class="owlColum owlColumnista">
 					<?php $args = array(
-						'posts_per_page' => '9',
+						'posts_per_page' => '6',
 						'cat' => 131
 					);?>
 					<?php $the_query = new WP_Query($args); ?>
@@ -411,7 +411,7 @@
 										<figcaption>
 											<h3>
 												<a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>">
-													<?php the_title() ?>
+													[nomb_colum]
 												</a>
 											</h3>
 										</figcaption>
