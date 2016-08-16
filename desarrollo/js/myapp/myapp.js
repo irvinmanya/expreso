@@ -235,13 +235,14 @@ $(document).on('ready',function() {
     $(window).load(function() {
         if ($(window).width() >= 600) {
           equalheight('.teamItem');
+          equalheight('.itemModNot');
         }
     });
 
     $(window).resize(function(){
-        equalheight('.teamItem');
         if ($(window).width() >= 600) {
           equalheight('.teamItem');
+          equalheight('.itemModNot');
         }
     });
     //-------------- [ FIN - Plugin de height ] --------------//

@@ -406,7 +406,7 @@
 								<li class="itemShadow">
 									<figure>
 										<a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>">
-											<img src="<?php echo get_template_directory_uri() ?>/img/plantilla/noticia.jpg" alt="title" title="">
+											<?php the_post_thumbnail(); ?>
 										</a>
 										<figcaption>
 											<h3>
