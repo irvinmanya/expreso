@@ -107,7 +107,7 @@
 				</figure>
 				<ul class="headerBtn">
 					<li class="headerBtnLine">
-						<a href="javascript:void(0)" class="btnGeneral" title="">
+						<a href="http://expreso.dhdinc.info/seccion/editoriales/" class="btnGeneral" title="Editoriales">
 							Editoriales
 						</a>
 					</li>
