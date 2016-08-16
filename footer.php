@@ -14,71 +14,25 @@
 								Política
 							</a>
 						</li>
-						<li class="col l6 m12 s12">
-							<a href="javascript:void(0)" title="">
-								Polidatos
-							</a>
-						</li>
-						<li class="col l6 m12 s12">
-							<a href="javascript:void(0)" title="">
-								Economía
-							</a>
-						</li>
-						<li class="col l6 m12 s12">
-							<a href="javascript:void(0)" title="">
-								Actualidad
-							</a>
-						</li>
-						<li class="col l6 m12 s12">
-							<a href="javascript:void(0)" title="">
-								Mundo
-							</a>
-						</li>
-						<li class="col l6 m12 s12">
-							<a href="javascript:void(0)" title="">
-								Nacional
-							</a>
-						</li>
-						<li class="col l6 m12 s12">
-							<a href="javascript:void(0)" title="">
-								Opinión
-							</a>
-						</li>
-						<li class="col l6 m12 s12">
-							<a href="javascript:void(0)" title="">
-								Espectáculos
-							</a>
-						</li>
-						<li class="col l6 m12 s12">
-							<a href="javascript:void(0)" title="">
-								Judicial
-							</a>
-						</li>
-						<li class="col l6 m12 s12">
-							<a href="javascript:void(0)" title="">
-								Deportes
-							</a>
-						</li>
-						<li class="col l6 m12 s12">
-							<a href="javascript:void(0)" title="">
-								Cultural
-							</a>
-						</li>
-						<li class="col l6 m12 s12">
-							<a href="javascript:void(0)" title="">
-								Especiales
-							</a>
-						</li>
-						<li class="col l6 m12 s12">
-							<a href="javascript:void(0)" title="">
-								Cine
-							</a>
-						</li>
-						<li class="col l6 m12 s12">
-							<a href="javascript:void(0)" title="">
-								Tecnología
-							</a>
-						</li>
+						<?php
+						$menu_name = 'menu-principal';
+						$locations = get_nav_menu_locations();
+						$menu = wp_get_nav_menu_object($locations[$menu_name]);
+						$menuitems = wp_get_nav_menu_items($menu->term_id, array('order' => 'DESC'));
+						?>
+
+						<?php foreach ($menuitems as $item): ?>
+							<?php
+							$link = $item->url;
+							$title = $item->title;
+							$cssClass = $item->classes[0];
+							?> 
+							<li class="col l6 m12 s12">
+								<a href="<?php echo $link; ?>" title="<?php echo $title; ?>" <?php echo!empty($cssClass) ? " class='" . $cssClass . "'" : "" ?>>
+									<?php echo $title; ?>
+								</a>
+							</li>
+						<?php endforeach; ?>
 					</ul>
 				</div>
 			</div>
@@ -90,31 +44,21 @@
 						Último minuto
 					</h3>
 					<ul class="lastNot">
-						<li class="col l6 m12 s12">
-							<a href="javascript:void(0)" title="">
-								¿Qué profesionales seran más..
-							</a>
-						</li>
-						<li class="col l6 m12 s12">
-							<a href="javascript:void(0)" title="">
-								¿Qué profesionales seran más..
-							</a>
-						</li>
-						<li class="col l6 m12 s12">
-							<a href="javascript:void(0)" title="">
-								¿Qué profesionales seran más..
-							</a>
-						</li>
-						<li class="col l6 m12 s12">
-							<a href="javascript:void(0)" title="">
-								¿Qué profesionales seran más..
-							</a>
-						</li>
-						<li class="col l6 m12 s12">
-							<a href="javascript:void(0)" title="">
-								¿Qué profesionales seran más..
-							</a>
-						</li>
+						<?php $args = array(
+							'posts_per_page' => '8',
+							'cat' => 131
+						);?>
+						<?php $the_query = new WP_Query($args); ?>
+							<?php if ($the_query->have_posts()) : ?>
+								<?php while ($the_query->have_posts()) : $the_query->the_post(); ?>
+									<li class="col l6 m12 s12">
+										<a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>">
+											<?php the_title(); ?>
+										</a>
+									</li>
+								<?php endwhile; ?>
+							<?php wp_reset_postdata(); ?>
+						<?php endif; ?>
 					</ul>
 				</div>
 			</div>
