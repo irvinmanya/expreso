@@ -947,6 +947,10 @@
 					<?php $the_query = new WP_Query($args); ?>
 						<?php if ($the_query->have_posts()) : ?>
 							<?php while ($the_query->have_posts()) : $the_query->the_post(); ?>
+								<?php
+									$t_id = $term->term_id;
+									$term_meta = get_option("taxonomy_$t_id");
+								?>
 								<article class="col l12 m12 s12">
 									<div class="blogItem itemShadow margBot20">
 										<figure>
@@ -956,7 +960,7 @@
 											<figcaption>
 												<h3>
 													<a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>">
-														<?php the_title(); ?>
+														<?php the_title(); ?>[nomb_colum]
 													</a>
 												</h3>
 											</figcaption>
