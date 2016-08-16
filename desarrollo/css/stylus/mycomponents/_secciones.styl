@@ -413,6 +413,7 @@ section
 	tam ()
 	text-align left
 	margin-bottom 20px
+	trancicion ()
 	h3
 		tam ()
 		padding 7px 10px 7px 10px
@@ -422,6 +423,8 @@ section
 			height auto
 	figure
 		tam ()
+		max-height 260px
+		overflow hidden
 	figcaption
 		tam ()
 		h4
@@ -437,6 +440,12 @@ section
 				padding 7px 10px 7px 10px
 				font-size 14px
 				border-top 1px solid rgba(0,0,0,.15)
+	&:hover
+	&:active
+	&:focus
+		box-shadow 1px 1px 10px 0 rgba(0,0,0,.55)
+		transform translateY(-5px)
+	
 
 .encBox
 	tam ()
