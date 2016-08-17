@@ -12,6 +12,8 @@ if (in_category('editoriales')) {
 	get_template_part( 'singlecat/single', 'portadas' );
 }elseif(in_category('blogueros')){
 	get_template_part( 'singlecat/single', 'blogueros' );
+}elseif(in_category('opinion')){
+	get_template_part( 'singlecat/single', 'blogueros' );
 } else {
 	get_template_part( 'singlecat/single', 'default' );
 }
