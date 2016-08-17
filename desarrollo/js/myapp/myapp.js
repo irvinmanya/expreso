@@ -309,11 +309,11 @@ $(document).on('ready',function() {
     $('.itemModNot figure').eq(0).addClass('itemModNotfAct');
     
     //------------------- [ Modulos Slider Hover ] --------------------//
-    $('.itemModNot li').mouseenter(function(){
+    $('.itemModNot').mouseenter('li',function(){
       var $li = $(this);
       var itemLi = $li.index();
-      $('.itemModNot').find('figure').addClass('itemModNotfHide').removeClass('itemModNotfAct');
-      $('.itemModNot').find('figure').eq(itemLi).addClass('itemModNotfAct').removeClass('itemModNotfHide');
+      $li.find('figure').addClass('itemModNotfHide').removeClass('itemModNotfAct');
+      $li.find('figure').eq(itemLi).addClass('itemModNotfAct').removeClass('itemModNotfHide');
     });
     //------------------- [ Fin - Modulos Slider Hover ] --------------------//
     $('#sliderList li').eq(0).click();
