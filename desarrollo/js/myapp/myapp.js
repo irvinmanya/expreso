@@ -304,11 +304,9 @@ $(document).on('ready',function() {
 
 
     //------------------- [ Modulos Slider ] --------------------//
-    function sliderMod(nameCont){
-      $(nameCont).addClass('itemModNotfHide');
-      $(nameCont).eq(0).addClass('itemModNotfAct');
-    }
-    sliderMod('.itemModNot figure');
+
+    $('.itemModNot figure').addClass('itemModNotfHide');
+    $('.itemModNot figure').eq(0).addClass('itemModNotfAct');
     
     //------------------- [ Modulos Slider Hover ] --------------------//
     $('.itemModNot li').mouseenter(function(){
