@@ -305,8 +305,8 @@ $(document).on('ready',function() {
 
     //------------------- [ Modulos Slider ] --------------------//
 
-    // $('.itemModNot figure').addClass('itemModNotfHide');
-    // $('.itemModNot figure').eq(0).addClass('itemModNotfAct');
+    $('.itemModNot figure').addClass('itemModNotfHide');
+    $('.itemModNot figure').eq(0).addClass('itemModNotfAct');
     
     // //------------------- [ Modulos Slider Hover ] --------------------//
     // $('.itemModNot').mouseenter('li',function(){
@@ -316,7 +316,6 @@ $(document).on('ready',function() {
     //   $li.find('figure').eq(itemLi).addClass('itemModNotfAct').removeClass('itemModNotfHide');
     // });
     // //------------------- [ Fin - Modulos Slider Hover ] --------------------//
-    $('#sliderList li').eq(0).click();
 
 
     // Datepicker
