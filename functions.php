@@ -389,5 +389,4 @@ add_image_size('banner-image',920,210,array('left','top'));
 
 if(function_exists('add_theme_support')) {
     add_theme_support('category-thumbnails');
-    add_theme_support( 'post-thumbnails' );
 }
