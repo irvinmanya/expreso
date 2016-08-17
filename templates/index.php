@@ -449,7 +449,7 @@
 										<li class="itemShadow">
 											<figure>
 												<a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>">
-													<?php the_post_thumbnail(array( 200,200 ), array( 'class' => 'alignleft' ));  ?>
+													<?php the_post_thumbnail(); ?>
 												</a>
 												<figcaption>
 													<h3>
