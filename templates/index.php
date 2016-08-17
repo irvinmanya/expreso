@@ -445,11 +445,11 @@
 									$idObj = get_category_by_slug('blogueros'); 
 									$categories = get_categories(array('child_of' => get_query_var('cat'))); 
 									foreach ($categories as $category) : 
-										$image_url = apply_filters( 'taxonomy-images-queried-term-image-url', '' ) ;?>
+										$image_url = apply_filters( 'taxonomy-images-queried-term-image-url', '' );?>
 										<li class="itemShadow">
 											<figure>
 												<a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>">
-													<?php the_category_thumbnail(); ?>
+													<?php the_post_thumbnail(array( 200,200 ), array( 'class' => 'alignleft' ));  ?>
 												</a>
 												<figcaption>
 													<h3>
