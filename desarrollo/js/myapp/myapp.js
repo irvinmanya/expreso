@@ -302,22 +302,6 @@ $(document).on('ready',function() {
     });
     //------------------- [ Fin - Slider Hover ] --------------------//
 
-
-    //------------------- [ Modulos Slider ] --------------------//
-
-    // $('.itemModNot figure').addClass('itemModNotfHide');
-    // $('.itemModNot figure').eq(0).addClass('itemModNotfAct');
-    
-    // //------------------- [ Modulos Slider Hover ] --------------------//
-    // $('.itemModNot').mouseenter('li',function(){
-    //   var $li = $(this);
-    //   var itemLi = $li.index();
-    //   $li.find('figure').addClass('itemModNotfHide').removeClass('itemModNotfAct');
-    //   $li.find('figure').eq(itemLi).addClass('itemModNotfAct').removeClass('itemModNotfHide');
-    // });
-    // //------------------- [ Fin - Modulos Slider Hover ] --------------------//
-
-
     // Datepicker
     $('.datepicker').pickadate({
         selectMonths: true, // Creates a dropdown to control month
