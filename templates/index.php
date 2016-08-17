@@ -449,8 +449,8 @@
 											<figure>
 												<?php $category_link = get_category_link($category->cat_ID); ?>
 												<a href=<?php echo esc_url( $category_link ); ?>" title="<?php echo $category->name; ?>">
-													<?php echo get_the_post_thumbnail($category->cat_ID, "thumbnail"); ?>
-													<?php the_post_thumbnail($category->cat_ID, "thumbnail"); ?>
+													<?php $thumb_src = wp_get_attachment_image_src(212, 'medium'); ?>
+													<img src="<?php echo $thumb_src; ?> " alt="">
 												</a>
 												<figcaption>
 													<h3>
