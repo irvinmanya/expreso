@@ -34,9 +34,11 @@
 																	<?php the_title(); ?>
 																</a>
 															</h2>
-															<p>
-																<?php the_excerpt(); ?>
-															</p>
+															<?php if (false) { ?>
+																<p>
+																	<?php the_excerpt(); ?>
+																</p>
+															<?php } ?>
 														</figcaption>
 														<?php the_post_thumbnail(); ?>
 													</figure>
@@ -68,9 +70,11 @@
 														<h3>
 															<?php the_title(); ?>
 														</h3>
-														<p>
-															<?php the_excerpt(); ?>
-														</p>
+														<?php if (false) { ?>
+															<p>
+																<?php the_excerpt(); ?>
+															</p>
+														<?php } ?>
 													</div>
 												</li>
 											<?php endwhile; ?>
