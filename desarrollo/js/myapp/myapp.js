@@ -291,8 +291,6 @@ $(document).on('ready',function() {
     });
     $('#sliderList li').eq(0).click();
 
-
-
     //------------------- [ Slider Hover ] --------------------//
     $('.sliderList li').mouseenter(function(){
       var $li = $(this);
@@ -303,6 +301,24 @@ $(document).on('ready',function() {
       $('#sliderFeat').find('li').eq(itemLi).addClass('sliderFeatAct').removeClass('sliderFeatHide');
     });
     //------------------- [ Fin - Slider Hover ] --------------------//
+
+
+    //------------------- [ Modulos Slider ] --------------------//
+    function sliderMod(nameCont){
+      $(nameCont).addClass('itemModNotfHide');
+      $(nameCont).eq(0).addClass('itemModNotfAct');
+    }
+    sliderMod('.itemModNot figure');
+    
+    //------------------- [ Modulos Slider Hover ] --------------------//
+    $('.sliderList li').mouseenter(function(){
+      var $li = $(this);
+      var itemLi = $li.index();
+      $('.itemModNot').find('figure').addClass('itemModNotfHide').removeClass('itemModNotfAct');
+      $('.itemModNot').find('figure').eq(itemLi).addClass('itemModNotfAct').removeClass('itemModNotfHide');
+    });
+    //------------------- [ Fin - Modulos Slider Hover ] --------------------//
+    $('#sliderList li').eq(0).click();
 
 
     // Datepicker
