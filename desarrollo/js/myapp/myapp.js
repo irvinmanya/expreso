@@ -305,17 +305,17 @@ $(document).on('ready',function() {
 
     //------------------- [ Modulos Slider ] --------------------//
 
-    $('.itemModNot figure').addClass('itemModNotfHide');
-    $('.itemModNot figure').eq(0).addClass('itemModNotfAct');
+    // $('.itemModNot figure').addClass('itemModNotfHide');
+    // $('.itemModNot figure').eq(0).addClass('itemModNotfAct');
     
-    //------------------- [ Modulos Slider Hover ] --------------------//
-    $('.itemModNot').mouseenter('li',function(){
-      var $li = $(this);
-      var itemLi = $li.index();
-      $li.find('figure').addClass('itemModNotfHide').removeClass('itemModNotfAct');
-      $li.find('figure').eq(itemLi).addClass('itemModNotfAct').removeClass('itemModNotfHide');
-    });
-    //------------------- [ Fin - Modulos Slider Hover ] --------------------//
+    // //------------------- [ Modulos Slider Hover ] --------------------//
+    // $('.itemModNot').mouseenter('li',function(){
+    //   var $li = $(this);
+    //   var itemLi = $li.index();
+    //   $li.find('figure').addClass('itemModNotfHide').removeClass('itemModNotfAct');
+    //   $li.find('figure').eq(itemLi).addClass('itemModNotfAct').removeClass('itemModNotfHide');
+    // });
+    // //------------------- [ Fin - Modulos Slider Hover ] --------------------//
     $('#sliderList li').eq(0).click();
 
 
