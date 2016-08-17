@@ -68,7 +68,7 @@
 						<div class="blogerItem itemShadow margBot20">
 							<figure>
 								<a href="<?php echo esc_url( $category_link ); ?>" title="<?php echo $category->name; ?>" >
-									<img src="<?php echo get_template_directory_uri() ?>/img/plantilla/noticia.jpg" alt="title" title="">
+									<img src="<?php echo get_template_directory_uri() ?>/img/plantilla/bloguero.png" alt="<?php echo $category->name; ?>" title="<?php echo $category->name; ?>">
 								</a>
 							</figure>
 							<div class="blogerTxt">

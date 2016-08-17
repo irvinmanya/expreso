@@ -450,7 +450,7 @@
 												<?php $category_link = get_category_link($category->cat_ID); ?>
 												<a href=<?php echo esc_url( $category_link ); ?>" title="<?php echo $category->name; ?>">
  													<?php $image = wp_get_attachment_image_src( get_post_thumbnail_id( $category->ID ) ); ?>
-													<img src="<?php echo get_template_directory_uri() ?>/img/plantilla/bloguero.jpg" alt="<?php echo $category->name; ?>" title="<?php echo $category->name; ?>">
+													<img src="<?php echo get_template_directory_uri() ?>/img/plantilla/bloguero.png" alt="<?php echo $category->name; ?>" title="<?php echo $category->name; ?>">
 												</a>
 												<figcaption>
 													<h3>
@@ -1012,20 +1012,20 @@
 
 								<?php
 									$idObj = get_category_by_slug('blogueros'); 
-									$categories = get_categories(array('child_of' => get_query_var('cat'),'posts_per_page' => 4,)); 
+									$categories = get_categories(array('child_of' => get_query_var('cat'),'show_option_all'    => '4')); 
 									foreach ($categories as $category) : ?>
 										<?php $category_link = get_category_link($category->cat_ID); ?>
 										<article class="col l12 m12 s12">
 											<div class="blogItem itemShadow margBot20">
 												<figure>
 													<a href="<?php echo esc_url( $category_link ); ?>" title="<?php echo $category->name; ?>" >
-														<?php the_post_thumbnail(); ?>
+														<img src="<?php echo get_template_directory_uri() ?>/img/plantilla/bloguero.png" alt="<?php echo $category->name; ?>" title="<?php echo $category->name; ?>">
 													</a>
 													<figcaption>
 														<h3>
 															<a href="<?php echo esc_url( $category_link ); ?>" title="<?php echo $category->name; ?>" >
 																<?php echo $category->name; ?>
-															</a>
+															</a
 														</h3>
 													</figcaption>
 												</figure>
