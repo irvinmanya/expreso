@@ -311,7 +311,7 @@ $(document).on('ready',function() {
     sliderMod('.itemModNot figure');
     
     //------------------- [ Modulos Slider Hover ] --------------------//
-    $('.sliderList li').mouseenter(function(){
+    $('.itemModNot li').mouseenter(function(){
       var $li = $(this);
       var itemLi = $li.index();
       $('.itemModNot').find('figure').addClass('itemModNotfHide').removeClass('itemModNotfAct');
