@@ -462,7 +462,7 @@
 										</a>
 									</h3>
 									<?php $args = array(
-										'posts_per_page' => '4',
+										'posts_per_page' => '1',
 										'cat' => 1364
 
 									);?>
@@ -509,7 +509,7 @@
 										</a>
 									</h3>
 									<?php $args = array(
-										'posts_per_page' => '4',
+										'posts_per_page' => '1',
 										'cat' => 11
 									);?>
 									<?php $the_query = new WP_Query($args); ?>
@@ -562,7 +562,7 @@
 										</a>
 									</h3>
 									<?php $args = array(
-										'posts_per_page' => '4',
+										'posts_per_page' => '1',
 										'cat' => 12
 									);?>
 									<?php $the_query = new WP_Query($args); ?>
@@ -615,7 +615,7 @@
 										</a>
 									</h3>
 									<?php $args = array(
-										'posts_per_page' => '4',
+										'posts_per_page' => '1',
 										'cat' => 10
 									);?>
 									<?php $the_query = new WP_Query($args); ?>
@@ -668,7 +668,7 @@
 										</a>
 									</h3>
 									<?php $args = array(
-										'posts_per_page' => '4',
+										'posts_per_page' => '1',
 										'cat' => 13
 									);?>
 									<?php $the_query = new WP_Query($args); ?>
@@ -721,7 +721,7 @@
 										</a>
 									</h3>
 									<?php $args = array(
-										'posts_per_page' => '4',
+										'posts_per_page' => '1',
 										'cat' => 49
 									);?>
 									<?php $the_query = new WP_Query($args); ?>
@@ -774,7 +774,7 @@
 										</a>
 									</h3>
 									<?php $args = array(
-										'posts_per_page' => '4',
+										'posts_per_page' => '1',
 										'cat' => 17
 									);?>
 									<?php $the_query = new WP_Query($args); ?>
