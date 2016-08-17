@@ -448,7 +448,7 @@
 										<li class="itemShadow">
 											<figure>
 												<a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>">
-													<?php echo get_the_category_thumbnail(); ?>
+													<?php echo wp_get_attachment_url(); ?>
 												</a>
 												<figcaption>
 													<h3>
