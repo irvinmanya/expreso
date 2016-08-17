@@ -10,7 +10,7 @@ if (in_category('editoriales')) {
 	get_template_part( 'singlecat/single', 'polidatos' );
 }elseif(in_category('galeria-de-portadas')){
 	get_template_part( 'singlecat/single', 'portadas' );
-}elseif(in_category('blogueros')){
+}elseif(in_category(131)){
 	get_template_part( 'singlecat/single', 'blogueros' );
 }elseif(in_category('opinion')){
 	get_template_part( 'singlecat/single', 'blogueros' );
