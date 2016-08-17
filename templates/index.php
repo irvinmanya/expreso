@@ -444,20 +444,11 @@
 								<?php
 									$idObj = get_category_by_slug('blogueros'); 
 									$categories = get_categories(array('child_of' => get_query_var('cat'))); 
-									foreach ($categories as $category) : 
-										$image_url = apply_filters( 'taxonomy-images-queried-term-image-url', '' );?>
+									foreach ($categories as $category) : ?>
 										<li class="itemShadow">
 											<figure>
 												<a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>">
-<?php
-
-if ( function_exists( 'add_image_size' ) ) {
-  add_image_size( 'custom-thumb', 180, 115, true ); //add a custom image size
-}
-
-echo get_the_post_thumbnail(get_the_ID(), 'custom-thumb', $attr); //echo the thumbnail with the new custom image size
-
-?>
+													<?php the_post_thumbnail(); ?>
 												</a>
 												<figcaption>
 													<h3>
