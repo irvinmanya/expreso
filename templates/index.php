@@ -449,7 +449,7 @@
 										<li class="itemShadow">
 											<figure>
 												<a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>">
-													<?php get_the_category_thumbnail(); ?>
+													<?php echo get_the_category_thumbnail(); ?>
 												</a>
 												<figcaption>
 													<h3>
