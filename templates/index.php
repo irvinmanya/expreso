@@ -413,30 +413,53 @@
 								<h2>Columnistas del día</h2>
 							</div>
 							<ul class="owlColum owlColumnista">
-								<?php $args = array(
-									'posts_per_page' => '6',
-									'cat' => 131
-								);?>
-								<?php $the_query = new WP_Query($args); ?>
-									<?php if ($the_query->have_posts()) : ?>
-										<?php while ($the_query->have_posts()) : $the_query->the_post(); ?>
-											<li class="itemShadow">
-												<figure>
-													<a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>">
-														<?php the_post_thumbnail(); ?>
-													</a>
-													<figcaption>
-														<h3>
-															<a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>">
-																[nomb_colum]
-															</a>
-														</h3>
-													</figcaption>
-												</figure>
-											</li>
-										<?php endwhile; ?>
-									<?php wp_reset_postdata(); ?>
-								<?php endif; ?>
+								<?php if (false) { ?>
+
+									<?php $args = array(
+										'posts_per_page' => '6',
+										'cat' => 131
+									);?>
+									<?php $the_query = new WP_Query($args); ?>
+										<?php if ($the_query->have_posts()) : ?>
+											<?php while ($the_query->have_posts()) : $the_query->the_post(); ?>
+												<li class="itemShadow">
+													<figure>
+														<a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>">
+															<?php the_post_thumbnail(); ?>
+														</a>
+														<figcaption>
+															<h3>
+																<a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>">
+																	[nomb_colum]
+																</a>
+															</h3>
+														</figcaption>
+													</figure>
+												</li>
+											<?php endwhile; ?>
+										<?php wp_reset_postdata(); ?>
+									<?php endif; ?>
+
+								<?php } ?>
+								<?php
+									$idObj = get_category_by_slug('blogueros'); 
+									$categories = get_categories(array('child_of' => get_query_var('cat'))); 
+									foreach ($categories as $category) :  ?>
+										<li class="itemShadow">
+											<figure>
+												<a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>">
+													<?php the_post_thumbnail(); ?>
+												</a>
+												<figcaption>
+													<h3>
+														<a href="<?php the_permalink(); ?>" title="<?php echo $category->name; ?>">
+															<?php echo $category->name; ?>
+														</a>
+													</h3>
+												</figcaption>
+											</figure>
+										</li>
+								<?php endforeach; ?>
 							</ul>
 						</div>
 					</div>
