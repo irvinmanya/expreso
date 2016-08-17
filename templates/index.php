@@ -452,7 +452,7 @@
 												</a>
 												<figcaption>
 													<h3>
-														<a href="<?php echo esc_url( $category_link ); ?>" title="<?php echo $category->name; ?>">
+														<a href="<?php echo esc_url( $category_link ); ?>" title="xxx">
 															<?php echo $category->name; ?>
 														</a>
 													</h3>
