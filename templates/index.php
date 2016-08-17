@@ -449,7 +449,7 @@
 											<figure>
 												<?php $category_link = get_category_link($category->cat_ID); ?>
 												<a href=<?php echo esc_url( $category_link ); ?>" title="<?php echo $category->name; ?>">
-													<?php echo geT_the_post_thumbnail(); ?>
+													<?php echo get_the_post_thumbnail(); ?>
 												</a>
 												<figcaption>
 													<h3>
@@ -495,7 +495,7 @@
 											<?php while ($the_query->have_posts()) : $the_query->the_post(); ?>
 												<figure>
 													<a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>">
-														<img src="<?php echo get_template_directory_uri() ?>/img/plantilla/arrowLeftMod.svg" alt="title" title="title">
+														<?php the_post_thumbnail(); ?>
 													</a>
 												</figure>
 											<?php endwhile; ?>
