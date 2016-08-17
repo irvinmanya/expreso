@@ -449,7 +449,15 @@
 										<li class="itemShadow">
 											<figure>
 												<a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>">
-													<?php echo get_post_thumbnail(); ?>
+<?php
+
+if ( function_exists( 'add_image_size' ) ) {
+  add_image_size( 'custom-thumb', 180, 115, true ); //add a custom image size
+}
+
+echo get_the_post_thumbnail(get_the_ID(), 'custom-thumb', $attr); //echo the thumbnail with the new custom image size
+
+?>
 												</a>
 												<figcaption>
 													<h3>
