@@ -449,9 +449,7 @@
 											<figure>
 												<?php $category_link = get_category_link($category->cat_ID); ?>
 												<a href=<?php echo esc_url( $category_link ); ?>" title="<?php echo $category->name; ?>">
-													<?php the_post_thumbnail($category->term_id,'thumbnail'); ?>
-													<?php the_post_thumbnail(); ?>
-													<?php the_post_thumbnail($category->term_id); ?>
+													<?php echo geT_the_post_thumbnail(); ?>
 												</a>
 												<figcaption>
 													<h3>
