@@ -21,7 +21,8 @@
 							<div class="sliderIntro itemShadow">
 								<ul class="sliderFeat" id="sliderFeat">
 									<?php $args = array(
-										'posts_per_page' => '3'
+										'posts_per_page' => '3',
+										'cat' => -70
 									);?>
 									<?php $the_query = new WP_Query($args); ?>
 										<?php if ($the_query->have_posts()) : ?>
@@ -57,7 +58,8 @@
 								</div>
 								<ul class="sliderList" id="sliderList">
 									<?php $args = array(
-										'posts_per_page' => '3'
+										'posts_per_page' => '3',
+										'cat' => -70
 									);?>
 									<?php $the_query = new WP_Query($args); ?>
 										<?php if ($the_query->have_posts()) : ?>
@@ -86,7 +88,7 @@
 						<article class="col l4 m12 s12">
 							<?php $args = array(
 								'posts_per_page' => '1',
-								'cat' => 20
+								'cat' => 70
 							);?>
 							<?php $the_query = new WP_Query($args); ?>
 								<?php if ($the_query->have_posts()) : ?>
@@ -460,8 +462,9 @@
 										</a>
 									</h3>
 									<?php $args = array(
-										'posts_per_page' => '1',
+										'posts_per_page' => '4',
 										'cat' => 1364
+
 									);?>
 									<?php $the_query = new WP_Query($args); ?>
 										<?php if ($the_query->have_posts()) : ?>
@@ -470,13 +473,6 @@
 													<a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>">
 														<?php the_post_thumbnail(); ?>
 													</a>
-													<figcaption>
-														<h4>
-															<a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>">
-																<?php the_title(); ?>
-															</a>
-														</h4>
-													</figcaption>
 												</figure>
 											<?php endwhile; ?>
 										<?php wp_reset_postdata(); ?>
@@ -513,7 +509,7 @@
 										</a>
 									</h3>
 									<?php $args = array(
-										'posts_per_page' => '1',
+										'posts_per_page' => '4',
 										'cat' => 11
 									);?>
 									<?php $the_query = new WP_Query($args); ?>
@@ -566,7 +562,7 @@
 										</a>
 									</h3>
 									<?php $args = array(
-										'posts_per_page' => '1',
+										'posts_per_page' => '4',
 										'cat' => 12
 									);?>
 									<?php $the_query = new WP_Query($args); ?>
@@ -619,7 +615,7 @@
 										</a>
 									</h3>
 									<?php $args = array(
-										'posts_per_page' => '1',
+										'posts_per_page' => '4',
 										'cat' => 10
 									);?>
 									<?php $the_query = new WP_Query($args); ?>
@@ -672,7 +668,7 @@
 										</a>
 									</h3>
 									<?php $args = array(
-										'posts_per_page' => '1',
+										'posts_per_page' => '4',
 										'cat' => 13
 									);?>
 									<?php $the_query = new WP_Query($args); ?>
@@ -725,7 +721,7 @@
 										</a>
 									</h3>
 									<?php $args = array(
-										'posts_per_page' => '1',
+										'posts_per_page' => '4',
 										'cat' => 49
 									);?>
 									<?php $the_query = new WP_Query($args); ?>
@@ -778,7 +774,7 @@
 										</a>
 									</h3>
 									<?php $args = array(
-										'posts_per_page' => '1',
+										'posts_per_page' => '4',
 										'cat' => 17
 									);?>
 									<?php $the_query = new WP_Query($args); ?>
@@ -1019,7 +1015,9 @@
 					</div>
 				</div>
 			</section>
+
 		<?php endif; ?>
+
 	<?php endwhile; ?>
 <?php endif; ?>
 
