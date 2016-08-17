@@ -31,37 +31,59 @@
 					</h1>
 				</div>
 				<div class="portCont itemShadow margBot20">
-					<figure>
-						<a href="javascript:void(0)" title="">
-							<img src="<?php echo get_template_directory_uri() ?>/img/plantilla/noticia.jpg" alt="title" title="title">
-						</a>
-					</figure>
+
+					<?php $args = array(
+						'posts_per_page' => '1',
+						'cat' => 70
+					);?>
+					<?php $the_query = new WP_Query($args); ?>
+						<?php if ($the_query->have_posts()) : ?>
+							<?php while ($the_query->have_posts()) : $the_query->the_post(); ?>
+								<figure>
+									<a href="javascript:void(0)" title="">
+										<?php the_post_thumbnail(); ?>
+									</a>
+								</figure>
+							<?php endwhile; ?>
+						<?php wp_reset_postdata(); ?>
+					<?php endif; ?>
 				</div>
 			</div>
 
 			<?php //SideBar ?>
 			<div class="col l3 m12 s12">
 
-				<?php //Portada del dia ?>
-				<article class="itemLast itemShadow margBot20">
-					<figure>
-						<figcaption>
-							<h3>
-								Portada del dia
-							</h3>
-						</figcaption>
-						<a href="javascript:void(0)" title="">
-							<img src="<?php echo get_template_directory_uri() ?>/img/plantilla/noticia.jpg" alt="title" title="title">
-						</a>
-						<figcaption>
-							<p>
-								<a href="javascript:void(0)" title="">
-									Mira aquí la versíon impresa "Preessreader"
-								</a>
-							</p>
-						</figcaption>
-					</figure>
-				</article>
+				<?php $args = array(
+					'posts_per_page' => '1',
+					'cat' => 70
+				);?>
+				<?php $the_query = new WP_Query($args); ?>
+					<?php if ($the_query->have_posts()) : ?>
+						<?php while ($the_query->have_posts()) : $the_query->the_post(); ?>
+							<?php //Portada del dia ?>
+							<article class="itemLast itemShadow margBot20">
+								<figure>
+									<figcaption>
+										<h3>
+											Portada del dia
+										</h3>
+									</figcaption>
+									<a href="javascript:void(0)" title="">
+										<?php the_post_thumbnail(); ?>
+									</a>
+									<figcaption>
+										<p>
+											<a href="javascript:void(0)" title="">
+												Mira aquí la versíon impresa "Preessreader"
+											</a>
+										</p>
+									</figcaption>
+								</figure>
+							</article>
+						<?php endwhile; ?>
+					<?php wp_reset_postdata(); ?>
+				<?php endif; ?>
+
 
 				<?php //Publicidad - Small ?>
 				<?php get_template_part( 'content/content', 'pubsmall' ); ?>

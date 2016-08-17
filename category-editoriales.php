@@ -26,73 +26,32 @@
 			<?php //Content ?>
 			<div class="col l6 m12 s12">
 				<ul class="collapsible acordImg" data-collapsible="accordion">
-					<li class="active">
-						<div class="collapsible-header active">
-							First #1
-						</div>
-						<div class="collapsible-body" style="display:block;">
-							<figure>
-								<img src="<?php echo get_template_directory_uri() ?>/img/plantilla/noticia.jpg" alt="title" title="title">
-							</figure>
-							<div class="campTxt">
-								<p>
-									Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quos earum dolor minima autem, sit voluptatibus, praesentium.
-								</p>
-							</div>
-						</div>
-					</li>
-					<li>
-						<div class="collapsible-header">
-							First #2
-						</div>
-						<div class="collapsible-body">
-							<figure>
-								<img src="<?php echo get_template_directory_uri() ?>/img/plantilla/noticia.jpg" alt="title" title="title">
-							</figure>
-							<div class="campTxt">
-								Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quos earum dolor minima autem, sit voluptatibus, praesentium.
-							</div>
-						</div>
-					</li>
-					<li>
-						<div class="collapsible-header">
-							First #3
-						</div>
-						<div class="collapsible-body">
-							<figure>
-								<img src="<?php echo get_template_directory_uri() ?>/img/plantilla/noticia.jpg" alt="title" title="title">
-							</figure>
-							<div class="campTxt">
-								Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quos earum dolor minima autem, sit voluptatibus, praesentium.
-							</div>
-						</div>
-					</li>
-					<li>
-						<div class="collapsible-header">
-							First #4
-						</div>
-						<div class="collapsible-body">
-							<figure>
-								<img src="<?php echo get_template_directory_uri() ?>/img/plantilla/noticia.jpg" alt="title" title="title">
-							</figure>
-							<div class="campTxt">
-								Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quos earum dolor minima autem, sit voluptatibus, praesentium.
-							</div>
-						</div>
-					</li>
-					<li>
-						<div class="collapsible-header">
-							First #5
-						</div>
-						<div class="collapsible-body">
-							<figure>
-								<img src="<?php echo get_template_directory_uri() ?>/img/plantilla/noticia.jpg" alt="title" title="title">
-							</figure>
-							<div class="campTxt">
-								Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quos earum dolor minima autem, sit voluptatibus, praesentium.
-							</div>
-						</div>
-					</li>
+					<?php $args = array(
+						'posts_per_page' => '9',
+						'cat' => 48
+					);?>
+					<?php $the_query = new WP_Query($args); ?>
+						<?php if ($the_query->have_posts()) : ?>
+							<?php while ($the_query->have_posts()) : $the_query->the_post(); ?>
+								<li class="active">
+									<div class="collapsible-header active">
+										<?php the_title(); ?>
+									</div>
+									<div class="collapsible-body" style="display:block;">
+										<figure>
+											<?php the_post_thumbnail(); ?>
+										</figure>
+										<div class="campTxt">
+											<p>
+												Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quos earum dolor minima autem, sit voluptatibus, praesentium.
+											</p>
+										</div>
+									</div>
+								</li>
+							<?php endwhile; ?>
+						<?php wp_reset_postdata(); ?>
+					<?php endif; ?>
+
 				</ul>
 			</div>
 
