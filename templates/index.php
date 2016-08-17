@@ -425,7 +425,7 @@
 												<li class="itemShadow">
 													<figure>
 														<a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>">
-															<?php the_post_thumbnail(); ?>
+															<?php echothe_post_thumbnail(); ?>
 														</a>
 														<figcaption>
 															<h3>
@@ -449,7 +449,11 @@
 											<figure>
 												<?php $category_link = get_category_link($category->cat_ID); ?>
 												<a href=<?php echo esc_url( $category_link ); ?>" title="<?php echo $category->name; ?>">
-													<?php echo get_the_post_thumbnail(); ?>
+													<?php 
+$post_thumbnail_id = get_post_thumbnail_id($post->ID);
+$post_thumbnail_url = wp_get_attachment_url( $post_thumbnail_id );
+													 ?>
+													<img src="<?php echo $post_thumbnail_url; ?>" alt="">
 												</a>
 												<figcaption>
 													<h3>
