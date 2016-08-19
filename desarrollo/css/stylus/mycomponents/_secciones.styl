@@ -13,7 +13,7 @@ section
 //------------> [ Intro ] <-----------------//
 .intro
 	tam ()
-	padding 20px 0px 20px 0px
+	padding 20px 0px 0px 0px
 	
 .sliderIntro
 	tam ()
@@ -103,7 +103,7 @@ section
 			p
 				tam ()
 			h3
-				font-size 16px
+				font-size 18px
 				padding-bottom 3px
 			p
 				font-size 14px
@@ -175,17 +175,24 @@ section
 	margin-bottom 20px
 	figure
 		tam ()
+		max-height value
 		img
 			tam ()
-		figcaption
+	figcaption
+		tam ()
+		text-align left
+		h3
+		h4
 			tam ()
-			text-align left
-			h3
-			h4
-				tam ()
-				padding 10px 10px 10px 10px
-			p
-				padding 7px 10px 7px 10px
+			padding 10px 10px 10px 10px
+		p
+			padding 7px 10px 7px 10px
+
+
+.pDay
+	tam ()
+	max-height 278px
+	overflow hidden
 
 
 // Materialize
@@ -257,6 +264,7 @@ section
 .notItemHome
 	tam ()
 	text-align left
+	trancicion ()
 	figure
 		tam ()
 	figcaption
@@ -269,6 +277,11 @@ section
 		p
 			font-size 14px
 			color rgba(0,0,0,.7)
+	&:hover
+	&:active
+	&:focus
+		box-shadow 1px 1px 10px 0 rgba(0,0,0,.55)
+		transform translateY(-5px)
 
 .itemLastMin
 	tam ()
@@ -407,6 +420,7 @@ section
 	tam ()
 	text-align left
 	margin-bottom 20px
+	trancicion ()
 	h3
 		tam ()
 		padding 7px 10px 7px 10px
@@ -416,6 +430,8 @@ section
 			height auto
 	figure
 		tam ()
+		max-height 260px
+		overflow hidden
 	figcaption
 		tam ()
 		h4
@@ -431,6 +447,17 @@ section
 				padding 7px 10px 7px 10px
 				font-size 14px
 				border-top 1px solid rgba(0,0,0,.15)
+	&:hover
+	&:active
+	&:focus
+		box-shadow 1px 1px 10px 0 rgba(0,0,0,.55)
+		transform translateY(-5px)
+
+.itemModNotfHide
+	display none !important
+.itemModNotfAct
+	display inline-block !important
+
 
 .encBox
 	tam ()
@@ -457,14 +484,21 @@ section
 //------------> [ Home - Blogueros ] <-----------------//
 .blogerList
 	tam ()
+	max-height 750px
+	overflow hidden
 	text-align left
 	padding 20px 0px 20px 0px
+	text-align center
 
 .blogItem
 	tam ()
 	margin-bottom 20px
 	figure
 		tam ()
+		text-align center
+		img
+			tam ()
+			max-width 150px
 	figcaption
 		tam ()
 		h3

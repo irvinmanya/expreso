@@ -41,11 +41,29 @@
 			<div class="menuBox contShadow">
 				<div class="infoHeader">
 					<ul class="MapHeader">
+<<<<<<< HEAD
 						<?php $args=array(
 							'theme_location'=>'menu-sitetop',
 							'menu_class' =>'mfBox'
 						);?>
 						<?php wp_nav_menu($args); ?>
+=======
+						<li>
+							<a href="http://expreso.dhdinc.info/seccion/editoriales/" title="Editoriales">
+								Editoriales
+							</a>
+						</li>
+						<li>
+							<a href="http://expreso.dhdinc.info/historia/" title="Historia">
+								Historia
+							</a>
+						</li>
+						<li>
+							<a href="http://expreso.dhdinc.info/publicidad/" title="Publicidad">
+								Publicidad
+							</a>
+						</li>
+>>>>>>> 9d8a83ec33c477c10786ec634b8fff4094a063cf
 					</ul>
 
 					<ul class="rsListHead">
@@ -97,7 +115,7 @@
 				</figure>
 				<ul class="headerBtn">
 					<li class="headerBtnLine">
-						<a href="javascript:void(0)" class="btnGeneral" title="">
+						<a href="http://expreso.dhdinc.info/seccion/editoriales/" class="btnGeneral" title="Editoriales">
 							Editoriales
 						</a>
 					</li>

@@ -235,13 +235,16 @@ $(document).on('ready',function() {
     $(window).load(function() {
         if ($(window).width() >= 600) {
           equalheight('.teamItem');
+          equalheight('.itemModNot');
+          equalheight('.notItemHome');
         }
     });
 
     $(window).resize(function(){
-        equalheight('.teamItem');
         if ($(window).width() >= 600) {
           equalheight('.teamItem');
+          equalheight('.itemModNot');
+          equalheight('.notItemHome');
         }
     });
     //-------------- [ FIN - Plugin de height ] --------------//
@@ -288,6 +291,16 @@ $(document).on('ready',function() {
     });
     $('#sliderList li').eq(0).click();
 
+    //------------------- [ Slider Hover ] --------------------//
+    $('.sliderList li').mouseenter(function(){
+      var $li = $(this);
+      var itemLi = $li.index();
+      $('#sliderList li').removeClass('sliderListAct');
+      $li.addClass('sliderListAct');
+      $('#sliderFeat').find('li').addClass('sliderFeatHide').removeClass('sliderFeatAct');
+      $('#sliderFeat').find('li').eq(itemLi).addClass('sliderFeatAct').removeClass('sliderFeatHide');
+    });
+    //------------------- [ Fin - Slider Hover ] --------------------//
 
     // Datepicker
     $('.datepicker').pickadate({
@@ -296,7 +309,7 @@ $(document).on('ready',function() {
     });
 
     // Collapse
-    $('.collapsible').collapsible({})
+    $('.collapsible').collapsible({});
 
 });
     

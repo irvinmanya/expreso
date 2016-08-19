@@ -15,10 +15,10 @@
 						<?php the_content(); ?>
 					</div>
 
-					<a href="javascript:void(0)" title="" class="linkPlus">
+					<a href="http://expreso.dhdinc.info/seccion/editoriales/" title="Lee los editoriales de días anteriores" class="linkPlus">
 						Lee los editoriales de días anteriores
 						<i>
-							<img src="<?php echo get_template_directory_uri() ?>/img/plantilla/arrowLeftMod.svg" alt="" title="">
+							<img src="<?php echo get_template_directory_uri() ?>/img/plantilla/arrowLeftMod.svg" alt="Lee los editoriales de días anteriores" title="Lee los editoriales de días anteriores">
 						</i>
 					</a>
 

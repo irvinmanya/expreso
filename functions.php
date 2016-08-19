@@ -360,7 +360,7 @@ if (!is_admin()) {
 
 // --- PLUGINS ---
 // Necesario para que funcione el plugin "Category Thumbnails"
-add_theme_support('category-thumbnails');
+// add_theme_support('category-thumbnails');
 
 
 /*-------------------[ Resumen del blog y longitud ]----------------------*/
@@ -386,3 +386,8 @@ add_image_size('small-thumbnail',180,120,true);
 add_image_size('img-post-box',348,210,true);
 add_image_size('banner-image',920,210,array('left','top'));
 /*-------------------[ Fin - Imagen Destacada ]----------------------*/
+
+
+if(function_exists('add_theme_support')) {
+    add_theme_support('category-thumbnails');
+}

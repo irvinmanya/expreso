@@ -59,110 +59,34 @@
 
 			<?php //Content ?>
 			<div class="col l9 m12 s12">
-				<article class="col l6 m12 s12">
-					<div class="blogerItem itemShadow margBot20">
-						<figure>
-							<a href="javascript:void(0)" title="">
-								<img src="<?php echo get_template_directory_uri() ?>/img/plantilla/noticia.jpg" alt="title" title="">
-							</a>
-						</figure>
-						<div class="blogerTxt">
-							<h3>
-								<a href="javascript:void(0)" title="">
-									Jhon Boyega en el raparto de...
+				<?php
+				$idObj = get_category_by_slug('blogueros'); 
+				$categories = get_categories(array('child_of' => get_query_var('cat'))); 
+				foreach ($categories as $category) : ?>
+					<?php $category_link = get_category_link($category->cat_ID); ?>
+					<article class="col l6 m12 s12">
+						<div class="blogerItem itemShadow margBot20">
+							<figure>
+								<a href="<?php echo esc_url( $category_link ); ?>" title="<?php echo $category->name; ?>" >
+									<img src="<?php echo get_template_directory_uri() ?>/img/plantilla/bloguero.png" alt="<?php echo $category->name; ?>" title="<?php echo $category->name; ?>">
 								</a>
-							</h3>
-							<p>
-								Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-								tempor incididunt ut labore et dolore 
-							</p>
-							<a href="javascript:void(0)" title="" class="linkPlus">
-								Míralo ahora
-								<i>
-									<img src="<?php echo get_template_directory_uri() ?>/img/plantilla/arrowLeftMod.svg" alt="" title="">
-								</i>
-							</a>
-						</div>
-					</div>
-				</article>
-				<article class="col l6 m12 s12">
-					<div class="blogerItem itemShadow margBot20">
-						<figure>
-							<a href="javascript:void(0)" title="">
-								<img src="<?php echo get_template_directory_uri() ?>/img/plantilla/noticia.jpg" alt="title" title="">
-							</a>
-						</figure>
-						<div class="blogerTxt">
-							<h3>
-								<a href="javascript:void(0)" title="">
-									Jhon Boyega en el raparto de...
+							</figure>
+							<div class="blogerTxt">
+								<h3>
+									<a href="<?php echo esc_url( $category_link ); ?>" title="<?php echo $category->name; ?>" >
+										<?php echo $category->name; ?>
+									</a>
+								</h3>
+								<a href="<?php echo esc_url( $category_link ); ?>" title="<?php echo $category->name; ?>"  class="linkPlus">
+									Míralo ahora
+									<i>
+										<img src="<?php echo get_template_directory_uri() ?>/img/plantilla/arrowLeftMod.svg" alt="" title="">
+									</i>
 								</a>
-							</h3>
-							<p>
-								Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-								tempor incididunt ut labore et dolore 
-							</p>
-							<a href="javascript:void(0)" title="" class="linkPlus">
-								Míralo ahora
-								<i>
-									<img src="<?php echo get_template_directory_uri() ?>/img/plantilla/arrowLeftMod.svg" alt="" title="">
-								</i>
-							</a>
+							</div>
 						</div>
-					</div>
-				</article>
-				<article class="col l6 m12 s12">
-					<div class="blogerItem itemShadow margBot20">
-						<figure>
-							<a href="javascript:void(0)" title="">
-								<img src="<?php echo get_template_directory_uri() ?>/img/plantilla/noticia.jpg" alt="title" title="">
-							</a>
-						</figure>
-						<div class="blogerTxt">
-							<h3>
-								<a href="javascript:void(0)" title="">
-									Jhon Boyega en el raparto de...
-								</a>
-							</h3>
-							<p>
-								Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-								tempor incididunt ut labore et dolore 
-							</p>
-							<a href="javascript:void(0)" title="" class="linkPlus">
-								Míralo ahora
-								<i>
-									<img src="<?php echo get_template_directory_uri() ?>/img/plantilla/arrowLeftMod.svg" alt="" title="">
-								</i>
-							</a>
-						</div>
-					</div>
-				</article>
-				<article class="col l6 m12 s12">
-					<div class="blogerItem itemShadow margBot20">
-						<figure>
-							<a href="javascript:void(0)" title="">
-								<img src="<?php echo get_template_directory_uri() ?>/img/plantilla/noticia.jpg" alt="title" title="">
-							</a>
-						</figure>
-						<div class="blogerTxt">
-							<h3>
-								<a href="javascript:void(0)" title="">
-									Jhon Boyega en el raparto de...
-								</a>
-							</h3>
-							<p>
-								Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-								tempor incididunt ut labore et dolore 
-							</p>
-							<a href="javascript:void(0)" title="" class="linkPlus">
-								Míralo ahora
-								<i>
-									<img src="<?php echo get_template_directory_uri() ?>/img/plantilla/arrowLeftMod.svg" alt="" title="">
-								</i>
-							</a>
-						</div>
-					</div>
-				</article>
+					</article>
+				<?php endforeach; ?>
 			</div>
 
 		</div>
