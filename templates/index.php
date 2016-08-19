@@ -494,11 +494,13 @@
 									<?php $the_query = new WP_Query($args); ?>
 										<?php if ($the_query->have_posts()) : ?>
 											<?php while ($the_query->have_posts()) : $the_query->the_post(); ?>
-												<figure>
-													<a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>">
-														<?php the_post_thumbnail(); ?>
-													</a>
-												</figure>
+												<div class="modFig">
+													<figure>
+														<a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>">
+															<?php the_post_thumbnail(); ?>
+														</a>
+													</figure>
+												</div>
 											<?php endwhile; ?>
 										<?php wp_reset_postdata(); ?>
 									<?php endif; ?>
@@ -540,18 +542,20 @@
 									<?php $the_query = new WP_Query($args); ?>
 										<?php if ($the_query->have_posts()) : ?>
 											<?php while ($the_query->have_posts()) : $the_query->the_post(); ?>
-												<figure>
-													<a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>">
-														<?php the_post_thumbnail(); ?>
-													</a>
-													<figcaption>
-														<h4>
-															<a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>">
-																<?php the_title(); ?>
-															</a>
-														</h4>
-													</figcaption>
-												</figure>
+												<div class="modFig">
+													<figure>
+														<a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>">
+															<?php the_post_thumbnail(); ?>
+														</a>
+														<figcaption>
+															<h4>
+																<a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>">
+																	<?php the_title(); ?>
+																</a>
+															</h4>
+														</figcaption>
+													</figure>
+												</div>
 											<?php endwhile; ?>
 										<?php wp_reset_postdata(); ?>
 									<?php endif; ?>
@@ -593,18 +597,20 @@
 									<?php $the_query = new WP_Query($args); ?>
 										<?php if ($the_query->have_posts()) : ?>
 											<?php while ($the_query->have_posts()) : $the_query->the_post(); ?>
-												<figure>
-													<a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>">
-														<?php the_post_thumbnail(); ?>
-													</a>
-													<figcaption>
-														<h4>
-															<a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>">
-																<?php the_title(); ?>
-															</a>
-														</h4>
-													</figcaption>
-												</figure>
+												<div class="modFig">
+													<figure>
+														<a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>">
+															<?php the_post_thumbnail(); ?>
+														</a>
+														<figcaption>
+															<h4>
+																<a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>">
+																	<?php the_title(); ?>
+																</a>
+															</h4>
+														</figcaption>
+													</figure>
+												</div>
 											<?php endwhile; ?>
 										<?php wp_reset_postdata(); ?>
 									<?php endif; ?>
@@ -646,18 +652,20 @@
 									<?php $the_query = new WP_Query($args); ?>
 										<?php if ($the_query->have_posts()) : ?>
 											<?php while ($the_query->have_posts()) : $the_query->the_post(); ?>
-												<figure>
-													<a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>">
-														<?php the_post_thumbnail(); ?>
-													</a>
-													<figcaption>
-														<h4>
-															<a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>">
-																<?php the_title(); ?>
-															</a>
-														</h4>
-													</figcaption>
-												</figure>
+												<div class="modFig">
+													<figure>
+														<a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>">
+															<?php the_post_thumbnail(); ?>
+														</a>
+														<figcaption>
+															<h4>
+																<a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>">
+																	<?php the_title(); ?>
+																</a>
+															</h4>
+														</figcaption>
+													</figure>
+												</div>
 											<?php endwhile; ?>
 										<?php wp_reset_postdata(); ?>
 									<?php endif; ?>
@@ -699,18 +707,20 @@
 									<?php $the_query = new WP_Query($args); ?>
 										<?php if ($the_query->have_posts()) : ?>
 											<?php while ($the_query->have_posts()) : $the_query->the_post(); ?>
-												<figure>
-													<a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>">
-														<?php the_post_thumbnail(); ?>
-													</a>
-													<figcaption>
-														<h4>
-															<a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>">
-																<?php the_title(); ?>
-															</a>
-														</h4>
-													</figcaption>
-												</figure>
+												<div class="modFig">
+													<figure>
+														<a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>">
+															<?php the_post_thumbnail(); ?>
+														</a>
+														<figcaption>
+															<h4>
+																<a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>">
+																	<?php the_title(); ?>
+																</a>
+															</h4>
+														</figcaption>
+													</figure>
+												</div>
 											<?php endwhile; ?>
 										<?php wp_reset_postdata(); ?>
 									<?php endif; ?>
@@ -752,18 +762,20 @@
 									<?php $the_query = new WP_Query($args); ?>
 										<?php if ($the_query->have_posts()) : ?>
 											<?php while ($the_query->have_posts()) : $the_query->the_post(); ?>
-												<figure>
-													<a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>">
-														<?php the_post_thumbnail(); ?>
-													</a>
-													<figcaption>
-														<h4>
-															<a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>">
-																<?php the_title(); ?>
-															</a>
-														</h4>
-													</figcaption>
-												</figure>
+												<div class="modFig">
+													<figure>
+														<a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>">
+															<?php the_post_thumbnail(); ?>
+														</a>
+														<figcaption>
+															<h4>
+																<a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>">
+																	<?php the_title(); ?>
+																</a>
+															</h4>
+														</figcaption>
+													</figure>
+												</div>
 											<?php endwhile; ?>
 										<?php wp_reset_postdata(); ?>
 									<?php endif; ?>
@@ -805,18 +817,20 @@
 									<?php $the_query = new WP_Query($args); ?>
 										<?php if ($the_query->have_posts()) : ?>
 											<?php while ($the_query->have_posts()) : $the_query->the_post(); ?>
-												<figure>
-													<a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>">
-														<?php the_post_thumbnail(); ?>
-													</a>
-													<figcaption>
-														<h4>
-															<a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>">
-																<?php the_title(); ?>
-															</a>
-														</h4>
-													</figcaption>
-												</figure>
+												<div class="modFig">
+													<figure>
+														<a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>">
+															<?php the_post_thumbnail(); ?>
+														</a>
+														<figcaption>
+															<h4>
+																<a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>">
+																	<?php the_title(); ?>
+																</a>
+															</h4>
+														</figcaption>
+													</figure>
+												</div>
 											<?php endwhile; ?>
 										<?php wp_reset_postdata(); ?>
 									<?php endif; ?>
@@ -858,18 +872,20 @@
 									<?php $the_query = new WP_Query($args); ?>
 										<?php if ($the_query->have_posts()) : ?>
 											<?php while ($the_query->have_posts()) : $the_query->the_post(); ?>
-												<figure>
-													<a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>">
-														<?php the_post_thumbnail(); ?>
-													</a>
-													<figcaption>
-														<h4>
-															<a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>">
-																<?php the_title(); ?>
-															</a>
-														</h4>
-													</figcaption>
-												</figure>
+												<div class="modFig">
+													<figure>
+														<a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>">
+															<?php the_post_thumbnail(); ?>
+														</a>
+														<figcaption>
+															<h4>
+																<a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>">
+																	<?php the_title(); ?>
+																</a>
+															</h4>
+														</figcaption>
+													</figure>
+												</div>
 											<?php endwhile; ?>
 										<?php wp_reset_postdata(); ?>
 									<?php endif; ?>
