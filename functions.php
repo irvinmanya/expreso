@@ -13,6 +13,7 @@ function register_theme_menus() {
     register_nav_menus(
             array(
                 'menu-principal' => __('Menu principal'),
+                'menu-sitetop' => __('Menu Sitie Top')
             )
     );
 }

@@ -41,21 +41,11 @@
 			<div class="menuBox contShadow">
 				<div class="infoHeader">
 					<ul class="MapHeader">
-						<li>
-							<a href="javascript:void(0)">
-								Editoriales
-							</a>
-						</li>
-						<li>
-							<a href="javascript:void(0)">
-								Historia
-							</a>
-						</li>
-						<li>
-							<a href="javascript:void(0)">
-								Publicidad
-							</a>
-						</li>
+						<?php $args=array(
+							'theme_location'=>'menu-sitetop',
+							'menu_class' =>'mfBox'
+						);?>
+						<?php wp_nav_menu($args); ?>
 					</ul>
 
 					<ul class="rsListHead">

@@ -241,44 +241,8 @@
 				<div class="titleBox2">
 					<h2>Economía</h2>	
 				</div>
-				<article class="col l4 m12 s12">
-					<div class="notItemHome itemShadow margBot20">
-						<figure>
-							<a href="javascript:void(0)" title="">
-								<img src="<?php echo get_template_directory_uri() ?>/img/plantilla/noticia.jpg" alt="title" title="">
-							</a>
-							<figcaption>
-								<h3>
-									<a href="javascript:void(0)" title="">
-										John Boyega en el reparto de "Pacific Rim 2"
-									</a>
-								</h3>
-								<p>
-									El actor visto en "Attack The Block" o en el Episodio VII de 'La guerra de...
-								</p>
-							</figcaption>
-						</figure>
-					</div>
-				</article>
-				<article class="col l4 m12 s12">
-					<div class="notItemHome itemShadow margBot20">
-						<figure>
-							<a href="javascript:void(0)" title="">
-								<img src="<?php echo get_template_directory_uri() ?>/img/plantilla/noticia.jpg" alt="title" title="">
-							</a>
-							<figcaption>
-								<h3>
-									<a href="javascript:void(0)" title="">
-										John Boyega en el reparto de "Pacific Rim 2"
-									</a>
-								</h3>
-								<p>
-									El actor visto en "Attack The Block" o en el Episodio VII de 'La guerra de...
-								</p>
-							</figcaption>
-						</figure>
-					</div>
-				</article>
+
+				
 				<article class="col l4 m12 s12">
 					<div class="notItemHome itemShadow margBot20">
 						<figure>
