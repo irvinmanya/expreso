@@ -297,6 +297,13 @@ header
 				&:active
 				&:focus
 					background rgba(0,0,0,.15)
+			.sub-menu
+				pointer-events none
+			&:hover
+			&:active
+			&:focus
+				.sub-menu
+					pointer-events visible
 			&:first-child
 				a
 					border-left 0px solid rgba(0,0,0,.0)
