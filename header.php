@@ -48,36 +48,18 @@
 
 					<ul class="rsListHead">
 						<span>Síguenos en:</span>
-						<li>
-							<a href="javascript:void(0)">
-								<img src="<?php echo get_template_directory_uri() ?>/img/plantilla/icoFb.svg" alt="Expreso" title="Expreso">
-							</a>
-						</li>
-						<li>
-							<a href="javascript:void(0)">
-								<img src="<?php echo get_template_directory_uri() ?>/img/plantilla/icoTwitter.svg" alt="Expreso" title="Expreso">
-							</a>
-						</li>
-						<li>
-							<a href="javascript:void(0)">
-								<img src="<?php echo get_template_directory_uri() ?>/img/plantilla/icoPinteres.svg" alt="Expreso" title="Expreso">
-							</a>
-						</li>
-						<li>
-							<a href="javascript:void(0)">
-								<img src="<?php echo get_template_directory_uri() ?>/img/plantilla/icoGoogle.svg" alt="Expreso" title="Expreso">
-							</a>
-						</li>
-						<li>
-							<a href="javascript:void(0)">
-								<img src="<?php echo get_template_directory_uri() ?>/img/plantilla/icoYoutube.svg" alt="Expreso" title="Expreso">
-							</a>
-						</li>
-						<li>
-							<a href="javascript:void(0)">
-								<img src="<?php echo get_template_directory_uri() ?>/img/plantilla/icoLinkedin.svg" alt="Expreso" title="Expreso">
-							</a>
-						</li>
+
+						<?php if(have_rows('head-rs',75961)): ?>
+							<?php while(have_rows('head-rs',75961)): the_row(); ?>
+								<?php $headRsico = get_sub_field('head-rsico'); ?>
+								<li>
+									<a href="<?php the_sub_field('head-rslink'); ?>" title="<?php the_sub_field('head-rstitulo'); ?>">
+										<img src="<?php $headRsico['url']; ?>" alt="<?php the_sub_field('head-rstitulo'); ?>" title="<?php the_sub_field('head-rstitulo'); ?>">
+									</a>
+								</li>
+							<?php endwhile; ?>
+						<?php endif; ?>
+
 					</ul>
 				</div>
 				<div class="hamBurger" id="hamBurger">
@@ -89,8 +71,9 @@
 					</div>
 				</div>
 				<figure class="logoBox">
+					<?php $headLogo = get_field('head-logo',75961); ?>
 					<a href="<?php echo site_url(); ?>/<?php echo $menu_item->url ?>" title="<?php echo $hLogo['title']; ?>">
-						<img src="<?php echo get_template_directory_uri() ?>/img/plantilla/logo.png" alt="Expreso" title="Expreso">
+						<img src="<?php $headLogo['url']; ?>" alt="<?php wp_title( '' ); ?>" title="<?php wp_title( '' ); ?>">
 					</a>
 				</figure>
 				<ul class="headerBtn">

@@ -46,7 +46,7 @@
 					<ul class="lastNot">
 						<?php $args = array(
 							'posts_per_page' => '8',
-							'cat' => 131
+							'cat' => 131,-70
 						);?>
 						<?php $the_query = new WP_Query($args); ?>
 							<?php if ($the_query->have_posts()) : ?>
