@@ -40,31 +40,11 @@
 		<div class="container">
 			<div class="menuBox contShadow">
 				<div class="infoHeader">
-					<?php if (false) { ?>
-						<ul class="MapHeader">
-							<li>
-								<a href="http://expreso.dhdinc.info/seccion/editoriales/" title="Editoriales">
-									Editoriales
-								</a>
-							</li>
-							<li>
-								<a href="http://expreso.dhdinc.info/historia/" title="Historia">
-									Historia
-								</a>
-							</li>
-							<li>
-								<a href="http://expreso.dhdinc.info/publicidad/" title="Publicidad">
-									Publicidad
-								</a>
-							</li>
-						</ul>
-					<?php } ?>
 					<?php $args=array(
 						'theme_location'=>'menu-sitetop',
 						'menu_class' =>'MapHeader'
 					);?>
 					<?php wp_nav_menu($args); ?>
-
 
 					<ul class="rsListHead">
 						<span>Síguenos en:</span>
