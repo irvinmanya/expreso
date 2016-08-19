@@ -54,7 +54,7 @@
 								<?php $headRsico = get_sub_field('head-rsico'); ?>
 								<li>
 									<a href="<?php the_sub_field('head-rslink'); ?>" title="<?php the_sub_field('head-rstitulo'); ?>">
-										<img src="<?php $headRsico['url']; ?>" alt="<?php the_sub_field('head-rstitulo'); ?>" title="<?php the_sub_field('head-rstitulo'); ?>">
+										<img src="<?php echo $headRsico['url']; ?>" alt="<?php the_sub_field('head-rstitulo'); ?>" title="<?php the_sub_field('head-rstitulo'); ?>">
 									</a>
 								</li>
 							<?php endwhile; ?>
@@ -73,7 +73,7 @@
 				<figure class="logoBox">
 					<?php $headLogo = get_field('head-logo',75961); ?>
 					<a href="<?php echo site_url(); ?>/<?php echo $menu_item->url ?>" title="<?php echo $hLogo['title']; ?>">
-						<img src="<?php $headLogo['url']; ?>" alt="<?php wp_title( '' ); ?>" title="<?php wp_title( '' ); ?>">
+						<img src="<?php echo $headLogo['url']; ?>" alt="<?php wp_title( '' ); ?>" title="<?php wp_title( '' ); ?>">
 					</a>
 				</figure>
 				<ul class="headerBtn">
