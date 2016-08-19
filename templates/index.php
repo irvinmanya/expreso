@@ -35,7 +35,7 @@
 																	<?php the_title(); ?>
 																</a>
 															</h2>
-															<?php if (true) { ?>
+															<?php if (false) { ?>
 																<p>
 																	<?php the_excerpt(); ?>
 																</p>
@@ -72,7 +72,7 @@
 														<h3>
 															<?php the_title(); ?>
 														</h3>
-														<?php if (true) { ?>
+														<?php if (false) { ?>
 															<p>
 																<?php the_excerpt(); ?>
 															</p>
