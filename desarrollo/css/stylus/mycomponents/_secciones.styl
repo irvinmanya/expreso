@@ -428,30 +428,37 @@ section
 			float right
 			width 20px
 			height auto
-	figure
-		tam ()
-		max-height 260px
-		overflow hidden
-	figcaption
-		tam ()
-		h4
-			padding 7px 10px 7px 10px
-			font-size 18px
-	ul
-		tam ()
-		text-align left
-		li
-			tam ()
-			a
-				tam ()
-				padding 7px 10px 7px 10px
-				font-size 14px
-				border-top 1px solid rgba(0,0,0,.15)
 	&:hover
 	&:active
 	&:focus
 		box-shadow 1px 1px 10px 0 rgba(0,0,0,.55)
 		transform translateY(-5px)
+
+.iModListFig
+	tam ()
+	li
+		tam()
+		figure
+			tam ()
+			max-height 260px
+			overflow hidden
+		figcaption
+			tam ()
+			h4
+				padding 7px 10px 7px 10px
+				font-size 18px
+
+.iModList
+	tam ()
+	text-align left
+	li
+		tam ()
+		a
+			tam ()
+			padding 7px 10px 7px 10px
+			font-size 14px
+			border-top 1px solid rgba(0,0,0,.15)
+
 
 .itemModNotfHide
 	display none !important

@@ -491,19 +491,21 @@
 										'cat' => 1364
 									);?>
 									<?php $the_query = new WP_Query($args); ?>
-										<div class="modFig">
+										<ul class="iModListFig">
 										<?php if ($the_query->have_posts()) : ?>
 											<?php while ($the_query->have_posts()) : $the_query->the_post(); ?>
-												<figure>
-													<a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>">
-														<?php the_post_thumbnail(); ?>
-													</a>
-												</figure>
+												<li>
+													<figure>
+														<a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>">
+															<?php the_post_thumbnail(); ?>
+														</a>
+													</figure>
+												</li>
 											<?php endwhile; ?>
 										<?php wp_reset_postdata(); ?>
-										</div>
+										</ul>
 									<?php endif; ?>
-									<ul>
+									<ul class="iModList">
 										<?php $args = array(
 											'posts_per_page' => '4',
 											'cat' => 1364
@@ -539,19 +541,21 @@
 										'cat' => 11
 									);?>
 									<?php $the_query = new WP_Query($args); ?>
-										<div class="modFig">
+										<ul class="iModListFig">
 										<?php if ($the_query->have_posts()) : ?>
 											<?php while ($the_query->have_posts()) : $the_query->the_post(); ?>
-												<figure>
-													<a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>">
-														<?php the_post_thumbnail(); ?>
-													</a>
-												</figure>
+												<li>
+													<figure>
+														<a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>">
+															<?php the_post_thumbnail(); ?>
+														</a>
+													</figure>
+												</li>
 											<?php endwhile; ?>
 										<?php wp_reset_postdata(); ?>
-										</div>
+										</ul>
 									<?php endif; ?>
-									<ul>
+									<ul class="iModList">
 										<?php $args = array(
 											'posts_per_page' => '4',
 											'cat' => 11
@@ -587,19 +591,21 @@
 										'cat' => 12
 									);?>
 									<?php $the_query = new WP_Query($args); ?>
-										<div class="modFig">
+										<ul class="iModListFig">
 										<?php if ($the_query->have_posts()) : ?>
 											<?php while ($the_query->have_posts()) : $the_query->the_post(); ?>
-												<figure>
-													<a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>">
-														<?php the_post_thumbnail(); ?>
-													</a>
-												</figure>
+												<li>
+													<figure>
+														<a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>">
+															<?php the_post_thumbnail(); ?>
+														</a>
+													</figure>
+												</li>
 											<?php endwhile; ?>
 										<?php wp_reset_postdata(); ?>
-										</div>
+										</ul>
 									<?php endif; ?>
-									<ul>
+									<ul class="iModList">
 										<?php $args = array(
 											'posts_per_page' => '4',
 											'cat' => 12
@@ -635,19 +641,21 @@
 										'cat' => 10
 									);?>
 									<?php $the_query = new WP_Query($args); ?>
-										<div class="modFig">
+										<ul class="iModListFig">
 										<?php if ($the_query->have_posts()) : ?>
 											<?php while ($the_query->have_posts()) : $the_query->the_post(); ?>
-												<figure>
-													<a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>">
-														<?php the_post_thumbnail(); ?>
-													</a>
-												</figure>
+												<li>
+													<figure>
+														<a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>">
+															<?php the_post_thumbnail(); ?>
+														</a>
+													</figure>
+												</li>
 											<?php endwhile; ?>
 										<?php wp_reset_postdata(); ?>
-										</div>
+										</ul>
 									<?php endif; ?>
-									<ul>
+									<ul class="iModList">
 										<?php $args = array(
 											'posts_per_page' => '4',
 											'cat' => 10
@@ -683,19 +691,21 @@
 										'cat' => 13
 									);?>
 									<?php $the_query = new WP_Query($args); ?>
-										<div class="modFig">
+										<ul class="iModListFig">
 										<?php if ($the_query->have_posts()) : ?>
 											<?php while ($the_query->have_posts()) : $the_query->the_post(); ?>
-												<figure>
-													<a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>">
-														<?php the_post_thumbnail(); ?>
-													</a>
-												</figure>
+												<li>
+													<figure>
+														<a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>">
+															<?php the_post_thumbnail(); ?>
+														</a>
+													</figure>
+												</li>
 											<?php endwhile; ?>
 										<?php wp_reset_postdata(); ?>
-										</div>
+										</ul>
 									<?php endif; ?>
-									<ul>
+									<ul class="iModList">
 										<?php $args = array(
 											'posts_per_page' => '4',
 											'cat' => 13
@@ -731,19 +741,21 @@
 										'cat' => 49
 									);?>
 									<?php $the_query = new WP_Query($args); ?>
-										<div class="modFig">
+										<ul class="iModListFig">
 										<?php if ($the_query->have_posts()) : ?>
 											<?php while ($the_query->have_posts()) : $the_query->the_post(); ?>
-												<figure>
-													<a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>">
-														<?php the_post_thumbnail(); ?>
-													</a>
-												</figure>
+												<li>
+													<figure>
+														<a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>">
+															<?php the_post_thumbnail(); ?>
+														</a>
+													</figure>
+												</li>
 											<?php endwhile; ?>
 										<?php wp_reset_postdata(); ?>
-										</div>
+										</ul>
 									<?php endif; ?>
-									<ul>
+									<ul class="iModList">
 										<?php $args = array(
 											'posts_per_page' => '4',
 											'cat' => 49
@@ -779,19 +791,21 @@
 										'cat' => 17
 									);?>
 									<?php $the_query = new WP_Query($args); ?>
-										<div class="modFig">
+										<ul class="iModListFig">
 										<?php if ($the_query->have_posts()) : ?>
 											<?php while ($the_query->have_posts()) : $the_query->the_post(); ?>
-												<figure>
-													<a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>">
-														<?php the_post_thumbnail(); ?>
-													</a>
-												</figure>
+												<li>
+													<figure>
+														<a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>">
+															<?php the_post_thumbnail(); ?>
+														</a>
+													</figure>
+												</li>
 											<?php endwhile; ?>
 										<?php wp_reset_postdata(); ?>
-										</div>
+										</ul>
 									<?php endif; ?>
-									<ul>
+									<ul class="iModList">
 										<?php $args = array(
 											'posts_per_page' => '4',
 											'cat' => 17
@@ -827,19 +841,21 @@
 										'cat' => 8
 									);?>
 									<?php $the_query = new WP_Query($args); ?>
-										<div class="modFig">
+										<ul class="iModListFig">
 										<?php if ($the_query->have_posts()) : ?>
 											<?php while ($the_query->have_posts()) : $the_query->the_post(); ?>
-												<figure>
-													<a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>">
-														<?php the_post_thumbnail(); ?>
-													</a>
-												</figure>
+												<li>
+													<figure>
+														<a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>">
+															<?php the_post_thumbnail(); ?>
+														</a>
+													</figure>
+												</li>
 											<?php endwhile; ?>
 										<?php wp_reset_postdata(); ?>
-										</div>
+										</ul>
 									<?php endif; ?>
-									<ul>
+									<ul class="iModList">
 										<?php $args = array(
 											'posts_per_page' => '4',
 											'cat' => 8
