@@ -94,28 +94,13 @@ $(document).on('ready',function() {
                 dots: true,
                 nav:true
             },
-            370: {
+            450: {
                 items: 1,
                 dots: true,
                 nav:true
             },
-            450: {
-                items: 2,
-                dots: true,
-                nav:true
-            },
-            600: {
-                items: 3,
-                dots: true,
-                nav:true
-            },
-            800: {
-                items: 4,
-                dots: true,
-                nav:true
-            },
             992: {
-                items: 6,
+                items: 3,
                 dots: true,
                 nav:true
             }

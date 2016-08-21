@@ -437,6 +437,7 @@
 																	$output.='<a href="'.get_category_link($category->term_id).'" class="tagLink myLinkTxt" title="'.$category->cat_name.'" style="cursor:pointer;" >'.$category->cat_name.'</a>'.$separator;
 																}
 																echo trim($output, $separator); ?>
+																<?php the_post_thumbnail() ?>
 														</div>
 													<?php } ?>
 												</li>
