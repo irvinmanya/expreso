@@ -435,10 +435,11 @@
 															<?php 
 																foreach ($categories as $category) {
 																$caTaxImg = get_field('caTax-img', 'category_'.$category->cat_ID);
-																	$output.='<a href="'.get_category_link($category->term_id).'" class="tagLink myLinkTxt" title="'.$category->cat_name.'" style="cursor:pointer;" >'.$category->cat_name.'</a>'.$separator;
-																}
+																	$output.='<a href="'.get_category_link($category->term_id).'" class="tagLink myLinkTxt" title="'.$category->cat_name.'" style="cursor:pointer;" >'.$category->cat_name.'</a>'.$separator; ?>
+																	<img src="<?php echo $cateImg['url']; ?>" alt="<?php echo $cateImg['title']; ?>" title="<?php echo $cateImg['title']; ?>
+																<?php }
 																echo trim($output, $separator); ?>
-																<img src="<?php echo $cateImg['url']; ?>" alt="<?php echo $cateImg['title']; ?>" title="<?php echo $cateImg['title']; ?>">
+
 														</div>
 													<?php } ?>
 												</li>
