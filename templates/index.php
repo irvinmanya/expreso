@@ -413,11 +413,10 @@
 								<h2>Columnistas del día</h2>
 							</div>
 							<ul class="owlColum owlColumnista">
-								<?php if (false) { ?>
-
+								<?php if (true) { ?>
 									<?php $args = array(
 										'posts_per_page' => '6',
-										'cat' => 131
+										'cat' => 18
 									);?>
 									<?php $the_query = new WP_Query($args); ?>
 										<?php if ($the_query->have_posts()) : ?>
@@ -425,43 +424,50 @@
 												<li class="itemShadow">
 													<figure>
 														<a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>">
-															img
 														</a>
-														<figcaption>
-															<h3>
-																<a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>">
-																	[nomb_colum]
-																</a>
-															</h3>
-														</figcaption>
 													</figure>
+													<?php
+														$categories=get_the_category();
+														$separator=", ";
+														$output="";
+														if($categories){ ?>
+														<div class="tagBox">
+															<?php 
+																foreach ($categories as $category) {
+																	$output.='<a href="'.get_category_link($category->term_id).'" class="tagLink myLinkTxt" title="'.$category->cat_name.'" style="cursor:pointer;" >'.$category->cat_name.'</a>'.$separator;
+																}
+																echo trim($output, $separator); ?>
+														</div>
+													<?php } ?>
 												</li>
 											<?php endwhile; ?>
 										<?php wp_reset_postdata(); ?>
 									<?php endif; ?>
-
 								<?php } ?>
-								<?php
-									$idObj = get_category_by_slug('blogueros'); 
-									$categories = get_categories(array('child_of' => get_query_var('cat'))); 
-									foreach ($categories as $category) : ?>
-										<li class="itemShadow">
-											<figure>
-												<?php $category_link = get_category_link($category->cat_ID); ?>
-												<a href=<?php echo esc_url( $category_link ); ?>" title="<?php echo $category->name; ?>">
- 													<?php $image = wp_get_attachment_image_src( get_post_thumbnail_id( $category->ID ) ); ?>
-													<img src="<?php echo get_template_directory_uri() ?>/img/plantilla/bloguero.png" alt="<?php echo $category->name; ?>" title="<?php echo $category->name; ?>">
-												</a>
-												<figcaption>
-													<h3>
-														<a href="<?php echo esc_url( $category_link ); ?>" title="<?php echo $category->name; ?>">
-															<?php echo $category->name; ?>
-														</a>
-													</h3>
-												</figcaption>
-											</figure>
-										</li>
-								<?php endforeach; ?>
+
+								<?php if (false) { ?>
+									<?php
+										$idObj = get_category_by_slug('blogueros'); 
+										$categories = get_categories(array('child_of' => get_query_var('cat'))); 
+										foreach ($categories as $category) : ?>
+											<li class="itemShadow">
+												<figure>
+													<?php $category_link = get_category_link($category->cat_ID); ?>
+													<a href=<?php echo esc_url( $category_link ); ?>" title="<?php echo $category->name; ?>">
+	 													<?php $image = wp_get_attachment_image_src( get_post_thumbnail_id( $category->ID ) ); ?>
+														<img src="<?php echo get_template_directory_uri() ?>/img/plantilla/bloguero.png" alt="<?php echo $category->name; ?>" title="<?php echo $category->name; ?>">
+													</a>
+													<figcaption>
+														<h3>
+															<a href="<?php echo esc_url( $category_link ); ?>" title="<?php echo $category->name; ?>">
+																<?php echo $category->name; ?>
+															</a>
+														</h3>
+													</figcaption>
+												</figure>
+											</li>
+									<?php endforeach; ?>
+								<?php } ?>
 							</ul>
 						</div>
 					</div>
