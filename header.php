@@ -94,9 +94,11 @@
 						</button>
 					</li>
 				</ul>
-				<div class="searchIco" id="searchBox">
-					<img src="<?php echo get_template_directory_uri() ?>/img/plantilla/searchWhite.svg" alt="" title="">
-				</div>
+				<?php if (false) { ?>
+					<div class="searchIco" id="searchBox">
+						<img src="<?php echo get_template_directory_uri() ?>/img/plantilla/searchWhite.svg" alt="" title="">
+					</div>
+				<?php } ?>
 			</div>
 			<nav class="mainMenu" id="mainMenu">
 				<?php $args=array(
@@ -105,8 +107,10 @@
 				);?>
 				<?php wp_nav_menu($args); ?>
 			</nav>
-			<div class="searchFixed">
-				<input type="text" name="hsearch" id="hsearch" class="inputField" placeholder="¿Que buscas?">
-			</div>
+			<?php if (false) { ?>
+				<div class="searchFixed">
+					<input type="text" name="hsearch" id="hsearch" class="inputField" placeholder="¿Que buscas?">
+				</div>
+			<?php } ?>
 		</div>
 	</header>
