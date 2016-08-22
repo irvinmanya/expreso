@@ -394,12 +394,13 @@ if(function_exists('add_theme_support')) {
 /*------------------| Fin - Thumbnails |-------------------*/
 
 /*------------------| Subcategory |-------------------*/
-function is_subcategory (){
-    $cat = get_query_var('cat');
-    $category = get_category($cat);
-    $category->parent;
-    return ( $category->parent == '0' ) ? false : true;
+function wpse_179617_category_template( $template ) {
+    if ( cat_is_ancestor_of( 67, get_queried_object_id() /* The current category ID */ ) )
+        $template = locate_template( 'single-blogueros.php' );
+    return $template;
 }
+
+add_filter( 'category_template', 'wpse_179617_category_template' );
 /*------------------| Fin - Subcategory |-------------------*/
 
 

@@ -3,12 +3,6 @@
 <?php //Publicidad - Long ?>
 <?php get_template_part( 'content/content', 'publong' ); ?>
 
-<?php
-if ( is_subcategory() ) {
-	echo 'Hola mundo';
-}
-?>
-
 <section class="secrow cine">
 	<div class="container">
 		<div class="row">
