@@ -428,8 +428,10 @@
 													if($categories){ ?>
 													<figure>
 														<?php foreach ($categories as $category) {
-															$caTaxImg = get_field('caTax-img', 'category_'.$category->cat_ID);  ?>
-															<img src="<?php echo $caTaxImg['url']; ?>" alt="<?php echo $caTaxImg['title']; ?>" title="<?php echo $caTaxImg['title']; ?>">
+															$caTaxImg = get_field('caTax-img', 'category_'.$category->cat_ID); ?>
+															<a href="<?php echo get_category_link($category->term_id); ?>" title="<?php echo $category->cat_name; ?>" >
+																<img src="<?php echo $caTaxImg['url']; ?>" alt="<?php echo $caTaxImg['title']; ?>" title="<?php echo $caTaxImg['title']; ?>">
+															</a>
 														<?php } ?>
 													</figure>
 												<?php } ?>
