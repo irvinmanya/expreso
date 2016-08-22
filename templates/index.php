@@ -85,7 +85,7 @@
 									<?php while ($the_query->have_posts()) : $the_query->the_post(); ?>
 										<div class="itemLast itemShadow">
 											<figure>
-												<figcaption>
+												<figcaption class="pDayTitle">
 													<h3>
 														Portada del día
 													</h3>
