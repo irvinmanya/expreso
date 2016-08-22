@@ -10,7 +10,7 @@ if (cat_is_ancestor_of(18, get_query_var('cat'))) {
 } else {
 	// normal-category-template.php
 	get_template_part( 'normal-category-template');
-	echo 'Soy la maravilla xD'
+	echo 'Soy la maravilla xD';
 }
 ?>
 
