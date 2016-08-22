@@ -436,19 +436,20 @@
 																foreach ($categories as $category) {
 																$caTaxImg = get_field('caTax-img', 'category_'.$category->cat_ID);
 																	$output.='<a href="'.get_category_link($category->term_id).'" class="tagLink myLinkTxt" title="'.$category->cat_name.'" style="cursor:pointer;" >'.$category->cat_name.'</a>'.$separator; ?>
-																	<img src="<?php echo $cateImg['url']; ?>" alt="<?php echo $cateImg['title']; ?>" title="<?php echo $cateImg['title']; ?>
+																	<img src="<?php echo $caTaxImg['url']; ?>" alt="<?php echo $caTaxImg['title']; ?>" title="<?php echo $caTaxImg['title']; ?>
 																<?php }
 																echo trim($output, $separator); ?>
 
 														</div>
 													<?php } ?>
-													<?php the_content(); ?>
+													<?php the_title(); ?>
+													<?php the_excerpt(); ?>
 												</li>
 											<?php endwhile; ?>
 										<?php wp_reset_postdata(); ?>
 									<?php endif; ?>
 								<?php } ?>
-
+								
 								<?php if (false) { ?>
 									<?php
 										$idObj = get_category_by_slug('blogueros'); 
