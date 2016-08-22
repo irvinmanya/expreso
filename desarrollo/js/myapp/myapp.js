@@ -182,6 +182,7 @@ $(document).on('ready',function() {
     //-------------- [ Carusel con animacion ] --------------//
 
     $('.owlOneItem').find('.owl-controls').addClass('arroOWL');
+    $('.owlBlogueros').find('.owl-controls').addClass('arroOWL');
 
     //-------------- [ Eliminando saltos de line ] --------------//
     $('.formBox').find('br').remove();
