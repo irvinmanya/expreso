@@ -77,24 +77,16 @@
 					</a>
 				</figure>
 				<ul class="headerBtn">
-					<?php
-					$btnEditoriales = get_field('hbtnedit-link',75961);
-					$btnPolidatos = get_field('hbtnpol-link',75961);
-					?>
-					<?php foreach( $btnEditCont as $btnEditContAs ): ?>
-						<li class="headerBtnLine">
-							<a href="<?php echo get_term_link($btnEditContAs); ?>" class="btnGeneral" title="<?php echo $btnEditContAs->name; ?>">
-								<?php the_field('hbtnedit-nom',75961); ?>
-							</a>
-						</li>
-					<?php endforeach; ?>
-					<?php foreach( $btnPolidatos as $btnPoliContAs ): ?>
-						<li class="headerBtnLine">
-							<a href="<?php echo get_term_link($btnPoliContAs); ?>" class="btnGeneral" title="<?php echo $btnPoliContAs->name; ?>">
-								<?php the_field('hbtnpol-nom',75961); ?>
-							</a>
-						</li>
-					<?php endforeach; ?>
+					<li class="headerBtnLine">
+						<a href="<?php the_field('hbtnedit-link',75961); ?>" class="btnGeneral" title="<?php the_field('hbtnedit-nom',75961); ?>">
+							<?php the_field('hbtnedit-nom',75961); ?>
+						</a>
+					</li>
+					<li class="headerBtnLine">
+						<a href="<?php the_field('hbtnpol-link',75961); ?>" class="btnGeneral" title="<?php the_field('hbtnedit-nom',75961); ?>">
+							<?php the_field('hbtnpol-nom',75961); ?>
+						</a>
+					</li>
 					<li>
 						<input type="text" class="inpsearch" name="searchDesk" id="searchDesk" placeholder="Encuentra">
 						<button type="submit" class="btnGeneral" style="padding-top:5px;padding-bottom:5px;">
