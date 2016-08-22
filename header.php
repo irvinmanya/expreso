@@ -81,16 +81,16 @@
 					$btnEditoriales = get_field('hbtnedit-link',75961);
 					$btnPolidatos = get_field('hbtnpol-link',75961);
 					?>
-					<?php foreach( $terms as $term ): ?>
+					<?php foreach( $btnEditCont as $btnEditContAs ): ?>
 						<li class="headerBtnLine">
-							<a href="<?php echo get_term_link($btnEditoriales); ?>" class="btnGeneral" title="<?php echo $btnEditoriales->name; ?>">
+							<a href="<?php echo get_term_link($btnEditContAs); ?>" class="btnGeneral" title="<?php echo $btnEditContAs->name; ?>">
 								<?php the_field('hbtnedit-nom',75961); ?>
 							</a>
 						</li>
 					<?php endforeach; ?>
-					<?php foreach( $terms as $term ): ?>
+					<?php foreach( $btnPolidatos as $btnPoliContAs ): ?>
 						<li class="headerBtnLine">
-							<a href="<?php echo get_term_link($btnPolidatos); ?>" class="btnGeneral" title="<?php echo $btnPolidatos->name; ?>">
+							<a href="<?php echo get_term_link($btnPoliContAs); ?>" class="btnGeneral" title="<?php echo $btnPoliContAs->name; ?>">
 								<?php the_field('hbtnpol-nom',75961); ?>
 							</a>
 						</li>
