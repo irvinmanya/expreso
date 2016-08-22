@@ -969,7 +969,7 @@
 																	<?php if(false): ?>
 																		<img src="<?php echo $caTaxImg['url']; ?>" alt="<?php echo $category->cat_name; ?>" title="<?php echo $category->cat_name; ?>">
 																	<?php endif; ?>
-																	<img src="<?php echo get_template_directory_uri() ?>/img/plantilla/bloguero.jpg" alt="title" title="title">
+																	<img src="<?php echo get_template_directory_uri() ?>/img/plantilla/bloguero.png" alt="title" title="title">
 																</a>
 															<?php } ?>
 														</figure>
