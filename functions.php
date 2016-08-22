@@ -393,19 +393,28 @@ if(function_exists('add_theme_support')) {
 }
 /*------------------| Fin - Thumbnails |-------------------*/
 
-/*------------------| Subcategory |-------------------*/
-function sub_cat_template( $template ) {
+/*------------------| Sub - category opinion |-------------------*/
+function sub_category_opinion( $template ) {
     if ( cat_is_ancestor_of( 18, get_queried_object_id() /* The current category ID */ ) ){
         $template = locate_template( 'single-blogueros.php' );
-        echo 'Template opinion';
-    }else if( cat_is_ancestor_of( 131, get_queried_object_id(){
-        $template = locate_template( 'single-blogueros.php' );
-        echo 'Template blogueros';
+        echo 'Soy opinion';
     }
     return $template;
 }
 
-add_filter( 'category_template', 'sub_cat_template' );
-/*------------------| Fin - Subcategory |-------------------*/
+add_filter( 'category_template', 'sub_category_opinion' );
+/*------------------| Fin - Sub - category opinion |-------------------*/
+
+/*------------------| Sub - category opinion |-------------------*/
+function sub_category_bloguero( $template ) {
+    if ( cat_is_ancestor_of( 131, get_queried_object_id() /* The current category ID */ ) ){
+        $template = locate_template( 'single-blogueros.php' );
+        echo 'Soy bloguero';
+    }
+    return $template;
+}
+
+add_filter( 'category_template', 'sub_category_bloguero' );
+/*------------------| Fin - Sub - category opinion |-------------------*/
 
 
