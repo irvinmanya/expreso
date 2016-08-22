@@ -413,66 +413,42 @@
 								<h2>Columnistas del día</h2>
 							</div>
 							<ul class="owlColum owlColumnista">
-								<?php if (true) { ?>
-									<?php $args = array(
-										'posts_per_page' => '6',
-										'cat' => 18
-									);?>
-									<?php $the_query = new WP_Query($args); ?>
-										<?php if ($the_query->have_posts()) : ?>
-											<?php while ($the_query->have_posts()) : $the_query->the_post(); ?>
-												<li class="itemShadow">
-													<figure>
-														<a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>">
-														</a>
-													</figure>
-													<?php
-														$categories=get_the_category();
-														$separator=", ";
-														$output="";
-														if($categories){ ?>
-														<div class="tagBox">
-															<?php 
-																foreach ($categories as $category) {
-																$caTaxImg = get_field('caTax-img', 'category_'.$category->cat_ID);
-																	$output.='<a href="'.get_category_link($category->term_id).'" class="tagLink myLinkTxt" title="'.$category->cat_name.'" style="cursor:pointer;" >'.$category->cat_name.'</a>'.$separator; ?>
-																	<img src="<?php echo $caTaxImg['url']; ?>" alt="<?php echo $caTaxImg['title']; ?>" title="<?php echo $caTaxImg['title']; ?>
-																<?php }
-																echo trim($output, $separator); ?>
-
-														</div>
-													<?php } ?>
-													<?php the_title(); ?>
-													<?php the_excerpt(); ?>
-												</li>
-											<?php endwhile; ?>
-										<?php wp_reset_postdata(); ?>
-									<?php endif; ?>
-								<?php } ?>
-								
-								<?php if (false) { ?>
-									<?php
-										$idObj = get_category_by_slug('blogueros'); 
-										$categories = get_categories(array('child_of' => get_query_var('cat'))); 
-										foreach ($categories as $category) : ?>
+								<?php $args = array(
+									'posts_per_page' => '6',
+									'cat' => 18
+								);?>
+								<?php $the_query = new WP_Query($args); ?>
+									<?php if ($the_query->have_posts()) : ?>
+										<?php while ($the_query->have_posts()) : $the_query->the_post(); ?>
 											<li class="itemShadow">
-												<figure>
-													<?php $category_link = get_category_link($category->cat_ID); ?>
-													<a href=<?php echo esc_url( $category_link ); ?>" title="<?php echo $category->name; ?>">
-	 													<?php $image = wp_get_attachment_image_src( get_post_thumbnail_id( $category->ID ) ); ?>
-														<img src="<?php echo get_template_directory_uri() ?>/img/plantilla/bloguero.png" alt="<?php echo $category->name; ?>" title="<?php echo $category->name; ?>">
-													</a>
-													<figcaption>
-														<h3>
-															<a href="<?php echo esc_url( $category_link ); ?>" title="<?php echo $category->name; ?>">
-																<?php echo $category->name; ?>
-															</a>
-														</h3>
-													</figcaption>
-												</figure>
+												<?php
+													$categories=get_the_category();
+													$separator=", ";
+													$output="";
+													if($categories){ ?>
+													<figure>
+														<?php foreach ($categories as $category) {
+															$caTaxImg = get_field('caTax-img', 'category_'.$category->cat_ID);  ?>
+															<img src="<?php echo $caTaxImg['url']; ?>" alt="<?php echo $caTaxImg['title']; ?>" title="<?php echo $caTaxImg['title']; ?>">
+														<?php } ?>
+													</figure>
+												<?php } ?>
+												<h3>
+													<?php the_title(); ?>
+												</h3>
+												<h4>
+													<?php foreach ($categories as $category) {
+														$output.='<a href="'.get_category_link($category->term_id).'" title="'.$category->cat_name.'" >'.$category->cat_name.'</a>'.$separator; ?>
+													<?php }  ?>
+													Por: <?php echo trim($output, $separator); ?>
+												</h4>
+												<p>
+													<?php the_excerpt(); ?>
+												</p>
 											</li>
-									<?php endforeach; ?>
-								<?php } ?>
+										<?php endwhile; ?>
+									<?php wp_reset_postdata(); ?>
+								<?php endif; ?>
 							</ul>
 						</div>
 					</div>

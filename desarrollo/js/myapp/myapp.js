@@ -91,17 +91,17 @@ $(document).on('ready',function() {
         responsive: {
             0: {
                 items: 1,
-                dots: true,
+                dots: false,
                 nav:true
             },
             450: {
                 items: 1,
-                dots: true,
+                dots: false,
                 nav:true
             },
             992: {
                 items: 3,
-                dots: true,
+                dots: false,
                 nav:true
             }
         }
