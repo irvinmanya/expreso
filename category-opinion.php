@@ -3,6 +3,12 @@
 <?php //Publicidad - Long ?>
 <?php get_template_part( 'content/content', 'publong' ); ?>
 
+<?php
+	if ( cat_is_ancestor_of( 18, get_queried_object_id()) ){
+		echo '<h1>holamundo</h1>';
+	}
+?>
+
 <section class="secrow cine">
 	<div class="container">
 		<div class="row">
