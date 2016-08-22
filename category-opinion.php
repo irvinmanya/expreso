@@ -3,9 +3,15 @@
 <?php //Publicidad - Long ?>
 <?php get_template_part( 'content/content', 'publong' ); ?>
 
-<?php if (is_category()) : ?>
-	<?php if (get_category_children($this_category->cat_ID) != "") : ?>
-		<section class="secrow cine">
+
+<?php
+if (cat_is_ancestor_of(18, get_query_var('cat'))) { ?>
+	<h1>Soy la sub categoria</h1>
+<?php } else {  ?>
+	<h1>Soy opinion</h1>
+<?php } ?>
+
+<section class="secrow cine">
 	<div class="container">
 		<div class="row">
 			<?php //filtros ?>
@@ -93,11 +99,9 @@
 
 		</div>
 	</div>
-		</section>
-	<?php endif; ?>
-<?php endif; ?>
+</section>
 
 <?php get_footer(); ?>
 
 </body>
-</html>
+</html>is
