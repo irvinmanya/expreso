@@ -1,3 +1,4 @@
+<?php get_header(); ?>
 <section class="secrow cine">
 	<div class="container">
 		<div class="row">
@@ -155,3 +156,7 @@
 		</div>
 	</div>
 </section>
+
+<?php get_footer(); ?>
+</body>
+</html>
