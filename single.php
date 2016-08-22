@@ -11,8 +11,13 @@ if (in_category('editoriales')) {
 }elseif(in_category('galeria-de-portadas')){
 	get_template_part( 'singlecat/single', 'portadas' );
 }elseif(in_category('blogueros')){
-	$subcategories = get_categories('child_of=2,hide_empty=1'); 
-	foreach ($subcategories as $subcategory) {
+	$cat = get_query_var('cat');
+	$args = array(
+		'include' => $cat,
+		'hide_empty' => 0
+	);
+	$categories = get_categories($args);
+	if ( ($cat == 131) || ($categories[0]->category_parent == 1) ) {
 		get_template_part( 'singlecat/single', 'blogueros' );
 	}
 }elseif(in_category('opinion')){
