@@ -22,7 +22,7 @@
 								<ul class="sliderFeat" id="sliderFeat">
 									<?php $args = array(
 										'posts_per_page' => '3',
-										'cat' => -70
+										'cat' => -70 //Menos portada cat=70
 									);?>
 									<?php $the_query = new WP_Query($args); ?>
 										<?php if ($the_query->have_posts()) : ?>
@@ -35,11 +35,6 @@
 																	<?php the_title(); ?>
 																</a>
 															</h2>
-															<?php if (false) { ?>
-																<p>
-																	<?php the_excerpt(); ?>
-																</p>
-															<?php } ?>
 														</figcaption>
 														<?php the_post_thumbnail(); ?>
 													</figure>
@@ -72,11 +67,6 @@
 														<h3>
 															<?php the_title(); ?>
 														</h3>
-														<?php if (false) { ?>
-															<p>
-																<?php the_excerpt(); ?>
-															</p>
-														<?php } ?>
 													</div>
 												</li>
 											<?php endwhile; ?>
@@ -95,21 +85,14 @@
 									<?php while ($the_query->have_posts()) : $the_query->the_post(); ?>
 										<div class="itemLast itemShadow">
 											<figure>
-												<figcaption>
+												<figcaption class="pDayTitle">
 													<h3>
 														Portada del día
 													</h3>
 												</figcaption>
-													<a href="<?php the_permalink(); ?>" class="pDay" title="<?php the_title(); ?>">
-														<?php the_post_thumbnail(); ?>
-													</a>
-												<figcaption>
-													<h4>
-														<a href="<?php the_permalink(); ?>" title="<?php the_title() ?>">
-															Mira aquí la versión impresa "Preessreader"
-														</a>
-													</h4>
-												</figcaption>
+												<a href="<?php the_permalink(); ?>" class="pDay" title="<?php the_title(); ?>">
+													<?php the_post_thumbnail(); ?>
+												</a>
 											</figure>
 										</div>
 									<?php endwhile; ?>
@@ -138,25 +121,6 @@
 								<?php if ($the_query->have_posts()) : ?>
 									<?php while ($the_query->have_posts()) : $the_query->the_post(); ?>
 										<article class="col l4 m12 s12">
-											<?php if (false) { ?>
-												<div class="notItemHome itemShadow margBot20">
-													<figure>
-														<a href="javascript:void(0)" title="">
-															<img src="<?php echo get_template_directory_uri() ?>/img/plantilla/noticia.jpg" alt="title" title="">
-														</a>
-														<figcaption>
-															<h3>
-																<a href="javascript:void(0)" title="">
-																	<?php the_title() ?>
-																</a>
-															</h3>
-															<p>
-																El actor visto en "Attack The Block" o en el Episodio VII de 'La guerra de...
-															</p>
-														</figcaption>
-													</figure>
-												</div>
-											<?php } ?>
 											<?php get_template_part( 'content/content', 'notcard' ); ?>
 										</article>
 									<?php endwhile; ?>
@@ -966,9 +930,6 @@
 															<?php foreach ($categories as $category) {
 																$caTaxImg = get_field('caTax-img', 'category_'.$category->cat_ID); ?>
 																<a href="<?php echo get_category_link($category->term_id); ?>" title="<?php echo $category->cat_name; ?>" >
-																	<?php if(false): ?>
-																		<img src="<?php echo $caTaxImg['url']; ?>" alt="<?php echo $category->cat_name; ?>" title="<?php echo $category->cat_name; ?>">
-																	<?php endif; ?>
 																	<img src="<?php echo get_template_directory_uri() ?>/img/plantilla/bloguero.png" alt="title" title="title">
 																</a>
 															<?php } ?>
