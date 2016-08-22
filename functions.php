@@ -398,7 +398,7 @@ function sub_cat_template( $template ) {
     if ( cat_is_ancestor_of( 18, get_queried_object_id() /* The current category ID */ ) ){
         $template = locate_template( 'single-blogueros.php' );
         echo 'Template opinion';
-    }elseif( cat_is_ancestor_of( 131, get_queried_object_id(){
+    }else if( cat_is_ancestor_of( 131, get_queried_object_id(){
         $template = locate_template( 'single-blogueros.php' );
         echo 'Template blogueros';
     }
