@@ -94,8 +94,13 @@ $(document).on('ready',function() {
                 dots: false,
                 nav:true
             },
-            450: {
+            600: {
                 items: 1,
+                dots: false,
+                nav:true
+            },
+            900: {
+                items: 2,
                 dots: false,
                 nav:true
             },
@@ -106,6 +111,37 @@ $(document).on('ready',function() {
             }
         }
     });
+
+    var owl = $('.owlBlogueros');
+    owl.owlCarousel({
+        items: 1,
+        loop: true,
+        margin: 0,
+        autoplay: true,
+        lazyLoad: true,
+        autoplayTimeout: 1500,
+        autoplayHoverPause: false,
+        smartSpeed:450,
+        responsive: {
+            0: {
+                items: 1,
+                dots: false,
+                nav:true
+            },
+            450: {
+                items: 1,
+                dots: false,
+                nav:true
+            },
+            992: {
+                items: 1,
+                dots: false,
+                nav:true
+            }
+        }
+    });
+
+
     var owl = $('.owlYt');
     owl.owlCarousel({
         items:3,
@@ -124,6 +160,7 @@ $(document).on('ready',function() {
             }
         }
     });
+
     var owl = $('.owlOneItem');
     owl.owlCarousel({
         items: 1,

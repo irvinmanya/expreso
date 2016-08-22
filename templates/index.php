@@ -430,7 +430,7 @@
 														<?php foreach ($categories as $category) {
 															$caTaxImg = get_field('caTax-img', 'category_'.$category->cat_ID); ?>
 															<a href="<?php echo get_category_link($category->term_id); ?>" title="<?php echo $category->cat_name; ?>" >
-																<img src="<?php echo $caTaxImg['url']; ?>" alt="<?php echo $caTaxImg['title']; ?>" title="<?php echo $caTaxImg['title']; ?>">
+																<img src="<?php echo $caTaxImg['url']; ?>" alt="<?php echo $category->cat_name; ?>" title="<?php echo $category->cat_name; ?>">
 															</a>
 														<?php } ?>
 													</figure>
@@ -948,7 +948,7 @@
 										Nuestros blogueros
 									</h2>
 								</div>
-								<?php if (false) { ?>
+								<ul class="owlBlog owlBlogueros">
 									<?php $args = array(
 										'posts_per_page' => '4',
 										'cat' => 131
@@ -956,53 +956,41 @@
 									<?php $the_query = new WP_Query($args); ?>
 										<?php if ($the_query->have_posts()) : ?>
 											<?php while ($the_query->have_posts()) : $the_query->the_post(); ?>
-												<?php
-													$t_id = $term->term_id;
-													$term_meta = get_option("taxonomy_$t_id");
-												?>
-												<article class="col l12 m12 s12">
-													<div class="blogItem itemShadow margBot20">
+												<li>
+													<?php
+														$categories=get_the_category();
+														$separator=", ";
+														$output="";
+														if($categories){ ?>
 														<figure>
-															<a href="javascript:void(0)" title="">
-																<?php the_post_thumbnail(); ?>
-															</a>
-															<figcaption>
-																<h3>
-																	<a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>">
-																		[nomb_colum]
-																	</a>
-																</h3>
-															</figcaption>
+															<?php foreach ($categories as $category) {
+																$caTaxImg = get_field('caTax-img', 'category_'.$category->cat_ID); ?>
+																<a href="<?php echo get_category_link($category->term_id); ?>" title="<?php echo $category->cat_name; ?>" >
+																	<?php if(false): ?>
+																		<img src="<?php echo $caTaxImg['url']; ?>" alt="<?php echo $category->cat_name; ?>" title="<?php echo $category->cat_name; ?>">
+																	<?php endif; ?>
+																	<img src="<?php echo get_template_directory_uri() ?>/img/plantilla/noticia.jpg" alt="title" title="title">
+																</a>
+															<?php } ?>
 														</figure>
+													<?php } ?>
+													<div class="columTxt">
+														<h3>
+															<?php the_title(); ?>
+														</h3>
+														<h4>
+															<?php foreach ($categories as $category) {
+																$output.='<a href="'.get_category_link($category->term_id).'" title="'.$category->cat_name.'" >'.$category->cat_name.'</a>'.$separator; ?>
+															<?php }  ?>
+															Por: <?php echo trim($output, $separator); ?>
+														</h4>
+														<?php the_excerpt(); ?>
 													</div>
-												</article>
+												</li>
 											<?php endwhile; ?>
 										<?php wp_reset_postdata(); ?>
 									<?php endif; ?>
-								<?php } ?>
-
-								<?php
-									$idObj = get_category_by_slug('blogueros'); 
-									$categories = get_categories(array('child_of' => get_query_var('cat'),'show_option_all'    => '4')); 
-									foreach ($categories as $category) : ?>
-										<?php $category_link = get_category_link($category->cat_ID); ?>
-										<article class="col l12 m12 s12">
-											<div class="blogItem itemShadow margBot20">
-												<figure>
-													<a href="<?php echo esc_url( $category_link ); ?>" title="<?php echo $category->name; ?>" >
-														<img src="<?php echo get_template_directory_uri() ?>/img/plantilla/bloguero.png" alt="<?php echo $category->name; ?>" title="<?php echo $category->name; ?>">
-													</a>
-													<figcaption>
-														<h3>
-															<a href="<?php echo esc_url( $category_link ); ?>" title="<?php echo $category->name; ?>" >
-																<?php echo $category->name; ?>
-															</a
-														</h3>
-													</figcaption>
-												</figure>
-											</div>
-										</article>
-								<?php endforeach; ?>
+								</ul>
 							</div>
 
 							<?php //Publicidad - Small ?>
