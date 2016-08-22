@@ -110,7 +110,7 @@
 					</ul>
 
 					<div class="campTxt">
-						<?php the_content(): ?>
+						Lorem ipsum dolor sit amet, consectetur adipisicing elit. Illum praesentium vitae, aut eveniet dignissimos harum explicabo doloribus possimus eius delectus laudantium ab mollitia magni exercitationem. Voluptatem molestiae expedita, modi deleniti.
 					</div>
 
 					<div class="titleBox2">
