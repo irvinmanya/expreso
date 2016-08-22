@@ -4,13 +4,8 @@
 <?php get_template_part( 'content/content', 'publong' ); ?>
 
 <?php
-if (cat_is_ancestor_of(18, get_query_var('cat'))) {
-	// category-first-level-sub.php
-	echo 'Soy la maravilla';
-} else {
-	// normal-category-template.php
-	get_template_part( 'normal-category-template');
-	echo 'Soy la maravilla xD';
+if ( is_subcategory() ) {
+	echo 'Hola mundo';
 }
 ?>
 
