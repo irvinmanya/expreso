@@ -12,7 +12,7 @@ if (in_category('editoriales')) {
 	get_template_part( 'singlecat/single', 'portadas' );
 }elseif(in_category(131) || post_is_in_descendant_category(131)){
 	get_template_part( 'singlecat/single', 'blogueros' );
-}elseif(in_category('opinion') || post_is_in_descendant_category('opinion')){
+}elseif(in_category(18) || post_is_in_descendant_category(18)){
 	get_template_part( 'singlecat/single', 'blogueros' );
 }else{
 	get_template_part( 'singlecat/single', 'default' );
