@@ -71,8 +71,8 @@
 											'relation'		=> 'AND',
 											array(
 												'key'	 	=> 'sliderprev-opt',
-												'value'	  	=> array('sliderprincipal'),
-												'compare' 	=> 'IN'
+												'value'	  	=> 'sliderprincipal',
+												'compare' 	=> 'IN',
 											)
 										)
 									);?>
