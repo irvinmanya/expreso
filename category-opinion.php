@@ -3,13 +3,16 @@
 <?php //Publicidad - Long ?>
 <?php get_template_part( 'content/content', 'publong' ); ?>
 
-
 <?php
-if (cat_is_ancestor_of(18, get_query_var('cat'))) { ?>
-	<h1>Soy la sub categoria</h1>
-<?php } else {  ?>
-	<h1>Soy opinion</h1>
-<?php } ?>
+if (cat_is_ancestor_of(18, get_query_var('cat'))) {
+	// category-first-level-sub.php
+	echo 'Soy la maravilla';
+} else {
+	// normal-category-template.php
+	get_template_part( 'normal-category-template');
+	echo 'Soy la maravilla xD'
+}
+?>
 
 <section class="secrow cine">
 	<div class="container">
@@ -104,4 +107,4 @@ if (cat_is_ancestor_of(18, get_query_var('cat'))) { ?>
 <?php get_footer(); ?>
 
 </body>
-</html>is
+</html>
