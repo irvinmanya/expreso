@@ -85,7 +85,7 @@ $(document).on('ready',function() {
         margin: 0,
         autoplay: true,
         lazyLoad: true,
-        autoplayTimeout: 1500,
+        autoplayTimeout: 3500,
         autoplayHoverPause: false,
         smartSpeed:450,
         responsive: {
@@ -119,7 +119,7 @@ $(document).on('ready',function() {
         margin: 0,
         autoplay: true,
         lazyLoad: true,
-        autoplayTimeout: 1500,
+        autoplayTimeout: 3500,
         autoplayHoverPause: false,
         smartSpeed:450,
         responsive: {
