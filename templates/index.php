@@ -442,6 +442,7 @@
 
 														</div>
 													<?php } ?>
+													<?php the_content(); ?>
 												</li>
 											<?php endwhile; ?>
 										<?php wp_reset_postdata(); ?>
