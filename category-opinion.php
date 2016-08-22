@@ -4,7 +4,7 @@
 <?php get_template_part( 'content/content', 'publong' ); ?>
 
 <?php
-if ( is_subcategory(18) ) {
+if ( is_subcategory() ) {
 	echo 'Hola mundo';
 }
 ?>

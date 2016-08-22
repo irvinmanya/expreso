@@ -387,7 +387,19 @@ add_image_size('img-post-box',348,210,true);
 add_image_size('banner-image',920,210,array('left','top'));
 /*-------------------[ Fin - Imagen Destacada ]----------------------*/
 
-
+/*------------------| Thumbnails |-------------------*/
 if(function_exists('add_theme_support')) {
     add_theme_support('category-thumbnails');
 }
+/*------------------| Fin - Thumbnails |-------------------*/
+
+/*------------------| Subcategory |-------------------*/
+function is_subcategory (){
+    $cat = get_query_var('cat');
+    $category = get_category($cat);
+    $category->parent;
+    return ( $category->parent == '0' ) ? false : true;
+}
+/*------------------| Fin - Subcategory |-------------------*/
+
+
