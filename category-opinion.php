@@ -3,7 +3,9 @@
 <?php //Publicidad - Long ?>
 <?php get_template_part( 'content/content', 'publong' ); ?>
 
-<section class="secrow cine">
+<?php if (is_category()) : ?>
+	<?php if (get_category_children($this_category->cat_ID) != "") : ?>
+		<section class="secrow cine">
 	<div class="container">
 		<div class="row">
 			<?php //filtros ?>
@@ -91,8 +93,11 @@
 
 		</div>
 	</div>
-</section>
+		</section>
+	<?php endif; ?>
+<?php endif; ?>
 
 <?php get_footer(); ?>
+
 </body>
 </html>
