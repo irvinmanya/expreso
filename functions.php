@@ -394,15 +394,18 @@ if(function_exists('add_theme_support')) {
 /*------------------| Fin - Thumbnails |-------------------*/
 
 /*------------------| Subcategory |-------------------*/
-function wpse_179617_category_template( $template ) {
+function sub_cat_template( $template ) {
     if ( cat_is_ancestor_of( 18, get_queried_object_id() /* The current category ID */ ) ){
         $template = locate_template( 'single-blogueros.php' );
-        echo 'Hola mundo';
+        echo 'Template opinion';
+    }elseif( cat_is_ancestor_of( 131, get_queried_object_id(){
+        $template = locate_template( 'single-blogueros.php' );
+        echo 'Template blogueros';
     }
     return $template;
 }
 
-add_filter( 'category_template', 'wpse_179617_category_template' );
+add_filter( 'category_template', 'sub_cat_template' );
 /*------------------| Fin - Subcategory |-------------------*/
 
 
