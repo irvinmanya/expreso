@@ -396,8 +396,7 @@ if(function_exists('add_theme_support')) {
 /*------------------| Sub - category opinion |-------------------*/
 function sub_category_opinion( $template ) {
     if ( cat_is_ancestor_of( 18, get_queried_object_id() /* The current category ID */ ) ){
-        $template = locate_template( 'single-blogueros.php' );
-        echo 'Soy opinion';
+        $template = locate_template( 'subcat_blogcolum.php' );
     }
     return $template;
 }
@@ -408,8 +407,7 @@ add_filter( 'category_template', 'sub_category_opinion' );
 /*------------------| Sub - category opinion |-------------------*/
 function sub_category_bloguero( $template ) {
     if ( cat_is_ancestor_of( 131, get_queried_object_id() /* The current category ID */ ) ){
-        $template = locate_template( 'single-blogueros.php' );
-        echo 'Soy bloguero';
+        $template = locate_template( 'subcat_blogcolum.php' );
     }
     return $template;
 }
