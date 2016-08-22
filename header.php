@@ -77,16 +77,24 @@
 					</a>
 				</figure>
 				<ul class="headerBtn">
-					<li class="headerBtnLine">
-						<a href="http://expreso.dhdinc.info/seccion/editoriales/" class="btnGeneral" title="Editoriales">
-							Editoriales
-						</a>
-					</li>
-					<li>
-						<a href="javascript:void(0)" class="btnGeneral" title="">
-							Polidato del día
-						</a>
-					</li>
+					<?php
+					$btnEditoriales = get_field('hbtnedit-link',75961);
+					$btnPolidatos = get_field('hbtnpol-link',75961);
+					?>
+					<?php foreach( $terms as $term ): ?>
+						<li class="headerBtnLine">
+							<a href="<?php echo get_term_link($btnEditoriales); ?>" class="btnGeneral" title="<?php echo $btnEditoriales->name; ?>">
+								<?php the_field('hbtnedit-nom',75961); ?>
+							</a>
+						</li>
+					<?php endforeach; ?>
+					<?php foreach( $terms as $term ): ?>
+						<li class="headerBtnLine">
+							<a href="<?php echo get_term_link($btnPolidatos); ?>" class="btnGeneral" title="<?php echo $btnPolidatos->name; ?>">
+								<?php the_field('hbtnpol-nom',75961); ?>
+							</a>
+						</li>
+					<?php endforeach; ?>
 					<li>
 						<input type="text" class="inpsearch" name="searchDesk" id="searchDesk" placeholder="Encuentra">
 						<button type="submit" class="btnGeneral" style="padding-top:5px;padding-bottom:5px;">
