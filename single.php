@@ -11,9 +11,13 @@ if (in_category('editoriales')) {
 }elseif(in_category('galeria-de-portadas')){
 	get_template_part( 'singlecat/single', 'portadas' );
 }elseif(in_category('blogueros')){
-	get_template_part( 'singlecat/single', 'blogueros' );
+	if (get_category_children($this_category->cat_ID) != ""){
+		get_template_part( 'singlecat/single', 'blogueros' );
+	}
 }elseif(in_category('opinion')){
-	get_template_part( 'singlecat/single', 'blogueros' );
+	if (get_category_children($this_category->cat_ID) != ""){
+		get_template_part( 'singlecat/single', 'blogueros' );
+	}
 }else{
 	get_template_part( 'singlecat/single', 'default' );
 }
