@@ -110,7 +110,7 @@
 					</ul>
 
 					<div class="campTxt">
-						<?php the_content(): ?>
+						<?php the_content(); ?>
 					</div>
 
 					<div class="titleBox2">
