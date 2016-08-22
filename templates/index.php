@@ -32,7 +32,11 @@
 														<figcaption>
 															<h2>
 																<a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>">
-																	<?php the_title(); ?>
+																	<?php if (get_field('sliderprev-titulo')) { ?>
+																		<?php the_field('sliderprev-titulo'); ?>
+																	<?php }else{ ?>
+																		<?php the_title(); ?>
+																	<?php } ?>
 																</a>
 															</h2>
 														</figcaption>
@@ -65,7 +69,11 @@
 													</figure>
 													<div class="sliderTxt">
 														<h3>
-															<?php the_title(); ?>
+															<?php if (get_field('sliderprev-titulo')) { ?>
+																<?php the_field('sliderprev-titulo'); ?>
+															<?php }else{ ?>
+																<?php the_title(); ?>
+															<?php } ?>
 														</h3>
 													</div>
 												</li>
