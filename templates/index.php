@@ -68,10 +68,11 @@
 										'posts_per_page' => '3',
 										'cat' => -70, //Menos portada cat=70
 										'meta_query'	=> array(
+											'relation'		=> 'AND',
 											array(
 												'key'	 	=> 'sliderprev-opt',
-												'value'	  	=> 'sliderprincipal',
-												'compare' 	=> '==',
+												'value'	  	=> sliderprincipal,
+												'compare' 	=> '=='
 											)
 										)
 									);?>
