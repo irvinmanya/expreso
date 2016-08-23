@@ -71,8 +71,8 @@
 											'relation'		=> 'AND',
 											array(
 												'key'	 	=> 'sliderprev-opt',
-												'value'	  	=> 1,
-												'compare' 	=> '=='
+												'value'	  	=> 'sliderprincipal',
+												'compare' 	=> 'LIKE'
 											)
 										)
 									);?>
