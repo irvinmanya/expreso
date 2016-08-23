@@ -190,7 +190,7 @@
 					<?php if ($the_query->have_posts()) : ?>
 						<?php while ($the_query->have_posts()) : $the_query->the_post(); ?>
 							<article class="col l4 m12 s12">
-								<div class="notItemHome notItemArt itemShadow margBot20">
+								<div class="notItemHome notItemArt itemShadow margBot20" style="margin-bottom:25px;">
 									<figure>
 										<a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>">
 											<?php the_post_thumbnail(); ?>
