@@ -4,11 +4,12 @@
 		<div class="row">
 			<?php //filtros ?>
 			<div class="col l3 m12 s12 rowFiltros lineLateralRight">
+
 				<div class="blogAutor itemShadow lineBottom">
 					<figure>
 						<img src="<?php echo get_template_directory_uri() ?>/img/plantilla/noticia.jpg" alt="title" title="">
 						<figcaption>
-							<h3>Nombre del comunista</h3>
+							<h3><?php the_title(); ?></h3>
 							<h4>Nombre de la columna</h4>
 							<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Asperiores eveniet optio inventore quos voluptat</p>
 						</figcaption>
