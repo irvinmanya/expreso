@@ -71,7 +71,7 @@
 											'relation'		=> 'AND',
 											array(
 												'key'	 	=> 'sliderprev-opt',
-												'value'	  	=> sliderprincipal,
+												'value'	  	=> 1,
 												'compare' 	=> '=='
 											)
 										)
