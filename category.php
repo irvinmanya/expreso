@@ -10,51 +10,40 @@
 			<article class="col l8 m12 s12">
 				<div class="sliderIntro itemShadow">
 					<ul class="sliderFeat" id="sliderFeat">
-						<li>
-							<figure>
-								<figcaption>
-									<h2>
-										<a href="" title="">
-											Lorem ipsum dolor sit amet, consectetur.
-										</a>
-									</h2>
-									<p>
-										Lorem ipsum dolor sit.
-									</p>
-								</figcaption>
-								<img src="<?php echo get_template_directory_uri() ?>/img/plantilla/noticia.jpg" alt="title" title="title">
-							</figure>
-						</li>
-						<li>
-							<figure>
-								<figcaption>
-									<h2>
-										<a href="" title="">
-											Lorem ipsum dolor sit amet, consectetur.
-										</a>
-									</h2>
-									<p>
-										Lorem ipsum dolor sit.
-									</p>
-								</figcaption>
-								<img src="<?php echo get_template_directory_uri() ?>/img/plantilla/noticia.jpg" alt="title" title="title">
-							</figure>
-						</li>
-						<li>
-							<figure>
-								<figcaption>
-									<h2>
-										<a href="" title="">
-											Lorem ipsum dolor sit amet, consectetur.
-										</a>
-									</h2>
-									<p>
-										Lorem ipsum dolor sit.
-									</p>
-								</figcaption>
-								<img src="<?php echo get_template_directory_uri() ?>/img/plantilla/noticia.jpg" alt="title" title="title">
-							</figure>
-						</li>
+						<?php $args = array(
+							'posts_per_page' => '3',
+							'cat' => get_query_var('cat'), //Menos portada cat=70
+							'meta_query'	=> array(
+								'relation'		=> 'AND',
+								array(
+									'key'	 	=> 'sliderprev-opt',
+									'value'	  	=> 'sliderprincipal',
+									'compare' 	=> 'LIKE'
+								)
+							)
+						);?>
+						<?php $the_query = new WP_Query($args); ?>
+							<?php if ($the_query->have_posts()) : ?>
+								<?php while ($the_query->have_posts()) : $the_query->the_post(); ?>
+									<li>
+										<figure>
+											<figcaption>
+												<h2>
+													<a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>">
+														<?php if (get_field('sliderprev-titulo')) { ?>
+															<?php the_field('sliderprev-titulo'); ?>
+														<?php }else{ ?>
+															<?php the_title(); ?>
+														<?php } ?>
+													</a>
+												</h2>
+											</figcaption>
+											<?php the_post_thumbnail(); ?>
+										</figure>
+									</li>
+								<?php endwhile; ?>
+							<?php wp_reset_postdata(); ?>
+						<?php endif; ?>
 					</ul>
 					<div class="sliderNav">
 						<div class="sliderPrev">
@@ -65,45 +54,38 @@
 						</div>
 					</div>
 					<ul class="sliderList" id="sliderList">
-						<li>
-							<figure>
-								<img src="<?php echo get_template_directory_uri() ?>/img/plantilla/noticia.jpg" alt="title" title="title">
-							</figure>
-							<div class="sliderTxt">
-								<h3>
-									Lorem ipsum dolor sit amet, consectetur.
-								</h3>
-								<p>
-									Lorem ipsum dolor sit amet.
-								</p>
-							</div>
-						</li>
-						<li>
-							<figure>
-								<img src="<?php echo get_template_directory_uri() ?>/img/plantilla/noticia.jpg" alt="title" title="title">
-							</figure>
-							<div class="sliderTxt">
-								<h3>
-									Lorem ipsum dolor sit amet, consectetur.
-								</h3>
-								<p>
-									Lorem ipsum dolor sit amet.
-								</p>
-							</div>
-						</li>
-						<li>
-							<figure>
-								<img src="<?php echo get_template_directory_uri() ?>/img/plantilla/noticia.jpg" alt="title" title="title">
-							</figure>
-							<div class="sliderTxt">
-								<h3>
-									Lorem ipsum dolor sit amet, consectetur.
-								</h3>
-								<p>
-									Lorem ipsum dolor sit amet.
-								</p>
-							</div>
-						</li>
+						<?php $args = array(
+							'posts_per_page' => '3',
+							'cat' => -70, //Menos portada cat=70
+							'meta_query'	=> array(
+								'relation'		=> 'AND',
+								array(
+									'key'	 	=> 'sliderprev-opt',
+									'value'	  	=> 'sliderprincipal',
+									'compare' 	=> 'LIKE'
+								)
+							)
+						);?>
+						<?php $the_query = new WP_Query($args); ?>
+							<?php if ($the_query->have_posts()) : ?>
+								<?php while ($the_query->have_posts()) : $the_query->the_post(); ?>
+									<li>
+										<figure>
+											<?php the_post_thumbnail(); ?>
+										</figure>
+										<div class="sliderTxt">
+											<h3>
+												<?php if (get_field('sliderprev-titulo')) { ?>
+													<?php the_field('sliderprev-titulo'); ?>
+												<?php }else{ ?>
+													<?php the_title(); ?>
+												<?php } ?>
+											</h3>
+										</div>
+									</li>
+								<?php endwhile; ?>
+							<?php wp_reset_postdata(); ?>
+						<?php endif; ?>
 					</ul>
 				</div>
 			</article>

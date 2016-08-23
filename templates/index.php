@@ -22,15 +22,7 @@
 								<ul class="sliderFeat" id="sliderFeat">
 									<?php $args = array(
 										'posts_per_page' => '3',
-										'cat' => -70, //Menos portada cat=70
-										'meta_query'	=> array(
-											'relation'		=> 'AND',
-											array(
-												'key'	 	=> 'sliderprev-opt',
-												'value'	  	=> 'sliderprincipal',
-												'compare' 	=> 'LIKE'
-											)
-										)
+										'cat' => -70 //Menos portada cat=70
 									);?>
 									<?php $the_query = new WP_Query($args); ?>
 										<?php if ($the_query->have_posts()) : ?>
@@ -66,15 +58,7 @@
 								<ul class="sliderList" id="sliderList">
 									<?php $args = array(
 										'posts_per_page' => '3',
-										'cat' => -70, //Menos portada cat=70
-										'meta_query'	=> array(
-											'relation'		=> 'AND',
-											array(
-												'key'	 	=> 'sliderprev-opt',
-												'value'	  	=> 'sliderprincipal',
-												'compare' 	=> 'LIKE'
-											)
-										)
+										'cat' => -70 //Menos portada cat=70
 									);?>
 									<?php $the_query = new WP_Query($args); ?>
 										<?php if ($the_query->have_posts()) : ?>
