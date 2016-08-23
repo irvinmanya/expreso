@@ -141,7 +141,7 @@
 								'posts_per_page' => '3',
 								'cat' => 227,
 								'orderby' => 'rand',
-								'order' => 'DESC'
+								'order' => 'ASC'
 							);?>
 							<?php $the_query = new WP_Query($args); ?>
 								<?php if ($the_query->have_posts()) : ?>
