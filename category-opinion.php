@@ -77,6 +77,9 @@
 										<?php echo $category->name; ?>
 									</a>
 								</h3>
+								<p>
+									<?php echo category_description(); ?>
+								</p>
 								<a href="<?php echo esc_url( $category_link ); ?>" title="<?php echo $category->name; ?>"  class="linkPlus">
 									Míralo ahora
 									<i>
