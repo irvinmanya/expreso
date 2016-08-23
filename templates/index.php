@@ -136,10 +136,17 @@
 							<div class="titleBox2">
 								<h2>Noticias destacadas</h2>	
 							</div>
-
 							<?php $args = array(
 								'posts_per_page' => '3',
-								'cat' => 227
+								'cat' => 227,
+								'meta_query'	=> array(
+									'relation'		=> 'AND',
+									array(
+										'key'		=> 'destprev-opt',
+										'value'		=> 'destacadoprincipal',
+										'compare' 	=> 'LIKE'
+									)
+								)
 							);?>
 							<?php $the_query = new WP_Query($args); ?>
 								<?php if ($the_query->have_posts()) : ?>
@@ -161,7 +168,15 @@
 						<div class="col l4 m12 s12">
 							<?php $args = array(
 								'posts_per_page' => '1',
-								'cat' => 227
+								'cat' => 227,
+								'meta_query'	=> array(
+									'relation'		=> 'AND',
+									array(
+										'key'		=> 'destprev-opt',
+										'value'		=> 'destacadodeldia',
+										'compare' 	=> 'LIKE'
+									)
+								)
 							);?>
 							<?php $the_query = new WP_Query($args); ?>
 								<?php if ($the_query->have_posts()) : ?>
@@ -207,7 +222,15 @@
 							</div>
 							<?php $args = array(
 								'posts_per_page' => '3',
-								'cat' => 5
+								'cat' => 5,
+								'meta_query'	=> array(
+									'relation'		=> 'AND',
+									array(
+										'key'		=> 'destprev-opt',
+										'value'		=> 'destacadoprincipal',
+										'compare' 	=> 'LIKE'
+									)
+								)
 							);?>
 							<?php $the_query = new WP_Query($args); ?>
 								<?php if ($the_query->have_posts()) : ?>
@@ -244,7 +267,15 @@
 							</div>
 							<?php $args = array(
 								'posts_per_page' => '3',
-								'cat' => 6
+								'cat' => 6,
+								'meta_query'	=> array(
+									'relation'		=> 'AND',
+									array(
+										'key'		=> 'destprev-opt',
+										'value'		=> 'destacadoprincipal',
+										'compare' 	=> 'LIKE'
+									)
+								)
 							);?>
 							<?php $the_query = new WP_Query($args); ?>
 								<?php if ($the_query->have_posts()) : ?>
@@ -302,7 +333,15 @@
 							</div>
 							<?php $args = array(
 								'posts_per_page' => '3',
-								'cat' => 29
+								'cat' => 29,
+								'meta_query'	=> array(
+									'relation'		=> 'AND',
+									array(
+										'key'		=> 'destprev-opt',
+										'value'		=> 'destacadoprincipal',
+										'compare' 	=> 'LIKE'
+									)
+								)
 							);?>
 							<?php $the_query = new WP_Query($args); ?>
 								<?php if ($the_query->have_posts()) : ?>
@@ -323,7 +362,7 @@
 						<div class="col l4 m12 s12">
 							<?php $args = array(
 								'posts_per_page' => '1',
-								'cat' => 29
+								'cat' => 30
 							);?>
 							<?php $the_query = new WP_Query($args); ?>
 								<?php if ($the_query->have_posts()) : ?>
@@ -364,7 +403,15 @@
 							</div>
 							<?php $args = array(
 								'posts_per_page' => '3',
-								'cat' => 9
+								'cat' => 9,
+								'meta_query'	=> array(
+									'relation'		=> 'AND',
+									array(
+										'key'		=> 'destprev-opt',
+										'value'		=> 'destacadoprincipal',
+										'compare' 	=> 'LIKE'
+									)
+								)
 							);?>
 							<?php $the_query = new WP_Query($args); ?>
 								<?php if ($the_query->have_posts()) : ?>
