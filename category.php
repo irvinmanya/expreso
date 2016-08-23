@@ -12,15 +12,7 @@
 					<ul class="sliderFeat" id="sliderFeat">
 						<?php $args = array(
 							'posts_per_page' => '3',
-							'cat' => get_query_var('cat'),
-							'meta_query'	=> array(
-								'relation'		=> 'AND',
-								array(
-									'key'	 	=> 'sliderprev-opt',
-									'value'	  	=> 'sliderprincipal',
-									'compare' 	=> 'LIKE'
-								)
-							)
+							'cat' => get_query_var('cat')
 						);?>
 						<?php $the_query = new WP_Query($args); ?>
 							<?php if ($the_query->have_posts()) : ?>
@@ -55,16 +47,7 @@
 					</div>
 					<ul class="sliderList" id="sliderList">
 						<?php $args = array(
-							'posts_per_page' => '3',
-							'cat' => get_query_var('cat'),
-							'meta_query'	=> array(
-								'relation'		=> 'AND',
-								array(
-									'key'	 	=> 'sliderprev-opt',
-									'value'	  	=> 'sliderprincipal',
-									'compare' 	=> 'LIKE'
-								)
-							)
+							'posts_per_page' => '3'
 						);?>
 						<?php $the_query = new WP_Query($args); ?>
 							<?php if ($the_query->have_posts()) : ?>
@@ -97,15 +80,7 @@
 					<ul>
 						<?php $args = array(
 							'posts_per_page' => '5',
-							'cat' => get_query_var('cat'),
-							'meta_query'	=> array(
-								'relation'		=> 'AND',
-								array(
-									'key'	 	=> 'sliderprev-opt',
-									'value'	  	=> 'sliderprincipal',
-									'compare' 	=> 'LIKE'
-								)
-							)
+							'cat' => get_query_var('cat')
 						);?>
 						<?php $the_query = new WP_Query($args); ?>
 							<?php if ($the_query->have_posts()) : ?>
@@ -130,68 +105,72 @@
 	<div class="container notBox">
 		<div class="row">
 			<div class="col l8 m12 s12 rowRell">
-				<article class="col l6 m12 s12">
-					<div class="notItemHome notItemArt itemShadow margBot20">
-						<figure>
-							<a href="javascript:void(0)" title="">
-								<img src="<?php echo get_template_directory_uri() ?>/img/plantilla/noticia.jpg" alt="title" title="">
-							</a>
-							<figcaption>
-								<h3>
-									<a href="javascript:void(0)" title="">
-										John Boyega en el reparto de "Pacific Rim 2"
-									</a>
-								</h3>
-								<p>
-									El actor visto en "Attack The Block" o en el Episodio VII de 'La guerra de...
-								</p>
-							</figcaption>
-						</figure>
-					</div>
-				</article>
-				<article class="col l6 m12 s12">
-					<div class="notItemHome notItemArt itemShadow margBot20">
-						<figure>
-							<a href="javascript:void(0)" title="">
-								<img src="<?php echo get_template_directory_uri() ?>/img/plantilla/noticia.jpg" alt="title" title="">
-							</a>
-							<figcaption>
-								<h3>
-									<a href="javascript:void(0)" title="">
-										John Boyega en el reparto de "Pacific Rim 2"
-									</a>
-								</h3>
-								<p>
-									El actor visto en "Attack The Block" o en el Episodio VII de 'La guerra de...
-								</p>
-							</figcaption>
-						</figure>
-					</div>
-				</article>
+				<?php $args = array(
+					'posts_per_page' => '4',
+					'cat' => get_query_var('cat')
+				);?>
+				<?php $the_query = new WP_Query($args); ?>
+					<?php if ($the_query->have_posts()) : ?>
+						<?php while ($the_query->have_posts()) : $the_query->the_post(); ?>
+							<article class="col l6 m12 s12">
+								<div class="notItemHome notItemArt itemShadow margBot20">
+									<figure>
+										<a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>">
+											<?php the_post_thumbnail(); ?>
+										</a>
+										<figcaption>
+											<h3>
+												<a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>">
+													<?php the_title(); ?>
+												</a>
+											</h3>
+											<p>
+												<?php the_excerpt(); ?>
+											</p>
+										</figcaption>
+									</figure>
+								</div>
+							</article>
+						<?php endwhile; ?>
+					<?php wp_reset_postdata(); ?>
+				<?php endif; ?>
 			</div>
 			<div class="col l4 m12 s12">
-				<article class="itemLast itemShadow margBot20">
-					<figure>
-						<figcaption>
-							<h3>
-								Destacada del día
-							</h3>
-						</figcaption>
-						<a href="javascript:void(0)" title="">
-							<img src="<?php echo get_template_directory_uri() ?>/img/plantilla/noticia.jpg" alt="title" title="title">
-						</a>
-						<figcaption>
-							<h4>
-								<a href="javascript:void(0)" title="">
-									Jhon Boyega en el reparto de "Pacific Rim 2"
-								</a>
-							</h4>
-							<p>
-								El actor visto en "Attack The Block" o en el Episodio VII de 'La guerra de...
-							</p>
-						</figcaption>
-					</figure>
-				</article>
+				<?php $args = array(
+					'posts_per_page' => '1',
+					'cat' => get_query_var('cat')
+				);?>
+				<?php $the_query = new WP_Query($args); ?>
+					<?php if ($the_query->have_posts()) : ?>
+						<?php while ($the_query->have_posts()) : $the_query->the_post(); ?>
+							<article class="itemLast itemShadow margBot20">
+								<figure>
+									<figcaption>
+										<h3>
+											Destacada del día
+										</h3>
+									</figcaption>
+									<a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>">
+										<?php the_post_thumbnail(); ?>
+									</a>
+									<figcaption>
+										<h4>
+											<a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>">
+												<?php the_title(); ?>
+											</a>
+										</h4>
+										<p>
+											<?php the_excerpt(); ?>
+										</p>
+									</figcaption>
+								</figure>
+							</article>
+						<?php endwhile; ?>
+					<?php wp_reset_postdata(); ?>
+				<?php endif; ?>
+
+				<?php //Publicidad - Small ?>
+				<?php get_template_part( 'content/content', 'pubsmall' ); ?>
 			</div>
 		</div>
 	</div>
@@ -202,115 +181,36 @@
 	<div class="container notBox">
 		<div class="row">
 			<div class="col l8 m12 s12 rowRell">
-				<article class="col l6 m12 s12">
-					<div class="notItemHome notItemArt notItemArt itemShadow margBot20">
-						<figure>
-							<a href="javascript:void(0)" title="">
-								<img src="<?php echo get_template_directory_uri() ?>/img/plantilla/noticia.jpg" alt="title" title="">
-							</a>
-							<figcaption>
-								<h3>
-									<a href="javascript:void(0)" title="">
-										John Boyega en el reparto de "Pacific Rim 2"
-									</a>
-								</h3>
-								<p>
-									El actor visto en "Attack The Block" o en el Episodio VII de 'La guerra de...
-								</p>
-							</figcaption>
-						</figure>
-					</div>
-				</article>
-				<article class="col l6 m12 s12">
-					<div class="notItemHome notItemArt itemShadow margBot20">
-						<figure>
-							<a href="javascript:void(0)" title="">
-								<img src="<?php echo get_template_directory_uri() ?>/img/plantilla/noticia.jpg" alt="title" title="">
-							</a>
-							<figcaption>
-								<h3>
-									<a href="javascript:void(0)" title="">
-										John Boyega en el reparto de "Pacific Rim 2"
-									</a>
-								</h3>
-								<p>
-									El actor visto en "Attack The Block" o en el Episodio VII de 'La guerra de...
-								</p>
-							</figcaption>
-						</figure>
-					</div>
-				</article>
-			</div>
-			<div class="col l4 m12 s12">
-				<?php //Publicidad - Small ?>
-				<?php get_template_part( 'content/content', 'pubsmall' ); ?>
-			</div>
-		</div>
-	</div>
-</section>
-
-<?php //Seccion #3 ?>
-<section class="secrow secDestac">
-	<div class="container notBox">
-		<div class="row">
-			<div class="col l8 m12 s12 rowRell">
-				<article class="col l4 m12 s12">
-					<div class="notItemHome notItemArt itemShadow margBot20">
-						<figure>
-							<a href="javascript:void(0)" title="">
-								<img src="<?php echo get_template_directory_uri() ?>/img/plantilla/noticia.jpg" alt="title" title="">
-							</a>
-							<figcaption>
-								<h3>
-									<a href="javascript:void(0)" title="">
-										John Boyega en el reparto de "Pacific Rim 2"
-									</a>
-								</h3>
-								<p>
-									El actor visto en "Attack The Block" o en el Episodio VII de 'La guerra de...
-								</p>
-							</figcaption>
-						</figure>
-					</div>
-				</article>
-				<article class="col l4 m12 s12">
-					<div class="notItemHome notItemArt itemShadow margBot20">
-						<figure>
-							<a href="javascript:void(0)" title="">
-								<img src="<?php echo get_template_directory_uri() ?>/img/plantilla/noticia.jpg" alt="title" title="">
-							</a>
-							<figcaption>
-								<h3>
-									<a href="javascript:void(0)" title="">
-										John Boyega en el reparto de "Pacific Rim 2"
-									</a>
-								</h3>
-								<p>
-									El actor visto en "Attack The Block" o en el Episodio VII de 'La guerra de...
-								</p>
-							</figcaption>
-						</figure>
-					</div>
-				</article>
-				<article class="col l4 m12 s12">
-					<div class="notItemHome notItemArt itemShadow margBot20">
-						<figure>
-							<a href="javascript:void(0)" title="">
-								<img src="<?php echo get_template_directory_uri() ?>/img/plantilla/noticia.jpg" alt="title" title="">
-							</a>
-							<figcaption>
-								<h3>
-									<a href="javascript:void(0)" title="">
-										John Boyega en el reparto de "Pacific Rim 2"
-									</a>
-								</h3>
-								<p>
-									El actor visto en "Attack The Block" o en el Episodio VII de 'La guerra de...
-								</p>
-							</figcaption>
-						</figure>
-					</div>
-				</article>
+				<?php $args = array(
+					'cat' => get_query_var('cat'),
+					'orderby'        => 'rand',
+					'posts_per_page' => '6'
+				);?>
+				<?php $the_query = new WP_Query($args); ?>
+					<?php if ($the_query->have_posts()) : ?>
+						<?php while ($the_query->have_posts()) : $the_query->the_post(); ?>
+							<article class="col l4 m12 s12">
+								<div class="notItemHome notItemArt itemShadow margBot20">
+									<figure>
+										<a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>">
+											<?php the_post_thumbnail(); ?>
+										</a>
+										<figcaption>
+											<h3>
+												<a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>">
+													<?php the_title(); ?>
+												</a>
+											</h3>
+											<p>
+												<?php the_excerpt(); ?>
+											</p>
+										</figcaption>
+									</figure>
+								</div>
+							</article>
+						<?php endwhile; ?>
+					<?php wp_reset_postdata(); ?>
+				<?php endif; ?>
 			</div>
 			<div class="col l4 m12 s12">
 				<article class="itemLast itemShadow margBot20">
@@ -332,75 +232,6 @@
 						</figcaption>
 					</figure>
 				</article>
-			</div>
-		</div>
-	</div>
-</section>
-
-<?php //Seccion #4 ?>
-<section class="secrow secDestac">
-	<div class="container notBox">
-		<div class="row">
-			<div class="col l8 m12 s12 rowRell">
-				<article class="col l4 m12 s12">
-					<div class="notItemHome notItemArt itemShadow margBot20">
-						<figure>
-							<a href="javascript:void(0)" title="">
-								<img src="<?php echo get_template_directory_uri() ?>/img/plantilla/noticia.jpg" alt="title" title="">
-							</a>
-							<figcaption>
-								<h3>
-									<a href="javascript:void(0)" title="">
-										John Boyega en el reparto de "Pacific Rim 2"
-									</a>
-								</h3>
-								<p>
-									El actor visto en "Attack The Block" o en el Episodio VII de 'La guerra de...
-								</p>
-							</figcaption>
-						</figure>
-					</div>
-				</article>
-				<article class="col l4 m12 s12">
-					<div class="notItemHome notItemArt itemShadow margBot20">
-						<figure>
-							<a href="javascript:void(0)" title="">
-								<img src="<?php echo get_template_directory_uri() ?>/img/plantilla/noticia.jpg" alt="title" title="">
-							</a>
-							<figcaption>
-								<h3>
-									<a href="javascript:void(0)" title="">
-										John Boyega en el reparto de "Pacific Rim 2"
-									</a>
-								</h3>
-								<p>
-									El actor visto en "Attack The Block" o en el Episodio VII de 'La guerra de...
-								</p>
-							</figcaption>
-						</figure>
-					</div>
-				</article>
-				<article class="col l4 m12 s12">
-					<div class="notItemHome notItemArt itemShadow margBot20">
-						<figure>
-							<a href="javascript:void(0)" title="">
-								<img src="<?php echo get_template_directory_uri() ?>/img/plantilla/noticia.jpg" alt="title" title="">
-							</a>
-							<figcaption>
-								<h3>
-									<a href="javascript:void(0)" title="">
-										John Boyega en el reparto de "Pacific Rim 2"
-									</a>
-								</h3>
-								<p>
-									El actor visto en "Attack The Block" o en el Episodio VII de 'La guerra de...
-								</p>
-							</figcaption>
-						</figure>
-					</div>
-				</article>
-			</div>
-			<div class="col l4 m12 s12">
 				<?php //Publicidad - Small ?>
 				<?php get_template_part( 'content/content', 'pubsmall' ); ?>
 			</div>
@@ -417,90 +248,44 @@
 					<h2>Columnistas del día</h2>
 				</div>
 				<ul class="owlColum owlColumnista">
-					<li class="itemShadow">
-						<figure>
-							<a href="javascript:void(0)" title="">
-								<img src="<?php echo get_template_directory_uri() ?>/img/plantilla/noticia.jpg" alt="title" title="">
-							</a>
-							<figcaption>
-								<h3>
-									<a href="https://manya.pe" target="blank" title="">
-										Nombre del columnista
-									</a>
-								</h3>
-							</figcaption>
-						</figure>
-					</li>
-					<li class="itemShadow">
-						<figure>
-							<a href="javascript:void(0)" title="">
-								<img src="<?php echo get_template_directory_uri() ?>/img/plantilla/noticia.jpg" alt="title" title="">
-							</a>
-							<figcaption>
-								<h3>
-									<a href="https://manya.pe" target="blank" title="">
-										Nombre del columnista
-									</a>
-								</h3>
-							</figcaption>
-						</figure>
-					</li>
-					<li class="itemShadow">
-						<figure>
-							<a href="javascript:void(0)" title="">
-								<img src="<?php echo get_template_directory_uri() ?>/img/plantilla/noticia.jpg" alt="title" title="">
-							</a>
-							<figcaption>
-								<h3>
-									<a href="https://manya.pe" target="blank" title="">
-										Nombre del columnista
-									</a>
-								</h3>
-							</figcaption>
-						</figure>
-					</li>
-					<li class="itemShadow">
-						<figure>
-							<a href="javascript:void(0)" title="">
-								<img src="<?php echo get_template_directory_uri() ?>/img/plantilla/noticia.jpg" alt="title" title="">
-							</a>
-							<figcaption>
-								<h3>
-									<a href="https://manya.pe" target="blank" title="">
-										Nombre del columnista
-									</a>
-								</h3>
-							</figcaption>
-						</figure>
-					</li>
-					<li class="itemShadow">
-						<figure>
-							<a href="javascript:void(0)" title="">
-								<img src="<?php echo get_template_directory_uri() ?>/img/plantilla/noticia.jpg" alt="title" title="">
-							</a>
-							<figcaption>
-								<h3>
-									<a href="https://manya.pe" target="blank" title="">
-										Nombre del columnista
-									</a>
-								</h3>
-							</figcaption>
-						</figure>
-					</li>
-					<li class="itemShadow">
-						<figure>
-							<a href="javascript:void(0)" title="">
-								<img src="<?php echo get_template_directory_uri() ?>/img/plantilla/noticia.jpg" alt="title" title="">
-							</a>
-							<figcaption>
-								<h3>
-									<a href="https://manya.pe" target="blank" title="">
-										Nombre del columnista
-									</a>
-								</h3>
-							</figcaption>
-						</figure>
-					</li>
+					<?php $args = array(
+						'posts_per_page' => '6',
+						'cat' => 18
+					);?>
+					<?php $the_query = new WP_Query($args); ?>
+						<?php if ($the_query->have_posts()) : ?>
+							<?php while ($the_query->have_posts()) : $the_query->the_post(); ?>
+								<li>
+									<?php
+										$categories=get_the_category();
+										$separator=", ";
+										$output="";
+										if($categories){ ?>
+										<figure>
+											<?php foreach ($categories as $category) {
+												$caTaxImg = get_field('caTax-img', 'category_'.$category->cat_ID); ?>
+												<a href="<?php echo get_category_link($category->term_id); ?>" title="<?php echo $category->cat_name; ?>" >
+													<img src="<?php echo $caTaxImg['url']; ?>" alt="<?php echo $category->cat_name; ?>" title="<?php echo $category->cat_name; ?>">
+												</a>
+											<?php } ?>
+										</figure>
+									<?php } ?>
+									<div class="columTxt">
+										<h3>
+											<?php the_title(); ?>
+										</h3>
+										<h4>
+											<?php foreach ($categories as $category) {
+												$output.='<a href="'.get_category_link($category->term_id).'" title="'.$category->cat_name.'" >'.$category->cat_name.'</a>'.$separator; ?>
+											<?php }  ?>
+											Por: <?php echo trim($output, $separator); ?>
+										</h4>
+										<?php the_excerpt(); ?>
+									</div>
+								</li>
+							<?php endwhile; ?>
+						<?php wp_reset_postdata(); ?>
+					<?php endif; ?>
 				</ul>
 			</div>
 		</div>
@@ -516,27 +301,42 @@
 				<?php //Modulo #1 ?>
 				<article class="col l6 m12 s12">
 					<div class="itemModNot itemShadow margBot20">
-						<figure>
-							<a href="javascript:void(0)" title="">
-								<img src="<?php echo get_template_directory_uri() ?>/img/plantilla/noticia.jpg" alt="title" title="title">
-							</a>
-						</figure>
-						<ul>
-							<li>
-								<a href="javascript:void(0)" title="">
-									¿Qué profesionales serán más buscados en 10 años?
-								</a>
-							</li>
-							<li>
-								<a href="javascript:void(0)" title="">
-									¿Qué profesionales serán más buscados en 10 años?
-								</a>
-							</li>
-							<li>
-								<a href="javascript:void(0)" title="">
-									¿Qué profesionales serán más buscados en 10 años?
-								</a>
-							</li>
+						<?php $args = array(
+							'orderby'        => 'rand',
+							'posts_per_page' => '1',
+							'cat' => get_query_var('cat')
+						);?>
+						<?php $the_query = new WP_Query($args); ?>
+							<ul class="iModListFig">
+							<?php if ($the_query->have_posts()) : ?>
+								<?php while ($the_query->have_posts()) : $the_query->the_post(); ?>
+									<li>
+										<figure>
+											<a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>">
+												<?php the_post_thumbnail(); ?>
+											</a>
+										</figure>
+									</li>
+								<?php endwhile; ?>
+							<?php wp_reset_postdata(); ?>
+							</ul>
+						<?php endif; ?>
+						<ul class="iModList">
+							<?php $args = array(
+								'posts_per_page' => '4',
+								'cat' => get_query_var('cat')
+							);?>
+							<?php $the_query = new WP_Query($args); ?>
+								<?php if ($the_query->have_posts()) : ?>
+									<?php while ($the_query->have_posts()) : $the_query->the_post(); ?>
+										<li>
+											<a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>">
+												<?php the_title(); ?>
+											</a>
+										</li>
+									<?php endwhile; ?>
+								<?php wp_reset_postdata(); ?>
+							<?php endif; ?>
 						</ul>
 					</div>
 				</article>
@@ -544,27 +344,42 @@
 				<?php //Modulo #2 ?>
 				<article class="col l6 m12 s12">
 					<div class="itemModNot itemShadow margBot20">
-						<figure>
-							<a href="javascript:void(0)" title="">
-								<img src="<?php echo get_template_directory_uri() ?>/img/plantilla/noticia.jpg" alt="title" title="title">
-							</a>
-						</figure>
-						<ul>
-							<li>
-								<a href="javascript:void(0)" title="">
-									¿Qué profesionales serán más buscados en 10 años?
-								</a>
-							</li>
-							<li>
-								<a href="javascript:void(0)" title="">
-									¿Qué profesionales serán más buscados en 10 años?
-								</a>
-							</li>
-							<li>
-								<a href="javascript:void(0)" title="">
-									¿Qué profesionales serán más buscados en 10 años?
-								</a>
-							</li>
+						<?php $args = array(
+							'orderby'        => 'rand',
+							'posts_per_page' => '1',
+							'cat' => get_query_var('cat')
+						);?>
+						<?php $the_query = new WP_Query($args); ?>
+							<ul class="iModListFig">
+							<?php if ($the_query->have_posts()) : ?>
+								<?php while ($the_query->have_posts()) : $the_query->the_post(); ?>
+									<li>
+										<figure>
+											<a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>">
+												<?php the_post_thumbnail(); ?>
+											</a>
+										</figure>
+									</li>
+								<?php endwhile; ?>
+							<?php wp_reset_postdata(); ?>
+							</ul>
+						<?php endif; ?>
+						<ul class="iModList">
+							<?php $args = array(
+								'posts_per_page' => '4',
+								'cat' => get_query_var('cat')
+							);?>
+							<?php $the_query = new WP_Query($args); ?>
+								<?php if ($the_query->have_posts()) : ?>
+									<?php while ($the_query->have_posts()) : $the_query->the_post(); ?>
+										<li>
+											<a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>">
+												<?php the_title(); ?>
+											</a>
+										</li>
+									<?php endwhile; ?>
+								<?php wp_reset_postdata(); ?>
+							<?php endif; ?>
 						</ul>
 					</div>
 				</article>
@@ -595,23 +410,33 @@
 			<div class="col l4 s12 m12">
 
 				<?php //Entrevista ?>
-				<article class="itemLast itemShadow margBot20">
-					<figure>
-						<figcaption>
-							<h3>
-								Entrevista
-							</h3>
-						</figcaption>
-						<a href="javascript:void(0)" title="">
-							<img src="<?php echo get_template_directory_uri() ?>/img/plantilla/noticia.jpg" alt="title" title="title">
-						</a>
-						<figcaption>
-							<p>
-								El actor visto en "Attack The Block" o en el Episodio VII de 'La guerra de...
-							</p>
-						</figcaption>
-					</figure>
-				</article>
+				<?php $args = array(
+					'posts_per_page' => '1',
+					'cat' => 30
+				);?>
+				<?php $the_query = new WP_Query($args); ?>
+					<?php if ($the_query->have_posts()) : ?>
+						<?php while ($the_query->have_posts()) : $the_query->the_post(); ?>
+							<article class="itemLast itemShadow margBot20">
+								<figure>
+									<figcaption>
+										<h3>
+											Entrevista
+										</h3>
+									</figcaption>
+									<a href="javascript:void(0)" title="">
+										<?php the_post_thumbnail(); ?>
+									</a>
+									<figcaption>
+										<p>
+											<?php the_excerpt(); ?>
+										</p>
+									</figcaption>
+								</figure>
+							</article>
+						<?php endwhile; ?>
+					<?php wp_reset_postdata(); ?>
+				<?php endif; ?>
 
 				<?php //Publicidad - small ?>
 				<?php get_template_part( 'content/content', 'pubsmall' ); ?>
