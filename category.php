@@ -424,7 +424,7 @@
 											Entrevista
 										</h3>
 									</figcaption>
-									<a href="javascript:void(0)" title="">
+									<a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>">
 										<?php the_post_thumbnail(); ?>
 									</a>
 									<figcaption>
