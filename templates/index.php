@@ -67,8 +67,13 @@
 									<?php $args = array(
 										'posts_per_page' => '3',
 										'cat' => -70, //Menos portada cat=70
-										'meta_key'		=> 'sliderprev-opt',
-										'meta_value'	=> 'sliderprincipal'
+										'meta_query'	=> array(
+											array(
+												'key'	 	=> 'sliderprev-opt',
+												'value'	  	=> 'sliderprincipal',
+												'compare' 	=> '==',
+											)
+										)
 									);?>
 									<?php $the_query = new WP_Query($args); ?>
 										<?php if ($the_query->have_posts()) : ?>
