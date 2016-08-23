@@ -12,7 +12,15 @@
 					<ul class="sliderFeat" id="sliderFeat">
 						<?php $args = array(
 							'posts_per_page' => '3',
-							'cat' => get_query_var('cat')
+							'cat' => get_query_var('cat'),
+							'meta_query'	=> array(
+								'relation'		=> 'AND',
+								array(
+									'key'	 	=> 'sliderprev-opt',
+									'value'	  	=> 'sliderprincipal',
+									'compare' 	=> 'LIKE'
+								)
+							)
 						);?>
 						<?php $the_query = new WP_Query($args); ?>
 							<?php if ($the_query->have_posts()) : ?>
@@ -48,7 +56,15 @@
 					<ul class="sliderList" id="sliderList">
 						<?php $args = array(
 							'posts_per_page' => '3',
-							'cat' => get_query_var('cat')
+							'cat' => get_query_var('cat'),
+							'meta_query'	=> array(
+								'relation'		=> 'AND',
+								array(
+									'key'	 	=> 'sliderprev-opt',
+									'value'	  	=> 'sliderprincipal',
+									'compare' 	=> 'LIKE'
+								)
+							)
 						);?>
 						<?php $the_query = new WP_Query($args); ?>
 							<?php if ($the_query->have_posts()) : ?>
@@ -79,23 +95,30 @@
 						Último minuto
 					</h3>
 					<ul>
-						<li>
-							<a href="javascript:void(0)">
-								El presidente del congreso, Luis iberico
-							</a>
-						</li>
-						<li>
-							<a href="javascript:void(0)">
-								Tumbes: Miembros de mesa estaban requisitoriados
-							</a>
-						</li>
-						<li>
-							<a href="javascript:void(0)">
-								Tumbes: Miembros de mesa estaban requisitoriados
-							</a>
-						</li>
+						<?php $args = array(
+							'posts_per_page' => '5',
+							'cat' => get_query_var('cat'),
+							'meta_query'	=> array(
+								'relation'		=> 'AND',
+								array(
+									'key'	 	=> 'sliderprev-opt',
+									'value'	  	=> 'sliderprincipal',
+									'compare' 	=> 'LIKE'
+								)
+							)
+						);?>
+						<?php $the_query = new WP_Query($args); ?>
+							<?php if ($the_query->have_posts()) : ?>
+								<?php while ($the_query->have_posts()) : $the_query->the_post(); ?>
+									<li>
+										<a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>">
+											<?php the_title(); ?>
+										</a>
+									</li>
+								<?php endwhile; ?>
+							<?php wp_reset_postdata(); ?>
+						<?php endif; ?>
 					</ul>
-					</figure>
 				</div>
 			</article>
 		</div>
