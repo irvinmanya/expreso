@@ -60,7 +60,7 @@
 			<?php //Content ?>
 			<div class="col l9 m12 s12">
 				<?php
-				$idObj = get_category_by_slug('blogueros'); 
+				$idObj = get_category_by_slug('opinion'); 
 				$categories = get_categories(array('child_of' => get_query_var('cat'))); 
 				foreach ($categories as $category) : ?>
 					<?php $category_link = get_category_link($category->cat_ID); ?>
@@ -79,6 +79,7 @@
 								</h3>
 								<p>
 									<?php echo category_description(); ?>
+									<?php echo $category->description; ?>
 								</p>
 								<a href="<?php echo esc_url( $category_link ); ?>" title="<?php echo $category->name; ?>"  class="linkPlus">
 									Míralo ahora
