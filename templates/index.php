@@ -139,7 +139,8 @@
 
 							<?php $args = array(
 								'posts_per_page' => '3',
-								'cat' => 227
+								'cat' => 227,
+								'orderby' => 'rand'
 							);?>
 							<?php $the_query = new WP_Query($args); ?>
 								<?php if ($the_query->have_posts()) : ?>
@@ -157,7 +158,6 @@
 								</i>
 								Ver más
 							</a>
-
 						</div>
 						<div class="col l4 m12 s12">
 							<?php $args = array(
