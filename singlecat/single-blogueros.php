@@ -147,6 +147,30 @@
 								</a>
 							</div>
 						</div>
+						<div class="blogerItem itemShadow margBot20">
+							<figure>
+								<a href="javascript:void(0)" title="">
+									<img src="<?php echo get_template_directory_uri() ?>/img/plantilla/noticia.jpg" alt="title" title="">
+								</a>
+							</figure>
+							<div class="blogerTxt">
+								<h3>
+									<a href="javascript:void(0)" title="">
+										Jhon Boyega en el raparto de...
+									</a>
+								</h3>
+								<p>
+									Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+									tempor incididunt ut labore et dolore 
+								</p>
+								<a href="javascript:void(0)" title="" class="linkPlus">
+									Míralo ahora
+									<i>
+										<img src="<?php echo get_template_directory_uri() ?>/img/plantilla/arrowLeftMod.svg" alt="" title="">
+									</i>
+								</a>
+							</div>
+						</div>
 					</div>
 				</div>
 
