@@ -13,6 +13,7 @@
 					<?php if ($the_query->have_posts()) : ?>
 						<?php while ($the_query->have_posts()) : $the_query->the_post(); ?>
 							<div class="blogAutor itemShadow lineBottom">
+								<?php $categories=get_the_category(); ?>
 								<?php foreach ($categories as $category) { ?>
 									<?php $caTaxImg = get_field('caTax-img', 'category_'.$category->cat_ID); ?>
 									<figure>
