@@ -109,23 +109,33 @@
 				<?php get_template_part( 'content/content', 'pubsmall' ); ?>
 				
 				<?php //Entrvista ?>
-				<article class="itemLast itemShadow margBot20">
-					<figure>
-						<figcaption>
-							<h3>
-								Entrevista
-							</h3>
-						</figcaption>
-						<a href="javascript:void(0)" title="">
-							<img src="<?php echo get_template_directory_uri() ?>/img/plantilla/noticia.jpg" alt="title" title="title">
-						</a>
-						<figcaption>
-							<p>
-								El actor visto en "Attack The Block" o en el Episodio VII de 'La guerra de...
-							</p>
-						</figcaption>
-					</figure>
-				</article>
+				<?php $args = array(
+					'posts_per_page' => '1',
+					'cat' => 30
+				);?>
+				<?php $the_query = new WP_Query($args); ?>
+					<?php if ($the_query->have_posts()) : ?>
+						<?php while ($the_query->have_posts()) : $the_query->the_post(); ?>
+							<article class="itemLast itemShadow margBot20">
+								<figure>
+									<figcaption>
+										<h3>
+											Entrevista
+										</h3>
+									</figcaption>
+									<a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>">
+										<?php the_post_thumbnail(); ?>
+									</a>
+									<figcaption>
+										<p>
+											<?php the_excerpt(); ?>
+										</p>
+									</figcaption>
+								</figure>
+							</article>
+						<?php endwhile; ?>
+					<?php wp_reset_postdata(); ?>
+				<?php endif; ?>
 
 				<?php //Entrevista ?>
 				<article class="itemLast itemShadow margBot20">
