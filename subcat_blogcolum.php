@@ -39,7 +39,7 @@
 			<?php //Content ?>
 			<div class="col l9 m12 s12">
 				<?php $args = array(
-					'posts_per_page' => '1',
+					'posts_per_page' => '-1',
 					'cat' => get_query_var('cat')
 				);?>
 				<?php $the_query = new WP_Query($args); ?>
