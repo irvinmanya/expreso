@@ -1009,16 +1009,9 @@
 									</h2>
 								</div>
 								<ul class="owlBlog owlBlogueros">
-									<?php $cat=131; ?>
 									<?php $args = array(
-										'posts_per_page' => 2,
-										'offset' => 0,
-										'cat' => $cat->cat_ID,
-										'orderby' => 'ID',
-										'order' => 'DESC',
-										'post_type' => 'post',
-										'post_status' => 'publish',
-										'suppress_filters' => true
+										'posts_per_page' => '2',
+										'child_of'=>131
 									);?>
 									<?php $the_query = new WP_Query($args); ?>
 										<?php if ($the_query->have_posts()) : ?>
