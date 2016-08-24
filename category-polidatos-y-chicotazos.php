@@ -80,7 +80,7 @@
 									</a>
 									<figcaption>
 										<p>
-											<?php the_excerpt(); ?>
+											<?php the_content(); ?>
 										</p>
 									</figcaption>
 								</figure>
