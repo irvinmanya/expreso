@@ -1093,7 +1093,6 @@
 															<?php }  ?>
 															<?php $author = get_the_author(); ?>
 															</a>
-															<?php echo $subcategories; ?>
 														</h4>
 														<?php the_excerpt(); ?>
 													</div>
