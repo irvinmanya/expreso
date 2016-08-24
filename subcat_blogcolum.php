@@ -77,12 +77,6 @@
 										<p>
 											<?php the_excerpt(); ?>
 										</p>
-										<a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>" class="linkPlus">
-											Míralo ahora
-											<i>
-												<img src="<?php echo get_template_directory_uri() ?>/img/plantilla/arrowLeftMod.svg" alt="" title="">
-											</i>
-										</a>
 									</div>
 								</div>
 							</article>
