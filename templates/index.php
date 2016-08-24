@@ -80,9 +80,6 @@
 										<?php if ($the_query->have_posts()) : ?>
 											<?php while ($the_query->have_posts()) : $the_query->the_post(); ?>
 												<li>
-													<figure>
-														<?php the_post_thumbnail(); ?>
-													</figure>
 													<div class="sliderTxt">
 														<h3>
 															<?php if (get_field('sliderprev-titulo')) { ?>

@@ -13,11 +13,11 @@
 						Encuentra rápido lo que más te interesa leer
 					</h2>
 				</div>
+
 				<div class="inpFiltro">
 					<input type="date" name="fecEdit" id="fecEdit" class="datepicker picker__input" placeholder="Escoja una fecha">
 				</div><br>
 
-				
 				<button type="submit" class="btnGeneral">
 					Filtrar
 				</button>
@@ -51,7 +51,6 @@
 							<?php endwhile; ?>
 						<?php wp_reset_postdata(); ?>
 					<?php endif; ?>
-
 				</ul>
 			</div>
 
