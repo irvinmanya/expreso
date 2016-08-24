@@ -1053,6 +1053,7 @@
 																$output.='<a href="'.get_category_link($category->term_id).'" title="'.$category->cat_name.'" >'.$category->cat_name.'</a>'.$separator; ?>
 															<?php }  ?>
 															Por: <?php echo trim($output, $separator); ?>
+															<?php echo $subcategories; ?>
 														</h4>
 														<?php the_excerpt(); ?>
 													</div>
