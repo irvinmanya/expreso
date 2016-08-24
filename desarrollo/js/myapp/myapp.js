@@ -260,6 +260,7 @@ $(document).on('ready',function() {
           equalheight('.teamItem');
           equalheight('.itemModNot');
           equalheight('.notItemHome');
+          equalheight('.blogerItem');
           // equalheight('.notItemHome img');
         }
     });
@@ -269,6 +270,7 @@ $(document).on('ready',function() {
           equalheight('.teamItem');
           equalheight('.itemModNot');
           equalheight('.notItemHome');
+          equalheight('.blogerItem');
           // equalheight('.notItemHome img');
         }
     });
