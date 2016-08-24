@@ -91,7 +91,8 @@
 							<i>
 								<img src="<?php echo get_template_directory_uri() ?>/img/plantilla/icoUser.svg" alt="Autor" title="Autor">
 							</i>
-							Autor name |
+							<?php $author = get_the_author(); ?>
+							<?php echo $author; ?> |
 						</li>
 						<li>
 							<i>
