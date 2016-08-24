@@ -3,16 +3,30 @@
 		<div class="row">
 			<?php //filtros ?>
 			<div class="col l3 m12 s12 rowFiltros lineLateralRight">
-				<div class="blogAutor itemShadow lineBottom">
-					<figure>
-						<img src="<?php echo get_template_directory_uri() ?>/img/plantilla/noticia.jpg" alt="title" title="">
-						<figcaption>
-							<h3>Nombre del comunista</h3>
-							<h4>Nombre de la columna</h4>
-							<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Asperiores eveniet optio inventore quos voluptat</p>
-						</figcaption>
-					</figure>
-				</div>
+				<?php $args = array(
+					'posts_per_page' => '1',
+					'cat' => get_query_var('cat')
+				);?>
+				<?php $the_query = new WP_Query($args); ?>
+					<?php if ($the_query->have_posts()) : ?>
+						<?php while ($the_query->have_posts()) : $the_query->the_post(); ?>
+							<div class="blogAutor itemShadow lineBottom">
+								<?php $categories=get_the_category(); ?>
+								<?php foreach ($categories as $category) { ?>
+									<?php $caTaxImg = get_field('caTax-img', 'category_'.$category->cat_ID); ?>
+									<figure>
+										<img src="<?php echo $caTaxImg['url']; ?>" alt="<?php echo $category->cat_name; ?>" title="<?php echo $category->cat_name; ?>">
+										<figcaption>
+											<h3><?php echo $category->cat_name; ?></h3>
+											<!--<h4>Nombre de la columna</h4>-->
+											<p><?php echo $category->description; ?></p>
+										</figcaption>
+									</figure>
+								<?php } ?>
+							</div>
+						<?php endwhile; ?>
+					<?php wp_reset_postdata(); ?>
+				<?php endif; ?>
 				<div class="titleBox2">
 					<h2>
 						Encuentra rápido lo que más te interesa leer
