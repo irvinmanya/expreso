@@ -137,4 +137,35 @@ Por	favor	<a	href="http://browsehappy.com/">actualiza	tu	navegador</a>
 Para	mejorar	la	experiencia..
 </p>
 <![endif]-->
+<script type="text/javascript">
+	$(document).ready(function(){
+		$(window).load(function(){
+			setTimeout(function(){
+				var $thys = $('.iModList');
+					for (var a=0; a<$thys.length; a++){
+					  var height = $thys.eq(a).closest('.iModList').height();  
+					  var tam = $thys.eq(a).find('li').length;
+					  var tamno = height / tam;
+					  $thys.eq(a).find('li').css('height',tamno);
+					}
+				$('.iModListFig li').hide();
+				
+				$('.iModList li').on('mouseenter',function(){
+				  var $thisLi = $(this);
+				  var indexLi = $thisLi.index();
+				  $thisLi.closest('.itemModNot').find('.iModListFig').find('li').hide();
+				  $thisLi.closest('.itemModNot').find('.iModListFig').find('li').eq(indexLi).show();
+				});
+
+				// $('.iModList li').on('mouseleave',function(){
+				//   var $thisLi = $(this);
+				//   $thisLi.closest('.itemModNot').find('.iModListFig').find('li').hide();
+				// });
+			},100);
+		});
+	});
+</script>
+<style type="text/css">
+
+</style>
 <?php wp_footer(); ?>
