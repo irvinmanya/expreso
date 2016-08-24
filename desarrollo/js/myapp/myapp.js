@@ -260,7 +260,7 @@ $(document).on('ready',function() {
           equalheight('.teamItem');
           equalheight('.itemModNot');
           equalheight('.notItemHome');
-          equalheight('.notItemHome img');
+          // equalheight('.notItemHome img');
         }
     });
 
@@ -269,7 +269,7 @@ $(document).on('ready',function() {
           equalheight('.teamItem');
           equalheight('.itemModNot');
           equalheight('.notItemHome');
-          equalheight('.notItemHome img');
+          // equalheight('.notItemHome img');
         }
     });
     //-------------- [ FIN - Plugin de height ] --------------//
