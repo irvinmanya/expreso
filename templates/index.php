@@ -1009,10 +1009,11 @@
 									</h2>
 								</div>
 								<ul class="owlBlog owlBlogueros">
+									<?php $cat=131; ?>
 									<?php $args = array(
 										'numberposts' => 2,
 										'offset' => 0,
-										'category' => 131->cat_ID,
+										'category' => $cat->cat_ID,
 										'orderby' => 'ID',
 										'order' => 'DESC',
 										'post_type' => 'post',
