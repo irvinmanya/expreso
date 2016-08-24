@@ -1022,7 +1022,7 @@
 								?>
 								<ul class="owlBlog owlBlogueros">
 									<?php $args = array(
-										'post_type' => 'post'
+										'post_type' => 'post',
 										'posts_per_page' => '2',
 										'category__in' => $subcategories
 									);?>
