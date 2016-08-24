@@ -1087,10 +1087,12 @@
 															<?php the_title(); ?>
 														</h3>
 														<h4>
+															Por:
 															<?php foreach ($categories as $category) {
-																$output.='<a href="'.get_category_link($category->term_id).'" title="'.$category->cat_name.'" >'.$category->cat_name.'</a>'.$separator; ?>
+																$output.='<a href="'.get_category_link($category->term_id).'" title="'.$category->cat_name.'" >'; ?>
 															<?php }  ?>
-															Por: <?php echo trim($output, $separator); ?>
+															<?php $author = get_the_author(); ?>
+															</a>
 															<?php echo $subcategories; ?>
 														</h4>
 														<?php the_excerpt(); ?>
