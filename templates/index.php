@@ -1008,10 +1008,23 @@
 										Nuestros blogueros
 									</h2>
 								</div>
+
+								<?php
+									$categories = get_categories( array(
+										'child_of'=>131
+									) );
+
+									$subcategories = array();
+
+									foreach ( $categories as $category ) {
+										$subcategories[] = $category->cat_ID;
+									}
+								?>
 								<ul class="owlBlog owlBlogueros">
 									<?php $args = array(
+										'post_type' => 'post'
 										'posts_per_page' => '2',
-										'child_of'=>131
+										'category__in' => $subcategories
 									);?>
 									<?php $the_query = new WP_Query($args); ?>
 										<?php if ($the_query->have_posts()) : ?>
