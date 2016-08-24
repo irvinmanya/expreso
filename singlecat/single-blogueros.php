@@ -44,6 +44,9 @@
 					</span>
 				</div>
 
+				<div class="inpFiltro">
+					<input type="date" name="fecEdit" id="fecEdit" class="datepicker picker__input" placeholder="Escoja una fecha">
+				</div>
 				<?php if (false) { ?>
 					<div class="titleBox3">
 						<h3>
