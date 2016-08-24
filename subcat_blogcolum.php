@@ -35,7 +35,7 @@
 						Encuentra rápido lo que más te interesa leer
 					</h2>
 				</div>
-				<?php if (false) {  ?>
+				<?php if (true) {  ?>
 					<div class="inputItem">
 						<span class="input input--kohana">
 							<input type="text" id="seachcine" name="seachcine" class="input__field input__field--kohana">
@@ -48,6 +48,15 @@
 						</span>
 					</div>
 				<?php } ?>
+
+				<div class="inpFiltro">
+					<input type="date" name="fecEdit" id="fecEdit" class="datepicker picker__input" placeholder="Escoja una fecha">
+				</div><br>
+
+				<button type="submit" class="btnGeneral">
+					Filtrar
+				</button>
+
 				<?php //Publicidad - Small ?>
 				<?php get_template_part( 'content/content', 'pubsmall' ); ?>
 			</div>
