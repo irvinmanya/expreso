@@ -1020,8 +1020,49 @@
 								<ul class="owlBlog owlBlogueros">
 									<?php $args = array(
 										'post_type' => 'post',
-										'posts_per_page' => '2',
-										'category__in' => $subcategories
+										'posts_per_page' => '1',
+										'category__in' => 217
+									);?>
+									<?php $the_query = new WP_Query($args); ?>
+										<?php if ($the_query->have_posts()) : ?>
+											<?php while ($the_query->have_posts()) : $the_query->the_post(); ?>
+												<li class="itemShadow">
+													<?php
+														$categories=get_the_category();
+														$separator=", ";
+														$output="";
+														if($categories){ ?>
+														<figure>
+															<?php foreach ($categories as $category) {
+																$caTaxImg = get_field('caTax-img', 'category_'.$category->cat_ID); ?>
+																<a href="<?php echo get_category_link($category->term_id); ?>" title="<?php echo $category->cat_name; ?>" >
+																	<img src="<?php echo $caTaxImg['url']; ?>" alt="<?php echo $category->cat_name; ?>" title="<?php echo $category->cat_name; ?>">
+																</a>
+															<?php } ?>
+														</figure>
+													<?php } ?>
+													<div class="columTxt">
+														<h3>
+															<?php the_title(); ?>
+														</h3>
+														<h4>
+															<?php foreach ($categories as $category) {
+																$output.='<a href="'.get_category_link($category->term_id).'" title="'.$category->cat_name.'" >'.$category->cat_name.'</a>'.$separator; ?>
+															<?php }  ?>
+															Por: <?php echo trim($output, $separator); ?>
+															<?php echo $subcategories; ?>
+														</h4>
+														<?php the_excerpt(); ?>
+													</div>
+												</li>
+											<?php endwhile; ?>
+										<?php wp_reset_postdata(); ?>
+									<?php endif; ?>
+
+									<?php $args = array(
+										'post_type' => 'post',
+										'posts_per_page' => '1',
+										'category__in' => 212
 									);?>
 									<?php $the_query = new WP_Query($args); ?>
 										<?php if ($the_query->have_posts()) : ?>
@@ -1059,6 +1100,7 @@
 										<?php wp_reset_postdata(); ?>
 									<?php endif; ?>
 								</ul>
+
 							</div>
 
 							<?php //Publicidad - Small ?>
