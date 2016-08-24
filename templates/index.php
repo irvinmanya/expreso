@@ -1010,8 +1010,14 @@
 								</div>
 								<ul class="owlBlog owlBlogueros">
 									<?php $args = array(
-										'posts_per_page' => '4',
-										'cat' => 131
+										'numberposts' => 2,
+										'offset' => 0,
+										'category' => 131->cat_ID,
+										'orderby' => 'ID',
+										'order' => 'DESC',
+										'post_type' => 'post',
+										'post_status' => 'publish',
+										'suppress_filters' => true 
 									);?>
 									<?php $the_query = new WP_Query($args); ?>
 										<?php if ($the_query->have_posts()) : ?>
