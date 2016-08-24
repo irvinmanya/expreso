@@ -43,7 +43,7 @@
 										</figure>
 										<div class="campTxt">
 											<p>
-												<?php the_excerpt(); ?>
+												<?php the_content(); ?>
 											</p>
 										</div>
 									</div>
@@ -80,7 +80,7 @@
 									</a>
 									<figcaption>
 										<p>
-											<?php the_content(); ?>
+											<?php the_excerpt(); ?>
 										</p>
 									</figcaption>
 								</figure>
