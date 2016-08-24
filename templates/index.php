@@ -134,7 +134,10 @@
 					<div class="row">
 						<div class="col l8 m12 s12 rowRell">
 							<div class="titleBox2">
-								<h2>Noticias destacadas</h2>	
+								<h2>Noticias destacadas</h2>
+								<a href="http://expreso.dhdinc.info/seccion/destacado/" class="icoResp" title="Noticias destacadas">
+									<img src="<?php echo get_template_directory_uri() ?>/img/plantilla/arrowLeftMod.svg" alt="Noticias destacadas" title="Noticias destacadas">
+								</a>
 							</div>
 							<?php $args = array(
 								'posts_per_page' => '3',
@@ -158,12 +161,14 @@
 								<?php wp_reset_postdata(); ?>
 							<?php endif; ?>
 
-							<a href="http://expreso.dhdinc.info/seccion/destacado/" class="btnPlusAbs" title="Ver más">
-								<i>
-									<img src="<?php echo get_template_directory_uri() ?>/img/plantilla/icoPlus.svg" alt="Ver más" title="Ver más">
-								</i>
-								Ver más
-							</a>
+							<?php if (fasle) { ?>
+								<a href="http://expreso.dhdinc.info/seccion/destacado/" class="btnPlusAbs" title="Ver más">
+									<i>
+										<img src="<?php echo get_template_directory_uri() ?>/img/plantilla/icoPlus.svg" alt="Ver más" title="Ver más">
+									</i>
+									Ver más
+								</a>
+							<?php } ?>
 						</div>
 						<div class="col l4 m12 s12">
 							<?php $args = array(
@@ -218,7 +223,10 @@
 					<div class="row">
 						<div class="col l8 m12 s12 rowRell">
 							<div class="titleBox2">
-								<h2>Política</h2>	
+								<h2>Política</h2>
+								<a href="http://expreso.dhdinc.info/seccion/politica/" class="icoResp" title="Política">
+									<img src="<?php echo get_template_directory_uri() ?>/img/plantilla/arrowLeftMod.svg" alt="Política" title="Política">
+								</a>
 							</div>
 							<?php $args = array(
 								'posts_per_page' => '3',
@@ -241,12 +249,14 @@
 									<?php endwhile; ?>
 								<?php wp_reset_postdata(); ?>
 							<?php endif; ?>
-							<a href="http://expreso.dhdinc.info/seccion/politica/" class="btnPlusAbs" title="Ver más">
-								<i>
-									<img src="<?php echo get_template_directory_uri() ?>/img/plantilla/icoPlus.svg" alt="Ver más" title="Ver más">
-								</i>
-								Ver más
-							</a>
+							<?php if (false) { ?>
+								<a href="http://expreso.dhdinc.info/seccion/politica/" class="btnPlusAbs" title="Ver más">
+									<i>
+										<img src="<?php echo get_template_directory_uri() ?>/img/plantilla/icoPlus.svg" alt="Ver más" title="Ver más">
+									</i>
+									Ver más
+								</a>
+							<?php } ?>
 						</div>
 						<div class="col l4 m12 s12">
 							<?php //Publicidad . small ?>
@@ -263,7 +273,10 @@
 					<div class="row">
 						<div class="col l8 m12 s12 rowRell">
 							<div class="titleBox2">
-								<h2>Economía</h2>	
+								<h2>Economía</h2>
+								<a href="http://expreso.dhdinc.info/seccion/economia/" class="icoResp" title="Economía">
+									<img src="<?php echo get_template_directory_uri() ?>/img/plantilla/arrowLeftMod.svg" alt="Economía" title="Economía">
+								</a>
 							</div>
 							<?php $args = array(
 								'posts_per_page' => '3',
@@ -286,15 +299,17 @@
 									<?php endwhile; ?>
 								<?php wp_reset_postdata(); ?>
 							<?php endif; ?>
-							<a href="http://expreso.dhdinc.info/seccion/economia/" class="btnPlusAbs" title="Ver más">
-								<i>
-									<img src="<?php echo get_template_directory_uri() ?>/img/plantilla/icoPlus.svg" alt="Ver más" title="Ver más">
-								</i>
-								Ver más
-							</a>
+							<?php if (fasle) { ?>
+								<a href="http://expreso.dhdinc.info/seccion/economia/" class="btnPlusAbs" title="Ver más">
+									<i>
+										<img src="<?php echo get_template_directory_uri() ?>/img/plantilla/icoPlus.svg" alt="Ver más" title="Ver más">
+									</i>
+									Ver más
+								</a>
+							<?php } ?>
 						</div>
 						<div class="col l4 m12 s12">
-							<article class="itemLastMin itemShadow margBot20">
+							<article class="itemLastMin itemShadow margBot20 ">
 								<h3>
 									Último minuto
 								</h3>
@@ -329,7 +344,10 @@
 					<div class="row">
 						<div class="col l8 m12 s12 rowRell">
 							<div class="titleBox2">
-								<h2>Actualidad</h2>	
+								<h2>Actualidad</h2>
+								<a href="http://expreso.dhdinc.info/seccion/actualidad/" class="icoResp" title="Actualidad">
+									<img src="<?php echo get_template_directory_uri() ?>/img/plantilla/arrowLeftMod.svg" alt="Actualidad" title="Actualidad">
+								</a>
 							</div>
 							<?php $args = array(
 								'posts_per_page' => '3',
@@ -352,12 +370,15 @@
 									<?php endwhile; ?>
 								<?php wp_reset_postdata(); ?>
 							<?php endif; ?>
-							<a href="http://expreso.dhdinc.info/seccion/actualidad/" class="btnPlusAbs" title="Ver más">
-								<i>
-									<img src="<?php echo get_template_directory_uri() ?>/img/plantilla/icoPlus.svg" alt="Ver más" title="Ver más">
-								</i>
-								Ver más
-							</a>
+
+							<?php if (false) { ?>
+								<a href="http://expreso.dhdinc.info/seccion/actualidad/" class="btnPlusAbs" title="Ver más">
+									<i>
+										<img src="<?php echo get_template_directory_uri() ?>/img/plantilla/icoPlus.svg" alt="Ver más" title="Ver más">
+									</i>
+									Ver más
+								</a>
+							<?php } ?>
 						</div>
 						<div class="col l4 m12 s12">
 							<?php $args = array(
@@ -399,7 +420,10 @@
 					<div class="row">
 						<div class="col l8 m12 s12 rowRell">
 							<div class="titleBox2">
-								<h2>Mundo</h2>	
+								<h2>Mundo</h2>
+								<a href="http://expreso.dhdinc.info/seccion/mundo/" class="icoResp" title="Mundo">
+									<img src="<?php echo get_template_directory_uri() ?>/img/plantilla/arrowLeftMod.svg" alt="Mundo" title="Mundo">
+								</a>
 							</div>
 							<?php $args = array(
 								'posts_per_page' => '3',
@@ -422,12 +446,14 @@
 									<?php endwhile; ?>
 								<?php wp_reset_postdata(); ?>
 							<?php endif; ?>
-							<a href="http://expreso.dhdinc.info/seccion/mundo/" class="btnPlusAbs" title="Ver más">
-								<i>
-									<img src="<?php echo get_template_directory_uri() ?>/img/plantilla/icoPlus.svg" alt="Ver más" title="Ver más">
-								</i>
-								Ver más
-							</a>
+							<?php if (false) { ?>
+								<a href="http://expreso.dhdinc.info/seccion/mundo/" class="btnPlusAbs" title="Ver más">
+									<i>
+										<img src="<?php echo get_template_directory_uri() ?>/img/plantilla/icoPlus.svg" alt="Ver más" title="Ver más">
+									</i>
+									Ver más
+								</a>
+							<?php } ?>
 						</div>
 						<div class="col l4 m12 s12">
 							<?php //Publicidad - Small ?>
@@ -502,7 +528,7 @@
 							<article class="col l6 m12 s12">
 								<div class="itemModNot itemShadow margBot20">
 									<h3>
-										<a href="javascript:void(0)">
+										<a href="http://expreso.dhdinc.info/seccion/tecnologia/" title="Tecnología">
 											Tecnología
 											<i>
 												<img src="<?php echo get_template_directory_uri() ?>/img/plantilla/arrowLeftMod.svg" alt="title" title="title">
@@ -552,7 +578,7 @@
 							<article class="col l6 m12 s12">
 								<div class="itemModNot itemShadow margBot20">
 									<h3>
-										<a href="javascript:void(0)">
+										<a href="http://expreso.dhdinc.info/seccion/espectaculos/" title="Espectaculos">
 											Espectaculos
 											<i>
 												<img src="<?php echo get_template_directory_uri() ?>/img/plantilla/arrowLeftMod.svg" alt="title" title="title">
@@ -602,7 +628,7 @@
 							<article class="col l6 m12 s12">
 								<div class="itemModNot itemShadow margBot20">
 									<h3>
-										<a href="javascript:void(0)">
+										<a href="http://expreso.dhdinc.info/seccion/judicial/" title="Judicial">
 											Judicial
 											<i>
 												<img src="<?php echo get_template_directory_uri() ?>/img/plantilla/arrowLeftMod.svg" alt="title" title="title">
@@ -652,7 +678,7 @@
 							<article class="col l6 m12 s12">
 								<div class="itemModNot itemShadow margBot20">
 									<h3>
-										<a href="javascript:void(0)">
+										<a href="http://expreso.dhdinc.info/seccion/judicial/" title="Deportes">
 											Deportes
 											<i>
 												<img src="<?php echo get_template_directory_uri() ?>/img/plantilla/arrowLeftMod.svg" alt="title" title="title">
@@ -702,7 +728,7 @@
 							<article class="col l6 m12 s12">
 								<div class="itemModNot itemShadow margBot20">
 									<h3>
-										<a href="javascript:void(0)">
+										<a href="http://expreso.dhdinc.info/seccion/cultural/" title="Cultural">
 											Cultural
 											<i>
 												<img src="<?php echo get_template_directory_uri() ?>/img/plantilla/arrowLeftMod.svg" alt="title" title="title">
@@ -752,7 +778,7 @@
 							<article class="col l6 m12 s12">
 								<div class="itemModNot itemShadow margBot20">
 									<h3>
-										<a href="javascript:void(0)">
+										<a href="http://expreso.dhdinc.info/seccion/especiales/" title="Especiales">
 											Especiales
 											<i>
 												<img src="<?php echo get_template_directory_uri() ?>/img/plantilla/arrowLeftMod.svg" alt="title" title="title">
@@ -802,7 +828,7 @@
 							<article class="col l6 m12 s12">
 								<div class="itemModNot itemShadow margBot20">
 									<h3>
-										<a href="javascript:void(0)">
+										<a href="http://expreso.dhdinc.info/seccion/cine/" title="Cine">
 											Cine
 											<i>
 												<img src="<?php echo get_template_directory_uri() ?>/img/plantilla/arrowLeftMod.svg" alt="title" title="title">
@@ -852,7 +878,7 @@
 							<article class="col l6 m12 s12">
 								<div class="itemModNot itemShadow margBot20">
 									<h3>
-										<a href="javascript:void(0)">
+										<a href="http://expreso.dhdinc.info/seccion/nacional/" title="Nacional">
 											Nacional
 											<i>
 												<img src="<?php echo get_template_directory_uri() ?>/img/plantilla/arrowLeftMod.svg" alt="title" title="title">

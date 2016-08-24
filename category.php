@@ -48,6 +48,7 @@
 					<ul class="sliderList" id="sliderList">
 						<?php $args = array(
 							'posts_per_page' => '3'
+							'cat' => get_query_var('cat')
 						);?>
 						<?php $the_query = new WP_Query($args); ?>
 							<?php if ($the_query->have_posts()) : ?>
