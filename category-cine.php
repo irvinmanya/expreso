@@ -83,8 +83,6 @@
 													<?php the_title(); ?>
 												</a>
 											</h3>
-											<p>
-												Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dignissimos, magni, modi.
 											<a href="javascript:void(0)" title="" class="linkPlus">
 												Míralo ahora
 												<i>
