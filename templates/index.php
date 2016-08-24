@@ -1039,7 +1039,7 @@
 															<?php foreach ($categories as $category) {
 																$caTaxImg = get_field('caTax-img', 'category_'.$category->cat_ID); ?>
 																<a href="<?php echo get_category_link($category->term_id); ?>" title="<?php echo $category->cat_name; ?>" >
-																	<img src="<?php echo get_template_directory_uri() ?>/img/plantilla/bloguero.png" alt="title" title="title">
+																	<img src="<?php echo $caTaxImg['url']; ?>" alt="<?php echo $category->cat_name; ?>" title="<?php echo $category->cat_name; ?>">
 																</a>
 															<?php } ?>
 														</figure>
