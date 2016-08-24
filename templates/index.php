@@ -161,7 +161,7 @@
 								<?php wp_reset_postdata(); ?>
 							<?php endif; ?>
 
-							<?php if (fasle) { ?>
+							<?php if (false) { ?>
 								<a href="http://expreso.dhdinc.info/seccion/destacado/" class="btnPlusAbs" title="Ver más">
 									<i>
 										<img src="<?php echo get_template_directory_uri() ?>/img/plantilla/icoPlus.svg" alt="Ver más" title="Ver más">
@@ -299,7 +299,7 @@
 									<?php endwhile; ?>
 								<?php wp_reset_postdata(); ?>
 							<?php endif; ?>
-							<?php if (fasle) { ?>
+							<?php if (false) { ?>
 								<a href="http://expreso.dhdinc.info/seccion/economia/" class="btnPlusAbs" title="Ver más">
 									<i>
 										<img src="<?php echo get_template_directory_uri() ?>/img/plantilla/icoPlus.svg" alt="Ver más" title="Ver más">
