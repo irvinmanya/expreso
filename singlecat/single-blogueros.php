@@ -97,28 +97,24 @@
 							<i>
 								<img src="<?php echo get_template_directory_uri() ?>/img/plantilla/icoClock.svg" alt="Fecha" title="Fecha">
 							</i>
-							Publicado hace 5
+							<?php the_time('l, F jS, Y') ?>
 						</li>
 						<li class="catList">
 							<i>
 								<img src="<?php echo get_template_directory_uri() ?>/img/plantilla/icoTag.svg" alt="Tag" title="Tag">
 							</i>
+							<?php
+							$categories=get_the_category();
+							$separator="";
+							$output="/";
+							if($categories){ ?>
 							<ul>
-								<li>
-									<a href="javascript:void(0)" title="categoria">
-										Categoria 1 /
-									</a>
-								</li>
-								<li>
-									<a href="javascript:void(0)" title="categoria">
-										Categoria 2 /
-									</a>
-								</li>
-								<li>
-									<a href="javascript:void(0)" title="categoria">
-										Categoria 3
-									</a>
-								</li>
+							<?php
+								foreach ($categories as $category) {
+									$output.='<li><a href="'.get_category_link($category->term_id).'" title="'.$category->cat_name.'">'.$category->cat_name.'</li></a>'.$separator;
+								}
+								echo trim($output, $separator);
+							} ?>
 							</ul>
 						</li>
 					</ul>
