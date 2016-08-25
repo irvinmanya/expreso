@@ -539,14 +539,26 @@
 									<?php $the_query = new WP_Query($args); ?>
 										<ul class="iModListFig">
 										<?php if ($the_query->have_posts()) : ?>
+											<?php $conModul = 0; ?>
 											<?php while ($the_query->have_posts()) : $the_query->the_post(); ?>
-												<li>
-													<figure>
-														<a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>">
-															<?php the_post_thumbnail(); ?>
-														</a>
-													</figure>
-												</li>
+												<?php if ($conModul > 0) { ?>
+													<li class="desactNot">
+														<figure>
+															<a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>">
+																<?php the_post_thumbnail(); ?>
+															</a>
+														</figure>
+													</li>
+												<?php }else{ ?>
+													<li class="desactNot actNot">
+														<figure>
+															<a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>">
+																<?php the_post_thumbnail(); ?>
+															</a>
+														</figure>
+													</li>
+												<?php } ?>
+												<?php $conModul++; ?>
 											<?php endwhile; ?>
 										<?php wp_reset_postdata(); ?>
 										</ul>
@@ -589,14 +601,26 @@
 									<?php $the_query = new WP_Query($args); ?>
 										<ul class="iModListFig">
 										<?php if ($the_query->have_posts()) : ?>
+											<?php $conModul = 0; ?>
 											<?php while ($the_query->have_posts()) : $the_query->the_post(); ?>
-												<li>
-													<figure>
-														<a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>">
-															<?php the_post_thumbnail(); ?>
-														</a>
-													</figure>
-												</li>
+												<?php if ($conModul > 0) { ?>
+													<li class="desactNot">
+														<figure>
+															<a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>">
+																<?php the_post_thumbnail(); ?>
+															</a>
+														</figure>
+													</li>
+												<?php }else{ ?>
+													<li class="desactNot actNot">
+														<figure>
+															<a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>">
+																<?php the_post_thumbnail(); ?>
+															</a>
+														</figure>
+													</li>
+												<?php } ?>
+												<?php $conModul++; ?>
 											<?php endwhile; ?>
 										<?php wp_reset_postdata(); ?>
 										</ul>
@@ -639,14 +663,26 @@
 									<?php $the_query = new WP_Query($args); ?>
 										<ul class="iModListFig">
 										<?php if ($the_query->have_posts()) : ?>
+											<?php $conModul = 0; ?>
 											<?php while ($the_query->have_posts()) : $the_query->the_post(); ?>
-												<li>
-													<figure>
-														<a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>">
-															<?php the_post_thumbnail(); ?>
-														</a>
-													</figure>
-												</li>
+												<?php if ($conModul > 0) { ?>
+													<li class="desactNot">
+														<figure>
+															<a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>">
+																<?php the_post_thumbnail(); ?>
+															</a>
+														</figure>
+													</li>
+												<?php }else{ ?>
+													<li class="desactNot actNot">
+														<figure>
+															<a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>">
+																<?php the_post_thumbnail(); ?>
+															</a>
+														</figure>
+													</li>
+												<?php } ?>
+												<?php $conModul++; ?>
 											<?php endwhile; ?>
 										<?php wp_reset_postdata(); ?>
 										</ul>
@@ -689,14 +725,26 @@
 									<?php $the_query = new WP_Query($args); ?>
 										<ul class="iModListFig">
 										<?php if ($the_query->have_posts()) : ?>
+											<?php $conModul = 0; ?>
 											<?php while ($the_query->have_posts()) : $the_query->the_post(); ?>
-												<li>
-													<figure>
-														<a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>">
-															<?php the_post_thumbnail(); ?>
-														</a>
-													</figure>
-												</li>
+												<?php if ($conModul > 0) { ?>
+													<li class="desactNot">
+														<figure>
+															<a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>">
+																<?php the_post_thumbnail(); ?>
+															</a>
+														</figure>
+													</li>
+												<?php }else{ ?>
+													<li class="desactNot actNot">
+														<figure>
+															<a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>">
+																<?php the_post_thumbnail(); ?>
+															</a>
+														</figure>
+													</li>
+												<?php } ?>
+												<?php $conModul++; ?>
 											<?php endwhile; ?>
 										<?php wp_reset_postdata(); ?>
 										</ul>
@@ -739,14 +787,26 @@
 									<?php $the_query = new WP_Query($args); ?>
 										<ul class="iModListFig">
 										<?php if ($the_query->have_posts()) : ?>
+											<?php $conModul = 0; ?>
 											<?php while ($the_query->have_posts()) : $the_query->the_post(); ?>
-												<li>
-													<figure>
-														<a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>">
-															<?php the_post_thumbnail(); ?>
-														</a>
-													</figure>
-												</li>
+												<?php if ($conModul > 0) { ?>
+													<li class="desactNot">
+														<figure>
+															<a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>">
+																<?php the_post_thumbnail(); ?>
+															</a>
+														</figure>
+													</li>
+												<?php }else{ ?>
+													<li class="desactNot actNot">
+														<figure>
+															<a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>">
+																<?php the_post_thumbnail(); ?>
+															</a>
+														</figure>
+													</li>
+												<?php } ?>
+												<?php $conModul++; ?>
 											<?php endwhile; ?>
 										<?php wp_reset_postdata(); ?>
 										</ul>
@@ -789,14 +849,26 @@
 									<?php $the_query = new WP_Query($args); ?>
 										<ul class="iModListFig">
 										<?php if ($the_query->have_posts()) : ?>
+											<?php $conModul = 0; ?>
 											<?php while ($the_query->have_posts()) : $the_query->the_post(); ?>
-												<li>
-													<figure>
-														<a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>">
-															<?php the_post_thumbnail(); ?>
-														</a>
-													</figure>
-												</li>
+												<?php if ($conModul > 0) { ?>
+													<li class="desactNot">
+														<figure>
+															<a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>">
+																<?php the_post_thumbnail(); ?>
+															</a>
+														</figure>
+													</li>
+												<?php }else{ ?>
+													<li class="desactNot actNot">
+														<figure>
+															<a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>">
+																<?php the_post_thumbnail(); ?>
+															</a>
+														</figure>
+													</li>
+												<?php } ?>
+												<?php $conModul++; ?>
 											<?php endwhile; ?>
 										<?php wp_reset_postdata(); ?>
 										</ul>
@@ -839,14 +911,26 @@
 									<?php $the_query = new WP_Query($args); ?>
 										<ul class="iModListFig">
 										<?php if ($the_query->have_posts()) : ?>
+											<?php $conModul = 0; ?>
 											<?php while ($the_query->have_posts()) : $the_query->the_post(); ?>
-												<li>
-													<figure>
-														<a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>">
-															<?php the_post_thumbnail(); ?>
-														</a>
-													</figure>
-												</li>
+												<?php if ($conModul > 0) { ?>
+													<li class="desactNot">
+														<figure>
+															<a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>">
+																<?php the_post_thumbnail(); ?>
+															</a>
+														</figure>
+													</li>
+												<?php }else{ ?>
+													<li class="desactNot actNot">
+														<figure>
+															<a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>">
+																<?php the_post_thumbnail(); ?>
+															</a>
+														</figure>
+													</li>
+												<?php } ?>
+												<?php $conModul++; ?>
 											<?php endwhile; ?>
 										<?php wp_reset_postdata(); ?>
 										</ul>
@@ -889,14 +973,26 @@
 									<?php $the_query = new WP_Query($args); ?>
 										<ul class="iModListFig">
 										<?php if ($the_query->have_posts()) : ?>
+											<?php $conModul = 0; ?>
 											<?php while ($the_query->have_posts()) : $the_query->the_post(); ?>
-												<li>
-													<figure>
-														<a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>">
-															<?php the_post_thumbnail(); ?>
-														</a>
-													</figure>
-												</li>
+												<?php if ($conModul > 0) { ?>
+													<li class="desactNot">
+														<figure>
+															<a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>">
+																<?php the_post_thumbnail(); ?>
+															</a>
+														</figure>
+													</li>
+												<?php }else{ ?>
+													<li class="desactNot actNot">
+														<figure>
+															<a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>">
+																<?php the_post_thumbnail(); ?>
+															</a>
+														</figure>
+													</li>
+												<?php } ?>
+												<?php $conModul++; ?>
 											<?php endwhile; ?>
 										<?php wp_reset_postdata(); ?>
 										</ul>
@@ -929,47 +1025,37 @@
 									</h2>
 								</div>
 								<div class="ytSlider ">
-									<div class="ytBox itemShadow">
-										<i></i>
-										<img src="<?php echo get_template_directory_uri() ?>/img/plantilla/noticia.jpg" alt="title" title="title">
-									</div>
+									<?php $args = array(
+										'posts_per_page' => '1',
+										'cat' => 17
+									);?>
+									<?php $the_query = new WP_Query($args); ?>
+										<?php if ($the_query->have_posts()) : ?>
+											<?php while ($the_query->have_posts()) : $the_query->the_post(); ?>
+												<div class="ytBox itemShadow">
+													<i></i>
+													<?php the_post_thumbnail(); ?>
+												</div>
+											<?php endwhile; ?>
+										<?php wp_reset_postdata(); ?>
+									<?php endif; ?>
 									<ul class="ytList owlYt">
-										<li>
-											<figure>
-												<i></i>
-												<img src="<?php echo get_template_directory_uri() ?>/img/plantilla/noticia.jpg" alt="title" title="title">
-											</figure>
-										</li>
-										<li>
-											<figure>
-												<i></i>
-												<img src="<?php echo get_template_directory_uri() ?>/img/plantilla/noticia.jpg" alt="title" title="title">
-											</figure>
-										</li>
-										<li>
-											<figure>
-												<i></i>
-												<img src="<?php echo get_template_directory_uri() ?>/img/plantilla/noticia.jpg" alt="title" title="title">
-											</figure>
-										</li>
-										<li>
-											<figure>
-												<i></i>
-												<img src="<?php echo get_template_directory_uri() ?>/img/plantilla/noticia.jpg" alt="title" title="title">
-											</figure>
-										</li>
-										<li>
-											<figure>
-												<i></i>
-												<img src="<?php echo get_template_directory_uri() ?>/img/plantilla/noticia.jpg" alt="title" title="title">
-											</figure>
-										</li>
-										<li>
-											<figure>
-												<i></i>
-												<img src="<?php echo get_template_directory_uri() ?>/img/plantilla/noticia.jpg" alt="title" title="title">
-											</figure>
-										</li>
+										<?php $args = array(
+											'posts_per_page' => '9',
+											'cat' => 17
+										);?>
+										<?php $the_query = new WP_Query($args); ?>
+											<?php if ($the_query->have_posts()) : ?>
+												<?php while ($the_query->have_posts()) : $the_query->the_post(); ?>
+													<li>
+														<figure>
+															<i></i>
+															<?php the_post_thumbnail(); ?>
+														</figure>
+													</li>
+												<?php endwhile; ?>
+											<?php wp_reset_postdata(); ?>
+										<?php endif; ?>
 									</ul>
 								</div>
 							</div>
@@ -1046,11 +1132,12 @@
 															<?php the_title(); ?>
 														</h3>
 														<h4>
+															<div class="catBloger">
 															<?php foreach ($categories as $category) {
 																$output.='<a href="'.get_category_link($category->term_id).'" title="'.$category->cat_name.'" >'.$category->cat_name.'</a>'.$separator; ?>
 															<?php }  ?>
+															</div>
 															Por: <?php echo trim($output, $separator); ?>
-															<?php echo $subcategories; ?>
 														</h4>
 														<?php the_excerpt(); ?>
 													</div>
@@ -1087,12 +1174,12 @@
 															<?php the_title(); ?>
 														</h3>
 														<h4>
-															Por:
+															<div class="catBloger">
 															<?php foreach ($categories as $category) {
-																$output.='<a href="'.get_category_link($category->term_id).'" title="'.$category->cat_name.'" >'; ?>
+																$output.='<a href="'.get_category_link($category->term_id).'" title="'.$category->cat_name.'" >'.$category->cat_name.'</a>'.$separator; ?>
 															<?php }  ?>
-															<?php $author = get_the_author(); ?>
-															</a>
+															Por: <?php echo trim($output, $separator); ?>
+															</div>
 														</h4>
 														<?php the_excerpt(); ?>
 													</div>
@@ -1108,26 +1195,36 @@
 							<?php get_template_part( 'content/content', 'pubsmall' ); ?>
 							
 							<!-- [ Suplementos del dia ] -->
-							<article class="itemLast itemShadow margBot20">
-								<figure>
-									<figcaption>
-										<h3>
-											Suplementos del dia
-										</h3>
-									</figcaption>
-									<a href="javascript:void(0)" title="">
-										<img src="<?php echo get_template_directory_uri() ?>/img/plantilla/noticia.jpg" alt="title" title="title">
-									</a>
-									<figcaption>
-										<p>
-											<a href="javascript:void(0)" title="">
-												El actor visto en "Attack The Block" o en el Episodio VII de 'La guerra de...
-											</a>
-										</p>
-									</figcaption>
-								</figure>
-							</article>
-
+							<?php $args = array(
+								'post_type' => 'post',
+								'posts_per_page' => '1',
+								'category__in' => 1377
+							);?>
+							<?php $the_query = new WP_Query($args); ?>
+								<?php if ($the_query->have_posts()) : ?>
+									<?php while ($the_query->have_posts()) : $the_query->the_post(); ?>
+										<article class="itemLast itemShadow margBot20">
+											<figure>
+												<figcaption>
+													<h3>
+														Suplementos del dia
+													</h3>
+												</figcaption>
+												<a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>">
+													<?php the_post_thumbnail(); ?>
+												</a>
+												<figcaption>
+													<p>
+														<a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>" alt="<?php the_title(); ?>">
+															<?php the_title(); ?>
+														</a>
+													</p>
+												</figcaption>
+											</figure>
+										</article>
+									<?php endwhile; ?>
+								<?php wp_reset_postdata(); ?>
+							<?php endif; ?>
 							<?php //Publicidad - Small ?>
 							<?php get_template_part( 'content/content', 'pubsmall' ); ?>
 

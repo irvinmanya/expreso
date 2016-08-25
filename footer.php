@@ -148,24 +148,30 @@ Para	mejorar	la	experiencia..
 					  var tamno = height / tam;
 					  $thys.eq(a).find('li').css('height',tamno);
 					}
-				$('.iModListFig li').hide();
-				
 				$('.iModList li').on('mouseenter',function(){
 				  var $thisLi = $(this);
 				  var indexLi = $thisLi.index();
-				  $thisLi.closest('.itemModNot').find('.iModListFig').find('li').hide();
-				  $thisLi.closest('.itemModNot').find('.iModListFig').find('li').eq(indexLi).show();
+				  $thisLi.closest('.itemModNot').find('.iModListFig').find('li').removeClass('actNot');
+				  $thisLi.closest('.itemModNot').find('.iModListFig').find('li').eq(indexLi).addClass('actNot');
 				});
 
-				// $('.iModList li').on('mouseleave',function(){
-				//   var $thisLi = $(this);
-				//   $thisLi.closest('.itemModNot').find('.iModListFig').find('li').hide();
-				// });
+				$('.iModList li').on('mouseleave',function(){
+				  var $thisLi = $(this);
+				  // $thisLi.closest('.itemModNot').find('.iModListFig').find('li').removeClass('actNot');
+				});
 			},100);
 		});
 	});
 </script>
 <style type="text/css">
-
+	.desactNot{
+		display: none !important;
+	}
+	.actNot{
+		display: block !important;
+	}
+	.actLi{
+		background: rgba(0,0,0,.3);
+	}
 </style>
 <?php wp_footer(); ?>

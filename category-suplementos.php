@@ -27,7 +27,7 @@
 					</div>
 				<?php } ?>
 
-				<?php if (true) { ?>
+				<?php if (false) { ?>
 					<div class="titleBox3">
 						<h3>
 							Filtra por tema
@@ -62,54 +62,40 @@
 
 			<?php //Content ?>
 			<div class="col l9 m12 s12">
-				<article class="col l4 m12 s12">
-					<div class="suplItem itemShadow margBot20">
-						<figure>
-							<a href="" title="">
-								<img src="<?php echo get_template_directory_uri() ?>/img/plantilla/bloguero.png" alt="" title="">
-							</a>
-						</figure>
-						<div class="suplTxt">
-							<h3>
-								<a href="" title="" >
-									Titulo del suplemento
-								</a>
-							</h3>
-						</div>
-					</div>
-				</article>
-				<article class="col l4 m12 s12">
-					<div class="suplItem itemShadow margBot20">
-						<figure>
-							<a href="" title="">
-								<img src="<?php echo get_template_directory_uri() ?>/img/plantilla/bloguero.png" alt="" title="">
-							</a>
-						</figure>
-						<div class="suplTxt">
-							<h3>
-								<a href="" title="" >
-									Titulo del suplemento
-								</a>
-							</h3>
-						</div>
-					</div>
-				</article>
-				<article class="col l4 m12 s12">
-					<div class="suplItem itemShadow margBot20">
-						<figure>
-							<a href="" title="">
-								<img src="<?php echo get_template_directory_uri() ?>/img/plantilla/bloguero.png" alt="" title="">
-							</a>
-						</figure>
-						<div class="suplTxt">
-							<h3>
-								<a href="" title="" >
-									Titulo del suplemento
-								</a>
-							</h3>
-						</div>
-					</div>
-				</article>
+				<?php $args = array(
+					'posts_per_page' => '-1',
+					'cat' => 227,
+					'meta_query'	=> array(
+						'relation'		=> 'AND',
+						array(
+							'key'		=> 'destprev-opt',
+							'value'		=> 'destacadodeldia',
+							'compare' 	=> 'LIKE'
+						)
+					)
+				);?>
+				<?php $the_query = new WP_Query($args); ?>
+					<?php if ($the_query->have_posts()) : ?>
+						<?php while ($the_query->have_posts()) : $the_query->the_post(); ?>
+							<article class="col l4 m12 s12">
+								<div class="suplItem itemShadow margBot20">
+									<figure>
+										<a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>">
+											<?php the_post_thumbnail(); ?>
+										</a>
+									</figure>
+									<div class="suplTxt">
+										<h3>
+											<a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>">
+												<?php the_title(); ?>
+											</a>
+										</h3>
+									</div>
+								</div>
+							</article>
+						<?php endwhile; ?>
+					<?php wp_reset_postdata(); ?>
+				<?php endif; ?>
 			</div>
 		</div>
 	</div>

@@ -3,30 +3,22 @@
 		<div class="row">
 			<?php //filtros ?>
 			<div class="col l3 m12 s12 rowFiltros lineLateralRight">
-				<?php $args = array(
-					'posts_per_page' => '1',
-					'cat' => get_query_var('cat')
-				);?>
-				<?php $the_query = new WP_Query($args); ?>
-					<?php if ($the_query->have_posts()) : ?>
-						<?php while ($the_query->have_posts()) : $the_query->the_post(); ?>
-							<div class="blogAutor itemShadow lineBottom">
-								<?php $categories=get_the_category(); ?>
-								<?php foreach ($categories as $category) { ?>
-									<?php $caTaxImg = get_field('caTax-img', 'category_'.$category->cat_ID); ?>
-									<figure>
-										<img src="<?php echo $caTaxImg['url']; ?>" alt="<?php echo $category->cat_name; ?>" title="<?php echo $category->cat_name; ?>">
-										<figcaption>
-											<h3><?php echo $category->cat_name; ?></h3>
-											<!--<h4>Nombre de la columna</h4>-->
-											<p><?php echo $category->description; ?></p>
-										</figcaption>
-									</figure>
-								<?php } ?>
-							</div>
-						<?php endwhile; ?>
-					<?php wp_reset_postdata(); ?>
-				<?php endif; ?>
+
+				<div class="blogAutor itemShadow lineBottom">
+					<?php $categories=get_the_category(); ?>
+					<?php foreach ($categories as $category) { ?>
+						<?php $caTaxImg = get_field('caTax-img', 'category_'.$category->cat_ID); ?>
+						<figure>
+							<img src="<?php echo $caTaxImg['url']; ?>" alt="<?php echo $category->cat_name; ?>" title="<?php echo $category->cat_name; ?>">
+							<figcaption>
+								<h3><?php echo $category->cat_name; ?></h3>
+								<!--<h4>Nombre de la columna</h4>-->
+								<p><?php echo $category->description; ?></p>
+							</figcaption>
+						</figure>
+					<?php } ?>
+				</div>
+
 				<div class="titleBox2">
 					<h2>
 						Encuentra rápido lo que más te interesa leer
@@ -90,7 +82,7 @@
 					</div>
 
 					<?php //Detalles ?>
-					<ul class="singDet">
+					<ul class="singDet lineBottom">
 						<li>
 							<i>
 								<img src="<?php echo get_template_directory_uri() ?>/img/plantilla/icoUser.svg" alt="Autor" title="Autor">
@@ -124,68 +116,55 @@
 						</li>
 					</ul>
 
-					<div class="campTxt">
+					<div class="socialShare socialShareTop">
+						<?php do_action( 'addthis_widget' ); ?>
+					</div>
+
+					<div class="campTxt lineBottom">
 						<?php the_content(); ?>
 					</div>
 
-					<div class="titleBox2">
-						<h3>
-							Aquí tienes más artículos que te pueden interesar
-						</h3>
-					</div>
-					<div class="col l5 m12 s12">
-						<?php //Publicidad . small ?>
-						<?php get_template_part( 'content/content', 'pubsmall' ); ?>
-					</div>
-					<div class="col l7 m12 s12">
-						<div class="blogerItem itemShadow margBot20">
-							<figure>
-								<a href="javascript:void(0)" title="">
-									<img src="<?php echo get_template_directory_uri() ?>/img/plantilla/noticia.jpg" alt="title" title="">
-								</a>
-							</figure>
-							<div class="blogerTxt">
-								<h3>
-									<a href="javascript:void(0)" title="">
-										Jhon Boyega en el raparto de...
-									</a>
-								</h3>
-								<p>
-									Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-									tempor incididunt ut labore et dolore 
-								</p>
-								<a href="javascript:void(0)" title="" class="linkPlus">
-									Míralo ahora
-									<i>
-										<img src="<?php echo get_template_directory_uri() ?>/img/plantilla/arrowLeftMod.svg" alt="" title="">
-									</i>
-								</a>
-							</div>
+					<div class="rellBlog">
+
+						<div class="titleBox2">
+							<h3>
+								Aquí tienes más artículos que te pueden interesar
+							</h3>
 						</div>
-						<div class="blogerItem itemShadow margBot20">
-							<figure>
-								<a href="javascript:void(0)" title="">
-									<img src="<?php echo get_template_directory_uri() ?>/img/plantilla/noticia.jpg" alt="title" title="">
-								</a>
-							</figure>
-							<div class="blogerTxt">
-								<h3>
-									<a href="javascript:void(0)" title="">
-										Jhon Boyega en el raparto de...
-									</a>
-								</h3>
-								<p>
-									Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-									tempor incididunt ut labore et dolore 
-								</p>
-								<a href="javascript:void(0)" title="" class="linkPlus">
-									Míralo ahora
-									<i>
-										<img src="<?php echo get_template_directory_uri() ?>/img/plantilla/arrowLeftMod.svg" alt="" title="">
-									</i>
-								</a>
-							</div>
+						<div class="col l5 m12 s12">
+							<?php //Publicidad . small ?>
+							<?php get_template_part( 'content/content', 'pubsmall' ); ?>
 						</div>
+						<div class="col l7 m12 s12">
+							<?php $args = array(
+								'posts_per_page' => '2',
+								'cat' => get_the_category()
+							);?>
+							<?php $the_query = new WP_Query($args); ?>
+								<?php if ($the_query->have_posts()) : ?>
+									<?php while ($the_query->have_posts()) : $the_query->the_post(); ?>
+										<div class="blogerItem itemShadow margBot20">
+											<figure>
+												<a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>">
+													<?php the_post_thumbnail(); ?>
+												</a>
+											</figure>
+											<div class="blogerTxt">
+												<h3>
+													<a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>">
+														<?php the_title() ?>
+													</a>
+												</h3>
+												<p>
+													<?php the_excerpt(); ?>
+												</p>
+											</div>
+										</div>
+									<?php endwhile; ?>
+								<?php wp_reset_postdata(); ?>
+							<?php endif; ?>
+						</div>
+
 					</div>
 				</div>
 
