@@ -1225,6 +1225,7 @@
 									<?php endwhile; ?>
 								<?php wp_reset_postdata(); ?>
 							<?php endif; ?>
+							
 							<?php //Publicidad - Small ?>
 							<?php get_template_part( 'content/content', 'pubsmall' ); ?>
 
