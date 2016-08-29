@@ -36,6 +36,29 @@
 </head>
 <?php if ( have_posts() ) { while ( have_posts() ) {the_post(); }}?>
 <body>
+
+	<?php $headLogo = get_field('head-logo',75961); ?>
+
+	<!-- [ Preloader ] -->
+	<div id="preloader" >
+		<div id="status">
+			<?php if (false) { ?>
+				<div class="cssload-circle">
+					<div class="cssload-up">
+							<div class="cssload-innera"></div>
+					</div>
+					<div class="cssload-down">
+							<div class="cssload-innerb"></div>
+					</div>
+				</div>
+			<?php } ?>
+			<div class="preloadXP">
+				<img src="<?php echo $headLogo['url']; ?>" alt="<?php wp_title( '' ); ?>" title="<?php wp_title( '' ); ?>">
+			</div>
+		</div>
+	</div>
+	<!-- [ Fin - Preloader ] -->
+
 	<header>
 		<div class="container">
 			<div class="menuBox contShadow">
@@ -51,8 +74,8 @@
 
 						<?php if(have_rows('head-rs',75961)): ?>
 							<?php while(have_rows('head-rs',75961)): the_row(); ?>
-								<?php $headRsico = get_sub_field('head-rsico'); ?>
 								<li>
+									<?php $headRsico = get_sub_field('head-rsico'); ?>
 									<a href="<?php the_sub_field('head-rslink'); ?>" title="<?php the_sub_field('head-rstitulo'); ?>">
 										<img src="<?php echo $headRsico['url']; ?>" alt="<?php the_sub_field('head-rstitulo'); ?>" title="<?php the_sub_field('head-rstitulo'); ?>">
 									</a>
@@ -71,7 +94,6 @@
 					</div>
 				</div>
 				<figure class="logoBox">
-					<?php $headLogo = get_field('head-logo',75961); ?>
 					<a href="<?php echo site_url(); ?>/<?php echo $menu_item->url ?>" title="<?php echo $hLogo['title']; ?>">
 						<img src="<?php echo $headLogo['url']; ?>" alt="<?php wp_title( '' ); ?>" title="<?php wp_title( '' ); ?>">
 					</a>
@@ -114,3 +136,27 @@
 			<?php } ?>
 		</div>
 	</header>
+
+	<section class="secrow rowPub">
+		<div class="container">
+			<div class="row">
+				<div class="rowContPub">
+					<div class="col l12 m12 s12">
+						<div class="pubextra">
+							<?php $headpubImg = get_field('headpub-img'); ?>
+							<a href="<?php the_field('headpub-imglink'); ?>" title="<?php echo $headpubImg['title']; ?>">
+								<img src="<?php echo $headpubImg['url']; ?>" alt="<?php echo $headpubImg['title']; ?>" title="<?php echo $headpubImg['title']; ?>">
+							</a>
+						</div>
+						<div class="publong">
+							<?php if (get_field('headpub-code')): ?>
+								<?php the_sub_field('headpub-code'); ?>
+							<?php else: ?>
+								<img src="<?php echo get_template_directory_uri() ?>/img/plantilla/publong.jpg" alt="title" title="title">
+							<?php endif; ?>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>

@@ -64,7 +64,7 @@
 			<?php //Content ?>
 			<div class="col l9 m12 s12">
 				<?php $args = array(
-					'posts_per_page' => '-1',
+					'posts_per_page' => '6',
 					'cat' => get_query_var('cat')
 				);?>
 				<?php $the_query = new WP_Query($args); ?>
@@ -72,11 +72,6 @@
 						<?php while ($the_query->have_posts()) : $the_query->the_post(); ?>
 							<article class="col l6 m12 s12">
 								<div class="blogerItem itemShadow margBot20">
-									<figure>
-										<a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>">
-											<?php the_post_thumbnail(); ?>
-										</a>
-									</figure>
 									<div class="blogerTxt">
 										<h3>
 											<a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>">

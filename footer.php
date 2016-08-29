@@ -123,6 +123,13 @@
 	</div>
 </footer>
 
+<?php //Back to top ?>
+<a href="#0" class="cd-top">
+	<i>
+		<img src="<?php echo get_template_directory_uri() ?>/img/plantilla/icoNext.svg" alt="Top" title="Top">
+	</i>
+</a>
+
 <!--[ JQuery ]-->
 <script src="<?php echo get_template_directory_uri() ?>/js/jquery.js"></script>
 <!--[ General ]-->
@@ -141,18 +148,15 @@ Para	mejorar	la	experiencia..
 	$(document).ready(function(){
 		$(window).load(function(){
 			setTimeout(function(){
-				var $thys = $('.iModList');
-					for (var a=0; a<$thys.length; a++){
-					  var height = $thys.eq(a).closest('.iModList').height();  
-					  var tam = $thys.eq(a).find('li').length;
-					  var tamno = height / tam;
-					  $thys.eq(a).find('li').css('height',tamno);
-					}
 				$('.iModList li').on('mouseenter',function(){
 				  var $thisLi = $(this);
 				  var indexLi = $thisLi.index();
 				  $thisLi.closest('.itemModNot').find('.iModListFig').find('li').removeClass('actNot');
 				  $thisLi.closest('.itemModNot').find('.iModListFig').find('li').eq(indexLi).addClass('actNot');
+
+				  $thisLi.closest('.itemModNotTV').find('.iModListFig').find('li').removeClass('actNot');
+				  $thisLi.closest('.itemModNotTV').find('.iModListFig').find('li').eq(indexLi).addClass('actNot');
+
 				});
 
 				$('.iModList li').on('mouseleave',function(){
@@ -163,15 +167,4 @@ Para	mejorar	la	experiencia..
 		});
 	});
 </script>
-<style type="text/css">
-	.desactNot{
-		display: none !important;
-	}
-	.actNot{
-		display: block !important;
-	}
-	.actLi{
-		background: rgba(0,0,0,.3);
-	}
-</style>
 <?php wp_footer(); ?>

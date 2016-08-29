@@ -83,6 +83,295 @@ scale = 0 480px 768px 992px 1200px
 		svg
 			fill rgba(255, 255, 255, 0.1)
 
+
+// Backtotop
+
+.cd-top
+	display inline-block
+	height 40px
+	width 40px
+	position fixed
+	bottom 40px
+	right 10px
+	border 1px solid rgba(0,0,0,.3)
+	border-radius 50%
+	background rgba(255, 255, 255, .1)
+	overflow hidden
+	text-indent 100%
+	visibility hidden
+	opacity 0
+	transition opacity .3s 0s, visibility 0s .3s
+
+.cd-top
+	i
+		tam ()
+		position absolute
+		top 0px
+		left 0px
+		width 100%
+		height 100%
+		transform rotate(-90deg)
+		padding 10px
+		img
+			tam ()
+			width 35px
+			position absolute
+			top 0px
+			left 0px
+			right 0px
+			bottom 0px
+			margin auto
+
+.cd-top
+	.cd-is-visible
+		transition opacity .3s 0s, visibility 0s 0s
+
+.cd-top
+	.cd-fade-out
+		transition opacity .3s 0s, visibility 0s 0s
+.no-touch
+.cd-top
+	&:hover
+		transition opacity .3s 0s, visibility 0s 0s
+
+.cd-top.cd-is-visible
+	visibility visible
+	opacity 1
+
+.cd-top
+	.cd-fade-out
+		opacity .5
+
+.no-touch
+	.cd-top
+		&:hover 
+			box-shadow 0px 0px 10px 0px rgba(0, 0, 0, .75)
+			opacity 1
+
+@media only screen and (min-width: 768px)
+	.cd-top
+		right 20px
+		bottom 20px
+
+@media only screen and (min-width: 1024px)
+	.cd-top 
+		height: 60px
+		width: 60px
+		right: 30px
+		bottom: 30px
+
+
+// Loader 
+
+.preloadXP
+	width 250px
+	height 60px
+	position absolute
+	top 0px
+	left 0px
+	right 0px
+	bottom 0px
+	margin auto
+	img
+		tam ()
+
+.cssload-circle{
+	position:absolute;
+	margin:49px auto;
+	width:78px;
+	height:78px;
+	background:rgb(236,240,241);
+	border:solid 5px rgb(44,62,80);
+	border-radius:100%;
+	overflow:hidden;
+	animation: cssload-rotates 2.3s infinite linear;
+	-o-animation: cssload-rotates 2.3s infinite linear;
+	-ms-animation: cssload-rotates 2.3s infinite linear;
+	-webkit-animation: cssload-rotates 2.3s infinite linear;
+	-moz-animation: cssload-rotates 2.3s infinite linear;
+	margin:auto;
+	top:0px;
+	left:0px;
+	right:0px;
+	bottom:0px;
+}
+.cssload-up{
+		width: 29px;
+		height: 39px;
+		left:20px;
+		overflow:hidden;
+		background:rgb(204,238,255);
+		position:absolute;
+}
+.cssload-up:before,.cssload-up:after{
+		content:"";
+		width:29px;height:29px;
+		background:rgb(236,240,241);
+		position:absolute;
+		z-index:1;
+}
+.cssload-up:before{
+		top:29px;
+		left:-17px;
+		transform:rotate(45deg);
+		-o-transform:rotate(45deg);
+		-ms-transform:rotate(45deg);
+		-webkit-transform:rotate(45deg);
+		-moz-transform:rotate(45deg);
+}
+.cssload-up:after{
+		top:29px; left:17px;
+		transform:rotate(45deg);
+		-o-transform:rotate(45deg);
+		-ms-transform:rotate(45deg);
+		-webkit-transform:rotate(45deg);
+		-moz-transform:rotate(45deg);
+}
+.cssload-innera{
+		position:relative;
+		top:15px;
+		width:29px;height:29px;
+		background:rgb(241,196,15);
+		animation: cssload-mymove 2.3s infinite linear;
+		-o-animation: cssload-mymove 2.3s infinite linear;
+		-ms-animation: cssload-mymove 2.3s infinite linear;
+		-webkit-animation: cssload-mymove 2.3s infinite linear;
+		-moz-animation: cssload-mymove 2.3s infinite linear;
+}
+.cssload-down{
+		width: 29px;
+		height: 39px;
+		left:20px;
+		top:39px;
+		overflow:hidden;
+		background:rgb(204,238,255);
+		position:absolute;
+		z-index:1;
+}
+.cssload-down:before,.cssload-down:after{
+		content:"";
+		width:29px;
+		height:39px;
+		background:rgb(236,240,241);
+		position:absolute;
+		z-index:1;
+}
+.cssload-down:before{
+		top:-24px;
+		left:-17px;
+		transform:rotate(45deg);
+		-o-transform:rotate(45deg);
+		-ms-transform:rotate(45deg);
+		-webkit-transform:rotate(45deg);
+		-moz-transform:rotate(45deg);
+}
+.cssload-down:after{
+		top:-24px;
+		left:23px;
+		transform:rotate(45deg);
+		-o-transform:rotate(45deg);
+		-ms-transform:rotate(45deg);
+		-webkit-transform:rotate(45deg);
+		-moz-transform:rotate(45deg);
+}
+.cssload-innerb{
+		position:relative;
+		top:39px;
+		width:29px;height:29px; background:rgb(241,196,15);
+		animation: cssload-mymoveb 2.3s infinite linear;
+		-o-animation: cssload-mymoveb 2.3s infinite linear;
+		-ms-animation: cssload-mymoveb 2.3s infinite linear;
+		-webkit-animation: cssload-mymoveb 2.3s infinite linear;
+		-moz-animation: cssload-mymoveb 2.3s infinite linear;
+}
+
+
+@keyframes cssload-mymove{
+		0%{top:15px;}
+		100%{top:44px;}
+}
+
+@-o-keyframes cssload-mymove{
+		0%{top:15px;}
+		100%{top:44px;}
+}
+
+@-ms-keyframes cssload-mymove{
+		0%{top:15px;}
+		100%{top:44px;}
+}
+
+@-webkit-keyframes cssload-mymove{
+		0%{top:15px;}
+		100%{top:44px;}
+}
+
+@-moz-keyframes cssload-mymove{
+		0%{top:15px;}
+		100%{top:44px;}
+}
+
+@keyframes cssload-mymoveb{
+		0%{top:39px;}
+		90%{top:19px;}
+		100%{top:-5px;}
+}
+
+@-o-keyframes cssload-mymoveb{
+		0%{top:39px;}
+		90%{top:19px;}
+		100%{top:-5px;}
+}
+
+@-ms-keyframes cssload-mymoveb{
+		0%{top:39px;}
+		90%{top:19px;}
+		100%{top:-5px;}
+}
+
+@-webkit-keyframes cssload-mymoveb{
+		0%{top:39px;}
+		90%{top:19px;}
+		100%{top:-5px;}
+}
+
+@-moz-keyframes cssload-mymoveb{
+		0%{top:39px;}
+		90%{top:19px;}
+		100%{top:-5px;}
+}
+
+@keyframes cssload-rotates{
+		0%{transform:rotate(0deg);}
+		80%{transform:rotate(0deg);}
+		100%{transform:rotate(180deg);}
+}
+
+@-o-keyframes cssload-rotates{
+		0%{-o-transform:rotate(0deg);}
+		80%{-o-transform:rotate(0deg);}
+		100%{-o-transform:rotate(180deg);}
+}
+
+@-ms-keyframes cssload-rotates{
+		0%{-ms-transform:rotate(0deg);}
+		80%{-ms-transform:rotate(0deg);}
+		100%{-ms-transform:rotate(180deg);}
+}
+
+@-webkit-keyframes cssload-rotates{
+		0%{-webkit-transform:rotate(0deg);}
+		80%{-webkit-transform:rotate(0deg);}
+		100%{-webkit-transform:rotate(180deg);}
+}
+
+@-moz-keyframes cssload-rotates{
+		0%{-moz-transform:rotate(0deg);}
+		80%{-moz-transform:rotate(0deg);}
+		100%{-moz-transform:rotate(180deg);}
+}
+
+
 //***********************************************************//
 //************************************************************//
 // ------------> [ Fin - Menu animado ] <----------- //

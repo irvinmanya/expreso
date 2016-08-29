@@ -63,7 +63,7 @@
 			<div class="col l12 m12 s12">
 				<?php $args = array(
 					'posts_per_page' => '6',
-					'cat' => 17
+					'cat' => 1379
 				);?>
 				<?php $the_query = new WP_Query($args); ?>
 					<?php if ($the_query->have_posts()) : ?>

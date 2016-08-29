@@ -23,10 +23,14 @@ section
 .sliderFeat
 	tam ()
 	width calc( 100% - 235px )
+	max-height 406px
+	overflow hidden
 	li
 		tam ()
 		figure
 			tam ()
+			max-height 406px
+			overflow hidden
 			overflow hidden
 			figcaption
 				position absolute
@@ -59,14 +63,18 @@ section
 .sliderList
 	tam ()
 	width 235px
+	max-height 406px
+	overflow hidden
 	li
 		tam ()
 		height auto
+		min-height 100px
+		max-height 100px
+		overflow hidden
 		border-bottom 1px solid rgba(0,0,0,.15)
 		font-size 0px
-		height auto
 		trancicion ()
-		overflow hidden
+		display table
 		&:before
 			befcont ()
 			width 10px
@@ -89,18 +97,14 @@ section
 				height 100%
 		.sliderTxt
 			tam ()
+			display table-cell
+			vertical-align middle
 			width 100%
 			text-align left
-			padding 5px 7px 5px 7px
+			padding 5px 7px 5px 15px
 			h3
-			p
 				tam ()
-			h3
 				font-size 18px
-				padding-bottom 3px
-			p
-				font-size 14px
-				color rgba(0,0,0,.7)
 		&:last-child
 			border-bottom 0px solid blanco
 		&:hover
@@ -266,6 +270,10 @@ section
 		tam ()
 		a
 			tam ()
+		.notItemImg
+			tam ()
+			max-height 265px
+			overflow hidden
 	figcaption
 		h3
 		p
@@ -474,6 +482,22 @@ section
 		box-shadow 1px 1px 10px 0 rgba(0,0,0,.55)
 		transform translateY(-5px)
 
+.itemModNotTV
+	tam ()
+	text-align left
+	margin-bottom 20px
+	trancicion ()
+	h3
+		tam ()
+		padding 7px 10px 7px 10px
+		i
+			float right
+			width 20px
+			height auto
+	&:hover
+		.epTvPlay
+			transform scale(1.1,1.1)
+
 .iModListFig
 	tam ()
 	li
@@ -499,12 +523,24 @@ section
 			font-size 14px
 			border-top 1px solid rgba(0,0,0,.15)
 
+.iModListVid
+	li
+		a
+			padding 13px 10px 13px 35px
+		&:before
+			befcont ()
+			width 20px
+			height 20px
+			background url('../img/plantilla/icoPlayETV.svg') no-repeat center
+			background-size 100%
+			top 12px
+			left 7px
 
 .itemModNotfHide
 	display none !important
+
 .itemModNotfAct
 	display inline-block !important
-
 
 .encBox
 	tam ()
@@ -514,6 +550,32 @@ section
 .encInpCont
 	tam ()
 	margin 15px 0px 10px 0px
+
+.epTvPlay
+	width 80px
+	height 80px
+	border-radius 50%
+	background rgba(0, 0, 0, .75)
+	top 0px
+	left 0px
+	right 0px
+	bottom 0px
+	margin auto
+	z-index 1
+	position absolute
+	pointer-events none
+	padding 10px
+	trancicion ()
+
+.desactNot
+	display none !important
+
+.actNot
+	display block !important
+
+.actLi
+	background rgba(0,0,0,.3)
+
 
 // Materialize
 // ---> [ Desktop ]
@@ -679,11 +741,29 @@ section
 //------------> [ Publicidad ] <-----------------//
 .rowPub
 	padding 0px 0px 0px 0px
-	
+	.row
+		margin-bottom 0px !important
+
+.rowContPub
+	tam ()
+	padding 20px 0px 0px 0px
+	font-size 0px
+
 .publong
 	tam ()
 	max-width 970px
 	height 90px
+	overflow hidden
+	border 1px solid rgba(0, 0, 0, .15)
+
+.pubextra
+	tam ()
+	width calc( 100% - 970px )
+	background rgba(0, 0, 0, .0)
+	height 90px
+	border 1px solid rgba(0, 0, 0, .15)
+
+
 // Materialize
 // ---> [ Desktop ]
 //@media screen and (max-width: 1200px)
@@ -693,6 +773,8 @@ section
 
 // ---> [ Mobil ]
 @media screen and (max-width: 600px)
+	.pubextra
+		display none
 	.publong
 		height auto
 
@@ -886,11 +968,12 @@ section
 		pointer-events none
 		.owl-prev
 		.owl-next
-			width 30px
-			height 30px
-			background rgba(0,0,0,.8) !important
+			width 50px
+			height 50px
+			background rgba(255,255,255,.8) !important
 			position relative
 			pointer-events visible
+			border 1px solid rgba(0, 0, 0, .5)
 			span
 				position absolute
 				width 100%
@@ -1138,12 +1221,9 @@ section
 	tam ()
 	margin-bottom 20px
 	font-size 0px
-	figure
-		tam ()
-		width 200px
 	.blogerTxt
 		tam ()
-		width calc( 100% - 200px )
+		width 100%
 		text-align left
 		padding 5px 5px 5px 5px
 		h3

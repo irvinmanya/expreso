@@ -60,32 +60,37 @@
 			<?php //Content ?>
 			<div class="col l9 m12 s12">
 				<?php
-				$idObj = get_category_by_slug('blogueros'); 
+				$idObj = get_category_by_slug('blogueros');
+				$blogCount = 0;
 				$categories = get_categories(array('child_of' => get_query_var('cat'))); 
 				foreach ($categories as $category) : ?>
 					<?php $category_link = get_category_link($category->cat_ID); ?>
-					<article class="col l6 m12 s12">
-						<div class="blogerItem itemShadow margBot20">
-							<figure>
-								<a href="<?php echo esc_url( $category_link ); ?>" title="<?php echo $category->name; ?>" >
-									<img src="<?php echo get_template_directory_uri() ?>/img/plantilla/bloguero.png" alt="<?php echo $category->name; ?>" title="<?php echo $category->name; ?>">
-								</a>
-							</figure>
-							<div class="blogerTxt">
-								<h3>
+					<?php if ($blogCount < 6) { ?>
+						<article class="col l6 m12 s12">
+							<div class="blogerItem itemShadow margBot20">
+								<figure>
 									<a href="<?php echo esc_url( $category_link ); ?>" title="<?php echo $category->name; ?>" >
-										<?php echo $category->name; ?>
+										<img src="<?php echo get_template_directory_uri() ?>/img/plantilla/bloguero.png" alt="<?php echo $category->name; ?>" title="<?php echo $category->name; ?>">
 									</a>
-								</h3>
-								<a href="<?php echo esc_url( $category_link ); ?>" title="<?php echo $category->name; ?>"  class="linkPlus">
-									Míralo ahora
-									<i>
-										<img src="<?php echo get_template_directory_uri() ?>/img/plantilla/arrowLeftMod.svg" alt="" title="">
-									</i>
-								</a>
+								</figure>
+								<div class="blogerTxt">
+									<h3>
+										<a href="<?php echo esc_url( $category_link ); ?>" title="<?php echo $category->name; ?>" >
+											<?php echo $category->name; ?>
+										</a>
+									</h3>
+									<a href="<?php echo esc_url( $category_link ); ?>" title="<?php echo $category->name; ?>"  class="linkPlus">
+										Míralo ahora
+										<i>
+											<img src="<?php echo get_template_directory_uri() ?>/img/plantilla/arrowLeftMod.svg" alt="" title="">
+										</i>
+									</a>
+								</div>
 							</div>
-						</div>
-					</article>
+						</article>
+					<?php }else{ ?>
+					<?php } ?>
+					<?php $blogCount++; ?>
 				<?php endforeach; ?>
 			</div>
 

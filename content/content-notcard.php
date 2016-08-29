@@ -1,6 +1,6 @@
 <div class="notItemHome itemShadow margBot20">
 	<figure>
-		<a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>">
+		<a href="<?php the_permalink(); ?>" class="notItemImg" title="<?php the_title(); ?>">
 			<?php the_post_thumbnail(); ?>
 		</a>
 		<figcaption>
