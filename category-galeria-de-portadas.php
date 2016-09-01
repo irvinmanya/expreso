@@ -1,8 +1,5 @@
 <?php get_header(); ?>
 
-<?php //Publicidad - Long ?>
-<?php get_template_part( 'content/content', 'publong' ); ?>
-
 <section class="secrow portadas">
 	<div class="container">
 		<div class="row">

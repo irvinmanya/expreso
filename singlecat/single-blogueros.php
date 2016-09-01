@@ -76,6 +76,11 @@
 			<div class="col l9 m12 s12">
 				<div class="blogCont">
 					<div class="titleBox1">
+						<?php if (get_field('postint-ssombrero')) { ?>
+							<small>
+								<?php the_field('postint-ssombrero'); ?>
+							</small>
+						<?php } ?>
 						<h1>
 							<?php the_title(); ?>
 						</h1>

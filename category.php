@@ -1,8 +1,5 @@
 <?php get_header(); ?>
 
-<?php //Publicidad - Long ?>
-<?php get_template_part( 'content/content', 'publong' ); ?>
-
 <?php // Intro ?>
 <section class="secCont intro">
 	<div class="container">
@@ -11,7 +8,7 @@
 				<div class="sliderIntro itemShadow">
 					<ul class="sliderFeat" id="sliderFeat">
 						<?php $args = array(
-							'posts_per_page' => '3',
+							'posts_per_page' => '4',
 							'cat' => get_query_var('cat')
 						);?>
 						<?php $the_query = new WP_Query($args); ?>
@@ -47,7 +44,7 @@
 					</div>
 					<ul class="sliderList" id="sliderList">
 						<?php $args = array(
-							'posts_per_page' => '3',
+							'posts_per_page' => '4',
 							'cat' => get_query_var('cat')
 						);?>
 						<?php $the_query = new WP_Query($args); ?>
@@ -110,24 +107,8 @@
 				<?php $the_query = new WP_Query($args); ?>
 					<?php if ($the_query->have_posts()) : ?>
 						<?php while ($the_query->have_posts()) : $the_query->the_post(); ?>
-							<article class="col l6 m12 s12">
-								<div class="notItemHome notItemArt itemShadow margBot20">
-									<figure>
-										<a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>">
-											<?php the_post_thumbnail(); ?>
-										</a>
-										<figcaption>
-											<h3>
-												<a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>">
-													<?php the_title(); ?>
-												</a>
-											</h3>
-											<p>
-												<?php the_excerpt(); ?>
-											</p>
-										</figcaption>
-									</figure>
-								</div>
+							<article class="col l6 m12 s12 notcardCol2">
+								<?php get_template_part( 'content/content', 'notcard' ); ?>
 							</article>
 						<?php endwhile; ?>
 					<?php wp_reset_postdata(); ?>

@@ -4,8 +4,15 @@
 		<div class="row">
 			<div class="col l8 m12 s12 lineLateralRight" style="position:relative;">
 
+				<?php // ?>
+
 				<?php //Titulo ?>
 				<div class="titleBox1">
+					<?php if (get_field('postint-ssombrero')) { ?>
+						<small>
+							<?php the_field('postint-ssombrero'); ?>
+						</small>
+					<?php } ?>
 					<h1>
 						<?php the_title() ?>
 					</h1>
@@ -85,13 +92,17 @@
 				<?php } ?>
 
 				<?php //Contenido ?>
-				<div class="campTxt lineBottom">
+				<div class="campTxt campTxtPub lineBottom">
 					<?php the_content(); ?>
 					<div class="socialShare socialShareBottom">
 						<?php do_action( 'addthis_widget' ); ?>
 					</div>
 				</div>
 
+				<?php //Publicidad ?>
+				<div class="pubSingle">
+					<?php get_template_part( 'content/content', 'publong' ); ?>
+				</div>
 				
 				<?php //Articulos relacionados ?>
 				<div class="rowSing rowRell lineBottom">
@@ -111,23 +122,7 @@
 						<?php if ($the_query->have_posts()) : ?>
 							<?php while ($the_query->have_posts()) : $the_query->the_post(); ?>
 								<article class="col l4 m12 s12">
-									<div class="notItemHome itemShadow margBot20">
-										<figure>
-											<a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>">
-												<?php the_post_thumbnail(); ?>
-											</a>
-											<figcaption>
-												<h3>
-													<a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>">
-														<?php the_title() ?>
-													</a>
-												</h3>
-												<p>
-													<?php the_excerpt(); ?>
-												</p>
-											</figcaption>
-										</figure>
-									</div>
+									<?php get_template_part( 'content/content', 'notcard' ); ?>
 								</article>
 							<?php endwhile; ?>
 						<?php wp_reset_postdata(); ?>
@@ -149,23 +144,7 @@
 						<?php if ($the_query->have_posts()) : ?>
 							<?php while ($the_query->have_posts()) : $the_query->the_post(); ?>
 								<article class="col l4 m12 s12">
-									<div class="notItemHome itemShadow margBot20">
-										<figure>
-											<a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>">
-												<?php the_post_thumbnail(); ?>
-											</a>
-											<figcaption>
-												<h3>
-													<a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>">
-														<?php the_title() ?>
-													</a>
-												</h3>
-												<p>
-													<?php the_excerpt(); ?>
-												</p>
-											</figcaption>
-										</figure>
-									</div>
+									<?php get_template_part( 'content/content', 'notcard' ); ?>
 								</article>
 							<?php endwhile; ?>
 						<?php wp_reset_postdata(); ?>

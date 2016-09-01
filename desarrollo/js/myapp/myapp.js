@@ -373,6 +373,18 @@ $(document).on('ready',function() {
       );
     });
 
+    // Mover la publicidad al medio del  Single(Default)
+    var $long = $('.campTxtPub p');
+    var lengt = $long.length;
+    var numEst;
+    if ((lengt % 2) == 0){
+      numEst = lengt/2  
+    }
+    else {
+      numEst = parseInt(lengt/2) + 1;
+    }
+    $long.eq(numEst).append($('.pubSingle .publong'));
+
 });
     
     //------------------- [ Clasie ] --------------------//

@@ -6,6 +6,11 @@
 				<div class="editCont">
 
 					<div class="titleBox1">
+						<?php if (get_field('postint-ssombrero')) { ?>
+							<small>
+								<?php the_field('postint-ssombrero'); ?>
+							</small>
+						<?php } ?>
 						<h1>
 							<?php the_title(); ?>
 						</h1>
