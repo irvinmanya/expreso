@@ -338,10 +338,36 @@ $(document).on('ready',function() {
     //------------------- [ Fin - Slider Hover ] --------------------//
 
     // Datepicker
-    $('.datepicker').pickadate({
-        selectMonths: true, // Creates a dropdown to control month
-        selectYears: 15 // Creates a dropdown of 15 years to control year
+    // $('.datepicker').pickadate({
+    //     selectMonths: true, // Creates a dropdown to control month
+    //     selectYears: 15 // Creates a dropdown of 15 years to control year
+    // });
+
+    var from_$input = $('.datepicker').pickadate({
+      selectMonths: true,
+      selectYears: true,
+      labelMonthNext: 'Próximo mes',
+      labelMonthPrev: 'Mes anterior',
+      labelMonthSelect: 'Seleccione un mes',
+      labelYearSelect: 'Selecione un año',
+      monthsFull: [ 'Enero', 'Febrero', 'Marzo', 'Abril', 'Mayo', 'Junio', 'Julio', 'Agosto', 'Septiembre', 'Octubre', 'Noviembre', 'Diciembre' ],
+      monthsShort: [ 'Ene', 'Feb', 'Mar', 'Abr', 'May', 'Jun', 'Jul', 'Ago', 'Set', 'Ago', 'Nov', 'Dis' ],
+      weekdaysFull: [ 'Domingo', 'Lunes', 'Martes', 'Miercoles', 'Jueves', 'Viernes', 'Sábado' ],
+      weekdaysShort: [ 'Dom', 'Lu', 'Mar', 'Mie', 'Ju', 'Vi', 'Sab' ],
+      weekdaysLetter: [ 'D', 'L', 'M', 'M', 'J', 'V', 'S' ],
+      today: 'Hoy',
+      format: 'dd/mm/yyyy',
+      clear: 'Limpiar',
+      close: 'Cerrar',
+      max: false,
+      min: false,
+      onSet: function( arg ){
+        if ( 'select' in arg ){ //prevent closing on selecting month/year
+          this.close();
+        }
+      }
     });
+
 
     // Collapse
     $('.collapsible').collapsible({});
@@ -384,6 +410,12 @@ $(document).on('ready',function() {
       numEst = parseInt(lengt/2) + 1;
     }
     $long.eq(numEst).append($('.pubSingle .publong'));
+
+    // Eliminando flecha de destacados
+    if($(window).width() < 600) {
+       $('.rowResp').eq(0).find('.icoResp').remove();
+    }
+
 
 });
     

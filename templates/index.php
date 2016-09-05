@@ -125,7 +125,7 @@
 			<section class="secrow secDestac">
 				<div class="container notBox">
 					<div class="row">
-						<div class="col l8 m12 s12 rowRell">
+						<div class="col l8 m12 s12 rowRell rowResp">
 							<?php $secTax = get_sub_field('secdest-linkcat'); ?>
 							<?php $secTax_name = $secTax->name; ?>
 							<?php $secTax_id = $secTax->term_id; ?>
@@ -206,7 +206,7 @@
 
 										<?php $args = array(
 											'posts_per_page' => '1',
-											'cat' => $latTax_id,
+											'cat' => $latTax,
 											'meta_query'	=> array(
 												'relation'		=> 'AND',
 												array(
@@ -216,6 +216,7 @@
 												)
 											)
 										);?>
+
 										<?php $the_query = new WP_Query($args); ?>
 											<?php if ($the_query->have_posts()) : ?>
 												<?php while ($the_query->have_posts()) : $the_query->the_post(); ?>
@@ -248,16 +249,16 @@
 									<?php //Expreso TV ?>
 									<?php elseif( get_row_layout() == 'indexlat-tv' ): ?>
 
-										<?php $latTax = get_sub_field('indexlat-tvcat'); ?>
-										<?php $latTax_name = $latTax->name; ?>
-										<?php $latTax_id = $latTax->term_id; ?>
+										<?php $latTatv = get_sub_field('indexlat-tvcat'); ?>
+										<?php $latTatv_name = $latTatv->name; ?>
+										<?php $latTatv_id = $latTatv->term_id; ?>
 
 										<article class="itemModNotTV itemShadow margBot20">
 											<h3>
-												<a href="http://expreso.dhdinc.info/seccion/tecnologia/" title="Tecnología">
+												<a href="<?php echo get_term_link( $latTatv ); ?>" title="<?php the_sub_field('indexlat-tvtitulo'); ?>">
 													<?php the_sub_field('indexlat-tvtitulo'); ?>
-													<a href="<?php echo get_term_link( $latTax ); ?>" class="icoResp" title="<?php echo $latTax_name; ?>">
-														<img src="<?php echo get_template_directory_uri() ?>/img/plantilla/arrowLeftMod.svg" alt="<?php echo $latTax_name; ?>" title="<?php echo $latTax_name; ?>">
+													<a href="<?php echo get_term_link( $latTatv ); ?>" class="icoResp" title="<?php echo $latTatv_name; ?>">
+														<img src="<?php echo get_template_directory_uri() ?>/img/plantilla/arrowLeftMod.svg" alt="<?php echo $latTatv_name; ?>" title="<?php echo $latTatv_name; ?>">
 													</a>
 												</a>
 											</h3>
@@ -266,13 +267,13 @@
 											<?php if( get_sub_field('indexlat-tvord') == 'aleatorio' ) { ?>
 												<?php $args = array(
 													'posts_per_page' => $tvNpost,
-													'cat' => $latTax_id,
+													'cat' => $latTatv,
 													'orderby' => 'rand'
 												); ?>
 											<?php }else{ ?>
 												<?php $args = array(
 													'posts_per_page' => $tvNpost,
-													'cat' => $latTax_id
+													'cat' => $latTatv
 												); ?>
 											<?php } ?>
 
@@ -311,13 +312,13 @@
 												<?php if( get_sub_field('indexlat-tvord') == 'aleatorio' ) { ?>
 													<?php $args = array(
 														'posts_per_page' => $tvNpost,
-														'cat' => $latTax_id,
+														'cat' => $latTatv,
 														'orderby' => 'rand'
 													); ?>
 												<?php }else{ ?>
 													<?php $args = array(
 														'posts_per_page' => $tvNpost,
-														'cat' => $latTax_id
+														'cat' => $latTatv
 													); ?>
 												<?php } ?>
 
@@ -336,7 +337,7 @@
 										</article>
 
 									<?php //Ultimo minuto ?>
-									<?php elseif( get_row_layout() == 'indexlat-ent' ): ?>
+									<?php elseif( get_row_layout() == 'indexlat-um' ): ?>
 										<article class="itemLastMin itemShadow margBot20 ">
 
 											<?php $latTax = get_sub_field('indexlat-umcat'); ?>
@@ -430,7 +431,7 @@
 											<ul class="owlBlog owlBlogueros">
 												<?php $args = array(
 													'posts_per_page' => $catNpst,
-													'category__in' => $latTax_id
+													'cat' => 131
 												);?>
 												<?php $the_query = new WP_Query($args); ?>
 													<?php if ($the_query->have_posts()) : ?>
@@ -506,7 +507,7 @@
 				<?php $args = array(
 					'posts_per_page' => $catNpostc,
 					'cat' => $latTax_idc,
-					'orderby' => 'rand'
+					'orderby' => 'rand',
 					'date_query' => array(
 						array(
 						'after' => $catHoursc
@@ -602,12 +603,12 @@
 										<?php $catHoursm = $setCatHoursm.$setCatHourStringm; ?>
 
 										<?php // Numero de post's ?>
-										<?php $catNpostm = get_sub_field('seccol-npost'); ?>
+										<?php $catNpostm = get_sub_field('secmodcat-npost'); ?>
 
 										<article class="col l6 m12 s12">
 											<div class="itemModNot itemShadow margBot20">
 												<h3>
-													<a href="<?php echo get_term_link( $latTaxm ); ?>" class="icoResp" title="<?php echo $latTax_namem; ?>">
+													<a href="<?php echo get_term_link( $latTaxm ); ?>" title="<?php echo $latTax_namem; ?>">
 														<?php the_sub_field('secmodcat-titulo'); ?>
 														<i>
 															<img src="<?php echo get_template_directory_uri() ?>/img/plantilla/arrowLeftMod.svg" alt="title" title="title">
@@ -750,12 +751,12 @@
 											<?php wp_reset_postdata(); ?>
 										<?php endif; ?>
 
-									<?php if( get_row_layout() == 'ifmlat-plat' ): ?>
+									<?php elseif( get_row_layout() == 'ifmlat-plat' ): ?>
 										<div class="itemLast itemShadow pubLateral margBot20">
 											<?php the_sub_field('ifmlatp-code'); ?>
 										</div>
 
-									<?php if( get_row_layout() == 'ifmlat-enc' ): ?>
+									<?php elseif( get_row_layout() == 'ifmlat-enc' ): ?>
 										<div class="encBox itemShadow margBot20">
 											<p>
 												<?php the_sub_field('ifmlate-preg'); ?>
@@ -793,23 +794,7 @@
 
 <?php get_footer(); ?>
 
-<script>
-	$("#zoom_03").elevateZoom({
-		gallery:'gallery_01',
-		cursor: 'pointer',
-		galleryActiveClass:
-		'active',
-		imageCrossfade: true,
-		loadingIcon: 'http://www.elevateweb.co.uk/spinner.gif'
-	}); 
 
-
-	$("#zoom_03").bind("click", function(e) {  
-		var ez = $('#zoom_03').data('elevateZoom');	
-			$.fancybox(ez.getGalleryList());
-		return false;
-	});
-</script>
 
 </body>
 </html>

@@ -136,6 +136,9 @@
 <script src="<?php echo get_template_directory_uri() ?>/js/jsgeneral.js"></script>
 <!--[ MyApp ]-->
 <script src="<?php echo get_template_directory_uri() ?>/js/myapp.min.js"></script>
+<!--[ Templates ]-->
+<script src="<?php echo get_template_directory_uri() ?>/js/jquery.tmpl.js"></script>
+
 
 <!--[if	lt	IE	8]>
 <p	class="browsehappy">

@@ -1,7 +1,8 @@
 <div class="notItemHome itemShadow margBot20">
 	<figure>
 		<a href="<?php the_permalink(); ?>" class="notItemImg" title="<?php the_title(); ?>">
-			<?php the_post_thumbnail(); ?>
+
+			<img src="<?php the_post_thumbnail_url( 'medium' ); ?>" alt="<?php the_title(); ?>" title="<?php the_title(); ?>">
 		</a>
 		<figcaption>
 			<h3>

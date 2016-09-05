@@ -10,23 +10,33 @@
 						Encuentra rápido lo que más te interesa leer
 					</h2>
 				</div>
+				<form id="frmEditor">
+					<div class="inpFiltro">
+						<input type="date" name="fecEdit" id="fecEdit" class="datepicker picker__input" placeholder="Escoja una fecha">
+					</div><br>
 
-				<div class="inpFiltro">
-					<input type="date" name="fecEdit" id="fecEdit" class="datepicker picker__input" placeholder="Escoja una fecha">
-				</div><br>
-
-				<button type="submit" class="btnGeneral">
-					Filtrar
-				</button>
+					<button type="submit" id="btnEditorial" class="btnGeneral">
+						Filtrar
+					</button>
+				</form>
 			</div>
 
 			<?php //Content ?>
 			<div class="col l6 m12 s12">
-				<ul class="collapsible acordImg" data-collapsible="accordion">
-					<?php $args = array(
-						'posts_per_page' => '9',
-						'cat' => 48
-					);?>
+				<ul class="collapsible acordImg" data-collapsible="accordion" id="listEdit">
+					<?php
+						$args = array(
+						'posts_per_page' => '-1',
+						'cat' => 48,
+						'date_query' => array(
+							array(
+								'year'      => 2016,
+								'month'     => 08,
+								'day'       => 25,
+								'compare'   => '='
+							)
+						));
+					?>
 					<?php $the_query = new WP_Query($args); ?>
 						<?php if ($the_query->have_posts()) : ?>
 							<?php while ($the_query->have_posts()) : $the_query->the_post(); ?>
@@ -113,5 +123,52 @@
 </section>
 
 <?php get_footer(); ?>
+
+<script id="plantilla_general" type="text/x-jquery-tmpl">
+	<li class="active">
+		<div class="collapsible-header active">
+			${titlePage}
+		</div>
+		<div class="collapsible-body" style="display:block;">
+			<figure>
+				<img src="${urlImg}" alt="${titlePage}" title="${titlePage}">
+			</figure>
+			<div class="campTxt">
+				<p>
+					${txtPage}
+				</p>
+			</div>
+		</div>
+	</li>
+</script>
+
+<script type="text/javascript">
+	$(document).ready(function(){
+		$('#frmEditor').submit(function(e){
+			e.preventDefault();
+
+			var fecEdit= $('#fecEdit').val();
+
+			$('#listEdit').html('');
+			$.ajax({
+				url: '<?php echo get_template_directory_uri() ?>/json/rspeditorial.php',
+				method: 'post',
+				data: {fecEdit: fecEdit},
+				dataType: 'json',
+				beforeSend: function(){
+					$('.eventLoader').addClass('eventLoaderAct');
+				},
+				success: function(data){
+					$("#plantilla_general").tmpl(data).appendTo("#listEdit");
+				},
+				complete: function(){
+					$('.eventLoader').removeClass('eventLoaderAct');
+				}
+			});
+		});
+
+	});
+</script>
+
 </body>
 </html>
