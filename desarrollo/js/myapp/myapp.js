@@ -356,7 +356,7 @@ $(document).on('ready',function() {
       weekdaysShort: [ 'Dom', 'Lu', 'Mar', 'Mie', 'Ju', 'Vi', 'Sab' ],
       weekdaysLetter: [ 'D', 'L', 'M', 'M', 'J', 'V', 'S' ],
       today: 'Hoy',
-      format: 'dd/mm/yyyy',
+      format: 'yyyy/mm/dd',
       clear: 'Limpiar',
       close: 'Cerrar',
       max: false,

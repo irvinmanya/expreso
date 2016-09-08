@@ -26,16 +26,17 @@
 				<ul class="collapsible acordImg" data-collapsible="accordion" id="listEdit">
 					<?php
 						$args = array(
-						'posts_per_page' => '-1',
-						'cat' => 48,
-						'date_query' => array(
-							array(
-								'year'      => 2016,
-								'month'     => 08,
-								'day'       => 25,
-								'compare'   => '='
-							)
-						));
+						'posts_per_page' => '6',
+						'cat' => 48
+						// 'date_query' => array(
+						// 	array(
+						// 		'year'      => 2016,
+						// 		'month'     => 08,
+						// 		'day'       => 25,
+						// 		'compare'   => '='
+						// 	)
+						// )
+						);
 					?>
 					<?php $the_query = new WP_Query($args); ?>
 						<?php if ($the_query->have_posts()) : ?>
@@ -127,7 +128,7 @@
 <script id="plantilla_general" type="text/x-jquery-tmpl">
 	<li class="active">
 		<div class="collapsible-header active">
-			${titlePage}
+			${title}
 		</div>
 		<div class="collapsible-body" style="display:block;">
 			<figure>
@@ -135,7 +136,7 @@
 			</figure>
 			<div class="campTxt">
 				<p>
-					${txtPage}
+					${excerpt}
 				</p>
 			</div>
 		</div>
@@ -150,19 +151,34 @@
 			var fecEdit= $('#fecEdit').val();
 
 			$('#listEdit').html('');
+			// $.ajax({
+			// 	// url: '<?php echo get_template_directory_uri() ?>/json/rspeditorial.php',
+			// 	url: 'http://expreso.dhdinc.info/api/Search/?cat=48',
+			// 	method: 'post',
+			// 	data: {fecEdit: fecEdit},
+			// 	dataType: 'json',
+			// 	beforeSend: function(){
+			// 		$('.eventLoader').addClass('eventLoaderAct');
+			// 	},
+			// 	success: function(data){
+			// 		$("#plantilla_general").tmpl(data).appendTo("#listEdit");
+			// 	},
+			// 	complete: function(){
+			// 		$('.eventLoader').removeClass('eventLoaderAct');
+			// 	}
+			// });
+			
 			$.ajax({
-				url: '<?php echo get_template_directory_uri() ?>/json/rspeditorial.php',
+				url: 'http://expreso.dhdinc.info/api/get_date_posts/?date='+fecEdit+'&cat=48',
 				method: 'post',
 				data: {fecEdit: fecEdit},
 				dataType: 'json',
 				beforeSend: function(){
-					$('.eventLoader').addClass('eventLoaderAct');
 				},
 				success: function(data){
-					$("#plantilla_general").tmpl(data).appendTo("#listEdit");
+                  $("#plantilla_general").tmpl(data.posts).appendTo("#listEdit");
 				},
 				complete: function(){
-					$('.eventLoader').removeClass('eventLoaderAct');
 				}
 			});
 		});

@@ -1,12 +1,14 @@
 <?php
 
 $scriptPath = dirname(__FILE__);
+
 $path = realpath($scriptPath . '/./');
 $filepath = explode("wp-content",$path);
 
 define('WP_USE_THEMES', false);
 
 require(''.$filepath[0].'/wp-blog-header.php');
+require_once dirname( __FILE__ ) . '/lib/endpoints/class-wp-rest-controller.php';
 
 $fecEdit = $_POST['fecEdit']; // --- Get_date
 
