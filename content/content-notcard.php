@@ -6,9 +6,15 @@
 		</a>
 		<figcaption>
 			<h3>
-				<a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>">
-					<?php the_title() ?>
-				</a>
+				<?php if (get_field('postint-stitulocor')) { ?>
+					<a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>">
+						<?php the_field('postint-stitulocor'); ?>
+					</a>
+				<?php }else{ ?>
+					<a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>">
+						<?php the_title() ?>
+					</a>
+				<?php } ?>
 			</h3>
 			<p>
 				<?php the_excerpt(); ?>

@@ -281,6 +281,8 @@ section
 			padding 7px 10px 7px 10px
 		h3
 			border-bottom 1px solid rgba(0,0,0,.15)
+			max-height  140px
+			overflow hidden
 		p
 			font-size 14px
 			color rgba(0,0,0,.7)
@@ -538,9 +540,13 @@ section
 			width 20px
 			height 20px
 			background url('../img/plantilla/icoPlayETV.svg') no-repeat center
-			background-size 100%
+			background-size 95%
 			top 12px
 			left 7px
+			trancicion ()
+		&:hover
+			&:before
+				transform scale(1.1,1.1)
 
 .itemModNotfHide
 	display none !important
@@ -581,6 +587,18 @@ section
 
 .actLi
 	background rgba(0,0,0,.3)
+
+.vidACF
+	font-size 0px !important
+	iframe
+		width 100%
+		height 230px
+
+.vmETV
+	tam ()
+	border-top 1px solid rgba(0, 0, 0, .15)
+	text-align center
+	padding 10px 0px 10px 0px
 
 
 // Materialize
@@ -758,9 +776,18 @@ section
 .publong
 	tam ()
 	max-width 970px
-	height 90px
+	height auto
 	overflow hidden
 	border 1px solid rgba(0, 0, 0, .15)
+
+
+.publongResp
+	tam ()
+	max-width 970px
+	height auto
+	overflow hidden
+	border 1px solid rgba(0, 0, 0, .15)
+	display none
 
 .pubextra
 	tam ()
@@ -770,8 +797,11 @@ section
 	border 1px solid rgba(0, 0, 0, .15)
 
 .pubLateral
+	height auto
 	min-height 200px
 
+.pubLateralResp
+	display none
 
 // Materialize
 // ---> [ Desktop ]
@@ -782,10 +812,24 @@ section
 
 // ---> [ Mobil ]
 @media screen and (max-width: 600px)
+	.pubLateralResp
+		display block !important
+		height auto
+		min-height 200px
+		
 	.pubextra
 		display none
+		
 	.publong
 		height auto
+
+	.publongSingle
+		display none !important
+
+	.publongResp
+		display block !important
+
+
 
 //------------> [ Fin - Publicidad ] <-----------------//
 
@@ -1012,13 +1056,13 @@ section
 	.titleBox1
 		margin-bottom 15px
 	.campTxt
-		padding-bottom 25px
+		padding-bottom 10px
 		margin-bottom 25px
 
 .rowSing
 	tam ()
 	padding-bottom 25px
-	margin-bottom 25px
+	margin-top 25px
 	.titleBox2
 		h2
 			margin-bottom 15px
@@ -1105,13 +1149,33 @@ section
 			figure
 				tam ()
 				width 200px
+				img
+					margin-top 15px
 			.campTxt
 				tam ()
 				width calc( 100% - 200px )
 				padding 15px 15px 15px 15px
 				p
 					padding 0px !important
-				
+
+.acordImgAct
+	min-height 350px
+	#floatingCirclesG
+		opacity 1
+		z-index 1
+
+.acordBox
+	tam ()
+	background blanco
+
+.acordBoxAct
+	min-height 350px
+	box-shadow 0px 2px 5px 0px rgba(0,0,0,.16), 0px 2px 10px 0px rgba(0,0,0,.12)
+	#floatingCirclesG
+		opacity 1
+		z-index 1
+
+
 // Materialize
 // ---> [ Desktop ]
 //@media screen and (max-width: 1200px)
@@ -1175,6 +1239,10 @@ section
 .singlePortadas
 	tam ()
 
+.portadas
+	.titleBox1
+		margin-bottom 20px
+
 .editCont
 	tam ()
 	text-align left
@@ -1187,6 +1255,26 @@ section
 	tam ()
 	figure
 		tam ()
+		min-height 350px
+		
+#floatingCirclesG
+	opacity 0
+	position absolute
+	top 0px
+	bottom 0px
+	left 0px
+	right 0px
+	margin auto
+	z-index -1
+	trancicion ()
+
+.ptTmpAct
+	min-height 350px
+	#floatingCirclesG
+		opacity 1
+		z-index 1
+
+
 //------------> [ Fin - Categoria - Portada ] <-----------------//
 
 //------------> [ Categoria - Cine ] <-----------------//
@@ -1304,6 +1392,7 @@ section
 
 //------------> [ Fin -Blogueros ] <-----------------//
 
+
 //------------> [ Suplementos ] <-----------------//
 .suplItem
 	tam ()
@@ -1319,6 +1408,52 @@ section
 			text-align center
 			tam ()
 //------------> [ Fin - Suplementos ] <-----------------//
+
+
+//------------> [ Encuesta ] <-----------------//
+.wp-polls
+	h3
+		font-size 20px
+		margin-bottom 20px
+	.resultado
+		text-align center
+		margin-top 15px
+	.wp-polls-ul
+		text-align center
+	.yes
+		display inline-block
+		width 30%
+		text-align center
+		
+.wp-polls-loading
+	text-align center
+	position absolute
+	top 0px
+	left 0px
+	right 0px
+	bottom 0px
+	margin auto
+	font-size 0px
+	width 70px
+	height 70px
+	&:before
+		content ''
+		width 100%
+		height 100%
+		position absolute
+		top 0px
+		left 0px
+		z-index 1
+		background url('../img/plantilla/loading-enc.gif') center no-repeat
+		background-size 100%
+	img
+		tam ()
+		width 70px !important
+		height 70px !important
+		opacity 0
+
+//------------> [ Fin - Encuesta ] <-----------------//
+
 
 //---------------------------- [ ESTILOS ] ------------------------------/
 //________________________________________________________________________/

@@ -18,7 +18,7 @@
 								<ul class="sliderFeat" id="sliderFeat">
 									<?php $args = array(
 										'posts_per_page' => '4',
-										'cat' => -70, //Menos portada cat=70
+										'cat' => -131,-1379,-39,-48,-35,-18,-19,-70,-20, //Menos portada cat=70
 										'meta_query'	=> array(
 											'relation'		=> 'AND',
 											array(
@@ -28,6 +28,9 @@
 											)
 										)
 									);?>
+
+									<?php $ids = array(); ?>
+
 									<?php $the_query = new WP_Query($args); ?>
 										<?php if ($the_query->have_posts()) : ?>
 											<?php while ($the_query->have_posts()) : $the_query->the_post(); ?>
@@ -47,6 +50,7 @@
 														<?php the_post_thumbnail(); ?>
 													</figure>
 												</li>
+												<?php array_push( $ids, get_the_ID() ); ?>
 											<?php endwhile; ?>
 										<?php wp_reset_postdata(); ?>
 									<?php endif; ?>
@@ -62,7 +66,7 @@
 								<ul class="sliderList" id="sliderList">
 									<?php $args = array(
 										'posts_per_page' => '4',
-										'cat' => -70, //Menos portada cat=70
+										'cat' => -131,-1379,-39,-48,-35,-18,-19,-70,-20, //Menos portada cat=70
 										'meta_query'	=> array(
 											'relation'		=> 'AND',
 											array(
@@ -92,113 +96,37 @@
 								</ul>
 							</div>
 						</article>
-						<article class="col l4 m12 s12">
-							<?php $args = array(
-								'posts_per_page' => '1',
-								'cat' => 70
-							);?>
-							<?php $the_query = new WP_Query($args); ?>
-								<?php if ($the_query->have_posts()) : ?>
-									<?php while ($the_query->have_posts()) : $the_query->the_post(); ?>
-										<div class="itemLast itemShadow">
-											<figure>
-												<figcaption class="pDayTitle">
-													<h3>
-														Portada del día
-													</h3>
-												</figcaption>
-												<a href="<?php the_permalink(); ?>" class="pDay" title="<?php the_title(); ?>">
-													<?php the_post_thumbnail(); ?>
-												</a>
-											</figure>
-										</div>
-									<?php endwhile; ?>
-								<?php wp_reset_postdata(); ?>
-							<?php endif; ?>
-						</article>
-					</div>
-				</div>
-			</section>
-
-		<?php //Noticias destacadas ?>
-		<?php elseif( get_row_layout() == 'secdestacada' ): ?>
-			<section class="secrow secDestac">
-				<div class="container notBox">
-					<div class="row">
-						<div class="col l8 m12 s12 rowRell rowResp">
-							<?php $secTax = get_sub_field('secdest-linkcat'); ?>
-							<?php $secTax_name = $secTax->name; ?>
-							<?php $secTax_id = $secTax->term_id; ?>
-							<div class="titleBox2">
-								<h2>
-									<?php the_sub_field('secdest-titulo'); ?>
-									<a href="<?php echo get_term_link( $secTax ); ?>" class="icoResp" title="<?php echo $secTax_name; ?>">
-										<img src="<?php echo get_template_directory_uri() ?>/img/plantilla/arrowLeftMod.svg" alt="<?php echo $secTax_name; ?>" title="<?php echo $secTax_name; ?>">
-									</a>
-								</h2>
-							</div>
-
-							<?php $setCatHours = get_sub_field('secdest-horas') ?>
-							<?php $setCatHourString = ' hours ago'; ?>
-							<?php $catHours = $setCatHours.$setCatHourString; ?>
-
-							<?php if( get_sub_field('secdest-opt') == 'descendente' ){ ?>
-								<?php $args = array(
-									'posts_per_page' => '3',
-									'cat' => $secTax_id,
-									'order' => 'DESC',
-									'meta_query'	=> array(
-										'relation'		=> 'AND',
-										array(
-											'key'		=> 'destprev-opt',
-											'value'		=> 'destacadoprincipal',
-											'compare' 	=> 'LIKE'
-										)
-									),
-									'date_query' => array(
-										array(
-										'after' => $catHours
-										)
-									)
-								); ?>
-							<?php }elseif( get_sub_field('secdest-opt') == 'random' ){ ?>
-								<?php $args = array(
-									'posts_per_page' => '3',
-									'cat' => $secTax_id,
-									'orderby' => 'rand',
-									'meta_query'	=> array(
-										'relation'		=> 'AND',
-										array(
-											'key'		=> 'destprev-opt',
-											'value'		=> 'destacadoprincipal',
-											'compare' 	=> 'LIKE'
-										)
-									),
-									'date_query' => array(
-										array(
-										'after' => $catHours
-										)
-									)
-								); ?>
-							<?php } ?>
-
-							<?php $the_query = new WP_Query($args); ?>
-								<?php if ($the_query->have_posts()) : ?>
-									<?php while ($the_query->have_posts()) : $the_query->the_post(); ?>
-										<article class="col l4 m12 s12">
-											<?php get_template_part( 'content/content', 'notcard' ); ?>
-										</article>
-									<?php endwhile; ?>
-								<?php wp_reset_postdata(); ?>
-							<?php endif; ?>
-
-						</div>
 						<div class="col l4 m12 s12">
 							<?php if( have_rows('inicioflexsub-cont') ): ?>
 								<?php while ( have_rows('inicioflexsub-cont') ) : the_row(); ?>
 
+									<?php //Portada del dia ?>
+									<?php if( get_row_layout() == 'indexlat-portday' ): ?>
+										<?php $args = array(
+											'posts_per_page' => '1',
+											'cat' => 20
+										);?>
+										<?php $the_query = new WP_Query($args); ?>
+											<?php if ($the_query->have_posts()) : ?>
+												<?php while ($the_query->have_posts()) : $the_query->the_post(); ?>
+													<div class="itemLast itemShadow">
+														<figure>
+															<figcaption class="pDayTitle">
+																<h3>
+																	<?php the_sub_field('indexlat-pdtitulo'); ?>
+																</h3>
+															</figcaption>
+															<a href="<?php echo site_url(); ?>/<?php echo $menu_item->url ?>/seccion/galeria-de-portadas/" class="pDay" title="<?php the_title(); ?>">
+																<?php the_post_thumbnail(); ?>
+															</a>
+														</figure>
+													</div>
+												<?php endwhile; ?>
+											<?php wp_reset_postdata(); ?>
+										<?php endif; ?>
+
 									<?php //Destacado del dia ?>
-									<?php if( get_row_layout() == 'indexlat-destacado' ): ?>
+									<?php elseif( get_row_layout() == 'indexlat-destacado' ): ?>
 
 										<?php $latTax = get_sub_field('indexlat-dcat'); ?>
 										<?php $latTax_name = $latTax->name; ?>
@@ -206,13 +134,12 @@
 
 										<?php $args = array(
 											'posts_per_page' => '1',
-											'cat' => $latTax,
 											'meta_query'	=> array(
 												'relation'		=> 'AND',
 												array(
-													'key'		=> 'destprev-opt',
-													'value'		=> 'destacadodeldia',
-													'compare' 	=> 'LIKE'
+													'key'	 	=> 'destprev-opt',
+													'value'	  	=> 'destacadodeldia',
+													'compare' 	=> 'LIKE',
 												)
 											)
 										);?>
@@ -253,7 +180,7 @@
 										<?php $latTatv_name = $latTatv->name; ?>
 										<?php $latTatv_id = $latTatv->term_id; ?>
 
-										<article class="itemModNotTV itemShadow margBot20">
+										<article id="expTv" class="itemModNotTV itemShadow margBot20">
 											<h3>
 												<a href="<?php echo get_term_link( $latTatv ); ?>" title="<?php the_sub_field('indexlat-tvtitulo'); ?>">
 													<?php the_sub_field('indexlat-tvtitulo'); ?>
@@ -267,13 +194,13 @@
 											<?php if( get_sub_field('indexlat-tvord') == 'aleatorio' ) { ?>
 												<?php $args = array(
 													'posts_per_page' => $tvNpost,
-													'cat' => $latTatv,
+													'cat' => 1380,
 													'orderby' => 'rand'
 												); ?>
 											<?php }else{ ?>
 												<?php $args = array(
 													'posts_per_page' => $tvNpost,
-													'cat' => $latTatv
+													'cat' => 1380
 												); ?>
 											<?php } ?>
 
@@ -284,41 +211,38 @@
 													<?php while ($the_query->have_posts()) : $the_query->the_post(); ?>
 														<?php if ($conModul > 0) { ?>
 															<li class="desactNot">
-																<figure>
-																	<a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>">
-																		<?php the_post_thumbnail(); ?>
-																	</a>
+																<figure class="vidACF">
+																	<?php the_field('destacimg-video'); ?>
 																</figure>
 															</li>
 														<?php }else{ ?>
 															<li class="desactNot actNot">
-																<figure>
-																	<a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>">
-																		<?php the_post_thumbnail(); ?>
-																	</a>
+																<figure class="vidACF">
+																	<?php the_field('destacimg-video'); ?>
 																</figure>
 															</li>
 														<?php } ?>
 														<?php $conModul++; ?>
 													<?php endwhile; ?>
 												<?php wp_reset_postdata(); ?>
-												<div class="epTvPlay">
-													<img src="<?php echo get_template_directory_uri() ?>/img/plantilla/icoPlay.svg" alt="Play" title="Play">
-												</div>
+												<?php if (false) { ?>
+													<div class="epTvPlay">
+														<img src="<?php echo get_template_directory_uri() ?>/img/plantilla/icoPlay.svg" alt="Play" title="Play">
+													</div>
+												<?php } ?>
 												</ul>
 											<?php endif; ?>
 											<ul class="iModList iModListVid">
-
 												<?php if( get_sub_field('indexlat-tvord') == 'aleatorio' ) { ?>
 													<?php $args = array(
 														'posts_per_page' => $tvNpost,
-														'cat' => $latTatv,
+														'cat' => 1380,
 														'orderby' => 'rand'
 													); ?>
 												<?php }else{ ?>
 													<?php $args = array(
 														'posts_per_page' => $tvNpost,
-														'cat' => $latTatv
+														'cat' => 1380
 													); ?>
 												<?php } ?>
 
@@ -326,7 +250,7 @@
 													<?php if ($the_query->have_posts()) : ?>
 														<?php while ($the_query->have_posts()) : $the_query->the_post(); ?>
 															<li>
-																<a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>">
+																<a href="javascript:void(0)" title="<?php the_title(); ?>">
 																	<?php the_title(); ?>
 																</a>
 															</li>
@@ -334,15 +258,14 @@
 													<?php wp_reset_postdata(); ?>
 												<?php endif; ?>
 											</ul>
+											<a class="vmETV" href="<?php echo get_term_link( $latTatv ); ?>" title="<?php the_sub_field('indexlat-tvtitulo'); ?>">
+												Ver más videos
+											</a>
 										</article>
 
 									<?php //Ultimo minuto ?>
 									<?php elseif( get_row_layout() == 'indexlat-um' ): ?>
 										<article class="itemLastMin itemShadow margBot20 ">
-
-											<?php $latTax = get_sub_field('indexlat-umcat'); ?>
-											<?php $latTax_name = $latTax->name; ?>
-											<?php $latTax_id = $latTax->term_id; ?>
 
 											<h3>
 												<?php the_sub_field('indexlat-umtitulo'); ?>
@@ -350,17 +273,22 @@
 											<ul>
 												<?php $catNpost = get_sub_field('indexlat-umnpost'); ?>
 
-												<?php if( get_sub_field('indexlat-umcat') == 'aleatorio' ) { ?>
+												<?php if( get_sub_field('indexlat-umcat') == 'descendente' ) { ?>
+
 													<?php $args = array(
 														'posts_per_page' => $catNpost,
-														'cat' => $latTax_id,
+														'cat' => -19,
+														'order' => 'DESC'
+													);?>
+
+												<?php }elseif( get_sub_field('indexlat-umcat') == 'aleatorio' ){ ?>
+
+													<?php $args = array(
+														'posts_per_page' => $catNpost,
+														'cat' => -19,
 														'orderby' => 'rand'
 													);?>
-												<?php }else{ ?>
-													<?php $args = array(
-														'posts_per_page' => $catNpost,
-														'cat' => $latTax_id
-													);?>
+
 												<?php } ?>
 
 												<?php $the_query = new WP_Query($args); ?>
@@ -378,17 +306,16 @@
 											</figure>
 										</article>
 
-									<?php //Entrevista ?>
-									<?php elseif( get_row_layout() == 'indexlat-ent' ): ?>
-
-										<?php $latTax = get_sub_field('indexlat-entcat'); ?>
+									<?php //Suplementos ?>
+									<?php elseif( get_row_layout() == 'indexlat-supl' ): ?>
+										<?php $latTax = get_sub_field('indexlat-supcat'); ?>
 										<?php $latTax_name = $latTax->name; ?>
 										<?php $latTax_id = $latTax->term_id; ?>
 
 										<?php $args = array(
 											'posts_per_page' => '1',
 											'cat' => $latTax
-										);?>
+										); ?>
 										<?php $the_query = new WP_Query($args); ?>
 											<?php if ($the_query->have_posts()) : ?>
 												<?php while ($the_query->have_posts()) : $the_query->the_post(); ?>
@@ -396,7 +323,12 @@
 														<figure>
 															<figcaption>
 																<h3>
-																	<?php the_sub_field('indexlat-enttitulo'); ?>
+																	<a href="<?php echo get_term_link( $latTax ); ?>" title="<?php the_sub_field('indexlat-suptitulo'); ?>">
+																		<?php the_sub_field('indexlat-suptitulo'); ?>
+																		<a href="<?php echo get_term_link( $latTax ); ?>" class="icoResp" title="<?php echo $latTatv_name; ?>">
+																			<img src="<?php echo get_template_directory_uri() ?>/img/plantilla/arrowLeftMod.svg" alt="<?php the_sub_field('indexlat-suptitulo'); ?>" title="<?php the_sub_field('indexlat-suptitulo'); ?>">
+																		</a>
+																	</a>
 																</h3>
 															</figcaption>
 															<a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>">
@@ -404,7 +336,9 @@
 															</a>
 															<figcaption>
 																<p>
-																	<?php the_excerpt(); ?>
+																	<a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>" alt="<?php the_title(); ?>">
+																		<?php the_title(); ?>
+																	</a>
 																</p>
 															</figcaption>
 														</figure>
@@ -422,6 +356,7 @@
 
 										<?php $catNpst = get_sub_field('indexlat-blonpost'); ?>
 										<div class="blogerList">
+
 											<div class="titleBox2">
 												<h2>
 													<?php the_sub_field('indexlat-blogtitulo'); ?>
@@ -429,13 +364,21 @@
 											</div>
 
 											<ul class="owlBlog owlBlogueros">
-												<?php $args = array(
-													'posts_per_page' => $catNpst,
-													'cat' => 131
-												);?>
-												<?php $the_query = new WP_Query($args); ?>
-													<?php if ($the_query->have_posts()) : ?>
-														<?php while ($the_query->have_posts()) : $the_query->the_post(); ?>
+
+												<?php
+												$news_cat_ID = get_cat_ID( 'blogueros' ); 
+												$news_cats   = get_categories( "parent=$news_cat_ID&number=$catNpst&orderby=modified" );
+												$news_query  = new WP_Query;
+												foreach ( $news_cats as $news_cat ) :
+												    $news_query->query( array(
+												        'cat'                 => $news_cat->term_id,
+												        'posts_per_page'      => 1,
+												        'no_found_rows'       => true,
+												        'ignore_sticky_posts' => true,
+												    ));
+												    ?>
+												    <?php while ( $news_query->have_posts() ) : $news_query->the_post() ?>
+
 															<li class="itemShadow">
 																<?php
 																	$categories=get_the_category();
@@ -453,7 +396,9 @@
 																<?php } ?>
 																<div class="columTxt">
 																	<h3>
-																		<?php the_title(); ?>
+																		<a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>">
+																			<?php the_title(); ?>
+																		</a>
 																	</h3>
 																	<h4>
 																		<div class="catBloger">
@@ -466,11 +411,24 @@
 																	<?php the_excerpt(); ?>
 																</div>
 															</li>
-														<?php endwhile; ?>
+												    <?php endwhile ?>
 													<?php wp_reset_postdata(); ?>
-												<?php endif; ?>
+												<?php endforeach ?>
+
 
 											</ul>
+										</div>
+									
+									<?php //Encuesta ?>
+									<?php elseif( get_row_layout() == 'indexlat-poll' ): ?>
+										<div class="encBox itemShadow margBot20">
+											<?php if (function_exists('vote_poll') && !in_pollarchive()): ?>
+												<ul>
+													<li>
+														<?php get_poll();?>
+													</li>
+												</ul>
+											<?php endif; ?>
 										</div>
 
 									<?php //Publicidad ?>
@@ -479,6 +437,854 @@
 											<?php the_sub_field('indexlat-publcod'); ?>
 										</div>
 
+									<?php //Publicidad Responsive ?>
+									<?php elseif( get_row_layout() == 'indexlat-publresp' ): ?>
+										<div class="itemLast itemShadow pubLateralResp margBot20">
+											<?php the_sub_field('indexlat-publcodresp'); ?>
+										</div>
+									<?php endif; ?>
+
+								<?php endwhile; ?>
+							<?php endif; ?>
+						</div>
+					</div>
+				</div>
+			</section>
+
+		<?php //Noticias destacadas - Principal ?>
+		<?php elseif( get_row_layout() == 'secdestpri' ): ?>
+			<section class="secrow secDestac">
+				<div class="container notBox">
+					<div class="row">
+						<div class="col l8 m12 s12 rowRell rowResp">
+							<div class="titleBox2">
+								<h2>
+									<?php the_sub_field('secdestpri-titulo'); ?>
+								</h2>
+							</div>
+
+							<?php $setCatHours = get_sub_field('secdestpri-horas') ?>
+							<?php $setCatHourString = ' hours ago'; ?>
+							<?php $catHours = $setCatHours.$setCatHourString; ?>
+
+							<?php if( get_sub_field('secdestpri-opt') == 'descendente' ){ ?>
+								<?php $args = array(
+									'posts_per_page' => '3',
+									'cat' => -131,-1379,-39,-48,-35,-18,-19,-70,-20, //Menos portada cat=70
+									'post__not_in' => $ids,
+									'order' => 'DESC',
+									'date_query' => array(
+										array(
+										'after' => $catHours
+										)
+									),
+									'meta_query'	=> array(
+										'relation'		=> 'AND',
+										array(
+											'key'	 	=> 'destprev-opt',
+											'value'	  	=> 'destacadoprincipal',
+											'compare' 	=> 'LIKE',
+										)
+									)
+								); ?>
+							<?php }elseif( get_sub_field('secdestpri-opt') == 'random' ){ ?>
+								<?php $args = array(
+									'posts_per_page' => '3',
+									'cat' => -131,-1379,-39,-48,-35,-18,-19,-70,-20, //Menos portada cat=70
+									'post__not_in' => $ids,
+									'orderby' => 'rand',
+									'date_query' => array(
+										array(
+										'after' => $catHours
+										)
+									),
+									'meta_query'	=> array(
+										'relation'		=> 'AND',
+										array(
+											'key'	 	=> 'destprev-opt',
+											'value'	  	=> 'destacadoprincipal',
+											'compare' 	=> 'LIKE',
+										)
+									)
+								); ?>
+							<?php } ?>
+
+							<?php $idsDest = array(); ?>
+
+							<?php $the_query = new WP_Query($args); ?>
+								<?php if ($the_query->have_posts()) : ?>
+									<?php while ($the_query->have_posts()) : $the_query->the_post(); ?>
+										<article class="col l4 m12 s12">
+											<?php get_template_part( 'content/content', 'notcard' ); ?>
+										</article>
+										<?php array_push( $idsDest, get_the_ID() ); ?>
+									<?php endwhile; ?>
+								<?php wp_reset_postdata(); ?>
+							<?php endif; ?>
+
+						</div>
+						<div class="col l4 m12 s12">
+							<?php if( have_rows('inicioflexsub-cont') ): ?>
+								<?php while ( have_rows('inicioflexsub-cont') ) : the_row(); ?>
+
+									<?php //Portada del dia ?>
+									<?php if( get_row_layout() == 'indexlat-portday' ): ?>
+										<?php $args = array(
+											'posts_per_page' => '1',
+											'cat' => 20
+										);?>
+										<?php $the_query = new WP_Query($args); ?>
+											<?php if ($the_query->have_posts()) : ?>
+												<?php while ($the_query->have_posts()) : $the_query->the_post(); ?>
+													<div class="itemLast itemShadow">
+														<figure>
+															<figcaption class="pDayTitle">
+																<h3>
+																	<?php the_sub_field('indexlat-pdtitulo'); ?>
+																</h3>
+															</figcaption>
+															<a href="<?php echo site_url(); ?>/<?php echo $menu_item->url ?>/seccion/galeria-de-portadas/" class="pDay" title="<?php the_title(); ?>">
+																<?php the_post_thumbnail(); ?>
+															</a>
+														</figure>
+													</div>
+												<?php endwhile; ?>
+											<?php wp_reset_postdata(); ?>
+										<?php endif; ?>
+
+									<?php //Destacado del dia ?>
+									<?php elseif( get_row_layout() == 'indexlat-destacado' ): ?>
+
+										<?php $latTax = get_sub_field('indexlat-dcat'); ?>
+										<?php $latTax_name = $latTax->name; ?>
+										<?php $latTax_id = $latTax->term_id; ?>
+
+										<?php $args = array(
+											'posts_per_page' => '1',
+											'meta_query'	=> array(
+												'relation'		=> 'AND',
+												array(
+													'key'	 	=> 'destprev-opt',
+													'value'	  	=> 'destacadodeldia',
+													'compare' 	=> 'LIKE',
+												)
+											)
+										);?>
+
+										<?php $the_query = new WP_Query($args); ?>
+											<?php if ($the_query->have_posts()) : ?>
+												<?php while ($the_query->have_posts()) : $the_query->the_post(); ?>
+													<article class="itemLast itemShadow margBot20">
+														<figure>
+															<figcaption>
+																<h3>
+																	<?php the_sub_field('indexlat-dtitulo'); ?>
+																</h3>
+															</figcaption>
+															<a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>">
+																<?php the_post_thumbnail(); ?>
+															</a>
+															<figcaption>
+																<h4>
+																	<a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>">
+																		<?php the_title(); ?>
+																	</a>
+																</h4>
+																<p>
+																	<?php the_excerpt(); ?>
+																</p>
+															</figcaption>
+														</figure>
+													</article>
+												<?php endwhile; ?>
+											<?php wp_reset_postdata(); ?>
+										<?php endif; ?>
+
+									<?php //Expreso TV ?>
+									<?php elseif( get_row_layout() == 'indexlat-tv' ): ?>
+
+										<?php $latTatv = get_sub_field('indexlat-tvcat'); ?>
+										<?php $latTatv_name = $latTatv->name; ?>
+										<?php $latTatv_id = $latTatv->term_id; ?>
+
+										<article id="expTv" class="itemModNotTV itemShadow margBot20">
+											<h3>
+												<a href="<?php echo get_term_link( $latTatv ); ?>" title="<?php the_sub_field('indexlat-tvtitulo'); ?>">
+													<?php the_sub_field('indexlat-tvtitulo'); ?>
+													<a href="<?php echo get_term_link( $latTatv ); ?>" class="icoResp" title="<?php echo $latTatv_name; ?>">
+														<img src="<?php echo get_template_directory_uri() ?>/img/plantilla/arrowLeftMod.svg" alt="<?php echo $latTatv_name; ?>" title="<?php echo $latTatv_name; ?>">
+													</a>
+												</a>
+											</h3>
+											<?php $tvNpost = get_sub_field('indexlat-tvnpost'); ?>
+
+											<?php if( get_sub_field('indexlat-tvord') == 'aleatorio' ) { ?>
+												<?php $args = array(
+													'posts_per_page' => $tvNpost,
+													'cat' => 1380,
+													'orderby' => 'rand'
+												); ?>
+											<?php }else{ ?>
+												<?php $args = array(
+													'posts_per_page' => $tvNpost,
+													'cat' => 1380
+												); ?>
+											<?php } ?>
+
+											<?php $the_query = new WP_Query($args); ?>
+												<ul class="iModListFig">
+												<?php if ($the_query->have_posts()) : ?>
+													<?php $conModul = 0; ?>
+													<?php while ($the_query->have_posts()) : $the_query->the_post(); ?>
+														<?php if ($conModul > 0) { ?>
+															<li class="desactNot">
+																<figure class="vidACF">
+																	<?php the_field('destacimg-video'); ?>
+																</figure>
+															</li>
+														<?php }else{ ?>
+															<li class="desactNot actNot">
+																<figure class="vidACF">
+																	<?php the_field('destacimg-video'); ?>
+																</figure>
+															</li>
+														<?php } ?>
+														<?php $conModul++; ?>
+													<?php endwhile; ?>
+												<?php wp_reset_postdata(); ?>
+												<?php if (false) { ?>
+													<div class="epTvPlay">
+														<img src="<?php echo get_template_directory_uri() ?>/img/plantilla/icoPlay.svg" alt="Play" title="Play">
+													</div>
+												<?php } ?>
+												</ul>
+											<?php endif; ?>
+											<ul class="iModList iModListVid">
+												<?php if( get_sub_field('indexlat-tvord') == 'aleatorio' ) { ?>
+													<?php $args = array(
+														'posts_per_page' => $tvNpost,
+														'cat' => 1380,
+														'orderby' => 'rand'
+													); ?>
+												<?php }else{ ?>
+													<?php $args = array(
+														'posts_per_page' => $tvNpost,
+														'cat' => 1380
+													); ?>
+												<?php } ?>
+
+												<?php $the_query = new WP_Query($args); ?>
+													<?php if ($the_query->have_posts()) : ?>
+														<?php while ($the_query->have_posts()) : $the_query->the_post(); ?>
+															<li>
+																<a href="javascript:void(0)" title="<?php the_title(); ?>">
+																	<?php the_title(); ?>
+																</a>
+															</li>
+														<?php endwhile; ?>
+													<?php wp_reset_postdata(); ?>
+												<?php endif; ?>
+											</ul>
+											<a class="vmETV" href="<?php echo get_term_link( $latTatv ); ?>" title="<?php the_sub_field('indexlat-tvtitulo'); ?>">
+												Ver más videos
+											</a>
+										</article>
+
+									<?php //Ultimo minuto ?>
+									<?php elseif( get_row_layout() == 'indexlat-um' ): ?>
+										<article class="itemLastMin itemShadow margBot20 ">
+
+											<h3>
+												<?php the_sub_field('indexlat-umtitulo'); ?>
+											</h3>
+											<ul>
+												<?php $catNpost = get_sub_field('indexlat-umnpost'); ?>
+
+												<?php if( get_sub_field('indexlat-umcat') == 'descendente' ) { ?>
+
+													<?php $args = array(
+														'posts_per_page' => $catNpost,
+														'cat' => -19,
+														'order' => 'DESC'
+													);?>
+
+												<?php }elseif( get_sub_field('indexlat-umcat') == 'aleatorio' ){ ?>
+
+													<?php $args = array(
+														'posts_per_page' => $catNpost,
+														'cat' => -19,
+														'orderby' => 'rand'
+													);?>
+
+												<?php } ?>
+
+												<?php $the_query = new WP_Query($args); ?>
+													<?php if ($the_query->have_posts()) : ?>
+														<?php while ($the_query->have_posts()) : $the_query->the_post(); ?>
+														<li>
+															<a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>">
+																<?php the_title(); ?>
+															</a>
+														</li>
+														<?php endwhile; ?>
+													<?php wp_reset_postdata(); ?>
+												<?php endif; ?>
+											</ul>
+											</figure>
+										</article>
+
+									<?php //Suplementos ?>
+									<?php elseif( get_row_layout() == 'indexlat-supl' ): ?>
+										<?php $latTax = get_sub_field('indexlat-supcat'); ?>
+										<?php $latTax_name = $latTax->name; ?>
+										<?php $latTax_id = $latTax->term_id; ?>
+
+										<?php $args = array(
+											'posts_per_page' => '1',
+											'cat' => $latTax
+										); ?>
+										<?php $the_query = new WP_Query($args); ?>
+											<?php if ($the_query->have_posts()) : ?>
+												<?php while ($the_query->have_posts()) : $the_query->the_post(); ?>
+													<article class="itemLast itemShadow margBot20">
+														<figure>
+															<figcaption>
+																<h3>
+																	<a href="<?php echo get_term_link( $latTax ); ?>" title="<?php the_sub_field('indexlat-suptitulo'); ?>">
+																		<?php the_sub_field('indexlat-suptitulo'); ?>
+																		<a href="<?php echo get_term_link( $latTax ); ?>" class="icoResp" title="<?php echo $latTatv_name; ?>">
+																			<img src="<?php echo get_template_directory_uri() ?>/img/plantilla/arrowLeftMod.svg" alt="<?php the_sub_field('indexlat-suptitulo'); ?>" title="<?php the_sub_field('indexlat-suptitulo'); ?>">
+																		</a>
+																	</a>
+																</h3>
+															</figcaption>
+															<a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>">
+																<?php the_post_thumbnail(); ?>
+															</a>
+															<figcaption>
+																<p>
+																	<a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>" alt="<?php the_title(); ?>">
+																		<?php the_title(); ?>
+																	</a>
+																</p>
+															</figcaption>
+														</figure>
+													</article>
+												<?php endwhile; ?>
+											<?php wp_reset_postdata(); ?>
+										<?php endif; ?>
+
+									<?php //Blogueros ?>
+									<?php elseif( get_row_layout() == 'indexlat-blog' ): ?>
+
+										<?php $latTax = get_sub_field('indexlat-blocat'); ?>
+										<?php $latTax_name = $latTax->name; ?>
+										<?php $latTax_id = $latTax->term_id; ?>
+
+										<?php $catNpst = get_sub_field('indexlat-blonpost'); ?>
+										<div class="blogerList">
+
+											<div class="titleBox2">
+												<h2>
+													<?php the_sub_field('indexlat-blogtitulo'); ?>
+												</h2>
+											</div>
+
+											<ul class="owlBlog owlBlogueros">
+
+												<?php
+												$news_cat_ID = get_cat_ID( 'blogueros' ); 
+												$news_cats   = get_categories( "parent=$news_cat_ID&number=$catNpst&orderby=modified" );
+												$news_query  = new WP_Query;
+												foreach ( $news_cats as $news_cat ) :
+												    $news_query->query( array(
+												        'cat'                 => $news_cat->term_id,
+												        'posts_per_page'      => 1,
+												        'no_found_rows'       => true,
+												        'ignore_sticky_posts' => true,
+												    ));
+												    ?>
+												    <?php while ( $news_query->have_posts() ) : $news_query->the_post() ?>
+
+															<li class="itemShadow">
+																<?php
+																	$categories=get_the_category();
+																	$separator=", ";
+																	$output="";
+																	if($categories){ ?>
+																	<figure>
+																		<?php foreach ($categories as $category) {
+																			$caTaxImg = get_field('caTax-img', 'category_'.$category->cat_ID); ?>
+																			<a href="<?php echo get_category_link($category->term_id); ?>" title="<?php echo $category->cat_name; ?>" >
+																				<img src="<?php echo $caTaxImg['url']; ?>" alt="<?php echo $category->cat_name; ?>" title="<?php echo $category->cat_name; ?>">
+																			</a>
+																		<?php } ?>
+																	</figure>
+																<?php } ?>
+																<div class="columTxt">
+																	<h3>
+																		<a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>">
+																			<?php the_title(); ?>
+																		</a>
+																	</h3>
+																	<h4>
+																		<div class="catBloger">
+																		<?php foreach ($categories as $category) {
+																			$output.='<a href="'.get_category_link($category->term_id).'" title="'.$category->cat_name.'" >'.$category->cat_name.'</a>'.$separator; ?>
+																		<?php }  ?>
+																		</div>
+																		Por: <?php echo trim($output, $separator); ?>
+																	</h4>
+																	<?php the_excerpt(); ?>
+																</div>
+															</li>
+												    <?php endwhile ?>
+													<?php wp_reset_postdata(); ?>
+												<?php endforeach ?>
+
+
+											</ul>
+										</div>
+									
+									<?php //Encuesta ?>
+									<?php elseif( get_row_layout() == 'indexlat-poll' ): ?>
+										<div class="encBox itemShadow margBot20">
+											<?php if (function_exists('vote_poll') && !in_pollarchive()): ?>
+												<ul>
+													<li>
+														<?php get_poll();?>
+													</li>
+												</ul>
+											<?php endif; ?>
+										</div>
+
+									<?php //Publicidad ?>
+									<?php elseif( get_row_layout() == 'indexlat-publ' ): ?>
+										<div class="itemLast itemShadow pubLateral margBot20">
+											<?php the_sub_field('indexlat-publcod'); ?>
+										</div>
+
+									<?php //Publicidad Responsive ?>
+									<?php elseif( get_row_layout() == 'indexlat-publresp' ): ?>
+										<div class="itemLast itemShadow pubLateralResp margBot20">
+											<?php the_sub_field('indexlat-publcodresp'); ?>
+										</div>
+									<?php endif; ?>
+
+								<?php endwhile; ?>
+							<?php endif; ?>
+						</div>
+					</div>
+				</div>
+			</section>
+
+		<?php //Noticias destacadas ?>
+		<?php elseif( get_row_layout() == 'secdestacada' ): ?>
+			<section class="secrow secDestac">
+				<div class="container notBox">
+					<div class="row">
+						<div class="col l8 m12 s12 rowRell rowResp">
+							<?php $secTax = get_sub_field('secdest-linkcat'); ?>
+							<?php $secTax_name = $secTax->name; ?>
+							<?php $secTax_id = $secTax->term_id; ?>
+							<div class="titleBox2">
+								<h2>
+									<?php the_sub_field('secdest-titulo'); ?>
+									<a href="<?php echo get_term_link( $secTax ); ?>" class="icoResp" title="<?php echo $secTax_name; ?>">
+										<img src="<?php echo get_template_directory_uri() ?>/img/plantilla/arrowLeftMod.svg" alt="<?php echo $secTax_name; ?>" title="<?php echo $secTax_name; ?>">
+									</a>
+								</h2>
+							</div>
+
+							<?php $setCatHours = get_sub_field('secdest-horas') ?>
+							<?php $setCatHourString = ' hours ago'; ?>
+							<?php $catHours = $setCatHours.$setCatHourString; ?>
+
+							<?php $idsSlDest = array_merge($ids, $idsDest); ?>
+
+							<?php if( get_sub_field('secdest-opt') == 'descendente' ){ ?>
+								<?php $args = array(
+									'posts_per_page' => '3',
+									'cat' => $secTax_id,
+									'post__not_in' => $idsSlDest,
+									'order' => 'DESC',
+									'date_query' => array(
+										array(
+										'after' => $catHours
+										)
+									)
+								); ?>
+							<?php }elseif( get_sub_field('secdest-opt') == 'random' ){ ?>
+								<?php $args = array(
+									'posts_per_page' => '3',
+									'cat' => $secTax_id,
+									'post__not_in' => $idsSlDest,
+									'orderby' => 'rand',
+									'date_query' => array(
+										array(
+										'after' => $catHours
+										)
+									)
+								); ?>
+							<?php } ?>
+
+							<?php $the_query = new WP_Query($args); ?>
+								<?php if ($the_query->have_posts()) : ?>
+									<?php while ($the_query->have_posts()) : $the_query->the_post(); ?>
+										<article class="col l4 m12 s12">
+											<?php get_template_part( 'content/content', 'notcard' ); ?>
+										</article>
+									<?php endwhile; ?>
+								<?php wp_reset_postdata(); ?>
+							<?php endif; ?>
+
+						</div>
+						<div class="col l4 m12 s12">
+							<?php if( have_rows('inicioflexsub-cont') ): ?>
+								<?php while ( have_rows('inicioflexsub-cont') ) : the_row(); ?>
+
+									<?php //Portada del dia ?>
+									<?php if( get_row_layout() == 'indexlat-portday' ): ?>
+										<?php $args = array(
+											'posts_per_page' => '1',
+											'cat' => 20
+										);?>
+										<?php $the_query = new WP_Query($args); ?>
+											<?php if ($the_query->have_posts()) : ?>
+												<?php while ($the_query->have_posts()) : $the_query->the_post(); ?>
+													<div class="itemLast itemShadow">
+														<figure>
+															<figcaption class="pDayTitle">
+																<h3>
+																	<?php the_sub_field('indexlat-pdtitulo'); ?>
+																</h3>
+															</figcaption>
+															<a href="<?php echo site_url(); ?>/<?php echo $menu_item->url ?>/seccion/galeria-de-portadas/" class="pDay" title="<?php the_title(); ?>">
+																<?php the_post_thumbnail(); ?>
+															</a>
+														</figure>
+													</div>
+												<?php endwhile; ?>
+											<?php wp_reset_postdata(); ?>
+										<?php endif; ?>
+
+									<?php //Destacado del dia ?>
+									<?php elseif( get_row_layout() == 'indexlat-destacado' ): ?>
+
+										<?php $latTax = get_sub_field('indexlat-dcat'); ?>
+										<?php $latTax_name = $latTax->name; ?>
+										<?php $latTax_id = $latTax->term_id; ?>
+
+										<?php $args = array(
+											'posts_per_page' => '1',
+											'meta_query'	=> array(
+												'relation'		=> 'AND',
+												array(
+													'key'	 	=> 'destprev-opt',
+													'value'	  	=> 'destacadodeldia',
+													'compare' 	=> 'LIKE',
+												)
+											)
+										);?>
+
+										<?php $the_query = new WP_Query($args); ?>
+											<?php if ($the_query->have_posts()) : ?>
+												<?php while ($the_query->have_posts()) : $the_query->the_post(); ?>
+													<article class="itemLast itemShadow margBot20">
+														<figure>
+															<figcaption>
+																<h3>
+																	<?php the_sub_field('indexlat-dtitulo'); ?>
+																</h3>
+															</figcaption>
+															<a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>">
+																<?php the_post_thumbnail(); ?>
+															</a>
+															<figcaption>
+																<h4>
+																	<a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>">
+																		<?php the_title(); ?>
+																	</a>
+																</h4>
+																<p>
+																	<?php the_excerpt(); ?>
+																</p>
+															</figcaption>
+														</figure>
+													</article>
+												<?php endwhile; ?>
+											<?php wp_reset_postdata(); ?>
+										<?php endif; ?>
+
+									<?php //Expreso TV ?>
+									<?php elseif( get_row_layout() == 'indexlat-tv' ): ?>
+
+										<?php $latTatv = get_sub_field('indexlat-tvcat'); ?>
+										<?php $latTatv_name = $latTatv->name; ?>
+										<?php $latTatv_id = $latTatv->term_id; ?>
+
+										<article id="expTv" class="itemModNotTV itemShadow margBot20">
+											<h3>
+												<a href="<?php echo get_term_link( $latTatv ); ?>" title="<?php the_sub_field('indexlat-tvtitulo'); ?>">
+													<?php the_sub_field('indexlat-tvtitulo'); ?>
+													<a href="<?php echo get_term_link( $latTatv ); ?>" class="icoResp" title="<?php echo $latTatv_name; ?>">
+														<img src="<?php echo get_template_directory_uri() ?>/img/plantilla/arrowLeftMod.svg" alt="<?php echo $latTatv_name; ?>" title="<?php echo $latTatv_name; ?>">
+													</a>
+												</a>
+											</h3>
+											<?php $tvNpost = get_sub_field('indexlat-tvnpost'); ?>
+
+											<?php if( get_sub_field('indexlat-tvord') == 'aleatorio' ) { ?>
+												<?php $args = array(
+													'posts_per_page' => $tvNpost,
+													'cat' => 1380,
+													'orderby' => 'rand'
+												); ?>
+											<?php }else{ ?>
+												<?php $args = array(
+													'posts_per_page' => $tvNpost,
+													'cat' => 1380
+												); ?>
+											<?php } ?>
+
+											<?php $the_query = new WP_Query($args); ?>
+												<ul class="iModListFig">
+												<?php if ($the_query->have_posts()) : ?>
+													<?php $conModul = 0; ?>
+													<?php while ($the_query->have_posts()) : $the_query->the_post(); ?>
+														<?php if ($conModul > 0) { ?>
+															<li class="desactNot">
+																<figure class="vidACF">
+																	<?php the_field('destacimg-video'); ?>
+																</figure>
+															</li>
+														<?php }else{ ?>
+															<li class="desactNot actNot">
+																<figure class="vidACF">
+																	<?php the_field('destacimg-video'); ?>
+																</figure>
+															</li>
+														<?php } ?>
+														<?php $conModul++; ?>
+													<?php endwhile; ?>
+												<?php wp_reset_postdata(); ?>
+												<?php if (false) { ?>
+													<div class="epTvPlay">
+														<img src="<?php echo get_template_directory_uri() ?>/img/plantilla/icoPlay.svg" alt="Play" title="Play">
+													</div>
+												<?php } ?>
+												</ul>
+											<?php endif; ?>
+											<ul class="iModList iModListVid">
+												<?php if( get_sub_field('indexlat-tvord') == 'aleatorio' ) { ?>
+													<?php $args = array(
+														'posts_per_page' => $tvNpost,
+														'cat' => $latTatv,
+														'orderby' => 'rand'
+													); ?>
+												<?php }else{ ?>
+													<?php $args = array(
+														'posts_per_page' => $tvNpost,
+														'cat' => $latTatv
+													); ?>
+												<?php } ?>
+
+												<?php $the_query = new WP_Query($args); ?>
+													<?php if ($the_query->have_posts()) : ?>
+														<?php while ($the_query->have_posts()) : $the_query->the_post(); ?>
+															<li>
+																<a href="javascript:void(0)" title="<?php the_title(); ?>">
+																	<?php the_title(); ?>
+																</a>
+															</li>
+														<?php endwhile; ?>
+													<?php wp_reset_postdata(); ?>
+												<?php endif; ?>
+											</ul>
+											<a class="vmETV" href="<?php echo get_term_link( $latTatv ); ?>" title="<?php the_sub_field('indexlat-tvtitulo'); ?>">
+												Ver más videos
+											</a>
+										</article>
+
+									<?php //Ultimo minuto ?>
+									<?php elseif( get_row_layout() == 'indexlat-um' ): ?>
+										<article class="itemLastMin itemShadow margBot20 ">
+
+											<h3>
+												<?php the_sub_field('indexlat-umtitulo'); ?>
+											</h3>
+											<ul>
+												<?php $catNpost = get_sub_field('indexlat-umnpost'); ?>
+
+												<?php if( get_sub_field('indexlat-umcat') == 'descendente' ) { ?>
+
+													<?php $args = array(
+														'posts_per_page' => $catNpost,
+														'cat' => -19,
+														'order' => 'DESC'
+													);?>
+
+												<?php }elseif( get_sub_field('indexlat-umcat') == 'aleatorio' ){ ?>
+
+													<?php $args = array(
+														'posts_per_page' => $catNpost,
+														'cat' => -19,
+														'orderby' => 'rand'
+													);?>
+
+												<?php } ?>
+
+												<?php $the_query = new WP_Query($args); ?>
+													<?php if ($the_query->have_posts()) : ?>
+														<?php while ($the_query->have_posts()) : $the_query->the_post(); ?>
+														<li>
+															<a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>">
+																<?php the_title(); ?>
+															</a>
+														</li>
+														<?php endwhile; ?>
+													<?php wp_reset_postdata(); ?>
+												<?php endif; ?>
+											</ul>
+											</figure>
+										</article>
+
+									<?php //Suplementos ?>
+									<?php elseif( get_row_layout() == 'indexlat-supl' ): ?>
+										<?php $latTax = get_sub_field('indexlat-supcat'); ?>
+										<?php $latTax_name = $latTax->name; ?>
+										<?php $latTax_id = $latTax->term_id; ?>
+
+										<?php $args = array(
+											'posts_per_page' => '1',
+											'cat' => $latTax
+										); ?>
+										<?php $the_query = new WP_Query($args); ?>
+											<?php if ($the_query->have_posts()) : ?>
+												<?php while ($the_query->have_posts()) : $the_query->the_post(); ?>
+													<article class="itemLast itemShadow margBot20">
+														<figure>
+															<figcaption>
+																<h3>
+																	<a href="<?php echo get_term_link( $latTax ); ?>" title="<?php the_sub_field('indexlat-suptitulo'); ?>">
+																		<?php the_sub_field('indexlat-suptitulo'); ?>
+																		<a href="<?php echo get_term_link( $latTax ); ?>" class="icoResp" title="<?php echo $latTatv_name; ?>">
+																			<img src="<?php echo get_template_directory_uri() ?>/img/plantilla/arrowLeftMod.svg" alt="<?php the_sub_field('indexlat-suptitulo'); ?>" title="<?php the_sub_field('indexlat-suptitulo'); ?>">
+																		</a>
+																	</a>
+																</h3>
+															</figcaption>
+															<a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>">
+																<?php the_post_thumbnail(); ?>
+															</a>
+															<figcaption>
+																<p>
+																	<a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>" alt="<?php the_title(); ?>">
+																		<?php the_title(); ?>
+																	</a>
+																</p>
+															</figcaption>
+														</figure>
+													</article>
+												<?php endwhile; ?>
+											<?php wp_reset_postdata(); ?>
+										<?php endif; ?>
+
+									<?php //Blogueros ?>
+									<?php elseif( get_row_layout() == 'indexlat-blog' ): ?>
+
+										<?php $latTax = get_sub_field('indexlat-blocat'); ?>
+										<?php $latTax_name = $latTax->name; ?>
+										<?php $latTax_id = $latTax->term_id; ?>
+
+										<?php $catNpst = get_sub_field('indexlat-blonpost'); ?>
+										<div class="blogerList">
+
+											<div class="titleBox2">
+												<h2>
+													<?php the_sub_field('indexlat-blogtitulo'); ?>
+												</h2>
+											</div>
+
+											<ul class="owlBlog owlBlogueros">
+
+												<?php
+												$news_cat_ID = get_cat_ID( 'blogueros' ); 
+												$news_cats   = get_categories( "parent=$news_cat_ID&number=$catNpst&orderby=modified" );
+												$news_query  = new WP_Query;
+												foreach ( $news_cats as $news_cat ) :
+												    $news_query->query( array(
+												        'cat'                 => $news_cat->term_id,
+												        'posts_per_page'      => 1,
+												        'no_found_rows'       => true,
+												        'ignore_sticky_posts' => true,
+												    ));
+												    ?>
+												    <?php while ( $news_query->have_posts() ) : $news_query->the_post() ?>
+
+															<li class="itemShadow">
+																<?php
+																	$categories=get_the_category();
+																	$separator=", ";
+																	$output="";
+																	if($categories){ ?>
+																	<figure>
+																		<?php foreach ($categories as $category) {
+																			$caTaxImg = get_field('caTax-img', 'category_'.$category->cat_ID); ?>
+																			<a href="<?php echo get_category_link($category->term_id); ?>" title="<?php echo $category->cat_name; ?>" >
+																				<img src="<?php echo $caTaxImg['url']; ?>" alt="<?php echo $category->cat_name; ?>" title="<?php echo $category->cat_name; ?>">
+																			</a>
+																		<?php } ?>
+																	</figure>
+																<?php } ?>
+																<div class="columTxt">
+																	<h3>
+																		<a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>">
+																			<?php the_title(); ?>
+																		</a>
+																	</h3>
+																	<h4>
+																		<div class="catBloger">
+																		<?php foreach ($categories as $category) {
+																			$output.='<a href="'.get_category_link($category->term_id).'" title="'.$category->cat_name.'" >'.$category->cat_name.'</a>'.$separator; ?>
+																		<?php }  ?>
+																		</div>
+																		Por: <?php echo trim($output, $separator); ?>
+																	</h4>
+																	<?php the_excerpt(); ?>
+																</div>
+															</li>
+												    <?php endwhile ?>
+													<?php wp_reset_postdata(); ?>
+												<?php endforeach ?>
+
+
+											</ul>
+										</div>
+									
+									<?php //Encuesta ?>
+									<?php elseif( get_row_layout() == 'indexlat-poll' ): ?>
+										<div class="encBox itemShadow margBot20">
+											<?php if (function_exists('vote_poll') && !in_pollarchive()): ?>
+												<ul>
+													<li>
+														<?php get_poll();?>
+													</li>
+												</ul>
+											<?php endif; ?>
+										</div>
+
+									<?php //Publicidad ?>
+									<?php elseif( get_row_layout() == 'indexlat-publ' ): ?>
+										<div class="itemLast itemShadow pubLateral margBot20">
+											<?php the_sub_field('indexlat-publcod'); ?>
+										</div>
+
+									<?php //Publicidad Responsive ?>
+									<?php elseif( get_row_layout() == 'indexlat-publresp' ): ?>
+										<div class="itemLast itemShadow pubLateralResp margBot20">
+											<?php the_sub_field('indexlat-publcodresp'); ?>
+										</div>
 									<?php endif; ?>
 
 								<?php endwhile; ?>
@@ -503,21 +1309,22 @@
 
 			<?php $catNpostc = get_sub_field('seccol-npost'); ?>
 
-			<?php if( get_sub_field('secdest-opt') == 'random' ){ ?>
+			<?php if( get_sub_field('seccol-ord') == 'descendente' ){ ?>
 				<?php $args = array(
 					'posts_per_page' => $catNpostc,
 					'cat' => $latTax_idc,
-					'orderby' => 'rand',
+					'order' => 'DESC',
 					'date_query' => array(
 						array(
 						'after' => $catHoursc
 						)
 					)
 				);?>
-			<?php }else{ ?>
+			<?php }elseif( get_sub_field('seccol-ord') == 'aleatorio' ){ ?>
 				<?php $args = array(
 					'posts_per_page' => $catNpostc,
 					'cat' => $latTax_idc,
+					'orderby' => 'rand',
 					'date_query' => array(
 						array(
 						'after' => $catHoursc
@@ -706,24 +1513,226 @@
 								<?php endwhile; ?>
 							<?php endif; ?>
 						</div>
-						
-						<div class="col l4 s12 m12">
-							
-							<?php //Suplementos del dia ?>
-							<?php if( have_rows('inicioflexmlat-cont') ): ?>
-								<?php while ( have_rows('inicioflexmlat-cont') ) : the_row(); ?>
 
-									<?php //Lateral suplementario ?>
-									<?php if( get_row_layout() == 'ifmlat-sup' ): ?>
+						<div class="col l4 m12 s12">
+							<?php if( have_rows('inicioflexsub-cont') ): ?>
+								<?php while ( have_rows('inicioflexsub-cont') ) : the_row(); ?>
 
-										<?php //Categorias ?>
-										<?php $latTaxsup = get_sub_field('ifmlat-supcat'); ?>
-										<?php $latTax_namesup = $latTaxsup->name; ?>
-										<?php $latTax_idsup = $latTaxsup->term_id; ?>
+									<?php //Portada del dia ?>
+									<?php if( get_row_layout() == 'indexlat-portday' ): ?>
+										<?php $args = array(
+											'posts_per_page' => '1',
+											'cat' => 20
+										);?>
+										<?php $the_query = new WP_Query($args); ?>
+											<?php if ($the_query->have_posts()) : ?>
+												<?php while ($the_query->have_posts()) : $the_query->the_post(); ?>
+													<div class="itemLast itemShadow">
+														<figure>
+															<figcaption class="pDayTitle">
+																<h3>
+																	<?php the_sub_field('indexlat-pdtitulo'); ?>
+																</h3>
+															</figcaption>
+															<a href="<?php echo site_url(); ?>/<?php echo $menu_item->url ?>/seccion/galeria-de-portadas/" class="pDay" title="<?php the_title(); ?>">
+																<?php the_post_thumbnail(); ?>
+															</a>
+														</figure>
+													</div>
+												<?php endwhile; ?>
+											<?php wp_reset_postdata(); ?>
+										<?php endif; ?>
+
+									<?php //Destacado del dia ?>
+									<?php elseif( get_row_layout() == 'indexlat-destacado' ): ?>
+
+										<?php $latTax = get_sub_field('indexlat-dcat'); ?>
+										<?php $latTax_name = $latTax->name; ?>
+										<?php $latTax_id = $latTax->term_id; ?>
 
 										<?php $args = array(
 											'posts_per_page' => '1',
-											'category__in' => $latTax_idsup
+											'meta_query'	=> array(
+												'relation'		=> 'AND',
+												array(
+													'key'	 	=> 'destprev-opt',
+													'value'	  	=> 'destacadodeldia',
+													'compare' 	=> 'LIKE',
+												)
+											)
+										);?>
+
+										<?php $the_query = new WP_Query($args); ?>
+											<?php if ($the_query->have_posts()) : ?>
+												<?php while ($the_query->have_posts()) : $the_query->the_post(); ?>
+													<article class="itemLast itemShadow margBot20">
+														<figure>
+															<figcaption>
+																<h3>
+																	<?php the_sub_field('indexlat-dtitulo'); ?>
+																</h3>
+															</figcaption>
+															<a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>">
+																<?php the_post_thumbnail(); ?>
+															</a>
+															<figcaption>
+																<h4>
+																	<a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>">
+																		<?php the_title(); ?>
+																	</a>
+																</h4>
+																<p>
+																	<?php the_excerpt(); ?>
+																</p>
+															</figcaption>
+														</figure>
+													</article>
+												<?php endwhile; ?>
+											<?php wp_reset_postdata(); ?>
+										<?php endif; ?>
+
+									<?php //Expreso TV ?>
+									<?php elseif( get_row_layout() == 'indexlat-tv' ): ?>
+
+										<?php $latTatv = get_sub_field('indexlat-tvcat'); ?>
+										<?php $latTatv_name = $latTatv->name; ?>
+										<?php $latTatv_id = $latTatv->term_id; ?>
+
+										<article id="expTv" class="itemModNotTV itemShadow margBot20">
+											<h3>
+												<a href="<?php echo get_term_link( $latTatv ); ?>" title="<?php the_sub_field('indexlat-tvtitulo'); ?>">
+													<?php the_sub_field('indexlat-tvtitulo'); ?>
+													<a href="<?php echo get_term_link( $latTatv ); ?>" class="icoResp" title="<?php echo $latTatv_name; ?>">
+														<img src="<?php echo get_template_directory_uri() ?>/img/plantilla/arrowLeftMod.svg" alt="<?php echo $latTatv_name; ?>" title="<?php echo $latTatv_name; ?>">
+													</a>
+												</a>
+											</h3>
+											<?php $tvNpost = get_sub_field('indexlat-tvnpost'); ?>
+
+											<?php if( get_sub_field('indexlat-tvord') == 'aleatorio' ) { ?>
+												<?php $args = array(
+													'posts_per_page' => $tvNpost,
+													'cat' => 1380,
+													'orderby' => 'rand'
+												); ?>
+											<?php }else{ ?>
+												<?php $args = array(
+													'posts_per_page' => $tvNpost,
+													'cat' => 1380
+												); ?>
+											<?php } ?>
+
+											<?php $the_query = new WP_Query($args); ?>
+												<ul class="iModListFig">
+												<?php if ($the_query->have_posts()) : ?>
+													<?php $conModul = 0; ?>
+													<?php while ($the_query->have_posts()) : $the_query->the_post(); ?>
+														<?php if ($conModul > 0) { ?>
+															<li class="desactNot">
+																<figure class="vidACF">
+																	<?php the_field('destacimg-video'); ?>
+																</figure>
+															</li>
+														<?php }else{ ?>
+															<li class="desactNot actNot">
+																<figure class="vidACF">
+																	<?php the_field('destacimg-video'); ?>
+																</figure>
+															</li>
+														<?php } ?>
+														<?php $conModul++; ?>
+													<?php endwhile; ?>
+												<?php wp_reset_postdata(); ?>
+												<?php if (false) { ?>
+													<div class="epTvPlay">
+														<img src="<?php echo get_template_directory_uri() ?>/img/plantilla/icoPlay.svg" alt="Play" title="Play">
+													</div>
+												<?php } ?>
+												</ul>
+											<?php endif; ?>
+											<ul class="iModList iModListVid">
+												<?php if( get_sub_field('indexlat-tvord') == 'aleatorio' ) { ?>
+													<?php $args = array(
+														'posts_per_page' => $tvNpost,
+														'cat' => 1380,
+														'orderby' => 'rand'
+													); ?>
+												<?php }else{ ?>
+													<?php $args = array(
+														'posts_per_page' => $tvNpost,
+														'cat' => 1380
+													); ?>
+												<?php } ?>
+
+												<?php $the_query = new WP_Query($args); ?>
+													<?php if ($the_query->have_posts()) : ?>
+														<?php while ($the_query->have_posts()) : $the_query->the_post(); ?>
+															<li>
+																<a href="javascript:void(0)" title="<?php the_title(); ?>">
+																	<?php the_title(); ?>
+																</a>
+															</li>
+														<?php endwhile; ?>
+													<?php wp_reset_postdata(); ?>
+												<?php endif; ?>
+											</ul>
+											<a class="vmETV" href="<?php echo get_term_link( $latTatv ); ?>" title="<?php the_sub_field('indexlat-tvtitulo'); ?>">
+												Ver más videos
+											</a>
+										</article>
+
+									<?php //Ultimo minuto ?>
+									<?php elseif( get_row_layout() == 'indexlat-um' ): ?>
+										<article class="itemLastMin itemShadow margBot20 ">
+
+											<h3>
+												<?php the_sub_field('indexlat-umtitulo'); ?>
+											</h3>
+											<ul>
+												<?php $catNpost = get_sub_field('indexlat-umnpost'); ?>
+
+												<?php if( get_sub_field('indexlat-umcat') == 'descendente' ) { ?>
+
+													<?php $args = array(
+														'posts_per_page' => $catNpost,
+														'cat' => -19,
+														'order' => 'DESC'
+													);?>
+
+												<?php }elseif( get_sub_field('indexlat-umcat') == 'aleatorio' ){ ?>
+
+													<?php $args = array(
+														'posts_per_page' => $catNpost,
+														'cat' => -19,
+														'orderby' => 'rand'
+													);?>
+
+												<?php } ?>
+
+												<?php $the_query = new WP_Query($args); ?>
+													<?php if ($the_query->have_posts()) : ?>
+														<?php while ($the_query->have_posts()) : $the_query->the_post(); ?>
+														<li>
+															<a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>">
+																<?php the_title(); ?>
+															</a>
+														</li>
+														<?php endwhile; ?>
+													<?php wp_reset_postdata(); ?>
+												<?php endif; ?>
+											</ul>
+											</figure>
+										</article>
+
+									<?php //Suplementos ?>
+									<?php elseif( get_row_layout() == 'indexlat-supl' ): ?>
+										<?php $latTax = get_sub_field('indexlat-supcat'); ?>
+										<?php $latTax_name = $latTax->name; ?>
+										<?php $latTax_id = $latTax->term_id; ?>
+
+										<?php $args = array(
+											'posts_per_page' => '1',
+											'cat' => $latTax
 										); ?>
 										<?php $the_query = new WP_Query($args); ?>
 											<?php if ($the_query->have_posts()) : ?>
@@ -732,7 +1741,12 @@
 														<figure>
 															<figcaption>
 																<h3>
-																	<?php the_sub_field('ifmlat-suptitulo'); ?>
+																	<a href="<?php echo get_term_link( $latTax ); ?>" title="<?php the_sub_field('indexlat-suptitulo'); ?>">
+																		<?php the_sub_field('indexlat-suptitulo'); ?>
+																		<a href="<?php echo get_term_link( $latTax ); ?>" class="icoResp" title="<?php echo $latTatv_name; ?>">
+																			<img src="<?php echo get_template_directory_uri() ?>/img/plantilla/arrowLeftMod.svg" alt="<?php the_sub_field('indexlat-suptitulo'); ?>" title="<?php the_sub_field('indexlat-suptitulo'); ?>">
+																		</a>
+																	</a>
 																</h3>
 															</figcaption>
 															<a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>">
@@ -751,37 +1765,107 @@
 											<?php wp_reset_postdata(); ?>
 										<?php endif; ?>
 
-									<?php elseif( get_row_layout() == 'ifmlat-plat' ): ?>
-										<div class="itemLast itemShadow pubLateral margBot20">
-											<?php the_sub_field('ifmlatp-code'); ?>
+									<?php //Blogueros ?>
+									<?php elseif( get_row_layout() == 'indexlat-blog' ): ?>
+
+										<?php $latTax = get_sub_field('indexlat-blocat'); ?>
+										<?php $latTax_name = $latTax->name; ?>
+										<?php $latTax_id = $latTax->term_id; ?>
+
+										<?php $catNpst = get_sub_field('indexlat-blonpost'); ?>
+										<div class="blogerList">
+
+											<div class="titleBox2">
+												<h2>
+													<?php the_sub_field('indexlat-blogtitulo'); ?>
+												</h2>
+											</div>
+
+											<ul class="owlBlog owlBlogueros">
+
+												<?php
+												$news_cat_ID = get_cat_ID( 'blogueros' ); 
+												$news_cats   = get_categories( "parent=$news_cat_ID&number=$catNpst&orderby=modified" );
+												$news_query  = new WP_Query;
+												foreach ( $news_cats as $news_cat ) :
+												    $news_query->query( array(
+												        'cat'                 => $news_cat->term_id,
+												        'posts_per_page'      => 1,
+												        'no_found_rows'       => true,
+												        'ignore_sticky_posts' => true,
+												    ));
+												    ?>
+												    <?php while ( $news_query->have_posts() ) : $news_query->the_post() ?>
+
+															<li class="itemShadow">
+																<?php
+																	$categories=get_the_category();
+																	$separator=", ";
+																	$output="";
+																	if($categories){ ?>
+																	<figure>
+																		<?php foreach ($categories as $category) {
+																			$caTaxImg = get_field('caTax-img', 'category_'.$category->cat_ID); ?>
+																			<a href="<?php echo get_category_link($category->term_id); ?>" title="<?php echo $category->cat_name; ?>" >
+																				<img src="<?php echo $caTaxImg['url']; ?>" alt="<?php echo $category->cat_name; ?>" title="<?php echo $category->cat_name; ?>">
+																			</a>
+																		<?php } ?>
+																	</figure>
+																<?php } ?>
+																<div class="columTxt">
+																	<h3>
+																		<a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>">
+																			<?php the_title(); ?>
+																		</a>
+																	</h3>
+																	<h4>
+																		<div class="catBloger">
+																		<?php foreach ($categories as $category) {
+																			$output.='<a href="'.get_category_link($category->term_id).'" title="'.$category->cat_name.'" >'.$category->cat_name.'</a>'.$separator; ?>
+																		<?php }  ?>
+																		</div>
+																		Por: <?php echo trim($output, $separator); ?>
+																	</h4>
+																	<?php the_excerpt(); ?>
+																</div>
+															</li>
+												    <?php endwhile ?>
+													<?php wp_reset_postdata(); ?>
+												<?php endforeach ?>
+
+
+											</ul>
+										</div>
+									
+									<?php //Encuesta ?>
+									<?php elseif( get_row_layout() == 'indexlat-poll' ): ?>
+										<div class="encBox itemShadow margBot20">
+											<?php if (function_exists('vote_poll') && !in_pollarchive()): ?>
+												<ul>
+													<li>
+														<?php get_poll();?>
+													</li>
+												</ul>
+											<?php endif; ?>
 										</div>
 
-									<?php elseif( get_row_layout() == 'ifmlat-enc' ): ?>
-										<div class="encBox itemShadow margBot20">
-											<p>
-												<?php the_sub_field('ifmlate-preg'); ?>
-											</p>
-											<div class="encInpCont">
-												<div class="col l6 m6 s6">
-													<p>
-														<input id="rdoSi" name="group1" type="radio" />
-														<label for="rdoSi">Si</label>
-													</p>
-												</div>
-												<div class="col l6 m6 s6">
-													<p>
-														<input id="rdoNo" name="group1" type="radio"/>
-														<label for="rdoNo">No</label>
-													</p>
-												</div>
-											</div>
+									<?php //Publicidad ?>
+									<?php elseif( get_row_layout() == 'indexlat-publ' ): ?>
+										<div class="itemLast itemShadow pubLateral margBot20">
+											<?php the_sub_field('indexlat-publcod'); ?>
+										</div>
+
+									<?php //Publicidad Responsive ?>
+									<?php elseif( get_row_layout() == 'indexlat-publresp' ): ?>
+										<div class="itemLast itemShadow pubLateralResp margBot20">
+											<?php the_sub_field('indexlat-publcodresp'); ?>
 										</div>
 									<?php endif; ?>
 
 								<?php endwhile; ?>
 							<?php endif; ?>
-
 						</div>
+
 					</div>
 				</div>
 			</section>

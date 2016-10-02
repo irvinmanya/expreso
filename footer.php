@@ -6,14 +6,9 @@
 			<div class="col l4 m12 s12">
 				<div class="siteMapBox margBot20">
 					<h3>
-						Lee las últimas noticias de:
+						<?php the_field('foo-ltitulo',75961); ?>
 					</h3>
 					<ul class="lastNot">
-						<li class="col l6 m12 s12">
-							<a href="javascript:void(0)" title="">
-								Política
-							</a>
-						</li>
 						<?php
 						$menu_name = 'menu-principal';
 						$locations = get_nav_menu_locations();
@@ -41,7 +36,7 @@
 			<div class="col l4 m12 s12">
 				<div class="siteMapBox margBot20">
 					<h3>
-						Último minuto
+						<?php the_field('foo-lmtitulo',75961); ?>
 					</h3>
 					<ul class="lastNot">
 						<?php $args = array(
@@ -66,28 +61,7 @@
 			<!-- [ Información ] -->
 			<div class="col l4 m12 s12">
 				<div class="siteMapBox siteMapBoxLast margBot20">
-					<h3>
-						Contáctate con nosotros
-					</h3>
-					<ul class="lastNot">
-						<li class="col l12 m12 s12">
-							Contral telefónica <a href="tel:+01 511 612 4000">(511) 612-4000</a>
-						</li>
-						<li class="col l12 m12 s12">
-							Fax <a href="tel:+01 511 612 4000">(511) 612-4000</a>
-						</li>
-						<li class="col l12 m12 s12">
-							Área Legal <a href="tel:+01 511 612 4000">(511) 612-4000</a>/ <br>
-							<a href="mailto:legal@expreso.com.pe">legal@expreso.com.pe</a>
-						</li>
-						<li class="col l12 m12 s12">
-							Soporte <a href="tel:+01 511 612 4000">(511) 612-4000</a> anexo 218 <br>
-							soporte@expreso.com.pe
-						</li>
-						<li class="col l12 m12 s12">
-							Director <a href="antonio.ramirez@expreso.com.pe" >antonio.ramirez@expreso.com.pe</a>
-						</li>
-					</ul>
+					<?php the_field('foo-info',75961); ?>
 				</div>
 			</div>
 
@@ -148,26 +122,55 @@ Para	mejorar	la	experiencia..
 </p>
 <![endif]-->
 <script type="text/javascript">
+	// Capturando la fecha de hoy
+	var dias_semana = new Array("Domingo","Lunes","Martes","Miercoles","Jueves","Viernes","Sabado");
+	var meses = new Array ("Enero","Febrero","Marzo","Abril","Mayo","Junio","Julio","Agosto","Septiembre","Octubre","Noviembre", "Diciembre");
+	var fecha_actual = new Date();
+	 
+	//alert("Hoy es " + dias_semana[fecha_actual.getDay()] + " dia " + fecha_actual.getDate() + " de " + meses[fecha_actual.getMonth()] + " de " + fecha_actual.getFullYear());
+	$('.fDay').find('p').html(dias_semana[fecha_actual.getDay()] + " " + fecha_actual.getDate() + " de " + meses[fecha_actual.getMonth()] + " del " + fecha_actual.getFullYear());
+
+
 	$(document).ready(function(){
+
+		var $videosURLxd = $('#expTv .iModListFig li');
+
+		for (var i = $videosURLxd.length - 1; i >= 0; i--) {
+			$videosURLxd.eq(i).find('iframe').attr('data-yt',$videosURLxd.eq(i).find('iframe').attr('src'));
+		}
+
 		$(window).load(function(){
 			setTimeout(function(){
 				$('.iModList li').on('mouseenter',function(){
-				  var $thisLi = $(this);
-				  var indexLi = $thisLi.index();
-				  $thisLi.closest('.itemModNot').find('.iModListFig').find('li').removeClass('actNot');
-				  $thisLi.closest('.itemModNot').find('.iModListFig').find('li').eq(indexLi).addClass('actNot');
+					var $thisLi = $(this);
+					var indexLi = $thisLi.index();
+					$thisLi.closest('.itemModNot').find('.iModListFig').find('li').removeClass('actNot');
+					$thisLi.closest('.itemModNot').find('.iModListFig').find('li').eq(indexLi).addClass('actNot');
 
-				  $thisLi.closest('.itemModNotTV').find('.iModListFig').find('li').removeClass('actNot');
-				  $thisLi.closest('.itemModNotTV').find('.iModListFig').find('li').eq(indexLi).addClass('actNot');
+					$('.actNot').find('iframe').attr('src',$videosURLxd.eq(indexLi).find('iframe').attr('data-yt'));
+
+
+					$thisLi.closest('.itemModNotTV').find('.iModListFig').find('li').removeClass('actNot');
+					$thisLi.closest('.itemModNotTV').find('.iModListFig').find('li').eq(indexLi).addClass('actNot');
 
 				});
 
-				$('.iModList li').on('mouseleave',function(){
-				  var $thisLi = $(this);
-				  // $thisLi.closest('.itemModNot').find('.iModListFig').find('li').removeClass('actNot');
-				});
+				// $('.iModList li').on('mouseleave',function(){
+				//   var $thisLi = $(this);
+				//   // $thisLi.closest('.itemModNot').find('.iModListFig').find('li').removeClass('actNot');
+				// });
 			},100);
 		});
+
+		//Video Autoplay
+		$('#expTv .iModList li').on('click',function(){
+			$('.actNot').find('iframe').attr('src',$('.actNot').find('iframe').attr('src')+'?autoplay=1');
+		});
+
+		//Agregando clases a la info del footer
+		$('.siteMapBoxLast').find('ul').addClass('lastNot');
+		$('.siteMapBoxLast').find('li').addClass('col l12 m12 s12');
+		
 	});
 </script>
 <?php wp_footer(); ?>

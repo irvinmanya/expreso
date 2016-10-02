@@ -4,8 +4,6 @@
 		<div class="row">
 			<div class="col l8 m12 s12 lineLateralRight" style="position:relative;">
 
-				<?php // ?>
-
 				<?php //Titulo ?>
 				<div class="titleBox1">
 					<?php if (get_field('postint-ssombrero')) { ?>
@@ -20,18 +18,21 @@
 
 				<?php //Detalles ?>
 				<ul class="singDet lineBottom">
-					<li>
-						<i>
-							<img src="<?php echo get_template_directory_uri() ?>/img/plantilla/icoUser.svg" alt="Autor" title="Autor">
-						</i>
-						<?php $author = get_the_author(); ?>
-						<?php echo $author; ?> |
-					</li>
+					<?php if (false) { ?>
+						<li>
+							<i>
+								<img src="<?php echo get_template_directory_uri() ?>/img/plantilla/icoUser.svg" alt="Autor" title="Autor">
+							</i>
+							<?php $author = get_the_author(); ?>
+							<?php echo $author; ?> |
+						</li>
+					<?php } ?>
+					
 					<li>
 						<i>
 							<img src="<?php echo get_template_directory_uri() ?>/img/plantilla/icoClock.svg" alt="Fecha" title="Fecha">
 						</i>
-						<?php the_time('l, F jS, Y') ?>
+						<?php the_time('l jS, F , Y') ?>
 					</li>
 					<li class="catList">
 						<i>
@@ -52,7 +53,8 @@
 						</ul>
 					</li>
 				</ul>
-
+				<?php the_tags(); ?>
+				<?php //Plugin Social Share ?>
 				<div class="socialShare socialShareTop">
 					<?php do_action( 'addthis_widget' ); ?>
 				</div>
@@ -93,6 +95,11 @@
 
 				<?php //Contenido ?>
 				<div class="campTxt campTxtPub lineBottom">
+					<?php if (get_field('postint-ubicacion')) { ?>
+						<p style="color:red;float:left;margin-right:5px;">
+							<?php the_field('postint-ubicacion'); ?>,
+						</p>
+					<?php } ?>
 					<?php the_content(); ?>
 					<div class="socialShare socialShareBottom">
 						<?php do_action( 'addthis_widget' ); ?>
@@ -105,25 +112,47 @@
 				</div>
 				
 				<?php //Articulos relacionados ?>
+
+				<?php
+				$categories = get_the_category();
+				$category_id = $categories[0]->cat_ID;
+				?>
+
 				<div class="rowSing rowRell lineBottom">
 					<div class="titleBox2">
 						<h2>
 							Noticias relacionadas
 						</h2>
 					</div>
-					<?php $args = array(
-						'cat' => get_query_var('cat'),
-						'posts_per_page' => '3',
-						// 'orderby'        => 'rand'
-						'orderby'        => 'title'
+					<?php 
+						$pageSobject = get_queried_object();
+						$pageSid = get_queried_object_id();
+						$pageSidArray = array($pageSid);
+					?>
 
+					<?php $searchvalue = get_the_title(); ?>
+
+					<?php $args = array(
+						'cat' => $category_id,
+						'posts_per_page' => '3',
+						'post__not_in' => $pageSidArray
+						// 'relation' => 'AND',
+						// array(
+						// 	'key' => 'title',
+						// 	'value' => $searchvalue,
+						// 	'compare' => 'LIKE'
+						// )
 					);?>
+
+					<?php $ids = array(); ?>
+
 					<?php $the_query = new WP_Query($args); ?>
 						<?php if ($the_query->have_posts()) : ?>
 							<?php while ($the_query->have_posts()) : $the_query->the_post(); ?>
 								<article class="col l4 m12 s12">
 									<?php get_template_part( 'content/content', 'notcard' ); ?>
 								</article>
+								<?php array_push( $ids, get_the_ID() ); ?>
 							<?php endwhile; ?>
 						<?php wp_reset_postdata(); ?>
 					<?php endif; ?>
@@ -133,12 +162,14 @@
 				<div class="rowSing rowRell lineBottom">
 					<div class="titleBox2">
 						<h2>
-							Noticias de una categoría relacionadas
+							Noticias de una categoría relacionadas 
 						</h2>
 					</div>
+					<?php $idTotal = array_merge($ids, $pageSidArray); ?>
 					<?php $args = array(
+						'cat' => $category_id,
 						'posts_per_page' => '3',
-						'cat' => get_query_var('cat')
+						'post__not_in' => $idTotal
 					);?>
 					<?php $the_query = new WP_Query($args); ?>
 						<?php if ($the_query->have_posts()) : ?>

@@ -175,202 +175,179 @@ scale = 0 480px 768px 992px 1200px
 	img
 		tam ()
 
-.cssload-circle{
+#floatingCirclesG{
+	width:125px;
+	height:125px;
+	transform:scale(0.6);
+		-o-transform:scale(0.6);
+		-ms-transform:scale(0.6);
+		-webkit-transform:scale(0.6);
+		-moz-transform:scale(0.6);
+}
+
+.f_circleG{
 	position:absolute;
-	margin:49px auto;
-	width:78px;
-	height:78px;
-	background:rgb(236,240,241);
-	border:solid 5px rgb(44,62,80);
-	border-radius:100%;
-	overflow:hidden;
-	animation: cssload-rotates 2.3s infinite linear;
-	-o-animation: cssload-rotates 2.3s infinite linear;
-	-ms-animation: cssload-rotates 2.3s infinite linear;
-	-webkit-animation: cssload-rotates 2.3s infinite linear;
-	-moz-animation: cssload-rotates 2.3s infinite linear;
-	margin:auto;
-	top:0px;
-	left:0px;
-	right:0px;
-	bottom:0px;
+	background-color:rgb(255,255,255);
+	height:22px;
+	width:22px;
+	border-radius:12px;
+		-o-border-radius:12px;
+		-ms-border-radius:12px;
+		-webkit-border-radius:12px;
+		-moz-border-radius:12px;
+	animation-name:f_fadeG;
+		-o-animation-name:f_fadeG;
+		-ms-animation-name:f_fadeG;
+		-webkit-animation-name:f_fadeG;
+		-moz-animation-name:f_fadeG;
+	animation-duration:1.2s;
+		-o-animation-duration:1.2s;
+		-ms-animation-duration:1.2s;
+		-webkit-animation-duration:1.2s;
+		-moz-animation-duration:1.2s;
+	animation-iteration-count:infinite;
+		-o-animation-iteration-count:infinite;
+		-ms-animation-iteration-count:infinite;
+		-webkit-animation-iteration-count:infinite;
+		-moz-animation-iteration-count:infinite;
+	animation-direction:normal;
+		-o-animation-direction:normal;
+		-ms-animation-direction:normal;
+		-webkit-animation-direction:normal;
+		-moz-animation-direction:normal;
 }
-.cssload-up{
-		width: 29px;
-		height: 39px;
-		left:20px;
-		overflow:hidden;
-		background:rgb(204,238,255);
-		position:absolute;
+
+#frotateG_01{
+	left:0;
+	top:51px;
+	animation-delay:0.45s;
+		-o-animation-delay:0.45s;
+		-ms-animation-delay:0.45s;
+		-webkit-animation-delay:0.45s;
+		-moz-animation-delay:0.45s;
 }
-.cssload-up:before,.cssload-up:after{
-		content:"";
-		width:29px;height:29px;
-		background:rgb(236,240,241);
-		position:absolute;
-		z-index:1;
+
+#frotateG_02{
+	left:15px;
+	top:15px;
+	animation-delay:0.6s;
+		-o-animation-delay:0.6s;
+		-ms-animation-delay:0.6s;
+		-webkit-animation-delay:0.6s;
+		-moz-animation-delay:0.6s;
 }
-.cssload-up:before{
-		top:29px;
-		left:-17px;
-		transform:rotate(45deg);
-		-o-transform:rotate(45deg);
-		-ms-transform:rotate(45deg);
-		-webkit-transform:rotate(45deg);
-		-moz-transform:rotate(45deg);
+
+#frotateG_03{
+	left:51px;
+	top:0;
+	animation-delay:0.75s;
+		-o-animation-delay:0.75s;
+		-ms-animation-delay:0.75s;
+		-webkit-animation-delay:0.75s;
+		-moz-animation-delay:0.75s;
 }
-.cssload-up:after{
-		top:29px; left:17px;
-		transform:rotate(45deg);
-		-o-transform:rotate(45deg);
-		-ms-transform:rotate(45deg);
-		-webkit-transform:rotate(45deg);
-		-moz-transform:rotate(45deg);
+
+#frotateG_04{
+	right:15px;
+	top:15px;
+	animation-delay:0.9s;
+		-o-animation-delay:0.9s;
+		-ms-animation-delay:0.9s;
+		-webkit-animation-delay:0.9s;
+		-moz-animation-delay:0.9s;
 }
-.cssload-innera{
-		position:relative;
-		top:15px;
-		width:29px;height:29px;
-		background:rgb(241,196,15);
-		animation: cssload-mymove 2.3s infinite linear;
-		-o-animation: cssload-mymove 2.3s infinite linear;
-		-ms-animation: cssload-mymove 2.3s infinite linear;
-		-webkit-animation: cssload-mymove 2.3s infinite linear;
-		-moz-animation: cssload-mymove 2.3s infinite linear;
+
+#frotateG_05{
+	right:0;
+	top:51px;
+	animation-delay:1.05s;
+		-o-animation-delay:1.05s;
+		-ms-animation-delay:1.05s;
+		-webkit-animation-delay:1.05s;
+		-moz-animation-delay:1.05s;
 }
-.cssload-down{
-		width: 29px;
-		height: 39px;
-		left:20px;
-		top:39px;
-		overflow:hidden;
-		background:rgb(204,238,255);
-		position:absolute;
-		z-index:1;
+
+#frotateG_06{
+	right:15px;
+	bottom:15px;
+	animation-delay:1.2s;
+		-o-animation-delay:1.2s;
+		-ms-animation-delay:1.2s;
+		-webkit-animation-delay:1.2s;
+		-moz-animation-delay:1.2s;
 }
-.cssload-down:before,.cssload-down:after{
-		content:"";
-		width:29px;
-		height:39px;
-		background:rgb(236,240,241);
-		position:absolute;
-		z-index:1;
+
+#frotateG_07{
+	left:51px;
+	bottom:0;
+	animation-delay:1.35s;
+		-o-animation-delay:1.35s;
+		-ms-animation-delay:1.35s;
+		-webkit-animation-delay:1.35s;
+		-moz-animation-delay:1.35s;
 }
-.cssload-down:before{
-		top:-24px;
-		left:-17px;
-		transform:rotate(45deg);
-		-o-transform:rotate(45deg);
-		-ms-transform:rotate(45deg);
-		-webkit-transform:rotate(45deg);
-		-moz-transform:rotate(45deg);
-}
-.cssload-down:after{
-		top:-24px;
-		left:23px;
-		transform:rotate(45deg);
-		-o-transform:rotate(45deg);
-		-ms-transform:rotate(45deg);
-		-webkit-transform:rotate(45deg);
-		-moz-transform:rotate(45deg);
-}
-.cssload-innerb{
-		position:relative;
-		top:39px;
-		width:29px;height:29px; background:rgb(241,196,15);
-		animation: cssload-mymoveb 2.3s infinite linear;
-		-o-animation: cssload-mymoveb 2.3s infinite linear;
-		-ms-animation: cssload-mymoveb 2.3s infinite linear;
-		-webkit-animation: cssload-mymoveb 2.3s infinite linear;
-		-moz-animation: cssload-mymoveb 2.3s infinite linear;
+
+#frotateG_08{
+	left:15px;
+	bottom:15px;
+	animation-delay:1.5s;
+		-o-animation-delay:1.5s;
+		-ms-animation-delay:1.5s;
+		-webkit-animation-delay:1.5s;
+		-moz-animation-delay:1.5s;
 }
 
 
-@keyframes cssload-mymove{
-		0%{top:15px;}
-		100%{top:44px;}
+
+@keyframes f_fadeG{
+	0%{
+		background-color:rgb(0,0,0);
+	}
+
+	100%{
+		background-color:rgb(255,255,255);
+	}
 }
 
-@-o-keyframes cssload-mymove{
-		0%{top:15px;}
-		100%{top:44px;}
+@-o-keyframes f_fadeG{
+	0%{
+		background-color:rgb(0,0,0);
+	}
+
+	100%{
+		background-color:rgb(255,255,255);
+	}
 }
 
-@-ms-keyframes cssload-mymove{
-		0%{top:15px;}
-		100%{top:44px;}
+@-ms-keyframes f_fadeG{
+	0%{
+		background-color:rgb(0,0,0);
+	}
+
+	100%{
+		background-color:rgb(255,255,255);
+	}
 }
 
-@-webkit-keyframes cssload-mymove{
-		0%{top:15px;}
-		100%{top:44px;}
+@-webkit-keyframes f_fadeG{
+	0%{
+		background-color:rgb(0,0,0);
+	}
+
+	100%{
+		background-color:rgb(255,255,255);
+	} 
 }
 
-@-moz-keyframes cssload-mymove{
-		0%{top:15px;}
-		100%{top:44px;}
-}
+@-moz-keyframes f_fadeG{
+	0%{
+		background-color:rgb(0,0,0);
+	}
 
-@keyframes cssload-mymoveb{
-		0%{top:39px;}
-		90%{top:19px;}
-		100%{top:-5px;}
+	100%{
+		background-color:rgb(255,255,255);
+	}
 }
-
-@-o-keyframes cssload-mymoveb{
-		0%{top:39px;}
-		90%{top:19px;}
-		100%{top:-5px;}
-}
-
-@-ms-keyframes cssload-mymoveb{
-		0%{top:39px;}
-		90%{top:19px;}
-		100%{top:-5px;}
-}
-
-@-webkit-keyframes cssload-mymoveb{
-		0%{top:39px;}
-		90%{top:19px;}
-		100%{top:-5px;}
-}
-
-@-moz-keyframes cssload-mymoveb{
-		0%{top:39px;}
-		90%{top:19px;}
-		100%{top:-5px;}
-}
-
-@keyframes cssload-rotates{
-		0%{transform:rotate(0deg);}
-		80%{transform:rotate(0deg);}
-		100%{transform:rotate(180deg);}
-}
-
-@-o-keyframes cssload-rotates{
-		0%{-o-transform:rotate(0deg);}
-		80%{-o-transform:rotate(0deg);}
-		100%{-o-transform:rotate(180deg);}
-}
-
-@-ms-keyframes cssload-rotates{
-		0%{-ms-transform:rotate(0deg);}
-		80%{-ms-transform:rotate(0deg);}
-		100%{-ms-transform:rotate(180deg);}
-}
-
-@-webkit-keyframes cssload-rotates{
-		0%{-webkit-transform:rotate(0deg);}
-		80%{-webkit-transform:rotate(0deg);}
-		100%{-webkit-transform:rotate(180deg);}
-}
-
-@-moz-keyframes cssload-rotates{
-		0%{-moz-transform:rotate(0deg);}
-		80%{-moz-transform:rotate(0deg);}
-		100%{-moz-transform:rotate(180deg);}
-}
-
 
 //***********************************************************//
 //************************************************************//

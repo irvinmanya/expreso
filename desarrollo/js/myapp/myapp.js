@@ -356,10 +356,11 @@ $(document).on('ready',function() {
       weekdaysShort: [ 'Dom', 'Lu', 'Mar', 'Mie', 'Ju', 'Vi', 'Sab' ],
       weekdaysLetter: [ 'D', 'L', 'M', 'M', 'J', 'V', 'S' ],
       today: 'Hoy',
-      format: 'yyyy/mm/dd',
+      format: 'dd/mm/yyyy',
+      // format: 'yyyy/mm/dd',
       clear: 'Limpiar',
       close: 'Cerrar',
-      max: false,
+      max: -1,
       min: false,
       onSet: function( arg ){
         if ( 'select' in arg ){ //prevent closing on selecting month/year

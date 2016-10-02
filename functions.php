@@ -196,7 +196,7 @@ if(function_exists('add_theme_support')) {
 /*------------------| Template Sub - category opinion |-------------------*/
 function sub_category_opinion( $template ) {
     if ( cat_is_ancestor_of( 18, get_queried_object_id() /* The current category ID */ ) ){
-        $template = locate_template( 'subcat_blogcolum.php' );
+        $template = locate_template( 'subcat_colum.php' );
     }
     return $template;
 }
@@ -207,7 +207,7 @@ add_filter( 'category_template', 'sub_category_opinion' );
 /*------------------| Template Sub - category opinion |-------------------*/
 function sub_category_bloguero( $template ) {
     if ( cat_is_ancestor_of( 131, get_queried_object_id() /* The current category ID */ ) ){
-        $template = locate_template( 'subcat_blogcolum.php' );
+        $template = locate_template( 'subcat_blog.php' );
     }
     return $template;
 }
@@ -216,15 +216,15 @@ add_filter( 'category_template', 'sub_category_bloguero' );
 /*------------------| Fin - Template Sub - category opinion |-------------------*/
 
 /*------------------| Fin - Single Sub - category opinion y blogueros |-------------------*/
-// if ( ! function_exists( 'post_is_in_descendant_category' ) ) {
-//     function post_is_in_descendant_category( $cats, $_post = null ) {
-//         foreach ( (array) $cats as $cat ) {
-//             // get_term_children() accepts integer ID only
-//             $descendants = get_term_children( (int) $cat, 'category' );
-//             if ( $descendants && in_category( $descendants, $_post ) )
-//                 return true;
-//         }
-//         return false;
-//     }
-// }
+if ( ! function_exists( 'post_is_in_descendant_category' ) ) {
+    function post_is_in_descendant_category( $cats, $_post = null ) {
+        foreach ( (array) $cats as $cat ) {
+            // get_term_children() accepts integer ID only
+            $descendants = get_term_children( (int) $cat, 'category' );
+            if ( $descendants && in_category( $descendants, $_post ) )
+                return true;
+        }
+        return false;
+    }
+}
 /*------------------| Fin - Single Sub - category opinion y blogueros |-------------------*/

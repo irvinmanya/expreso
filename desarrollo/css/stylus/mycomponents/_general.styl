@@ -26,6 +26,7 @@ body
 
 .rowRell
 	position relative
+	margin-top 
 	.col
 		padding-left 0px !important
 
@@ -97,11 +98,38 @@ body
 .icoResp
 	display none
 
+.fix-pubizq
+	position fixed
+	top 0px
+	bottom 0px
+	left 0px
+	margin-bottom auto
+	margin-top auto
+	width 120px
+	height 600px
+	background rgba(0, 0, 0, .75)
+
+.fix-pubder
+	position fixed
+	top 0px
+	bottom 0px
+	right 0px
+	margin-bottom auto
+	margin-top auto
+	width 120px
+	height 600px
+	background rgba(0, 0, 0, .75)
+
+
 // ---> [ Desktop ]
 //@media screen and (max-width: 1200px)
 
 // ---> [ Tablet ]
-//@media screen and (max-width: 992px)
+@media screen and (max-width: 992px)
+	.fix-pubizq
+		display none
+	.fix-pubder
+		display none
 
 // ---> [ Mobil ]
 @media screen and (max-width: 600px)
@@ -137,6 +165,22 @@ header
 	background blanco
 	height auto
 	padding 7px 15px 7px 15px
+
+.fDay
+	position absolute
+	top 0px
+	bottom 0px
+	left 0px
+	right 0px
+	margin auto
+	padding 7px
+	height 40px
+	text-align center
+	p
+		text-align center
+		font-size 14px
+		line-height 25px
+		display inline-block
 
 .logoBox
 	tam ()
@@ -250,7 +294,9 @@ header
 //@media screen and (max-width: 1200px)
 
 // ---> [ Tablet ]
-//@media screen and (max-width: 992px)
+@media screen and (max-width: 992px)
+	.fDay
+		display none
 
 // ---> [ Mobil ]
 //@media screen and (max-width: 600px)

@@ -42,16 +42,6 @@
 	<!-- [ Preloader ] -->
 	<div id="preloader" >
 		<div id="status">
-			<?php if (false) { ?>
-				<div class="cssload-circle">
-					<div class="cssload-up">
-							<div class="cssload-innera"></div>
-					</div>
-					<div class="cssload-down">
-							<div class="cssload-innerb"></div>
-					</div>
-				</div>
-			<?php } ?>
 			<div class="preloadXP">
 				<img src="<?php echo $headLogo['url']; ?>" alt="<?php wp_title( '' ); ?>" title="<?php wp_title( '' ); ?>">
 			</div>
@@ -68,6 +58,13 @@
 						'menu_class' =>'MapHeader'
 					);?>
 					<?php wp_nav_menu($args); ?>
+
+					<?php //Fecha del dia ?>
+					<div class="fDay">
+						<p>
+							
+						</p>
+					</div>
 
 					<ul class="rsListHead">
 						<span>Síguenos en:</span>
@@ -116,11 +113,6 @@
 						</button>
 					</li>
 				</ul>
-				<?php if (false) { ?>
-					<div class="searchIco" id="searchBox">
-						<img src="<?php echo get_template_directory_uri() ?>/img/plantilla/searchWhite.svg" alt="" title="">
-					</div>
-				<?php } ?>
 			</div>
 			<nav class="mainMenu" id="mainMenu">
 				<?php $args=array(
@@ -143,20 +135,25 @@
 				<div class="rowContPub">
 					<div class="col l12 m12 s12">
 						<div class="pubextra">
-							<?php $headpubImg = get_field('headpub-img'); ?>
+							<?php $headpubImg = get_field('headpub-img',75961); ?>
 							<a href="<?php the_field('headpub-imglink'); ?>" title="<?php echo $headpubImg['title']; ?>">
 								<img src="<?php echo $headpubImg['url']; ?>" alt="<?php echo $headpubImg['title']; ?>" title="<?php echo $headpubImg['title']; ?>">
 							</a>
 						</div>
-						<div class="publong">
-							<?php if (get_field('headpub-code')): ?>
-								<?php the_sub_field('headpub-code'); ?>
-							<?php else: ?>
-								<img src="<?php echo get_template_directory_uri() ?>/img/plantilla/publong.jpg" alt="title" title="title">
-							<?php endif; ?>
+						<div class="publong" style="font-size:0px;">
+							<?php the_field('headpub-head',75961); ?>
 						</div>
 					</div>
 				</div>
 			</div>
 		</div>
 	</section>
+
+	<?php if (false) { ?>
+		<div class="fix-pubizq">
+			<?php the_field('headpub-latizq',75961); ?>
+		</div>
+		<div class="fix-pubder">
+			<?php the_field('headpub-latder',75961); ?>
+		</div>
+	<?php } ?>
